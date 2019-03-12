@@ -1,0 +1,71 @@
+$mint-color: #4eb7a8;
+$orange-color: #e75735;
+.btn{
+    display: flex;
+}
+.btn-low{
+    margin-left: 2rem;
+    width: 6.5rem;
+    height: 1.8333rem;
+    border: none;
+    color: white;
+    font-family: Lato-black;
+    font-weight: bold;
+    font-size: 0.8333rem;
+    border-radius: 4px;
+}
+.btn-hight{
+    margin-left: 2rem;
+    width: 9.8333rem;
+    height: 2.6667rem;
+    border: none;
+    color: white;
+    font-family: Lato-black;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+.btn-low:hover,
+.btn-hight:hover{
+    cursor: pointer;
+}
+.btn-mint{
+    background-color: white;
+    color: $mint-color;
+    border: 1px solid $mint-color;
+    box-shadow: 0px 2.5px 0px -1px $mint-color;
+    overflow: hidden;
+    position: relative;
+}
+.btn-orange{
+    background-color: white;
+    color: $orange-color;
+    border: 1px solid $orange-color;
+    box-shadow: 0px 2.5px 0px -1px $orange-color;
+    overflow: hidden;
+    position: relative;
+}
+.btn-mint:hover{
+    background-color: $mint-color;
+    color: white;
+}
+.btn-orange:hover{
+    background-color: $orange-color;
+    color: white;
+}
+button{
+    overflow: hidden;
+}
+button .ripple {
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    transform: scale(0);
+    animation: ripple 0.3s linear;
+}
+
+@keyframes ripple {
+    to{
+        transform: scale(0.5);
+    }
+}
