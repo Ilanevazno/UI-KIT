@@ -1,0 +1,43 @@
+.arrows{
+    position: relative;
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    background-color: white;
+    border: 1.2px solid #4eb7a8;
+    outline: none;
+}
+.arrows:hover,
+.arrows:focus{
+    background-color: #4eb7a8;
+    outline: none;
+}
+
+.arrow-1 {
+    height: 12px;
+    width: 12px;
+    border: 1px solid #4eb7a8;
+    margin-left: 5px;
+	border-width: 2px 2px 0 0;
+	transform: rotate(45deg);
+}
+.arrows:hover > .arrow-1,
+.arrows:focus > .arrow-1{
+    border: 1px solid white;
+    border-width: 2px 2px 0 0;
+	transform: rotate(45deg);
+}
+.arrows:disabled,
+.arrows:disabled > .arrow-1{
+    background-color: #e5e5e5;
+    border: 1px solid white;
+    border-width: 2px 2px 0 0;
+}
+
+.arrow-left{
+    transform: rotate(220deg);
+    margin-left: 12px;
+}
+.arrow-left:hover{
+    transform: rotate(220deg); 
+}
