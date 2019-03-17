@@ -3,8 +3,16 @@
 }
 
 .ul__main{
+    max-width: 1920px;
+}
+.wrapper{
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    justify-content: space-between;
+}
+.buttons{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }

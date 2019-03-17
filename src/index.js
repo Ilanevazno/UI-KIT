@@ -6,3 +6,7 @@ import './buttons/buttons.js';
 import './arrows/arrow.pug';
 import './arrows/arrow.scss';
 import './arrows/arrow.js';
+import './pie-chart/pie-chart.pug';
+import './pie-chart/pie-chart.scss';
+import './pie-chart/pie-chart.js';
+import $ from 'jquery';

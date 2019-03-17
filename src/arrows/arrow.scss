@@ -1,34 +1,39 @@
-.arrows{
+// правило для всего тела кнопок
+@mixin arrows__template($width: 3.75rem, $height: 3.75rem){
     position: relative;
-    width: 3.75rem;
-    height: 3.75rem;
+    width: $width;
+    height: $height;
     border-radius: 50%;
     background-color: white;
     border: 1.2px solid #4eb7a8;
-    outline: none;
+}
+.arrows{
+    @include arrows__template;
 }
 .arrows:hover,
 .arrows:focus{
     background-color: #4eb7a8;
-    outline: none;
 }
-
-.arrow-1 {
-    height: 12px;
-    width: 12px;
+// правило для иконки внутри тела кнопок
+@mixin arrow__template($width: 12px, $height: 12px, $margin-left: 5px){
+    height: $width;
+    width: $width;
     border: 1px solid #4eb7a8;
-    margin-left: 5px;
+    margin-left: $margin-left;
 	border-width: 2px 2px 0 0;
 	transform: rotate(45deg);
 }
-.arrows:hover > .arrow-1,
-.arrows:focus > .arrow-1{
+.arrow {
+    @include arrow__template
+}
+// правило для поведения кнопок
+.arrows:hover > .arrow,
+.arrows:focus > .arrow{
     border: 1px solid white;
     border-width: 2px 2px 0 0;
-	transform: rotate(45deg);
 }
 .arrows:disabled,
-.arrows:disabled > .arrow-1{
+.arrows:disabled > .arrow{
     background-color: #e5e5e5;
     border: 1px solid white;
     border-width: 2px 2px 0 0;

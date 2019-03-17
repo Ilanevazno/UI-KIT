@@ -3,47 +3,44 @@ $orange-color: #e75735;
 .btn{
     display: flex;
 }
-.btn-low{
-    margin-left: 2rem;
-    width: 6.5rem;
-    height: 1.8333rem;
+// Тело кнопок
+@mixin btn__template($width: 6.5rem, $height: 1.8333rem, $font-size: 0.8333rem){
+    width: $width;
+    height: $height;
     border: none;
     color: white;
     font-family: Lato-black;
     font-weight: bold;
-    font-size: 0.8333rem;
+    font-size: $font-size;
     border-radius: 4px;
+    outline: none;
+}
+.btn-low{
+    @include btn__template;
+    margin-left: 1rem;
 }
 .btn-hight{
-    margin-left: 2rem;
-    width: 9.8333rem;
-    height: 2.6667rem;
-    border: none;
-    color: white;
-    font-family: Lato-black;
-    font-weight: bold;
-    font-size: 1rem;
-    border-radius: 4px;
+    margin-left: 1rem;
+    @include btn__template(9.8333rem, 2.6667rem, 1rem);
 }
 .btn-low:hover,
 .btn-hight:hover{
     cursor: pointer;
 }
-.btn-mint{
-    background-color: white;
-    color: $mint-color;
-    border: 1px solid $mint-color;
-    box-shadow: 0px 2.5px 0px -1px $mint-color;
+// Стилизация кнопок
+@mixin btn__style__template($background-color: white, $color: white, $border: 1px solid red, $box-shadow: 0px 2.5px 0px -1px green){
+    background-color: $background-color;
+    color: $color;
+    border: $border;
+    box-shadow: $box-shadow;
     overflow: hidden;
     position: relative;
 }
+.btn-mint{
+    @include btn__style__template(white, $mint-color, 1px solid $mint-color, 0px 2.5px 0px -1px $mint-color);
+}
 .btn-orange{
-    background-color: white;
-    color: $orange-color;
-    border: 1px solid $orange-color;
-    box-shadow: 0px 2.5px 0px -1px $orange-color;
-    overflow: hidden;
-    position: relative;
+    @include btn__style__template(white, $orange-color, 1px solid $orange-color, 0px 2.5px 0px -1px $orange-color);
 }
 .btn-mint:hover{
     background-color: $mint-color;

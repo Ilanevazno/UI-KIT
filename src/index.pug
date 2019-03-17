@@ -1,5 +1,16 @@
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link href="piechart.css" rel="stylesheet">
+<script src="piechart.js"></script>
+
+
 .ul__main
-    .buttons
-        include buttons/buttons.pug
-    .arrows
-        include arrows/arrow.pug
+    .wrapper
+        h2 Standart buttons
+        .buttons
+            include buttons/buttons.pug
+        h2 Arrow button
+        .arrows__icons
+            include arrows/arrow.pug
+        h3 Pie chart 
+        .piechart
+            include pie-chart/pie-chart.pug
