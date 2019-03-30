@@ -3,7 +3,18 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   module: {
-    rules: [{
+    rules: [
+      {
+        test: require.resolve('jquery'),
+        use: [{
+            loader: 'expose-loader',
+            options: 'jQuery'
+        }, {
+            loader: 'expose-loader',
+            options: '$'
+        }]
+    },
+      {
         test: /\.pug$/,
         use: ['pug-loader']
       },
