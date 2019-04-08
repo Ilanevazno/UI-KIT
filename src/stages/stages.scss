@@ -1,0 +1,60 @@
+.stages {
+    margin-top: 30px;
+    position: relative;
+  }
+  .stages__header {
+    font-family: Arial, Calibri, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 14px;
+  }
+  .stage {
+    display: -webkit-box;
+    display: flex;
+  }
+  .stage .slider-horizontal#st {
+    width: 85%;
+    margin: 17px auto;
+    background: inherit;
+  }
+  #st .slider-track {
+    height: 5px;
+  }
+  #st .slider-selection,
+  #st .slider-tick.in-selection {
+    background: #e75735;
+  }
+  #st .slider-tick-label-container {
+    font-weight: bold;
+    font-size: 17px;
+    position: absolute;
+    z-index: 99;
+    margin-top: -6px;
+    color: #888;
+  }
+  #st .slider-handle {
+    background: transparent;
+    width: 28px;
+    height: 28px;
+    top: -6px;
+  }
+  #st .slider-tick {
+    background: #e5e5e5;
+    box-shadow: unset;
+    width: 28px;
+    height: 28px;
+    opacity: unset;
+    margin-left: -14px;
+    top: -6px;
+    cursor: pointer;
+  }
+  #st .slider-tick-label {
+    height: 25px;
+  }
+  #st .whiteNum {
+    color: #fff;
+    cursor: pointer;
+  }

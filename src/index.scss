@@ -6,6 +6,8 @@
     max-width: 1920px;
 }
 .wrapper{
+    max-width: 600px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -15,4 +17,21 @@
 .buttons{
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+.charts{
+    display: flex;
+}
+
+.sliders{
+    width: 600px;
+    display: flex;
+    margin-top: 10px;
+}
+
+.stages{
+    width: 100%;
+}
+
+h2{
+    text-transform: uppercase;
 }

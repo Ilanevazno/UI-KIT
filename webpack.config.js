@@ -9,10 +9,14 @@ module.exports = {
         use: [{
             loader: 'expose-loader',
             options: 'jQuery'
-        }, {
+        },
+         {
             loader: 'expose-loader',
             options: '$'
         }]
+    },
+      { 
+        test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" 
     },
       {
         test: /\.pug$/,
