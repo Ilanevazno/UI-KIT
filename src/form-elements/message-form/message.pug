@@ -1,0 +1,12 @@
+.form__container
+    form(action="#" class="message__items" id="message__form")
+        .fields
+            input(type="text" id="userName" name="userName" class="message__name form__items" placeholder="Your name")
+            label(for="userName" class="name__status")
+        .fields
+            input(type="email" id="userEmail" name="userEmail" class="form__items" placeholder="Your email")
+            label(for="userEmail" class="email__status")
+        .fields
+            textarea(id="userMessage" class="form__items form__items__textarea" placeholder="Your message")
+            label(for="userMessage" class="messagetext__status")
+        input(type="submit" class="form__items" value="submit")

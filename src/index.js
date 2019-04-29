@@ -33,3 +33,15 @@ import './stages/stages.js';
 import './form-elements/message-form/message.pug';
 import './form-elements/message-form/message.scss';
 import './form-elements/message-form/message.js';
+// Подключение "Toggles"
+import './form-elements/toggles-form/toggles/toggles.pug';
+import './form-elements/toggles-form/toggles/toggles.scss';
+import './form-elements/toggles-form/toggles/toggles.js';
+// Подключение "Tick boxes"
+import './form-elements/toggles-form/tick-boxes/checkbox.pug';
+import './form-elements/toggles-form/tick-boxes/checkbox.scss';
+import './form-elements/toggles-form/tick-boxes/checkbox.js';
+// Подключение "Search / drop-down"
+import './search/search.pug';
+import './search/search.scss';
+import './search/search.js';

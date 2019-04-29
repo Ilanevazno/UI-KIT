@@ -20,9 +20,16 @@
         .stages
             include stages/stages.pug
         h2 Form elements
-        .message-form
-            include form-elements/message-form/message.pug
-        .toggles-form
-            .toggles
-
-            .tick__boxes
+        .form__container
+            .message__form
+                include form-elements/message-form/message.pug
+            .toggles-form
+                .toggles
+                    h2 Toggles
+                    include form-elements/toggles-form/toggles/toggles.pug 
+                .tick__boxes
+                    h2 Tick Boxes
+                    include form-elements/toggles-form/tick-boxes/checkbox.pug
+        .Search__drop-down
+            h2 Search / Drop down
+            include search/search.pug
