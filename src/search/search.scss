@@ -27,7 +27,7 @@
 }
 
 .form__search__str__find input[type="text"]{
-    width: 290px;
+    width: 100%;
     height: 30px;
     padding-left: 15px;
     box-sizing: border-box;
@@ -49,7 +49,7 @@
     background-color: #e75735;
     background-image: url('img/find-btn.png');
     background-repeat: no-repeat;
-    background-position: 11px;
+    background-position: 50%;
 }
 
 .search__items li:hover{

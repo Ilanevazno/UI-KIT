@@ -45,3 +45,22 @@ import './form-elements/toggles-form/tick-boxes/checkbox.js';
 import './search/search.pug';
 import './search/search.scss';
 import './search/search.js';
+// Подключение "User profile"
+import './User-profile/user-profile.pug';
+import './User-profile/user-profile.scss';
+import './User-profile/user-profile.js';
+// Подключение "News and events"
+//News
+import './News-and-events/News/News.pug';
+import './News-and-events/News/News.scss';
+import './News-and-events/News/News.js';
+import './News-and-events/News/jquery/FeedEk.min.js';
+import './News-and-events/News/jquery/FeedEk.call.js';
+//Events
+import './News-and-events/Events/Events.pug';
+import './News-and-events/Events/Events.scss';
+import './News-and-events/Events/Events.js';
+// Подключение "Location"
+import './location/location.pug';
+import './location/location.scss';
+import './location/location.js';

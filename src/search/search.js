@@ -70,7 +70,7 @@ searchBtn.focusin = function(){
         searchBtn.classList.add('valid');
         searchBtn.style.backgroundColor = '#4eb7a8';
         searchBtn.style.backgroundImage = "url('src/images/find-btn-sucsc.png')";
-        searchBtn.style.backgroundPosition = '9px';
+        searchBtn.style.backgroundPosition = '50%';
      } else {
         searchBtn.classList.remove('invalid');
         searchBtn.classList.remove('valid');
