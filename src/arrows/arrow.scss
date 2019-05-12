@@ -46,3 +46,12 @@
 .arrow-left:hover{
     transform: rotate(220deg); 
 }
+
+.arrows:focus{
+    outline: none;
+}
+
+.arrows:active{
+    outline: none;
+    transform: scale(0.9)
+}

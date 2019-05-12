@@ -66,3 +66,8 @@ button .ripple {
         transform: scale(0.5);
     }
 }
+
+.btn-mint:active,
+.btn-orange:active{
+    transform: scale(0.97)
+}

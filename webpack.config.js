@@ -18,6 +18,12 @@ module.exports = {
       { 
         test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" 
     },
+    {
+      test: /\.mp4$/,
+      use: [{
+        loader: 'file-loader?name=/src/images/[name].[ext]'
+      }]
+    },
       {
         test: /\.pug$/,
         use: ['pug-loader']

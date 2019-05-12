@@ -2,6 +2,20 @@ import $ from 'jquery';
 import './index.pug';
 import './index.scss';
 
+//Лоадер странички
+$('body').ready(function(){
+    setTimeout(function() {
+        let preloader = $('#page-preloader');
+
+        if(!preloader.hasClass('done') ){
+            $('.preloader').css({
+                'transition': '1s all',
+            });
+            preloader.addClass('done');
+        }
+    }, 1000);
+})
+
 //Подключение jQuery UI
 import './jQueryUI/jquery-ui.css';
 // Подключение ripple кнопок
@@ -68,7 +82,15 @@ import './location/location.pug';
 import './location/location.scss';
 import './location/location.js';
 // Подключение "Calendar and messaging"
-    //Подключение calendar
+    //Подключение "calendar"
     import './Calendar-and-messaging/calendar/calendar.pug';
     import './Calendar-and-messaging/calendar/calendar.scss';
     import './Calendar-and-messaging/calendar/calendar.js';
+    //Подключение "messaging"
+    import './Calendar-and-messaging/messaging/messaging.pug';
+    import './Calendar-and-messaging/messaging/messaging.scss';
+    import './Calendar-and-messaging/messaging/messaging.js';
+// подключение "video"
+import './video/video.pug';
+import './video/video.scss';
+import './video/video.js';
