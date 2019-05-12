@@ -1,6 +1,9 @@
 import $ from 'jquery';
 import './index.pug';
 import './index.scss';
+
+//Подключение jQuery UI
+import './jQueryUI/jquery-ui.css';
 // Подключение ripple кнопок
 import './buttons/buttons.pug';
 import './buttons/buttons.scss';
@@ -50,17 +53,22 @@ import './User-profile/user-profile.pug';
 import './User-profile/user-profile.scss';
 import './User-profile/user-profile.js';
 // Подключение "News and events"
-//News
-import './News-and-events/News/News.pug';
-import './News-and-events/News/News.scss';
-import './News-and-events/News/News.js';
-import './News-and-events/News/jquery/FeedEk.min.js';
-import './News-and-events/News/jquery/FeedEk.call.js';
-//Events
-import './News-and-events/Events/Events.pug';
-import './News-and-events/Events/Events.scss';
-import './News-and-events/Events/Events.js';
+    //News
+    import './News-and-events/News/News.pug';
+    import './News-and-events/News/News.scss';
+    import './News-and-events/News/News.js';
+    import './News-and-events/News/jquery/FeedEk.min.js';
+    import './News-and-events/News/jquery/FeedEk.call.js';
+    //Events
+    import './News-and-events/Events/Events.pug';
+    import './News-and-events/Events/Events.scss';
+    import './News-and-events/Events/Events.js';
 // Подключение "Location"
 import './location/location.pug';
 import './location/location.scss';
 import './location/location.js';
+// Подключение "Calendar and messaging"
+    //Подключение calendar
+    import './Calendar-and-messaging/calendar/calendar.pug';
+    import './Calendar-and-messaging/calendar/calendar.scss';
+    import './Calendar-and-messaging/calendar/calendar.js';
