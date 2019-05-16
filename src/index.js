@@ -65,7 +65,6 @@ import './search/search.js';
 // Подключение "User profile"
 import './User-profile/user-profile.pug';
 import './User-profile/user-profile.scss';
-import './User-profile/user-profile.js';
 // Подключение "News and events"
     //News
     import './News-and-events/News/News.pug';

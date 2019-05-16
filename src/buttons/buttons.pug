@@ -1,4 +1,7 @@
-button(class="btn-low btn-mint") button
-button(class="btn-hight btn-mint") button
-button(class="btn-hight btn-orange") button
-button(class="btn-low btn-orange") button
+mixin button(size, color)
+    button(class= ''+size, class= ''+color) button
+
++button('btn-low', 'btn-mint')
++button('btn-hight', 'btn-mint')
++button('btn-hight', 'btn-orange')
++button('btn-low', 'btn-orange')

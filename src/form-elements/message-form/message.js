@@ -9,7 +9,7 @@ jQuery(function($) {
     $(".text-error").remove();
     
     // Проверка логина    
-    var el_u    = $("#userName");
+    var el_u    = $(".message__name");
     if ( el_u.val().length < 4 ) {
       var v_login = true;
       $('span').remove(":contains('Thanks!')");
@@ -26,7 +26,7 @@ jQuery(function($) {
     // Проверка e-mail
     
     var reg     = /^\w+([\.-]?\w+)*@(((([a-z0-9]{2,})|([a-z0-9][-][a-z0-9]+))[\.][a-z0-9])|([a-z0-9]+[-]?))+[a-z0-9]+\.([a-z]{2}|(com|net|org|edu|int|mil|gov|arpa|biz|aero|name|coop|info|pro|museum))$/i;
-    var el_e    = $("#userEmail");
+    var el_e    = $(".message__email");
     var v_email = el_e.val()?false:true;
   
     if ( v_email ) {

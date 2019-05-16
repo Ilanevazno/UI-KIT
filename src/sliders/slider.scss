@@ -72,9 +72,10 @@
 }
 
 .slider__percentages__container{
-  padding-top: 1.2rem;
   box-sizing: border-box;
   max-width: 100%;
+  display: flex;
+  margin-top: 17px;
 }
 
 .standart__sliders{
@@ -87,11 +88,12 @@
   width: 250px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .slider__percentages{
-  margin-right: 20%;
   color: #d1d1d1;
+  margin-right: 19%;
 }
 
 // Настройки для слайдера с процентами

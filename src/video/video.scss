@@ -70,6 +70,11 @@ progress{
     border-radius: 14px;
 }
 
+progress:hover{
+    cursor: pointer;
+}
+
+
 .video__player__btns progress::-webkit-progress-bar{
     background-color: white;
     border-radius: 4px;

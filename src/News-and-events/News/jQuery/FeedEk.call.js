@@ -3,7 +3,7 @@ $('#divRss').FeedEk({
     MaxCount : 1,
     ShowDesc : true,
     ShowPubDate:true,
-    DescCharacterLimit: 160,
+    DescCharacterLimit: 200,
     TitleLinkTarget:'_blank',
     DateFormat : 'MM/dd/yyyy',
     DateFormatLang : 'en'

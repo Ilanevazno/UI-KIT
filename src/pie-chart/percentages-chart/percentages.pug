@@ -1,5 +1,7 @@
-.pie-charts__container
-    div(class="pie-chart" data-percentage="0")
-    div(class="pie-chart" data-percentage="38")
-    div(class="pie-chart" data-percentage="62")
-    div(class="pie-chart" data-percentage="89")
+mixin pieChart(percentage)
+    div(class="pie-chart", data-percentage= ''+percentage)
+
++pieChart('0')
++pieChart('38')
++pieChart('62')
++pieChart('89')

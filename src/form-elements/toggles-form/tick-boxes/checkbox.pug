@@ -1,7 +1,11 @@
 .checkboxes
-    form(action="checkboxes__form" class="checkboxes__form")
-        input(type="checkbox" class="page__checkbox" id="page__checkboxes__choised-one")
-        label(for="page__checkboxes__choised-one")
-        input(type="checkbox" class="page__checkbox" id="page__checkboxes__choised-two")
-        label(for="page__checkboxes__choised-two")
-    
+    mixin checkbox(checkboxID)
+        <label class="checkbox__container">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        </label>
+
+
+    form(class="forms__checkbox")
+        +checkbox
+        +checkbox

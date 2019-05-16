@@ -1,15 +1,12 @@
-.form__search
+mixin Search()
     .form__search__str__find
         input(type="text" id="search__str" class="str__find" placeholder="Search")
         input(type="button" id="search__btn" class="btn__find")
     .form__search__options
         ul(class="search__items hidden" id="search__items")
-            li First
-            li Second
-            li third
-            li Ilya
-            li Ilya sigidin
-            li 2 Step education
-            li Hello
-            li Fullstack Development
-            li Thank you
+
+            -var list1 = ["ilya", "sigidin", "education 1", "Fullstack Development", "hello", "pick me", "Press F"]
+                each item in list1
+                    li= item
+.form__search
+    +Search(list1)

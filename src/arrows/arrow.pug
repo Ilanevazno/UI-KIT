@@ -1,4 +1,17 @@
-button(class="arrows" disabled)
-    div(class="arrow arrow-right")
-button(class="arrows")
-    div(class="arrow arrow-left")
+mixin arrow(direction, disabled)
+    button(class="arrows" disabled= disabled)
+        div(class="arrow" class= ''+direction)
+
+.arrow-disabled
+    +arrow('arrow-left', true)
+    +arrow('arrow-right', true)
+.arrow-enabled
+    +arrow('arrow-left')
+    +arrow('arrow-right')
+
+//- Подсказка:
+
+//- 'true' = disabled
+//- 'false' = enabled
+
+//- 'arrow-left', 'arrow-right' и 'disabled'
