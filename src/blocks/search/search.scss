@@ -1,0 +1,99 @@
+@import "../template/Global-variables.scss";
+
+.hidden{
+    display: none;
+}
+
+//Стилизация инпута миксин
+@mixin search_input($background-color: $gray-template, $color: #888888, $width: 100%, $height: 30px){
+    width: $width;
+    height: $height;
+    padding-left: 15px;
+    box-sizing: border-box;
+    position: relative;
+    border: none;
+    background-color: $background-color;
+    border-radius: 4px;
+    color: $color;
+}
+
+//Стилизация кнопки
+
+@mixin search_button($background-image: url('img/find-btn.png'), $height: 100%, $width: 12%){
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    height: $height;
+    width: $width;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background-color: $orange-template;
+    background-image: $background-image;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.form__search-error{
+    width: 90%;
+    background-color: $orange-template;
+    border-radius: 4px;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    color: white;
+    padding-left: 15px;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    animation: 0.4s fadeIn;
+}
+
+.form__search-error:focus{
+    display: none;
+}
+
+.form__search__str__find{
+    position: relative;
+    display: flex;
+}
+
+.form__search__str__find input[type="button"]{
+    @include search_button
+}
+
+.search__items li:hover{
+    cursor: pointer;
+    background-color: #eeeeee
+}
+
+.search__items li:active{
+    background-color: darken(#eeeeee, 5%);
+}
+
+.search__items li.hide {
+    display: none;
+}
+.search__items{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+    box-shadow: -1px 6px 7px 6px rgba(0,0,0,0.13);
+    font-size: 12px;
+}
+//Стиль для инпута
+.form__search__str__find input[type="text"]{
+    @include search_input
+}
+//Анимации
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }

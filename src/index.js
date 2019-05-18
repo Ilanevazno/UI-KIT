@@ -1,4 +1,8 @@
 import $ from 'jquery';
+import './fonts/fonts.scss'
+//Подключение глобальных переменных scss
+import './blocks/template/Global-variables.scss';
+//Подключение основных файлов проекта
 import './index.pug';
 import './index.scss';
 
@@ -17,79 +21,78 @@ $('body').ready(function(){
 })
 
 //Подключение jQuery UI
-import './jQueryUI/jquery-ui.css';
+import './blocks/jQueryUI/jquery-ui.css';
 // Подключение ripple кнопок
-import './buttons/buttons.pug';
-import './buttons/buttons.scss';
-import './buttons/buttons.js';
+import './blocks/buttons/buttons.pug';
+import './blocks/buttons/buttons.scss';
+import './blocks/buttons/buttons.js';
 // Подключение arrow кнопок
-import './arrows/arrow.pug';
-import './arrows/arrow.scss';
-import './arrows/arrow.js';
+import './blocks/arrows/arrow.pug';
+import './blocks/arrows/arrow.scss';
+import './blocks/arrows/arrow.js';
 // Подключение percentages чартов
-import './pie-chart/percentages-chart/percentages.pug';
-import './pie-chart/percentages-chart/percentages.scss';
-import './pie-chart/percentages-chart/percentages.js';
+import './blocks/pie-chart/percentages-chart/percentages.pug';
+import './blocks/pie-chart/percentages-chart/percentages.scss';
+import './blocks/pie-chart/percentages-chart/percentages.js';
 // Подключение donut чартов
-import './pie-chart/donut-chart/donut.pug';
-import './pie-chart/donut-chart/donut.scss';
-import './pie-chart/donut-chart/donut.js';
-import './pie-chart/donut-chart/test.js';
+import './blocks/pie-chart/donut-chart/donut.pug';
+import './blocks/pie-chart/donut-chart/donut.scss';
+import './blocks/pie-chart/donut-chart/donut.js';
 // Подключение слайдера
-import './sliders/tools/slider-ui.js';
-import './sliders/slider.pug';
-import './sliders/slider.scss';
-import './sliders/slider.js';
+import './blocks/sliders/tools/slider-ui.js';
+import './blocks/sliders/slider.pug';
+import './blocks/sliders/slider.scss';
+import './blocks/sliders/slider.js';
 // Подключение "stages"
-import './stages/stages.pug';
-import './stages/stages.scss';
-import './stages/tools/stages-ui.scss';
-import './stages/tools/stages-ui.js';
-import './stages/stages.js';
+import './blocks/stages/stages.pug';
+import './blocks/stages/stages.scss';
+import './blocks/stages/tools/stages-ui.scss';
+import './blocks/stages/tools/stages-ui.js';
+import './blocks/stages/stages.js';
 // Подключение "Form elements"
-import './form-elements/message-form/message.pug';
-import './form-elements/message-form/message.scss';
-import './form-elements/message-form/message.js';
+import './blocks/message-form/message.pug';
+import './blocks/message-form/message.scss';
+import './blocks/message-form/message.js';
 // Подключение "Toggles"
-import './form-elements/toggles-form/toggles/toggles.pug';
-import './form-elements/toggles-form/toggles/toggles.scss';
-import './form-elements/toggles-form/toggles/toggles.js';
+import './blocks/toggles-form/toggles/toggles.pug';
+import './blocks/toggles-form/toggles/toggles.scss';
+import './blocks/toggles-form/toggles/toggles.js';
 // Подключение "Tick boxes"
-import './form-elements/toggles-form/tick-boxes/checkbox.pug';
-import './form-elements/toggles-form/tick-boxes/checkbox.scss';
-import './form-elements/toggles-form/tick-boxes/checkbox.js';
+import './blocks/toggles-form/tick-boxes/checkbox.pug';
+import './blocks/toggles-form/tick-boxes/checkbox.scss';
+import './blocks/toggles-form/tick-boxes/checkbox.js';
 // Подключение "Search / drop-down"
-import './search/search.pug';
-import './search/search.scss';
-import './search/search.js';
+import './blocks/search/search.pug';
+import './blocks/search/search.scss';
+import './blocks/search/search.js';
 // Подключение "User profile"
-import './User-profile/user-profile.pug';
-import './User-profile/user-profile.scss';
+import './blocks/User-profile/user-profile.pug';
+import './blocks/User-profile/user-profile.scss';
 // Подключение "News and events"
     //News
-    import './News-and-events/News/News.pug';
-    import './News-and-events/News/News.scss';
-    import './News-and-events/News/News.js';
-    import './News-and-events/News/jquery/FeedEk.min.js';
-    import './News-and-events/News/jquery/FeedEk.call.js';
+    import './blocks/News-and-events/News/News.pug';
+    import './blocks/News-and-events/News/News.scss';
+    import './blocks/News-and-events/News/News.js';
+    import './blocks/News-and-events/News/jquery/FeedEk.min.js';
+    import './blocks/News-and-events/News/jquery/FeedEk.call.js';
     //Events
-    import './News-and-events/Events/Events.pug';
-    import './News-and-events/Events/Events.scss';
-    import './News-and-events/Events/Events.js';
+    import './blocks/News-and-events/Events/Events.pug';
+    import './blocks/News-and-events/Events/Events.scss';
+    import './blocks/News-and-events/Events/Events.js';
 // Подключение "Location"
-import './location/location.pug';
-import './location/location.scss';
-import './location/location.js';
+import './blocks/location/location.pug';
+import './blocks/location/location.scss';
+import './blocks/location/location.js';
 // Подключение "Calendar and messaging"
     //Подключение "calendar"
-    import './Calendar-and-messaging/calendar/calendar.pug';
-    import './Calendar-and-messaging/calendar/calendar.scss';
-    import './Calendar-and-messaging/calendar/calendar.js';
+    import './blocks/Calendar-and-messaging/calendar/calendar.pug';
+    import './blocks/Calendar-and-messaging/calendar/calendar.scss';
+    import './blocks/Calendar-and-messaging/calendar/calendar.js';
     //Подключение "messaging"
-    import './Calendar-and-messaging/messaging/messaging.pug';
-    import './Calendar-and-messaging/messaging/messaging.scss';
-    import './Calendar-and-messaging/messaging/messaging.js';
+    import './blocks/Calendar-and-messaging/messaging/messaging.pug';
+    import './blocks/Calendar-and-messaging/messaging/messaging.scss';
+    import './blocks/Calendar-and-messaging/messaging/messaging.js';
 // подключение "video"
-import './video/video.pug';
-import './video/video.scss';
-import './video/video.js';
+import './blocks/video/video.pug';
+import './blocks/video/video.scss';
+import './blocks/video/video.js';

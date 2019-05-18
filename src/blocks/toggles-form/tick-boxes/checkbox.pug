@@ -1,0 +1,11 @@
+.checkboxes
+    mixin checkbox(checkboxID)
+        label(class="checkbox__container" for= ''+checkboxID)
+            input(type="checkbox" id= ''+checkboxID)
+            span(class="checkmark")
+
+
+
+    form(class="forms__checkbox")
+        +checkbox('example_checkbox')
+        +checkbox('second_checkbox')

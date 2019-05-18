@@ -1,0 +1,172 @@
+@import "../template/Global-variables.scss";
+
+@mixin slider_value ($background-color: $orange-template, $width: 16px, $color: white) {
+  background-color: $background-color;
+  width: $width;
+  display: block;
+  position: absolute;
+  padding: 7px;
+  border-radius: 5px;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: $color;
+  font-size: 11px;
+  text-align: center;
+}
+
+@mixin percentage-slider__range-handle ($background-color: $mint-template) {
+  background-color: $background-color;
+}
+
+@mixin percentage-slider__fill ($background-color: $gray-template) {
+  background-color: $background-color;
+}
+
+@mixin slider_standart_handle ($background-color: $orange-template, $width: 20px, $height: 20px,){
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: $width;
+  height: $height;
+  background-color: $background-color;
+  border-radius: 100%;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, .2);
+  cursor: pointer;
+  outline: none;
+  margin-left: -10px;
+}
+
+.range-slider-wrapper {
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  &.filters-expanded {
+    .slider {
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid rgba(0, 0, 0, .15);
+    }
+    .ui-slider-range {
+      background-color: #ccc;
+      background-image: none;
+      border: 1px solid rgba(0, 0, 0, .15);
+    }
+  }
+}
+
+.advanced-filters {
+  display: none;
+}
+
+.toggle-filters {
+  display: inline-block;
+  padding: 15px 10px;
+  margin-top: 15px;
+  margin-left: 15px;
+  cursor: pointer;
+  background-color: #666;
+  color: #eee;
+  min-width: 162px;
+  text-align: center;
+  border-radius: 5px;
+  transition: all .6s ease;
+  &:hover {
+    background-color: #932222;
+    color: #fff;
+  }
+}
+
+.slider-heading {
+  display: block;
+  font-size: 17px;
+  font-style: italic;
+  margin-bottom: 50px;
+  margin-left: 15px;
+}
+
+.slider__percentages__container{
+  box-sizing: border-box;
+  max-width: 100%;
+  display: flex;
+  margin-top: 17px;
+}
+
+.standart__sliders{
+  width: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+.percentage__sliders{
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.slider__percentages{
+  color: #d1d1d1;
+  margin-right: 19%;
+}
+
+.value {
+  @include slider_value
+}
+
+.value::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    border: solid transparent;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+    border-color: rgba(194,225,245,0);
+    border-top-color: $orange-template;
+    border-width: 5px;
+    margin-left: -5px;
+  }
+
+.ui-state-focus,
+.ui-state-hover{
+  border-color: transparent !important;
+}
+//Настройка стандартного слайдера 
+.slider {
+  position: relative;
+  width: 100%;
+  height: 5px;
+  margin-left: 15px;
+  background-color: #e5e5e5;
+  margin-bottom: 25px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  .ui-slider-handle {
+    @include slider_standart_handle                                                           //Управление хандлами всех слайдеров по дефолту
+  }
+}
+
+
+
+// Настройки для слайдера с процентами
+.percentage__slider{
+  @include percentage-slider__fill;                                                          //Управление цветом заливки всех процентных слайдеров
+
+  .ui-slider-handle{
+    @include percentage-slider__range-handle                                                 //Управление цветом хандла всех процентных слайдеров
+  }
+
+  .value{
+      display: none;
+  }
+}
+
+.range-slider-wrapper > .percentage__sliders > .slider > .ui-slider-range{
+  @include percentage-slider__range-handle                                             // Управление цветом заполнения любого процентного слайдера
+}
+
+//Чтобы применить настройки, нужна конструкция типа ".range-slider-wrapper > [Класс добавленного слайдера] > .slider > .ui-slider-range"
+

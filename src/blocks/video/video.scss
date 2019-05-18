@@ -1,0 +1,88 @@
+@import "../template/Global-variables.scss";
+
+.hidden{
+    display: none;
+}
+
+.video__player__container{
+    position: relative;
+}
+
+.video__player{
+    position: relative;
+    z-index: 0;
+}
+
+.video__player__btns{
+    position: relative;
+}
+
+.video__player button{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.video__player__btns button{
+    border: none;
+    outline: none;
+}
+
+.video__player__btns button svg:hover{
+    cursor: pointer;
+}
+
+.videoplayer__play-btn,
+.videoplayer__pause-btn{
+    background-color: inherit;
+}
+
+.videoplayer__play-btn{
+    position: absolute;
+    bottom: 17px;
+    left: 21px;
+}
+
+.videoplayer__pause-btn{
+    position: absolute;
+    bottom: 14px;
+    left: 13.1px;
+}
+
+
+.videoplayer__fullscreen-btn{
+    height: 48px;
+    width: 48px;
+    background-color: $orange-template;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.video__progress{
+    position: absolute;
+    bottom: 21px;
+    left: 57px;
+    width: 475px;
+    height: 5px;
+}
+
+progress{
+    border-radius: 14px;
+}
+
+progress:hover{
+    cursor: pointer;
+}
+
+
+.video__player__btns progress::-webkit-progress-bar{
+    background-color: white;
+    border-radius: 4px;
+}
+
+.video__player__btns progress::-webkit-progress-value{
+    background-color: $orange-template;
+}

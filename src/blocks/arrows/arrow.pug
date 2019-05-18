@@ -1,0 +1,17 @@
+mixin arrow(direction, disabled, name)
+    button(class="arrows" disabled= disabled, class= ''+name)
+        div(class="arrow" class= ''+direction)
+
+.arrow-disabled
+    +arrow('arrow-left', true, 'first_arrow-disabled')
+    +arrow('arrow-right', true, 'second_arrow-disabled')
+.arrow-enabled
+    +arrow('arrow-left', false, 'first_arrow-enabled')
+    +arrow('arrow-right', false, 'second_arrow-enabled')
+
+//- Подсказка:
+
+//- 'true' = disabled
+//- 'false' = enabled
+
+//- 'arrow-left', 'arrow-right' и 'disabled'

@@ -44,6 +44,7 @@ h2{
     text-transform: uppercase;
     display: flex;
     justify-content: center;
+
 }
 
 .ul__main{
@@ -57,7 +58,15 @@ h2{
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
+    padding-top: 7.1rem;
 }
+
+.wrapper h2{
+    font-family: Lato Black;
+    font-size: 29.5px;
+    color: #4f4f4f;
+}
+
 .buttons{
     margin-top: 2rem;
     margin-bottom: 2rem;

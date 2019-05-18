@@ -1,63 +1,69 @@
+style
+    include blocks/template/Global-variables.scss
 div(class="preloader" id="page-preloader")
     .loader
 .ul__main
     .wrapper
-        h2 Standart buttons
+        h2 Standard buttons
         .buttons
-            include buttons/buttons.pug
+            include blocks/buttons/buttons.pug
+            +button('btn-low', 'btn-mint', 'first_button', 'button')
+            +button('btn-hight', 'btn-mint', 'second_button', 'button')
+            +button('btn-hight', 'btn-orange', 'thid_button', 'button')
+            +button('btn-low', 'btn-orange', 'four_button', 'button')
         h2 Arrow button
         .arrows__icons
-            include arrows/arrow.pug
+            include blocks/arrows/arrow.pug
         h2 Pie chart 
         .charts
             .piechart
-                include pie-chart/percentages-chart/percentages.pug
+                include blocks/pie-chart/percentages-chart/percentages.pug
             .donut-chart
-                include pie-chart/donut-chart/donut.pug
+                include blocks/pie-chart/donut-chart/donut.pug
         h2 Sliders
         .sliders
-            include sliders/slider.pug
+            include blocks/sliders/slider.pug
         h2 Stages
         .stages
-            include stages/stages.pug
+            include blocks/stages/stages.pug
         h2 Form elements
         .form__container
             .message__form
-                include form-elements/message-form/message.pug
+                include blocks/message-form/message.pug
             .toggles-form
                 h2 Toggles
                 .toggles
-                    include form-elements/toggles-form/toggles/toggles.pug 
+                    include blocks/toggles-form/toggles/toggles.pug 
                 h2 Tick Boxes
                 .tick__boxes
-                    include form-elements/toggles-form/tick-boxes/checkbox.pug
+                    include blocks/toggles-form/tick-boxes/checkbox.pug
         .search__and__user-profile
             .search__and__user-profile__wrap-left
                 h2 Search / Drop down
                 .Search__drop-down
-                    include search/search.pug
+                    include blocks/search/search.pug
             .search__and__user-profile__wrap-right
                 h2 User profile
                 .user__profile
-                    include User-profile/user-profile.pug
+                    include blocks/User-profile/user-profile.pug
         h2 News & events
         .news__and__events
             .news
-                include News-and-events/News/News.pug
+                include blocks/News-and-events/News/News.pug
             .events
-                include News-and-events/Events/Events.pug
+                include blocks/News-and-events/Events/Events.pug
         h2 Location
         .Location
-            include location/location.pug
+            include blocks/location/location.pug
         .calendar__and__messaging
             .calendar__and__messaging__wrap-left
                 h2 Calendar
                 .calendar
-                    include Calendar-and-messaging/calendar/calendar.pug
+                    include blocks/Calendar-and-messaging/calendar/calendar.pug
             .calendar__and__messaging__wrap-right
                 h2 Messaging
                 .messaging
-                    include Calendar-and-messaging/messaging/messaging.pug
+                    include blocks/Calendar-and-messaging/messaging/messaging.pug
         h2 Video
         .video
-            include video/video.pug
+            include blocks/video/video.pug

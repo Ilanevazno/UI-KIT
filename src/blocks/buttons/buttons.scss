@@ -1,0 +1,74 @@
+@import "../template/Global-variables.scss";
+.btn{
+    display: flex;
+}
+// Тело кнопок
+@mixin btn__template($width: 6.5rem, $height: 1.8333rem, $font-size: 0.8333rem){
+    width: $width;
+    height: $height;
+    border: none;
+    color: white;
+    font-family: Lato-black;
+    font-weight: bold;
+    font-size: $font-size;
+    border-radius: 4px;
+    outline: none;
+}
+.btn-low{
+    @include btn__template;
+}
+.btn-hight{
+    @include btn__template(9.8333rem, 2.6667rem, 1rem);
+}
+.btn-low:hover,
+.btn-hight:hover{
+    cursor: pointer;
+}
+// Стилизация кнопок
+@mixin btn__style__template($background-color: white, $color: white, $border: 1px solid red, $box-shadow: 0px 2.5px 0px -1px green){
+    background-color: $background-color;
+    color: $color;
+    border: $border;
+    box-shadow: $box-shadow;
+    overflow: hidden;
+    position: relative;
+}
+.btn-mint{
+    @include btn__style__template(white, $mint-template, 1px solid $mint-template, 0px 2.5px 0px -1px $mint-template);
+    font-family: Lato-Black;
+    text-transform: uppercase;
+}
+.btn-orange{
+    @include btn__style__template(white, $orange-template, 1px solid $orange-template, 0px 2.5px 0px -1px $orange-template);
+    font-family: Lato-Black;
+    text-transform: uppercase;
+}
+.btn-mint:hover{
+    background-color: $mint-template;
+    color: white;
+}
+.btn-orange:hover{
+    background-color: $orange-template;
+    color: white;
+}
+button{
+    overflow: hidden;
+}
+button .ripple {
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    transform: scale(0);
+    animation: ripple 0.3s linear;
+}
+
+@keyframes ripple {
+    to{
+        transform: scale(0.5);
+    }
+}
+
+.btn-mint:active,
+.btn-orange:active{
+    transform: scale(0.97)
+}

@@ -1,0 +1,14 @@
+mixin Events(Events__title, Events__holiday, eventsAnch)
+    div(class="Events__widget" class= ''+eventsAnch)
+        .Event__picture
+        div(class="Event__information" class= ''+eventsAnch)
+            div(class="Event__information__wrapper" id="divEvents")
+                span(class="widget-date")
+                    p(class="" id="widget-date")
+                    p(class="" id="widget-month")
+                h2= Events__title
+                p= Events__holiday
+                button(class="Event-to-calendar")
+                    p Add to calendar
+
++Events('Today', 'Today there are no holidays', 'anch')
