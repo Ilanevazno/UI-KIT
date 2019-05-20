@@ -52,8 +52,8 @@ function init () {
 
     myMap.controls.add(buttonFullScreen, {
         position: {
-            bottom: '30px',
-            right: '70px'
+            bottom: '42px',
+            right: '103'
         },
         right: 5,
         top: 5
@@ -75,8 +75,8 @@ function init () {
 
     myMap.controls.add(buttonGeo, {
         position: {
-            bottom: '30px',
-            right: '20px'
+            bottom: '42px',
+            right: '42px'
         },
         right: 50,
         top: 5

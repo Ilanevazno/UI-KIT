@@ -1,16 +1,17 @@
 // правило для всего тела кнопок
 @import "../template/Global-variables.scss";
 
-@mixin arrows__template($width: 3.75rem, $height: 3.75rem){
+@mixin arrows__template($width: 6rem, $height: 6rem){
     position: relative;
     width: $width;
     height: $height;
     border-radius: 50%;
     background-color: white;
-    border: 1.2px solid #4eb7a8;
+    border: 3px solid #4eb7a8;
 }
 .arrows{
     @include arrows__template;
+    position: relative;
 }
 .arrows:hover,
 .arrows:focus{
@@ -18,12 +19,15 @@
     cursor: pointer;
 }
 // правило для иконки внутри тела кнопок
-@mixin arrow__template($width: 12px, $height: 12px, $margin-left: 5px){
+@mixin arrow__template($width: 30%, $height: 30%, $margin-left: 5px){
     height: $width;
     width: $width;
+    position: absolute;
+    top: 33%;
+    left: 32%;
     border: 1px solid #4eb7a8;
     margin-left: $margin-left;
-	border-width: 2px 2px 0 0;
+	border-width: 5px 5px 0 0;
 	transform: rotate(45deg);
 }
 .arrow {
@@ -33,27 +37,38 @@
 .arrows:hover > .arrow,
 .arrows:focus > .arrow{
     border: 1px solid white;
-    border-width: 2px 2px 0 0;
+    border-width: 5px 5px 0 0;
     cursor: pointer;
 }
 
 .arrows:disabled{
     background-color: $gray-template;
     border: 1px solid $gray-template;
-    border-width: 2px 2px 0 0;
+    border-width: 5px 5px 0 0;
 }
 
 .arrows:disabled > .arrow{
     border: 1px solid white;
-    border-width: 2px 2px 0 0;
+    border-width: 5px 5px 0 0;
 }
 
 .arrow-left{
-    transform: rotate(220deg);
-    margin-left: 12px;
+    transform: rotate(225deg);
+    left: 32%;
 }
-.arrow-left:hover{
-    transform: rotate(220deg); 
+
+.arrow-right{
+    left: 14%;
+}
+
+.arrows:disabled > .arrow-left{
+    left: 32%;
+    top: 27%;
+}
+
+.arrows:disabled > .arrow-right{
+    left: 17%;
+    top: 20px;
 }
 
 .arrows:focus{

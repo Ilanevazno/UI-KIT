@@ -11,10 +11,16 @@ div(class="preloader" id="page-preloader")
             +button('btn-hight', 'btn-mint', 'second_button', 'button')
             +button('btn-hight', 'btn-orange', 'thid_button', 'button')
             +button('btn-low', 'btn-orange', 'four_button', 'button')
-        h2 Arrow button
+        h2 Arrow buttons
         .arrows__icons
             include blocks/arrows/arrow.pug
-        h2 Pie chart 
+            .arrow-enabled
+                +arrow('arrow-left', false, 'first_arrow-enabled')
+                +arrow('arrow-right', false, 'second_arrow-enabled')
+            .arrow-disabled
+                +arrow('arrow-left', true, 'first_arrow-disabled')
+                +arrow('arrow-right', true, 'second_arrow-disabled')
+        h2 PERCENTAGES / PIE CHART
         .charts
             .piechart
                 include blocks/pie-chart/percentages-chart/percentages.pug

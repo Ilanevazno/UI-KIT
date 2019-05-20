@@ -1,8 +1,8 @@
 @import "../../template/Global-variables.scss";
 
 .Events__widget{
-    width: 290px;
-    height: 212px;
+    width: 35.2rem;
+    height: 25.8rem;
     background-color: $mint-template;
     display: flex;
     overflow: hidden;
@@ -12,11 +12,11 @@
 }
 
 .Event__picture{
-    width: 35%;
+    width: 33%;
 }
 
 .Event__information{
-    width: 65%;
+    width: 67%;
     box-sizing: border-box;
     background-color: $mint-template;
 }
@@ -26,7 +26,7 @@
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    padding-left: 20px;
+    padding-left: 2.6rem;
     padding-right: 20px;
     height: 100%;
     padding-bottom: 50px;
@@ -42,23 +42,28 @@
 
 .widget-date{
     display: flex;
+    font-family: Lato light;
 }
 
 .widget-date p:nth-child(1){
-    font-size: 73px;
+    font-size: 9.5rem;
     display: flex;
     align-items: flex-end;
 }
 
 .widget-date p:nth-child(2){
-    font-size: 26px;
+    font-size: 4.2rem;
     display: flex;
     align-items: flex-end;
     padding-bottom: 10px;
 }
 
 .Event__information__wrapper h2{
-    height: 30px;
+    font-family: Lato black;
+    font-size: 1.67rem;
+    word-spacing: normal;
+    color: white;
+    height: 37px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -66,11 +71,12 @@
 }
 
 .Event-to-calendar{
-    width: 130px;
-    height: 22px;
+    width: 45%;
+    height: 11%;
     background-color: white;
     position: absolute;
-    bottom: 20px;
+    bottom: 12%;
+    left: 44%;
     border: none;
     outline: none;
     box-shadow: 0px 6px 2px -1px rgba(55,146,133,1);
@@ -85,4 +91,17 @@
 
 .Event-to-calendar:active{
     transform: scale(0.9)
+}
+
+.Events_example p{
+    font-family: Lato regular;
+    font-size: 1.499rem;
+    word-spacing: 0rem;
+}
+
+.Event-to-calendar p{
+    font-family: lato black;
+    word-spacing: 0rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
 }

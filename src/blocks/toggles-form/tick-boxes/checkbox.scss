@@ -1,10 +1,11 @@
 @import "../../template/Global-variables.scss";
 
 .forms__checkbox{
-    width: 51px;
-    display: flex;
-    justify-content: space-around;
-    margin-left: 57px;
+  width: 10rem;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 8.2rem;
+  padding-top: 2rem;
 }
 
 .checkbox__container {
@@ -34,8 +35,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 20px;
-    width: 20px;
+    height: 2.7rem;
+    width: 2.7rem;
     border-radius: 50%;
     background-color: $gray-template;
   }
@@ -65,12 +66,12 @@
   /* Style the checkmark/indicator */
   .checkbox__container .checkmark:after {
     display: block;
-    left: 7px;
-    top: 3px;
-    width: 5px;
-    height: 10px;
+    left: 34%;
+    top: 19%;
+    width: 16%;
+    height: 42%;
     border: solid white;
-    border-width: 0 2px 2px 0;
+    border-width: 0 3.5px 2px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);

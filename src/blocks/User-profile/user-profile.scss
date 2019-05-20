@@ -5,8 +5,8 @@
 }
 
 .user__profile__picture{
-    height: 95px;
-    width: 95px;
+    height: 10.5rem;
+    width: 10.5rem;
     background-color: $gray-template;
     border-radius: 50%;
     position: relative;
@@ -22,19 +22,45 @@
 }
 
 .User__profile__space{
-    width: 165px;
-    height: 95px;
+    width: 62%;
+    height: 11.4rem;
     background-color:$mint-template;
-    border-radius: 5px;
+    border-radius: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    padding-bottom: 1.2rem;
+    position: relative;
+}
+
+.User__profile__space:before{
+    content: "";
+    display: block;
+    width: 5%;
+    height: 10%;
+    background-color: $mint-template;
+    position: absolute;
+    left: -5px;
+    top: 45%;
+    border-radius: 4px;
+    transform: rotate(220deg);
 }
 
 .User__profile__space h2{
     color: white;
+    font-size: 2.1rem;
+    font-family: lato regular;
+    padding-top: 1rem;
+    text-transform: none;
+    word-spacing: 0.1rem;
+    padding-bottom: 0;
+}
+
+.User__profile__space h3{
+    font-family: lato black;
+    font-size: 1.45rem;
 }
 
 .User__profile__space h3{
@@ -69,13 +95,11 @@
 .user__profile__social{
     display: flex;
     box-sizing: border-box;
-    margin-bottom: 5px;
 }
 
 .UP__social__btn svg{
-    height: 22px;
-    width: 25;
-    margin-right: 7px;
+    height: 2.5rem;
+    width: 4.7rem;
     fill: white;
 }
 
@@ -90,6 +114,10 @@
     background-color: $gray-template;
     color: white;
     cursor: pointer;
+}
+
+.User__profile__space:hover:before{
+    background-color: $gray-template;
 }
 
 .User__profile__space:hover > .user__profile__social > .UP__social__btn > .UP__social__pic{

@@ -1,8 +1,8 @@
 @import "../../template/Global-variables.scss";
 
 .News__widget{
-    width: 290px;
-    height: 212px;
+    width: 35.2rem;
+    height: 25.9rem;
     background-color: $orange-template;
     display: flex;
     overflow: hidden;
@@ -11,7 +11,7 @@
 }
 
 .News__picture{
-    width: 35%;
+    width: 33%;
     box-sizing: border-box;
 }
 
@@ -26,7 +26,7 @@
 
 .News__information{
     z-index: 2;
-    width: 65%;
+    width: 67%;
     height: 100%;
     background-color: $orange-template;
     box-sizing: border-box;
@@ -38,14 +38,17 @@
 }
 
 .itemTitle{
-    height: 80px;
+    height: 31%;
     overflow: hidden;
 }
 
 .itemContent{
     color: white;
-    max-height: 55px;
+    padding-top: 1rem;
+    max-height: 37%;
     overflow: hidden;
+    font-family: lato regular;
+    font-size: 130%;
 }
 
 .itemContent a{
@@ -60,7 +63,8 @@
 }
 
 .itemTitle a{
-    font-size: 17px;
+    font-family: Lato light;
+    font-size: 2rem;
     font-weight: normal;
     color: white;
     margin: 0;
@@ -78,9 +82,10 @@
 .itemDate{
     margin: 0;
     padding: 0;
-    height: 35px;
+    height: 30px;
     display: flex;
     align-items: center;
     color: white;
-    font-weight: bold;
+    font-family: Lato black;
+    font-size: 190%;
 } 

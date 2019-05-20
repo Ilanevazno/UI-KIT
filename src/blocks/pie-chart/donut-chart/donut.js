@@ -18,8 +18,9 @@ var seedData = [{
   }];
   
   // Define size & radius of donut pie chart
-  var width = 115,
-    height = 115,
+  var sizer = 158;
+  var width = sizer,
+    height = sizer,
     radius = Math.min(width, height) / 2;
   
   // Define arc colours
@@ -31,7 +32,7 @@ var seedData = [{
   
   // Determine size of arcs
   var arc = d3.arc()
-    .innerRadius(radius - 30)
+    .innerRadius(radius - 35)
     .outerRadius(radius - 10);
   
   // Create the donut pie chart layout

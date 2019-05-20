@@ -5,8 +5,8 @@
       // Pull our variables out of our helper div
       var dataset = wrapperEl.dataset;
       var percentage = dataset.percentage ? parseInt(dataset.percentage, 10) : 0;
-      var diameter = dataset.diameter ? parseInt(dataset.diameter, 10) : 95;
-      var strokeWidth = dataset.strokeWidth ? parseInt(dataset.strokeWidth, 10) : 5;
+      var diameter = dataset.diameter ? parseInt(dataset.diameter, 10) : 140;
+      var strokeWidth = dataset.strokeWidth ? parseInt(dataset.strokeWidth, 10) : 7;
       var fillColor = dataset.fillColor || '#e75735'; // red
       var bgColor = dataset.bgColor || 'white'; // light orange
       
