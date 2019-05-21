@@ -40,20 +40,20 @@
 
 .videoplayer__play-btn{
     position: absolute;
-    bottom: 17px;
-    left: 21px;
+    bottom: 2rem;
+    left: 3%;
 }
 
 .videoplayer__pause-btn{
     position: absolute;
-    bottom: 14px;
-    left: 13.1px;
+    bottom: 18px;
+    left: 18.1px;
 }
 
 
 .videoplayer__fullscreen-btn{
-    height: 48px;
-    width: 48px;
+    height: 5.6rem;
+    width: 8%;
     background-color: $orange-template;
     position: absolute;
     right: 0;
@@ -63,10 +63,10 @@
 
 .video__progress{
     position: absolute;
-    bottom: 21px;
-    left: 57px;
-    width: 475px;
-    height: 5px;
+    bottom: 2.4rem;
+    left: 8.6%;
+    width: 79.5%;
+    height: 0.75rem;
 }
 
 progress{

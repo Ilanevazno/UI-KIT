@@ -186,6 +186,11 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.calendar__and__messaging__wrap-right{
+    width: 48.5%;
 }
 
 .example_datepicker{
@@ -193,6 +198,11 @@
     position: relative;
 }
 
+.example__messaging{
+    padding-top: 1.2rem; 
+}
+
 .video{
     width: 100%;
+    padding-top: 0.8rem;
 }

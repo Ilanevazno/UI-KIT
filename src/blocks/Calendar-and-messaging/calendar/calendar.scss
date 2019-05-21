@@ -9,12 +9,13 @@
 }
 
 .actual__date{
-    height: 110px;
+    height: 25.5%;
     background-color: $datepicker-bg;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 80px;
+    font-family: Lato light;
+    font-size: 10rem;
     color: white;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -23,11 +24,11 @@
 .choised__data{
     background-color: darken(#f2f2f2, 5%);
     width: 100%;
-    height: 12%;
+    height: 11%;
     border-top: 1px solid white;
     display: flex;
     align-items: center;
-    padding-left: 20px;
+    padding-left: 8%;
     box-sizing: border-box;
     text-transform: uppercase;
     color: #868686;
@@ -36,12 +37,19 @@
     border-bottom-right-radius: 4px;
     position: absolute;
     bottom: 0;
+    font-family: Lato black;
+    font-size: 1.6rem;
+
 }
 
 .ui-datepicker-header{
     background-color: darken($datepicker-bg, 5%);
     width: 100%;
     border: none;
+}
+
+.ui-datepicker .ui-datepicker-title{
+    margin: 0.6rem 2.3em;
 }
 
 .ui-datepicker-title{
@@ -89,13 +97,13 @@
 
 .ui-datepicker .ui-datepicker-next,
 .ui-datepicker .ui-datepicker-prev{
-    right: 6px;
+    right: 5%;
     position: absolute;
     top: 30%;
 }
 
 .ui-datepicker .ui-datepicker-prev{
-    left: 6px;
+    left: 5%;
 }
 
 .ui-datepicker .ui-datepicker-prev::before,
@@ -157,13 +165,48 @@ table{
 .ui-datepicker table{
     margin: 0;
     width: 100.1%;
+    height: 52.4%;
 }
 
 .ui-datepicker td{
     padding: 0;
 }
 
+.ui-datepicker th{
+    padding: 0.8rem
+}
+
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+    color: #868686;
+    font-family: Source Sans Pro;
+    font-size: 2.4rem;
+    display: flex;
+}
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled{
+    border: 1px solid white;
+    opacity: 1;
+    color: white;
+}
+
+.ui-datepicker-other-month > .ui-state-default,
+.ui-datepicker-unselectable > .ui-state-default,
+.ui-state-disabled > .ui-state-default{
+    font-family: Source Sans Pro;
+    opacity: 1;
+    color: white;
+}
+
+.ui-datepicker-other-month,
+.ui-datepicker-unselectable,
+.ui-state-disabled{
+    color: white;
+}
+
+.ui-state-default,
+.ui-state-highlight,
+.ui-state-active{
+    height: 100%;
     color: #868686;
     display: flex;
 }
@@ -186,12 +229,17 @@ table{
 }
 
 .ui-datepicker-calendar thead tr span{
-    font-size: 9px;
+    font-family: lato black;
+    font-size: 1.1em;
+    text-transform: uppercase;
 }
 
 .ui-datepicker-month,
 .ui-datepicker-year{
-    font-size: 24px;
+    font-family: Lato light;
+    font-size: 2.9rem;
+    letter-spacing: -1px;
     font-weight: normal;
+    padding-right: 11px;
 }
 
