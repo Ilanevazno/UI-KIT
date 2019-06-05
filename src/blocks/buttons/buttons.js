@@ -1,19 +1,29 @@
-var buttons = document.getElementsByTagName('button');
+;(function($, window, document, undefined) {
 
-Array.prototype.forEach.call(buttons, function(b){
-    b.addEventListener('click', createRipple);
-});
-
-function createRipple (e) {
-    var circle = document.createElement('div');
-    this.appendChild(circle);
-
-    var d = Math.max(this.clientWidth, this.clientHeight);
-
-    circle.style.width = circle.style.height = d + 'px';
-
-    circle.style.left = e.clientX - this.offsetLeft - d / 2 + 'px';
-    circle.style.top = e.clientY - this.offsetTop - d / 2 + 'px';
-
-    circle.classList.add('ripple');
-}
+    'use strict';
+  
+    var $ripple = $('.js-ripple');
+  
+    $ripple.on('click.ui.ripple', function(e) {
+  
+      var $this = $(this);
+      var $offset = $this.parent().offset();
+      var $circle = $this.find('.c-ripple__circle');
+  
+      var x = e.pageX - $offset.left;
+      var y = e.pageY - $offset.top;
+  
+      $circle.css({
+        top: y + 'px',
+        left: x + 'px'
+      });
+  
+      $this.addClass('is-active');
+  
+    });
+  
+    $ripple.on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', function(e) {
+        $(this).removeClass('is-active');
+    });
+  
+  })(jQuery, window, document);

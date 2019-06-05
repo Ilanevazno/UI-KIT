@@ -71,6 +71,35 @@
     align-items: flex-end;
     margin-top: 13rem;
     margin-bottom: 11.3rem;
+    .btn__mint,
+    .btn__orange{
+        width: 24.5%;
+        height: 4rem;
+        p{
+            margin: 0;
+            text-transform: uppercase;
+            font-family: lato black;
+            font-size: 1.5rem;
+        }
+        &:active{
+            transform: scale(0.9);
+        }
+    }
+    .btn__mint_low,
+    .btn__orange_low{
+        height: 2.5rem;
+        width: 16%;
+        padding: 0;
+        p{
+            margin: 0;
+            text-transform: uppercase;
+            font-family: lato black;
+            font-size: 1.2rem;
+        }
+        &:active{
+            transform: scale(0.9);
+        }
+    }
 }
 
 .arrows__icons{

@@ -1,2 +1,6 @@
-mixin button(size, color, name, innerText)
-    button(class= ''+size, class= ''+color, class= ''+name)= innerText
+mixin button(color,buttonName,buttonText)
+    button(class= 'c-button '+color, class= ''+buttonName type="submit")
+        <div class="c-ripple js-ripple">
+            <span class="c-ripple__circle"></span>
+        </div>
+        p= buttonText

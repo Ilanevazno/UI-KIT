@@ -1,76 +1,110 @@
 @import "../template/Global-variables.scss";
-.btn{
-    display: flex;
+
+.o-divider {
+  border: 0;
+  margin: 20px;
+  height: 1px;
+  background: #656D78;
 }
-// Тело кнопок
-@mixin btn__template($width: 9.6rem, $height: 2.8rem, $font-size: 1.3rem){
-    width: $width;
-    height: $height;
-    border: none;
-    color: white;
-    font-family: Lato black;
-    font-weight: bold;
-    font-size: $font-size;
-    border-radius: 4px;
-    outline: none;
-}
-.btn-low{
-    @include btn__template;
-}
-.btn-hight{
-    @include btn__template(14.4rem, 4rem, 1.55rem);
-}
-.btn-low:hover,
-.btn-hight:hover{
+
+/**
+ * Component: Button
+ * --------------------------------------------------
+ */
+
+.c-button {
+  -webkit-appearance: none;
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0;
+  vertical-align: middle;
+  overflow: visible;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 1px;
+  background: transparent;
+  user-select: none;
+  transition: all 0.2s ease;
+  &:hover,
+  &:focus {
+    outline: 0;
+    text-decoration: none;
+  }
+  &:not(:disabled) {
     cursor: pointer;
+  }
 }
-// Стилизация кнопок
-@mixin btn__style__template($background-color: white, $color: white, $border: 1.5px solid red, $box-shadow: 0px 2.5px 0px -1px $mint-template){
-    background-color: $background-color;
+
+/**
+ * Mixin: Button Modifier
+ * --------------------------------------------------
+ */
+
+@mixin button-modifier($color, $bgcolor, $class, $box-shadow, $border) {
+  .c-button--#{$class} {
+    background: $bgcolor;
     color: $color;
+    font-family: Lato black;
+    border-radius: 8px;
     border: $border;
     box-shadow: $box-shadow;
-    overflow: hidden;
-    position: relative;
-}
-.btn-mint{
-    @include btn__style__template(white, $mint-template, 1.5px solid $mint-template, 0px 4.5px 1px 0px $mint-template);
-    font-family: Lato Black;
-    text-transform: uppercase;
-}
-.btn-orange{
-    @include btn__style__template(white, $orange-template, 1px solid $orange-template, 0px 4.5px 1px 0px $orange-template);
-    font-family: Lato Black;
-    text-transform: uppercase;
-}
-.btn-mint:hover{
-    background-color: $mint-template;
-    color: white;
-    box-shadow: 0px 4.5px 1px 0px darken($mint-template, 7%)
-}
-.btn-orange:hover{
-    background-color: $orange-template;
-    color: white;
-    box-shadow: 0px 4.5px 1px 0px darken($orange-template, 7%)
-}
-button{
-    overflow: hidden;
-}
-button .ripple {
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.7);
-    position: absolute;
-    transform: scale(0);
-    animation: ripple 0.3s linear;
-}
-
-@keyframes ripple {
-    to{
-        transform: scale(0.5);
+    &:hover {
+      background: $color;
+      color: white;
+      box-shadow: $box-shadow;
     }
+  }
+};
+
+
+@include button-modifier($mint-template, white, mint, 0px 4.5px 0px -1px darken($mint-template, 10%), 1.5px solid $mint-template);
+@include button-modifier($orange-template, white, orange, 0px 4.5px 0px -1px darken($orange-template, 10%), 1.5px solid $orange-template);
+
+.c-ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
 }
 
-.btn-mint:active,
-.btn-orange:active{
-    transform: scale(0.97)
+.c-ripple__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .25);
+  .c-ripple.is-active & {
+    animation: a-ripple .4s ease-in;
+  }
+}
+
+/**
+ * Animation: Ripple
+ * --------------------------------------------------
+ */
+
+@keyframes a-ripple {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+    padding-bottom: 200%;
+    opacity: 0;
+  }
 }

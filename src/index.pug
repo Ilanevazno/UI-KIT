@@ -7,10 +7,10 @@ div(class="preloader" id="page-preloader")
         h2 Standard buttons
         .buttons
             include blocks/buttons/buttons.pug
-            +button('btn-low', 'btn-mint', 'first_button', 'button')
-            +button('btn-hight', 'btn-mint', 'second_button', 'button')
-            +button('btn-hight', 'btn-orange', 'thid_button', 'button')
-            +button('btn-low', 'btn-orange', 'four_button', 'button')
+            +button('c-button--mint', 'btn__mint_low', 'Button')
+            +button('c-button--mint', 'btn__mint', 'Button')
+            +button('c-button--orange', 'btn__orange', 'Button')
+            +button('c-button--orange', 'btn__orange_low', 'Button')
         h2 Arrow buttons
         .arrows__icons
             include blocks/arrows/arrow.pug
@@ -24,52 +24,76 @@ div(class="preloader" id="page-preloader")
         .charts
             .piechart
                 include blocks/pie-chart/percentages-chart/percentages.pug
+                +pieChart('0')
+                +pieChart('38')
+                +pieChart('62')
+                +pieChart('89')
             .donut-chart
                 include blocks/pie-chart/donut-chart/donut.pug
+                +donutChart
         h2 Sliders
         .sliders
             include blocks/sliders/slider.pug
+            +slider('first_slider')
+            +sliderSteps("second_slider", "25", 'example', 0,25,50,75,100)
         h2 Stages
         .stages
             include blocks/stages/stages.pug
+            +stages('[1,2,3,4,5]', 'first_stage')
         h2 Form elements
         .form__container
             .message__form
                 include blocks/message-form/message.pug
+                +formMessage('example__message_form', 'example__userName', 'example__userEmail', 'example__userMessage')
             .toggles-form
                 h2 Toggles
                 .toggles
                     include blocks/toggles-form/toggles/toggles.pug 
+                    +Toggles
+                    +Toggles
                 h2 Tick Boxes
                 .tick__boxes
                     include blocks/toggles-form/tick-boxes/checkbox.pug
+                    form(class="forms__checkbox")
+                        +checkbox('example_checkbox')
+                        +checkbox('second_checkbox')
         .search__and__user-profile
             .search__and__user-profile__wrap-left
                 h2 Search / Drop down
                 .Search__drop-down
                     include blocks/search/search.pug
+                    .form__search
+                        +Search('example_input', 'example_button', list1)
             .search__and__user-profile__wrap-right
                 h2 User profile
                 .user__profile
                     include blocks/User-profile/user-profile.pug
+                    +user__profile('https://dl.dropboxusercontent.com/s/yyd1fcw7dvtfa1q/avatar-colored.jpg', 'John Smith', 'UX Designer', '#', '#', '#', 'user_profile__example-1')
+                    +user__profile('https://organicwoman.ru/wp-content/uploads/2018/08/avatar.jpg', 'Sarah Brown', 'Developer', '#', '#', '#', 'user_profile__example-2')
         h2 News & events
         .news__and__events
             .news
                 include blocks/News-and-events/News/News.pug
+                +News('divRss')
             .events
                 include blocks/News-and-events/Events/Events.pug
+                +Events('THIS IS THE TITLE', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Events_example')
         h2 Location
         .Location
             include blocks/location/location.pug
+            +location
         .calendar__and__messaging
             .calendar__and__messaging__wrap-left
                 h2 Calendar
                 .calendar
                     include blocks/Calendar-and-messaging/calendar/calendar.pug
+                    +calendar('example_datepicker')
             .calendar__and__messaging__wrap-right
                 h2 Messaging
                 .messaging
                     include blocks/Calendar-and-messaging/messaging/messaging.pug
+                    +messaging('https://www.meme-arsenal.com/memes/3d33dc0349e45c5c02d9e4e2c5132e18.jpg', 'Sarah Brown', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'example__messaging')
         h2 Video
         .video
             include blocks/video/video.pug
+            +videoPlayer('src/images/NewZeland.mp4')

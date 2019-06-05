@@ -3,8 +3,6 @@ mixin slider(name)
     div(class="standart__sliders" class= ''+name)
       div(id="slider-bedrooms" class="slider" data-min="0" data-max="100" data-value="0" data-step="1")
 
-+slider('first_slider')
-
 mixin sliderSteps(name, datastep, percentagesName, ...items)
   div(class="range-slider-wrapper")
     div(class="percentage__sliders" class= ''+name)
@@ -14,5 +12,3 @@ mixin sliderSteps(name, datastep, percentagesName, ...items)
             span(class="slider__percentages" class= ''+percentagesName)= item
 //Пример вызова данного слайдера:
 // +sliderSteps("25", 'example', 0,25,50,75,100) где 25 = один шаг 'example' = имя спанов для стилизации и последующие числа - спаны для подписи 
-
-+sliderSteps("second_slider", "25", 'example', 0,25,50,75,100)

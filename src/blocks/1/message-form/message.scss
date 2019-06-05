@@ -5,7 +5,7 @@
 .message__items{
     display: flex;
     flex-wrap: wrap;
-    width: 466px;
+    width: 480px;
     position: relative;
 }
 
@@ -61,7 +61,8 @@ input[type="email"]{
     height: 4rem;
     background-color: $mint-template;
     color: white;
-    font-family: lato black;
+    font-size: 1.56rem;
+    font-family: lato;
     text-transform: uppercase;
     outline: none;
     border: none;
@@ -71,14 +72,6 @@ input[type="email"]{
     margin-top: 1.2rem;
     margin-left: 54%;
     box-shadow: 0px 3px 1px -1px darken($mint-template, 15%);
-    padding: 0;
-
-    &:active{
-        transform: scale(0.9);
-    }
-    p{
-        font-size: 1.3rem;
-    }
 }
 
 //Сообщение об ошибке + анимация
@@ -129,7 +122,7 @@ input[type="email"]{
     background-color: $orange-template;
     transform: rotate(134deg);
     position: absolute;
-    left: 67.4%;
+    left: 314px;
 }
 
 .text-success:after{
@@ -140,7 +133,7 @@ input[type="email"]{
     background-color: $mint-template;
     transform: rotate(134deg);
     position: absolute;
-    left: 67.4%;
+    left: 314px;
 }
 
 @keyframes flash {
