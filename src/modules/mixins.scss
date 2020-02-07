@@ -1,0 +1,43 @@
+/**
+ * Mixin: Button Modifier
+ * --------------------------------------------------
+ */
+
+ @mixin button-modifier($color, $bgcolor, $class, $box-shadow, $border) {
+  .button__ripple--#{$class} {
+    background: $bgcolor;
+    color: $color;
+    font-family: Lato black;
+    border-radius: 8px;
+    border: $border;
+    box-shadow: $box-shadow;
+
+    &:hover {
+      background: $color;
+      color: white;
+      box-shadow: $box-shadow;
+    }
+  }
+}
+
+@mixin arrows__template($width: 6rem, $height: 6rem){
+  position: relative;
+  width: $width;
+  height: $height;
+  border-radius: 50%;
+  background-color: white;
+  border: 3px solid #4eb7a8;
+  transition: .1s ease-in-out all;
+}
+
+// правило для иконки внутри тела кнопок
+@mixin arrows__inner($width: 30%, $height: 30%){
+  height: $width;
+  width: $width;
+  position: absolute;
+  top: 33%;
+  left: 26%;
+  border: 1px solid #4eb7a8;
+  border-width: 5px 5px 0 0;
+  transform: rotate(45deg);
+}

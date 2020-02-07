@@ -1,0 +1,33 @@
+.arrows {
+    &__button {
+        @include arrows__template;
+
+        &:active:not(:disabled) {
+            transform: scale(0.9);
+        }
+
+        &:hover,
+        &:focus {
+            outline: none;
+            cursor: pointer;
+            background-color: $mint-template;
+
+            & > .arrows__arrow-inner {
+                border-color: white;
+            }
+        }
+
+        &:disabled {
+            background-color: $gray-template;
+            border: 1px solid $gray-template;
+
+            & > .arrows__arrow-inner {
+                border-color: white;
+            }
+        }
+    }
+
+    &__arrow-inner {
+        @include arrows__inner
+    }
+}

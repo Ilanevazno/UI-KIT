@@ -1,38 +1,51 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const path = require('path');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
+  output: {
+    path: path.join(__dirname, 'build'),
+    filename: 'bundle.js',
+  },
   module: {
     rules: [
       {
-        test: require.resolve('jquery'),
-        use: [{
-            loader: 'expose-loader',
-            options: 'jQuery'
-        },
-         {
-            loader: 'expose-loader',
-            options: '$'
-        }]
-    },
-      { 
-        test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" 
-    },
-    {
-      test: /\.mp4$/,
-      use: [{
-        loader: 'file-loader?name=/src/images/[name].[ext]'
-      }]
-    },
-      {
-        test: /\.pug$/,
-        use: ['pug-loader']
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         use: [{
-          loader: 'file-loader?name=/src/fonts/[name].[ext]'
-        }]
+          loader: 'file-loader',
+          options: {
+            name: './assets/fonts/[name].[ext]',
+            esModule: false,
+          }
+        },]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: './assets/images',
+              publicPath: './assets/images',
+              useRelativePath: true,
+              esModule: false,
+            }
+          },
+        ],
+      },
+      {
+        test: /\.pug$/,
+        use: [
+          "html-loader",
+          "pug-html-loader"
+        ]
       },
       {
         test: /\.(s(a|c)|c)ss$/,
@@ -41,7 +54,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 2,
+              importLoaders: 3,
               sourceMap: true
             }
           },
@@ -50,23 +63,25 @@ module.exports = {
             options: {
               sourceMap: true
             }
+          },
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: ['./src/modules/mixins.scss', './src/modules/variables.scss']
+            }
           }
         ]
       },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [{
-          loader: 'file-loader?name=/src/images/[name].[ext]'
-        }]
-      }
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.pug',
+    new HtmlWebPackPlugin({
+      template: "./src/index.pug",
+      filename: "./index.html"
     }),
     new MiniCssExtractPlugin({
-      filename: "index.css"
+      filename: "[name].css",
+      chunkFilename: "[id].css"
     })
   ]
-}
+};
