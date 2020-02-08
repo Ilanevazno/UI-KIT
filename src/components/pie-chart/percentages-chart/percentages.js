@@ -2,7 +2,7 @@ import './percentages.scss'
 import $ from 'jquery'
 
 $(document).on('DOMContentLoaded', () => {
-  $('.chart__pie').each((idx, itm) => {
+  $('.pie-chart').each((idx, itm) => {
     const totalLength = $(itm).find('svg > circle')[0].getTotalLength();
     const targetPerc = ($(itm).attr('data-percent'));
     $(itm).css('strokeDashoffset', `${totalLength - getPerc(targetPerc)}px`)
