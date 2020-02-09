@@ -1,4 +1,14 @@
 .arrows {
+    &__arrow-left {
+        left: 38%;
+        transform: rotate(-130deg);
+    }
+
+    &__arrow-right {
+        left: 26%;
+        transform: rotate(45deg);
+    }
+
     &__button {
         @include arrows__template;
 

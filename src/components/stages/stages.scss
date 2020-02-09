@@ -1,82 +1,80 @@
-@import "../template/Global-variables.scss";
-
-//Кастомизация всех последующих 'stages' происходит по следующей схеме:
-// .second_stage #st .slider-selection,
-// .second_stage #st .slider-tick.in-selection {
-//   background: color;
-// }
-// где всё что нужно менять - '.second_stage' на ваш класс данного виджета
-
-.stages {
-    margin-top: 1rem;
-    position: relative;
-    margin-bottom: 2.33rem;
+%remain-steps{
+  &:before {
+    content: counter(stepNum);
+    font-family: inherit;
+    font-weight: 700;
   }
-  .stages__header {
-    font-family: Arial, Calibri, sans-serif;
-    text-transform: uppercase;
+  
+  &:after{
+    background-color: $grey-light;
+  }
+}
+.multi-steps{
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+
+  > li{
+    counter-increment: stepNum;
     text-align: center;
-    font-weight: bold;
-    font-size: 18px;
-    margin: 0;
-    margin-bottom: 14px;
+    display: table-cell;
+    position: relative;
+    color: $orange-template;
+    font-size: 16px;
+
+    &:before{
+      content: counter(stepNum);
+      display: block;
+      margin: 0 auto 4px;
+      background-color: $orange-template;
+      color: white;
+      width: 36px;
+      height: 36px;
+      line-height: 32px;
+      text-align: center;
+      font-weight: bold;
+      border:{
+        width: 2px;
+        style: solid;
+        color: $orange-template;
+        radius: 50%;
+      }
+    }
+
+    &:after{
+      content: '';
+      height: 2px;
+      width: 100%;
+      background-color: $orange-template;
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      z-index: -1;
+    }
+
+    &:last-child{
+      &:after{
+        display: none;
+      }
+    }
+
+    &.is-active{
+      @extend %remain-steps;
+      &:before{
+        background-color: $orange-template;
+        color: white;
+        border-color: $orange-template;
+      }
+
+      ~ li{
+        color: #808080;
+        @extend %remain-steps;
+        &:before{
+          color: darken($grey-light, 40%);
+          background-color: $grey-light;
+          border-color: $grey-light;
+        }
+      }
+    }
   }
-  .stage {
-    display: -webkit-box;
-    display: flex;
-  }
-  .stage .slider-horizontal#st {
-    width: 96%;
-    margin: 17px auto;
-    background: inherit;
-  }
-  #st .slider-track {
-    height: 5px;
-  }
-  #st .slider-selection,
-  #st .slider-tick.in-selection {
-    background: $orange-template;
-  }
-  #st .slider-tick-label-container {
-    font-weight: bold;
-    font-size: 17px;
-    position: absolute;
-    z-index: 99;
-    margin-top: -6px;
-    color: #888;
-  }
-  #st .slider-handle {
-    background: transparent;
-    width: 1%;
-    height: 1%;
-    top: -6px;
-  }
-  #st .slider-tick {
-    background: #e5e5e5;
-    font-family: Lato black;
-    font-size: 14px;
-    box-shadow: unset;
-    width: 40px;
-    height: 40px;
-    opacity: unset;
-    margin-left: -17px;
-    top: -13px;
-    cursor: pointer;
-  }
-  #st .slider-tick-label {
-    height: 25px;
-  }
-  #st .whiteNum {
-    font-size: 1.6rem;
-    padding-top: 0;
-    color: #fff;
-    font-family: Lato black;
-    cursor: pointer;
-  }
-  #st .slider-tick-label{
-    font-size: 1.6rem;
-    padding-top: 0;
-    color: #fff;
-    font-family: Lato black;
-    cursor: pointer;
-  }
+}

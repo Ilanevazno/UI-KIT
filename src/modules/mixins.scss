@@ -45,8 +45,47 @@
   width: $width;
   position: absolute;
   top: 33%;
-  left: 26%;
   border: 1px solid #4eb7a8;
   border-width: 5px 5px 0 0;
-  transform: rotate(45deg);
+}
+
+@mixin getTheme ($color: #FFFFFF) {
+  .back-bar {
+    height: 5px;
+    border-radius: 2px;
+    background-color: #eeeeee;
+    background-color: #e7e7e7;
+    background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#dddddd));
+    background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
+    background-image: -o-linear-gradient(top, #eeeeee, #dddddd);
+    background-image: linear-gradient(to bottom, #eeeeee, #dddddd);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffdddddd', GradientType=0);
+
+    .pointer {
+      background-color: $color;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      top: -12px;
+    }
+
+    .selected-bar {
+      background-color: $color;
+    }
+
+    .pointer-label {
+      background: $color;
+      top: -42px;
+      width: 31px;
+      height: 22px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      border-radius: 5px;
+    }
+  }
 }

@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
 module.exports = {
   output: {
     path: path.join(__dirname, 'build'),
@@ -75,6 +76,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      '$': 'jquery',
+      'jQuery': 'jquery'
+    }),
     new HtmlWebPackPlugin({
       template: "./src/index.pug",
       filename: "./index.html"

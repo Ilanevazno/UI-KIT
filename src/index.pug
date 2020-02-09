@@ -35,3 +35,17 @@ body
                 .donut-charts
                     include components/pie-chart/donut-chart/donut.pug
                     +donutChart
+            .sliders
+                h2 Sliders
+                include components/sliders/slider.pug
+                +slider('first-slider')
+                +slider('second-slider')
+            .stages
+                h2 Stages
+                include components/stages/stages.pug
+                +stages('5', 'example-stages')
+            .form-elements
+                include components/message-form/message.pug
+                .message-form
+                    +formMessage('form__user-form', 'example__userName', 'example__userEmail', 'example__userMessage')
+                .toggles
