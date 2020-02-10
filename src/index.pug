@@ -62,4 +62,28 @@ body
                 .search
                     +search('example-search')    
                 .profile
-                    +user-profile('assets/images/profile-man.jpg', 'John Smith', 'Ux designer', 'http://google.com', 'http://google.com', 'http://google.com', 'da')
+                -
+                    var users = [
+                        {avatar: 'assets/images/profile-man.jpg', name: 'John Smith', job: 'Ux designer', social: { facebook: 'http://facebook.com', twitter: 'http://twitter.com', dbb: 'http://dbb.com'}},
+                        {avatar: 'assets/images/profile-girl.jpg', name: 'Sarah Brown', job: 'Developer', social: { facebook: 'http://facebook.com', twitter: 'http://twitter.com', dbb: 'http://dbb.com'}}
+                    ]
+                each user in users
+                    +user_profile(user.avatar, user.name, user.job, user.social.facebook, user.social.twitter, user.social.dbb) 
+            .news-events
+                include components/News-and-events/News/News.pug
+                include components/News-and-events/Events/Events.pug
+                .news
+                    h2 News
+                    +News('divRss')
+                .events
+                    h2 Events
+                    +Events('THIS IS THE TITLE', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Events_example')
+            .location
+                h2 Location
+            .calendar-with-messaging
+                .calendar
+                    h2 Calendar
+                .messaging
+                    h2 Messaging
+            .video
+                h2 Video

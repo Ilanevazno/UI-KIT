@@ -1,12 +1,12 @@
 mixin Events(Events__title, Events__holiday, eventsAnch)
-    div(class="Events__widget" class= ''+eventsAnch)
-        .Event__picture
-        div(class="Event__information" class= ''+eventsAnch)
-            div(class="Event__information__wrapper" id="divEvents")
-                span(class="widget-date")
-                    p(class="" id="widget-date")
-                    p(class="" id="widget-month")
+    div(class="widget-events "+ eventsAnch)
+        .widget-events__picture
+        div(class="widget-events__information "+ eventsAnch)
+            div(class="widget-events__information-wrap" id="divEvents")
+                span(class="widget-events__date-title")
+                    p(class="widget-events__date" id="widget-events__date")
+                    p(class="widget-events__month" id="widget-events__month")
                 h2= Events__title
                 p(class="holiday")= Events__holiday
-                button(class="Event-to-calendar")
+                button(class="widget-events__add-event")
                     p Add to calendar

@@ -1,7 +1,7 @@
-mixin News(NewsID, newsClass)
-    .News__widget
-        .news__picture
-        div(class="News__information" class= ''+newsClass)
-            div(class="News__information__wrapper" id= ''+NewsID)
+mixin News(newsID)
+    .widget-news
+        .widget-news__picture
+        .widget-news__information
+            div(class="widget-news__information-wrap" id= newsID)
 
 

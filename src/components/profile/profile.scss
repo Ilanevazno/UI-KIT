@@ -1,6 +1,10 @@
 .user-profile{
     display: flex;
 
+    &:hover svg {
+        fill: darken($gray-template, 45%);
+    }
+
     &__picture {
         height: 10.5rem;
         width: 10.5rem;
@@ -8,8 +12,8 @@
         border-radius: 50%;
         position: relative;
         overflow: hidden;
-        margin-right: 10px;
         border: 5px solid $gray-template;
+        cursor: pointer;
 
         img {
             position: absolute;
@@ -18,7 +22,7 @@
     }
 
     &__info {
-        width: 62%;
+        width: 45%;
         height: 11.4rem;
         background-color:$mint-template;
         border-radius: 15px;
@@ -29,6 +33,7 @@
         box-sizing: border-box;
         padding-bottom: 1.2rem;
         position: relative;
+        cursor: pointer;
 
         &:before {
             content: "";
@@ -44,13 +49,7 @@
         }
 
         h2 {
-            color: white;
-            font-size: 2.1rem;
-            font-family: lato regular;
-            padding-top: 1rem;
-            text-transform: none;
-            word-spacing: 0.1rem;
-            padding-bottom: 0;
+
         }
 
         h3 {
@@ -66,9 +65,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 18px;
-            font-family: Myriad pro;
             font-weight: normal;
+            color: white;
+            font-size: 2.1rem;
+            font-family: lato regular;
+            padding-top: 1rem;
+            text-transform: none;
+            word-spacing: 0.1rem;
+            padding-bottom: 0;
         }
 
         &-job {
@@ -92,6 +96,10 @@
                 height: 2.5rem;
                 width: 4.7rem;
                 fill: white;
+                
+                &:hover {
+                    fill: $orange-template;
+                }
             }
             
             a {
@@ -99,34 +107,31 @@
                 justify-content: space-between;
 
                 &:hover {
-                    background-color: $gray-template;
                     color: white;
                     cursor: pointer;
                 }
             }
         }
     }
+
+    &:hover > .user-profile__info {
+        background-color: $gray-template;
+        border-radius: 0;
+    }
+
+    &:hover > .user-profile__info:before {
+        display: none;
+    }
+
+    &:hover > .user-profile__picture {
+        border-radius: 0;
+    }
+
+    &:hover .user-profile__info-name {
+        color: $orange-template;
+    }
+
+    &:hover .user-profile__info-job {
+        color: darken($gray-template, 45%);
+    }
 }
-
-
-
-.User__profile__space:hover:before{
-    background-color: $gray-template;
-}
-
-.User__profile__space:hover > .user__profile__social > .UP__social__btn > .UP__social__pic{
-    fill: #757575;
-}
-
-.User__profile__space > .user__profile__social > .UP__social__btn > .UP__social__pic:hover{
-    fill: $orange-template;
-}
-
-.User__profile__space:hover > h2{
-    color: $orange-template;
-}
-
-.User__profile__space:hover > h3{
-    color: #4f4f4f;
-}
-

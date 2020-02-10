@@ -17,6 +17,8 @@ import './components/toggles-form/toggles/toggles';
 import './components/toggles-form/tick-boxes/checkbox';
 import './components/search/search';
 import './components/profile/profile';
+import './components/News-and-events/News/News';
+import './components/News-and-events/Events/Events';
 
 //media
 import './styles/media.scss';
