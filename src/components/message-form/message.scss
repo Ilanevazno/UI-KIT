@@ -1,87 +1,94 @@
-// Настройки поля формы
-
-.message__items{
-    display: flex;
-    flex-wrap: wrap;
-    width: 466px;
-    position: relative;
-}   
-
-.fields{
-    display: flex;
-}
-
-.form__items{
-    margin-top: 1.27rem;
-    border-radius: 4px;
-    border: none;
-    background-color: $gray-template;
-    padding-left: 21px;
-    padding-right: 12px;
-    position: relative;
-}
-
-.form__items__textarea{
-    padding-top: 12px;
-    font-family: Source Sans Pro;
-}
-
-//Взаимодействие с пользователем
-.form__items:focus{
-    outline: none;
-}
-
-.form__items::placeholder{
-    font-weight: bold;
-}
-// далее
-input[type="text"],
-input[type="email"]{
-    width: 25.35rem;
-    height: 3.5rem;
-    position: relative;
-    font-size: 1.74rem;
-    font-family: Source Sans Pro;
-}
-
-.fields textarea{
-    height: 10.8rem;
-    width: 35.2rem;
-    display: flex;
-    padding-bottom: 5px;
-    flex-wrap: wrap;
-    resize: none;
-    font-size: 1.74rem;
-    font-family: Source Sans Pro;
-}
-.form__items_submit{
-    width: 14.4rem;;
-    height: 4rem;
-    background-color: $mint-template;
-    color: white;
-    font-family: lato black;
-    text-transform: uppercase;
-    outline: none;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 1.2rem;
-    margin-left: 54%;
-    box-shadow: 0px 3px 1px -1px darken($mint-template, 15%);
-    padding: 0;
-
-    &:active{
-        transform: scale(0.9);
+.message {
+    &__form-container {
+        display: flex;
+        flex-direction: column;
     }
-    p{
-        font-size: 1.3rem;
+    
+    &__fields {
+        display: flex;
+        align-items: flex-end;
+
+        .text-error {
+            background-color: $orange-template;
+        }
+
+        .text-success {
+            background-color: $mint-template;
+        }
+
+        input {
+            width: 25.35rem;
+            height: 3.5rem;
+            position: relative;
+            font-size: 1.74rem;
+            font-family: Source Sans Pro;
+        }
+
+        textarea {
+            height: 10.8rem;
+            width: 35.2rem;
+            display: flex;
+            padding-bottom: 5px;
+            flex-wrap: wrap;
+            resize: none;
+            font-size: 1.74rem;
+            font-family: Source Sans Pro;
+        }
+    }
+
+    &__form-item {
+        margin-top: 1.27rem;
+        border-radius: 4px;
+        border: none;
+        background-color: $gray-template;
+        padding-left: 21px;
+        padding-right: 12px;
+        position: relative;
+    }
+
+    &__form-textarea {
+        padding-top: 12px;
+        font-family: Source Sans Pro;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            font-weight: bold;
+        }   
+    }
+
+    &__button-submit {
+        width: 14.4rem;;
+        height: 4rem;
+        background-color: $mint-template;
+        color: white;
+        font-family: lato black;
+        text-transform: uppercase;
+        outline: none;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 1.2rem;
+        box-shadow: 0px 3px 1px -1px darken($mint-template, 15%);
+        padding: 0;
+        align-self: flex-end;
+    
+        &:active{
+            transform: scale(0.9);
+        }
+        p{
+            font-size: 1.3rem;
+        }
     }
 }
+
 
 //Сообщение об ошибке + анимация
 
-.text-error{
+.field-status {
     border-radius: 6px;
     box-sizing: border-box;
     display: flex;
@@ -91,54 +98,12 @@ input[type="email"]{
     text-transform: uppercase;
     color: white;
     width: 8.7rem;
-    height: 3.4rem;
-    background-color: $orange-template;
+    height: 3.5rem;
+    background-color: inherit;
     margin-left: 12px;
-    margin-top: 14px;
     animation: 0.8s flash;
     font-family: Lato black;
     font-size: 1.3rem;
-}
-
-.text-success{
-    border-radius: 6px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    text-transform: uppercase;
-    color: white;
-    width: 8.7rem;
-    height: 3.4rem;
-    background-color: $mint-template;
-    margin-left: 12px;
-    margin-top: 14px;
-    animation: 0.8s flash;
-    font-family: Lato black;
-    font-size: 1.3rem;
-}
-
-.text-error:before{
-    content: "";
-    width: 10px;
-    height: 10px;
-    border-radius: 2px;
-    background-color: $orange-template;
-    transform: rotate(134deg);
-    position: absolute;
-    left: 67.4%;
-}
-
-.text-success:after{
-    content: "";
-    width: 10px;
-    height: 10px;
-    border-radius: 2px;
-    background-color: $mint-template;
-    transform: rotate(134deg);
-    position: absolute;
-    left: 67.4%;
 }
 
 @keyframes flash {

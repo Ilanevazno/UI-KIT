@@ -46,6 +46,20 @@ body
                 +stages('5', 'example-stages')
             .form-elements
                 include components/message-form/message.pug
+                include components/toggles-form/toggles/toggles.pug
+                include components/toggles-form/tick-boxes/checkbox.pug
                 .message-form
                     +formMessage('form__user-form', 'example__userName', 'example__userEmail', 'example__userMessage')
-                .toggles
+                .toggles-form
+                    .toggles
+                        +toggles
+                    .tick-boxes
+                        +checkbox
+                        +checkbox
+            .user
+                include components/search/search.pug
+                include components/profile/profile.pug
+                .search
+                    +search('example-search')    
+                .profile
+                    +user-profile('assets/images/profile-man.jpg', 'John Smith', 'Ux designer', 'http://google.com', 'http://google.com', 'http://google.com', 'da')

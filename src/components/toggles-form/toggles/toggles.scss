@@ -1,57 +1,52 @@
-@import "../../template/Global-variables.scss";
+.toggles {
+    &__icon {
+        width: 7rem;
+        height: 3rem;
+        background-color: $gray-template;
+        border-radius: 20px;
+        position: relative;
+        cursor: pointer;
 
-.two__toggles{
-    width: 16rem;
-    display: flex;
-    justify-content: space-between;
-    margin-left: 6.1rem;
-    padding-top: 2rem;
-    margin-bottom: 2.2rem;
-}
+        &::after {
+            content: "OFF";
+            position: absolute;
+            right: 13%;
+            bottom: 28%;
+            font-family: Lato black;
+            font-size: 1.5rem;
+            color: white;
+        }
 
-.icon{
-    width: 7rem;
-    height: 3rem;
-    background-color: $gray-template;
-    border-radius: 20px;
-    position: relative;
-    cursor: pointer;
-    .handle {
-    height: 2.3rem;
-    width: 2.3rem;
-    position: absolute;
-    border-radius: 50%;
-    background-color: white;
-    bottom: 14%;
-    left: 4px;
-    transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
+        &--active {
+            background-color: $mint-template;
+            cursor: pointer;
+
+            &::after {
+                content: "ON";
+                position: absolute;
+                left: 19%;
+                bottom: 26%;
+                font-family: Lato black;
+                font-size: 1.5rem;
+                color: white;
+            }
+        }
+
+        &--active > .toggles__handle {
+            left: 65%;
+            transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
+            cursor: pointer;
+        }
     }
-}
-.icon::after{
-    content: "OFF";
-    position: absolute;
-    right: 13%;
-    bottom: 28%;
-    font-family: Lato black;
-    font-size: 1.5rem;
-    color: white;
-    
-}
-.icon.icon-active {
-    background-color: $mint-template;
-    cursor: pointer;
+
+    &__handle {
+        height: 2.3rem;
+        width: 2.3rem;
+        position: absolute;
+        border-radius: 50%;
+        background-color: white;
+        bottom: 14%;
+        left: 4px;
+        transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
     }
-.icon-active > .handle{
-    left: 65%;
-    transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
-    cursor: pointer;
-}
-.icon-active::after{
-    content: "ON";
-    position: absolute;
-    left: 19%;
-    bottom: 26%;
-    font-family: Lato black;
-    font-size: 1.5rem;
-    color: white;
 }

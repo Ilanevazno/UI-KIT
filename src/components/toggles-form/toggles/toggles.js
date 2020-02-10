@@ -1,11 +1,13 @@
 
+import './toggles.scss'
+
 $(document).ready(function () {
     $(function () {
-        return $('.icon').on('click', function() {
-            if($(this).hasClass('icon-active')) {
-                return $(this).removeClass('icon-active');
+        return $('.toggles__icon').on('click', function() {
+            if($(this).hasClass('toggles__icon--active')) {
+                return $(this).removeClass('toggles__icon--active');
             } else {
-                return $(this).addClass('icon-active');
+                return $(this).addClass('toggles__icon--active');
             }
         });
     });

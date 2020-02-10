@@ -1,5 +1,3 @@
-@import "../template/Global-variables.scss";
-
 .hidden{
     display: none;
 }
@@ -12,6 +10,7 @@
     box-sizing: border-box;
     position: relative;
     border: none;
+    outline: none;
     background-color: $background-color;
     border-radius: 4px;
     color: $color;
@@ -20,7 +19,7 @@
 
 //Стилизация кнопки
 
-@mixin search_button($background-image: url('img/find-btn.png'), $height: 100%, $width: 11.3%){
+@mixin search_button($height: 100%, $width: 11.3%){
     position: absolute;
     right: 0;
     cursor: pointer;
@@ -28,70 +27,85 @@
     width: $width;
     outline: none;
     border: none;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     background-color: $orange-template;
-    background-image: $background-image;
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 43%;
+    background-image: url('../../assets/images/search-loupe.png');
 }
 
-.form__search-error{
-    width: 90%;
-    background-color: $orange-template;
-    border-radius: 4px;
-    position: absolute;
-    height: 100%;
-    display: flex;
-    color: white;
-    padding-left: 5%;
-    align-items: center;
-    box-sizing: border-box;
-    cursor: pointer;
-    animation: 0.4s fadeIn;
-    font-family: Source Sans Pro;
-    font-size: 1.75rem;
+.form-search {
+    &__str-wrapper {
+        width: 100%;
+    }
+
+    &__str-status {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        background-color: #e75735;
+        border-radius: 5px;
+        line-height: 40px;
+        color: white;
+        font-size: 17px;
+        padding-left: 4%;
+        box-sizing: border-box;
+        cursor: pointer;
+        opacity: 0;
+        transition: ease-in-out .3s all;
+    }
+
+    &__find-str {
+        position: relative;
+        display: flex;
+        width: 30rem;
+
+        input[type="text"] {
+            @include search_input
+        }
+    }
+
+    &__items {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        justify-content: center;
+        box-shadow: -1px 6px 7px 6px rgba(0,0,0,0.13);
+        font-family: lato;
+        background: $mint-template;
+
+        li {
+            color: white;
+            font-size: 19px;
+            padding: .5rem 0 .5rem 0;
+            padding-left: 5%;
+
+            &:hover {
+                background: darken(white, 10%);
+                color: black;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__btn-find {
+        @include search_button
+
+        &--invalid {
+            background-color: $orange-template;
+            background-image: url('../../assets/images/search-loupe.png');
+        }
+    
+        &--valid {
+            background-color: $mint-template;
+            background-image: url('../../assets/images/search-success.png');
+        }
+    }
 }
 
-.form__search-error:focus{
-    display: none;
-}
-
-.form__search__str__find{
-    position: relative;
-    display: flex;
-}
-
-.form__search__str__find input[type="button"]{
-    @include search_button
-}
-
-.search__items li:hover{
-    cursor: pointer;
-    background-color: #eeeeee
-}
-
-.search__items li:active{
-    background-color: darken(#eeeeee, 5%);
-}
-
-.search__items li.hide {
-    display: none;
-}
-.search__items{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    justify-content: center;
-    box-shadow: -1px 6px 7px 6px rgba(0,0,0,0.13);
-    font-family: lato;
-    padding-left: 5%;
-}
-//Стиль для инпута
-.form__search__str__find input[type="text"]{
-    @include search_input
-}
 //Анимации
 
 @keyframes fadeIn {
