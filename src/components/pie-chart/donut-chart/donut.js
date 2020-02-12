@@ -29,7 +29,6 @@ $(document).on("DOMContentLoaded", () => {
 
 
 function renderChart (dataObj) {
-  console.log(dataObj)
   // Seed data to populate the donut pie chart
   var seedData = dataObj.data;
 

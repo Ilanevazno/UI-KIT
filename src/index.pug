@@ -70,8 +70,8 @@ body
                 each user in users
                     +user_profile(user.avatar, user.name, user.job, user.social.facebook, user.social.twitter, user.social.dbb) 
             .news-events
-                include components/News-and-events/News/News.pug
-                include components/News-and-events/Events/Events.pug
+                include components/News/News.pug
+                include components/Events/Events.pug
                 .news
                     h2 News
                     +News('divRss')
@@ -79,7 +79,9 @@ body
                     h2 Events
                     +Events('THIS IS THE TITLE', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Events_example')
             .location
+                include components/location/location.pug
                 h2 Location
+                +location('class')
             .calendar-with-messaging
                 .calendar
                     h2 Calendar

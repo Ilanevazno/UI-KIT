@@ -17,8 +17,12 @@ import './components/toggles-form/toggles/toggles';
 import './components/toggles-form/tick-boxes/checkbox';
 import './components/search/search';
 import './components/profile/profile';
-import './components/News-and-events/News/News';
-import './components/News-and-events/Events/Events';
+import './components/Events/Events';
+import './components/News/News';
+import './components/location/location';
+import './components/calendar/calendar';
+import './components/messaging/messaging';
+import './components/video/video';
 
 //media
 import './styles/media.scss';

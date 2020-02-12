@@ -1,3 +1,5 @@
+import './location.scss';
+
 var myMap;
 
 // Дождёмся загрузки API и готовности DOM.
@@ -11,7 +13,7 @@ function init () {
         // её центр и коэффициент масштабирования.
         center: [37.787509, -122.444838], 
         zoom: 15,
-        controls: ['fullscreenControl', 'geolocationControl']
+        controls: ['geolocationControl']
     }, {
         searchControlProvider: 'yandex#search'
         
@@ -19,11 +21,11 @@ function init () {
 
     //Управление контрольной панелью
 
-    ControlPlayout = ymaps.templateLayoutFactory.createClass([
-        '<div class="control__panel"><p class="control__panel__title">Meet us!</p><p class="control__panel__address">1259  CALIFORNIA ST San Francisco, CA</p></div>',
+    const ControlPlayout = ymaps.templateLayoutFactory.createClass([
+        '<div class="control__panel"><p class="control__panel-title">Meet us!</p><p class="control__panel-address">1259  CALIFORNIA ST San Francisco, CA</p></div>',
     ].join(''));
 
-    ControlPanel = new ymaps.control.Button({
+    const ControlPanel = new ymaps.control.Button({
         options: {
             layout: ControlPlayout,
             maxWidth: [170, 190, 220]
@@ -35,14 +37,14 @@ function init () {
 
     //Кнопки на контрольной панели
 
-    ButtonLayout = ymaps.templateLayoutFactory.createClass([
-        '<img class="control__panel__btn" src="{{ data.image }}">',
+    const ButtonLayout = ymaps.templateLayoutFactory.createClass([
+        '<img class="control__panel-btn" src="{{ data.image }}">',
     ].join(''));
     
 
-    buttonFullScreen = new ymaps.control.Button({
+    const buttonFullScreen = new ymaps.control.Button({
         data: {
-            image: 'src/images/Location.png'
+            image: 'src/assets/images/location.png'
         },
         options: {
             layout: ButtonLayout,
@@ -53,19 +55,19 @@ function init () {
     myMap.controls.add(buttonFullScreen, {
         position: {
             bottom: '42px',
-            right: '103'
+            right: '82px'
         },
         right: 5,
         top: 5
     });
 
-    BtnGeoLayout = ymaps.templateLayoutFactory.createClass([
-        '<img class="control__panel__btn" src="{{ data.image }}">',
+    const BtnGeoLayout = ymaps.templateLayoutFactory.createClass([
+        '<img class="control__panel-btn" src="{{ data.image }}">',
     ].join(''));
 
-    buttonGeo = new ymaps.control.Button({
+    const buttonGeo = new ymaps.control.Button({
         data: {
-            image: 'src/images/Pin.png'
+            image: 'src/assets/images/pin.png'
         },
         options: {
             layout: BtnGeoLayout,
@@ -83,17 +85,17 @@ function init () {
     })
     
     // Данный класс нужен для отметки на карте
-    MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+    const MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
         '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
     ),
 
     //Управление отметкой на карте
     PlaceMark = new ymaps.Placemark([37.787509, -122.444838], {
         baloonContent: 'Местоположение',
-        iconContent: '<div class="Mark__circle"></div>'
+        iconContent: '<div class="mark-circle"></div>'
     }, {
         iconLayout: 'default#imageWithContent',
-        iconImageHref: 'src/images/mark.png',
+        iconImageHref: 'src/assets/images/mark.png',
         iconImageSize: [30,42],
         iconImageOffset: [-5, -38],
         iconContentOffset: [8, 10],
