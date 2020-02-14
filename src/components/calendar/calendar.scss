@@ -1,245 +1,108 @@
-@import "../../template/Global-variables.scss";
+@mixin calendar ($class, $width: 280px) {
+    #{$class} {
+        width: $width;
+        .datepicker {
+            background-color: $orange-template;
+            position: relative;
 
-.ui-datepicker{
-    width: 34rem;
-    height: 52.3rem;
-    background-color: #f2f2f2;
-    border: none;
-    padding: 0;
+            &--current-day {
+                height: 110px;
+                color: $white;
+                font-size: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &--nav {
+                display: flex;
+                justify-content: space-around;
+                color: $white;
+                height: 43px;
+                // background-color: darken($orange-template, 7);
+                background: #d54c2c;
+
+                &-title {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            &--nav-action {
+                width: 32px;
+
+                svg {
+                    width: 45%;
+                    height: 100%;
+                    fill: $white;
+                }
+            }
+
+            &--days-names {
+                background-color: $orange-template;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                color: $white;
+                text-transform: uppercase;
+                height: 27px;
+            }
+
+            &--cells-days {
+                display: flex;
+                flex-wrap: wrap;
+                background-color: $gray-template;
+
+                .-other-month- {
+                    color: $white;
+                }
+            }
+
+            &--cell-day {
+                width: 38px;
+                height: 38px;
+                border: 1px solid $white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #868686;
+                cursor: pointer;
+            }
+
+            .-selected-,
+            .-current- {
+                background-color: $orange-template;
+                color: $white;
+            }
+
+            &--buttons {
+                background-color: darken($gray-template, 10%);
+                height: 50px;
+                display: flex;
+                align-items: center;
+                padding: 0 20px;
+            }
+
+            &--button {
+                font-size: 13px;
+                text-transform: uppercase;
+                color: #868686;
+            }
+
+            &--cell-month,
+            --cell-year {
+                font-size: 25px;
+                color: $white;
+                text-align: center;
+                cursor: pointer;
+
+                &:hover {
+                    background: white;
+                    color: $orange-template;
+                }
+            }
+        }
+    }
 }
 
-.actual__date{
-    height: 25.5%;
-    background-color: $datepicker-bg;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Lato light;
-    font-size: 10rem;
-    color: white;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-
-.choised__data{
-    background-color: darken(#f2f2f2, 5%);
-    width: 100%;
-    height: 11%;
-    border-top: 1px solid white;
-    display: flex;
-    align-items: center;
-    padding-left: 8%;
-    box-sizing: border-box;
-    text-transform: uppercase;
-    color: #868686;
-    font-weight: bold;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    position: absolute;
-    bottom: 0;
-    font-family: Lato black;
-    font-size: 1.6rem;
-
-}
-
-.ui-datepicker-header{
-    background-color: darken($datepicker-bg, 5%);
-    width: 100%;
-    border: none;
-}
-
-.ui-datepicker .ui-datepicker-title{
-    margin: 0.6rem 2.3em;
-}
-
-.ui-datepicker-title{
-    font-size: 24px;
-    color: white;
-}
-
-.ui-datepicker-calendar thead{
-    background-color: $datepicker-bg;
-    color: white;
-}
-
-.ui-icon{
-    border: none;
-}
-
-.ui-state-default{
-    box-sizing: border-box;
-    height: 38px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    font-size: 20px;
-}
-
-.ui-widget.ui-widget-content{
-    border: none;
-}
-
-.ui-corner-all{
-    box-sizing: border-box;
-    border: none;
-}
-
-.ui-corner-br,
-.ui-corner-br{
-    border-radius: 0px;
-}
-
-.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl{
-    border-radius: 0px;
-}
-
-.ui-datepicker .ui-datepicker-next,
-.ui-datepicker .ui-datepicker-prev{
-    right: 5%;
-    position: absolute;
-    top: 30%;
-}
-
-.ui-datepicker .ui-datepicker-prev{
-    left: 5%;
-}
-
-.ui-datepicker .ui-datepicker-prev::before,
-.ui-datepicker .ui-datepicker-prev::after{
-    content: "";
-    width: 2px;
-    height: 50%;
-    background-color: white;
-    display: block;
-    position: absolute;
-    bottom: 1px;
-    left: 40%;
-}
-
-.ui-datepicker .ui-datepicker-prev::before{
-    transform: rotate(-41deg);
-    left: 7.3px;
-    top: 9.5px;
-}
-
-.ui-datepicker .ui-datepicker-prev::after{
-    transform: rotate(-132deg);
-    top: 3px;
-    left: 7.6px;
-}
-
-.ui-datepicker .ui-datepicker-next::before,
-.ui-datepicker .ui-datepicker-next::after{
-    content: "";
-    width: 2px;
-    height: 50%;
-    background-color: white;
-    display: block;
-    position: absolute;
-    bottom: 1px;
-    left: 60%;
-}
-
-.ui-datepicker .ui-datepicker-next::before{
-    transform: rotate(41deg);
-}
-
-.ui-datepicker .ui-datepicker-next::after{
-    transform: rotate(132deg);
-    top: 3.4px;
-    left: 12.4px;
-}
-
-
-.ui-datepicker .ui-datepicker-prev:hover,
-.ui-datepicker .ui-datepicker-next:hover{
-    background: none;
-}    
-
-table{
-    border-spacing: 0px;
-}
-
-.ui-datepicker table{
-    margin: 0;
-    width: 100.1%;
-    height: 52.4%;
-}
-
-.ui-datepicker td{
-    padding: 0;
-}
-
-.ui-datepicker th{
-    padding: 0.8rem
-}
-
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
-    color: #868686;
-    font-family: Source Sans Pro;
-    font-size: 2.4rem;
-    display: flex;
-}
-
-.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled{
-    border: 1px solid white;
-    opacity: 1;
-    color: white;
-}
-
-.ui-datepicker-other-month > .ui-state-default,
-.ui-datepicker-unselectable > .ui-state-default,
-.ui-state-disabled > .ui-state-default{
-    font-family: Source Sans Pro;
-    opacity: 1;
-    color: white;
-}
-
-.ui-datepicker-other-month,
-.ui-datepicker-unselectable,
-.ui-state-disabled{
-    color: white;
-}
-
-.ui-state-default,
-.ui-state-highlight,
-.ui-state-active{
-    height: 100%;
-    color: #868686;
-    display: flex;
-}
-
-.ui-datepicker-calendar tbody tr td a{
-    border: 1px solid white;
-}
-
-.ui-datepicker td a{
-    display: flex;
-}
-
-.ui-datepicker-trigger{
-    display: none;
-}
-
-.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
-    color: white;
-    background: $datepicker-bg;
-}
-
-.ui-datepicker-calendar thead tr span{
-    font-family: lato black;
-    font-size: 1.1em;
-    text-transform: uppercase;
-}
-
-.ui-datepicker-month,
-.ui-datepicker-year{
-    font-family: Lato light;
-    font-size: 2.9rem;
-    letter-spacing: -1px;
-    font-weight: normal;
-    padding-right: 11px;
-}
-
+@include calendar('.example-calendar');

@@ -78,7 +78,8 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       '$': 'jquery',
-      'jQuery': 'jquery'
+      'jQuery': 'jquery',
+      'datepicker': 'air-datepicker'
     }),
     new HtmlWebPackPlugin({
       template: "./src/index.pug",

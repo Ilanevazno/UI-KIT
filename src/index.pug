@@ -83,8 +83,11 @@ body
                 h2 Location
                 +location('class')
             .calendar-with-messaging
+                include components/calendar/calendar.pug
+                include components/messaging/messaging.pug
                 .calendar
                     h2 Calendar
+                    +calendar('example-calendar')
                 .messaging
                     h2 Messaging
             .video
