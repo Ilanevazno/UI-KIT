@@ -1,8 +1,11 @@
+import './video.scss';
+
 $(document).ready(function(){
-    let video = $('.video__player');
-    let progress = $('.video__progress');
+    let videoContainer = $('.video-player__container');
+    let video = $('.video-player__screen');
+    let progress = $('.video-player__progress');
     
-    $("#myvideo").on(
+    $(".video-player__screen").on(
         "timeupdate", 
         function(event){
           onTrackedVideoFrame(this.currentTime, this.duration);
@@ -29,20 +32,19 @@ $(document).ready(function(){
         video[0].play();
     })
 
-
-    $('#videoplayer-play').click(function(play){
+    videoContainer.find('.video-player__play').on('click', function(){
         video[0].play();
-        $('.videoplayer__play-btn').addClass('hidden');
-        $('.videoplayer__pause-btn').removeClass('hidden');
+        $(this).hide();
+        $(this).parent().find('.video-player__pause').show();
     });
 
-    $('#videoplayer-pause').click(function(pause){
+    videoContainer.find('.video-player__pause').on('click', function(){
         video[0].pause();
-        $('.videoplayer__play-btn').removeClass('hidden');
-        $('.videoplayer__pause-btn').addClass('hidden');
+        $(this).hide();
+        $(this).parent().find('.video-player__play').show();
     });
 
-    $('#videoplayer-fullscreen').click(function(fullscreen){
+    videoContainer.find('.video-player__fullscreen').on('click', function() {
         video[0].requestFullscreen();
-    });
+    })
 })

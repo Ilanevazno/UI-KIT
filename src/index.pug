@@ -8,87 +8,94 @@ html
 head
     title ui-kit
 body
-    .ul__main
-        .wrapper
-            .buttons
-                include components/buttons/buttons.pug
-                h2 Standard buttons
-                +button('mint', 'buttons__mint--low', 'Button')
-                +button('mint', 'buttons__mint', 'Button')
-                +button('orange', 'buttons__orange', 'Button')
-                +button('orange', 'buttons__orange--low', 'Button')
-            .arrows
-                include components/arrows/arrow.pug
-                h2 Arrow buttons
-                +arrow('arrow-left', false, 'first-arrow-enabled')
-                +arrow('arrow-right', false, 'second-arrow-enabled')
-                +arrow('arrow-left', true, 'first-arrow-disabled')
-                +arrow('arrow-right', true, 'second-arrow-disabled')
-            .pie
-                h2 Percentages / pie chart
-                .pie-charts
-                    include components/pie-chart/percentages-chart/percentages.pug
-                    +pieChart('25')
-                    +pieChart('50')
+    .widgets
+        .widgets__buttons
+            include components/buttons/buttons.pug
+            h2.widgets__title Standard buttons
+            .widgets__buttons-container
+                +button({theme: 'mint', size: 'low', text: 'Button'})
+                +button({theme: 'mint', size: 'hight', text: 'Button'})
+                +button({theme: 'orange', size: 'hight', text: 'Button'})
+                +button({theme: 'orange', size: 'low', text: 'Button'})
+        .widgets__arrows
+            include components/arrows/arrow.pug
+            h2.widgets__title Arrow buttons
+            .widgets__arrows-container
+                .widgets__arrows_enabled-buttons
+                    +arrow('arrow-left', false, 'first-arrow-enabled')
+                    +arrow('arrow-right', false, 'second-arrow-enabled')
+                .widgets__arrows_disabled-buttons
+                    +arrow('arrow-left', true, 'first-arrow-disabled')
+                    +arrow('arrow-right', true, 'second-arrow-disabled')
+        .widgets__pie
+            h2.widgets__title Percentages / pie chart
+            .widgets__pie-container
+                .widgets__pie-charts
+                    include components/percentages-chart/percentages.pug
+                    +pieChart('0')
+                    +pieChart('38')
                     +pieChart('62')
                     +pieChart('89')
-                .donut-charts
-                    include components/pie-chart/donut-chart/donut.pug
+                .widgets__donut-charts
+                    include components/donut-chart/donut.pug
                     +donutChart
-            .sliders
-                h2 Sliders
-                include components/sliders/slider.pug
-                +slider('first-slider')
-                +slider('second-slider')
-            .stages
-                h2 Stages
-                include components/stages/stages.pug
-                +stages('5', 'example-stages')
-            .form-elements
-                include components/message-form/message.pug
-                include components/toggles-form/toggles/toggles.pug
-                include components/toggles-form/tick-boxes/checkbox.pug
-                .message-form
-                    +formMessage('form__user-form', 'example__userName', 'example__userEmail', 'example__userMessage')
-                .toggles-form
-                    .toggles
-                        +toggles
-                    .tick-boxes
-                        +checkbox
-                        +checkbox
-            .user
-                include components/search/search.pug
-                include components/profile/profile.pug
-                .search
-                    +search('example-search')    
-                .profile
-                -
-                    var users = [
-                        {avatar: 'assets/images/profile-man.jpg', name: 'John Smith', job: 'Ux designer', social: { facebook: 'http://facebook.com', twitter: 'http://twitter.com', dbb: 'http://dbb.com'}},
-                        {avatar: 'assets/images/profile-girl.jpg', name: 'Sarah Brown', job: 'Developer', social: { facebook: 'http://facebook.com', twitter: 'http://twitter.com', dbb: 'http://dbb.com'}}
-                    ]
-                each user in users
-                    +user_profile(user.avatar, user.name, user.job, user.social.facebook, user.social.twitter, user.social.dbb) 
-            .news-events
-                include components/News/News.pug
-                include components/Events/Events.pug
-                .news
-                    h2 News
-                    +News('divRss')
-                .events
-                    h2 Events
-                    +Events('THIS IS THE TITLE', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Events_example')
-            .location
-                include components/location/location.pug
-                h2 Location
-                +location('class')
-            .calendar-with-messaging
-                include components/calendar/calendar.pug
-                include components/messaging/messaging.pug
-                .calendar
-                    h2 Calendar
-                    +calendar('example-calendar')
-                .messaging
-                    h2 Messaging
-            .video
-                h2 Video
+        .widgets__sliders
+            h2.widgets__title Sliders
+            include components/sliders/slider.pug
+            +slider('first-slider')
+            +slider('second-slider')
+        .widgets__stages
+            h2.widgets__title Stages
+            include components/stages/stages.pug
+            +stages('5', 'example-stages')
+        .widgets__form-elements
+            include components/message-form/message.pug
+            include components/toggles-form/toggles/toggles.pug
+            include components/toggles-form/tick-boxes/checkbox.pug
+            .message-form
+                +formMessage('form__user-form', 'example__userName', 'example__userEmail', 'example__userMessage')
+            .toggles-form
+                .toggles
+                    +toggles
+                .tick-boxes
+                    +checkbox
+                    +checkbox
+        .widgets__user
+            include components/search/search.pug
+            include components/profile/profile.pug
+            .search
+                +search('example-search')    
+            .profile
+            -
+                var users = [
+                    {avatar: 'assets/images/profile-man.jpg', name: 'John Smith', job: 'Ux designer', social: { facebook: 'http://facebook.com', twitter: 'http://twitter.com', dbb: 'http://dbb.com'}},
+                    {avatar: 'assets/images/profile-girl.jpg', name: 'Sarah Brown', job: 'Developer', social: { facebook: 'http://facebook.com', twitter: 'http://twitter.com', dbb: 'http://dbb.com'}}
+                ]
+            each user in users
+                +user_profile(user.avatar, user.name, user.job, user.social.facebook, user.social.twitter, user.social.dbb) 
+        .widgets__news-events
+            include components/News/News.pug
+            include components/Events/Events.pug
+            .news
+                h2.widgets__title News
+                +News('divRss')
+            .events
+                h2.widgets__title Events
+                +Events('THIS IS THE TITLE', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Events_example')
+        .widgets__location
+            include components/location/location.pug
+            h2.widgets__title Location
+            +location('class')
+        .widgets__calendar-with-messaging
+            include components/calendar/calendar.pug
+            include components/messaging/messaging.pug
+            .calendar
+                h2.widgets__title Calendar
+                +calendar('example-calendar')
+            .messaging
+                h2.widgets__title Messaging
+                +messaging('assets/images/profile-girl.jpg', 'Sarah Brown', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'example-messaging')
+        .widgets__video
+            include components/video/video.pug
+            h2.widgets__title Video
+            +videoPlayer('src/assets/video/New-zeland.mp4','example')

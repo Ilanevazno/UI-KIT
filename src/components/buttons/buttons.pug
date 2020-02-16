@@ -1,5 +1,5 @@
-mixin button(color,buttonName,buttonText)
-    button(class= 'button__ripple-btn button__ripple--'+color, class= ''+buttonName type="submit")
+mixin button({theme, size, text})
+    button(class= 'button__ripple-btn button__ripple-btn_'+theme+' button__ripple-btn_'+size type="submit")
         .button__ripple-effect.js-ripple-effect
             span.js-ripple-circle
-        p= buttonText
+        p= text

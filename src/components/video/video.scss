@@ -1,88 +1,55 @@
-@import "../template/Global-variables.scss";
+.video-player {
+    width: 100%;
 
-.hidden{
-    display: none;
-}
+    &__container {
+        position: relative;
+    }
 
-.video__player__container{
-    position: relative;
-}
+    &__screen {
+        position: relative;
+        width: 100%;
+    }
 
-.video__player{
-    position: relative;
-    z-index: 0;
-}
+    &__controls {
+        position: absolute;
+        bottom: 4px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 6rem;
+    }
 
-.video__player__btns{
-    position: relative;
-}
+    &__control {
+        background: inherit;
+        border: none;
+        outline: none;
+    }
 
-.video__player button{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
+    &__play {
+        flex-basis: 8%;
 
-.video__player__btns button{
-    border: none;
-    outline: none;
-}
+        svg {
+            fill: white;
+            width: 20px;
+            height: 20px;
+        }
+    }
 
-.video__player__btns button svg:hover{
-    cursor: pointer;
-}
+    &__pause {
+        display: none;
+        flex-basis: 8%;
+    }
 
-.videoplayer__play-btn,
-.videoplayer__pause-btn{
-    background-color: inherit;
-}
+    &__progress {
+        flex-basis: 84%;
+        margin-right: 4%;
+    }
 
-.videoplayer__play-btn{
-    position: absolute;
-    bottom: 2rem;
-    left: 3%;
-}
-
-.videoplayer__pause-btn{
-    position: absolute;
-    bottom: 18px;
-    left: 18.1px;
-}
-
-
-.videoplayer__fullscreen-btn{
-    height: 5.6rem;
-    width: 8%;
-    background-color: $orange-template;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    cursor: pointer;
-}
-
-.video__progress{
-    position: absolute;
-    bottom: 2.4rem;
-    left: 8.6%;
-    width: 79.5%;
-    height: 0.75rem;
-}
-
-progress{
-    border-radius: 14px;
-}
-
-progress:hover{
-    cursor: pointer;
-}
-
-
-.video__player__btns progress::-webkit-progress-bar{
-    background-color: white;
-    border-radius: 4px;
-}
-
-.video__player__btns progress::-webkit-progress-value{
-    background-color: $orange-template;
+    &__fullscreen {
+        height: 6rem;
+        background: $orange-template;
+        flex-basis: 6rem;
+        margin-left: 40;
+    }
 }

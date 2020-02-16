@@ -1,0 +1,6 @@
+mixin pieChart(percent)
+  figure.pie-chart(data-percent= percent)
+      .pie-chart__figure-inner
+        svg(height="100" width="100")
+          circle(class="pie-chart__outer" width="50" height="50" cx="125" cy="65" r="60" transform="rotate(-90, 95, 95)")
+        figcaption= percent

@@ -1,4 +1,4 @@
-@mixin pieChart__percentage($font-size: 5rem, $color: #9d9d9d){
+@mixin percentage-chart($font-size: 5rem, $color: #9d9d9d){
   font-size: $font-size;
   color: $color;
   left: 50%;
@@ -7,26 +7,24 @@
   transform: translateX(-50%) translateY(-50%);
 }
 
-/**
- * Mixin: Button Modifier
- * --------------------------------------------------
- */
+@mixin button__ripple-color-modify($color) {
+  border: 1.5px solid $color;
+  box-shadow: 0px 3.5px 1px -1px darken($color, 10%);
+  color: $color;
 
- @mixin button-modifier($color, $bgcolor, $class, $box-shadow, $border) {
-  .button__ripple--#{$class} {
-    background: $bgcolor;
-    color: $color;
-    font-family: Lato black;
-    border-radius: 8px;
-    border: $border;
-    box-shadow: $box-shadow;
-
-    &:hover {
-      background: $color;
-      color: white;
-      box-shadow: $box-shadow;
-    }
+  &:hover {
+    background: $color;
   }
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+@mixin button__ripple-size-modify($width, $height, $font-size) {
+  width: $width;
+  height: $height;
+  font-size: $font-size;
 }
 
 @mixin arrows__template($width: 6rem, $height: 6rem){

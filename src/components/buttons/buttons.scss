@@ -1,26 +1,38 @@
-/**
- * Component: Button
- * --------------------------------------------------
- */
-
 .button {
   &__ripple-btn {
-    -webkit-appearance: none;
+    outline: none;
+    background: inherit;
     position: relative;
-    display: inline-block;
-    margin: 0;
-    vertical-align: middle;
-    overflow: visible;
-    color: #fff;
-    font: inherit;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 400;
-    text-align: center;
-    letter-spacing: 1px;
-    background: transparent;
-    user-select: none;
-    transition: all 0.2s ease;
+    transition: .3s ease-in-out all;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: 'Lato black', Arial, sans-serif;
+
+    &:hover {
+      color: white;
+    }
+
+    &_low {
+      @include button__ripple-size-modify(9rem, 2.5rem, 1.2rem);
+    }
+
+    &_hight {
+      @include button__ripple-size-modify(13.7rem, 3.9rem, 1.45rem);
+    }
+
+    &_mint {
+      @include button__ripple-color-modify($mint-template);
+    }
+
+    &_orange {
+      @include button__ripple-color-modify($orange-template);
+    }
+
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
 
     &:hover,
     &:focus {
@@ -61,14 +73,6 @@
     }
   }
 }
-
-@include button-modifier($mint-template, white, mint, 0px 4.5px 0px -1px darken($mint-template, 10%), 1.5px solid $mint-template);
-@include button-modifier($orange-template, white, orange, 0px 4.5px 0px -1px darken($orange-template, 10%), 1.5px solid $orange-template);
-
-/**
- * Animation: Ripple
- * --------------------------------------------------
- */
 
 @keyframes a-ripple {
   0% {
