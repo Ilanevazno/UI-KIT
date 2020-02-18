@@ -18,9 +18,7 @@ body {
     }
 
     &__buttons {
-        h2 {
-            margin-top: 9.3rem;
-        }
+        margin-top: 9.3rem;
 
         &-container {
             display: flex;
@@ -32,9 +30,7 @@ body {
     }
 
     &__arrows {
-        h2 {
-            margin-top: 6.3rem;
-        }
+        margin-top: 6.3rem;
         
         &-container {
             display: flex;
@@ -55,9 +51,7 @@ body {
     }
 
     &__pie {
-        h2 {
-            margin-top: 5rem;
-        }
+        margin-top: 5rem;
 
         &-container {
             display: flex;
@@ -76,6 +70,86 @@ body {
     &__donut {  
         &-charts {
             width: 18%;
+        }
+    }
+
+    &__sliders {
+        margin-top: 4rem;
+
+        &-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 5rem;
+        }
+    }
+
+    &__stages {
+        margin-top: 7rem;
+
+        h2 {
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__form-elements {
+        margin-top: 5.5rem;
+
+        h2 {
+            margin-bottom: 4.5rem;
+        }
+
+        &-container {
+            display: flex;
+        }
+
+        &-message {
+            width: 48.5%;
+        }
+
+        &-toggles {
+            width: 51%;
+            display: flex;
+            flex-direction: column;
+
+            .toggles {
+                &__container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    h2 {
+                        margin-top: 1rem;
+                        margin-bottom: 3rem;
+                    }
+
+                    &-items {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 45%;
+                    }
+                }
+            }
+
+            .tick-boxes {
+                &__container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 3rem;
+
+                    h2 {
+                        margin-top: 1rem;
+                        margin-bottom: 4rem;
+                    }
+
+                    &-items {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 20%;
+                    }
+                }
+            }
         }
     }
 }

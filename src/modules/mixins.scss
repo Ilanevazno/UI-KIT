@@ -1,10 +1,11 @@
-@mixin percentage-chart($font-size: 5rem, $color: #9d9d9d){
+@mixin percentage-chart($font-size: 4.5rem, $color: #9d9d9d){
   font-size: $font-size;
   color: $color;
   left: 50%;
   position: absolute;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
+  font-family: 'Lato light', Arial, sans-serif;
 }
 
 @mixin button__ripple-color-modify($color) {
@@ -47,10 +48,10 @@
   border-width: 5px 5px 0 0;
 }
 
-@mixin getTheme ($color: #FFFFFF) {
+@mixin slider-theme ($color: #FFFFFF) {
   .back-bar {
-    height: 5px;
-    border-radius: 2px;
+    height: 0.6rem;
+    border-radius: 8px;
     background-color: #eeeeee;
     background-color: #e7e7e7;
     background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
@@ -64,26 +65,49 @@
     .pointer {
       background-color: $color;
       border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      top: -12px;
+      width: 2.3rem;
+      height: 2.3rem;
+      top: -0.7rem;
     }
 
     .selected-bar {
       background-color: $color;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
     }
 
     .pointer-label {
       background: $color;
-      top: -42px;
-      width: 31px;
-      height: 22px;
-      font-size: 15px;
+      top: -4.3rem;
+      width: 4rem;
+      height: 2.6rem;
+      font-size: 1.3rem;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       border-radius: 5px;
+      font-family: 'Lato black', Arial, sans-serif;
+
+      &:after {
+        content: "";
+        width: 30%;
+        height: 30%;
+        transform: rotate(45deg);
+        border-radius: 3px;
+        background: $color;
+        position: absolute;
+        bottom: -3px;
+      }
+    }
+  }
+
+  .scale {
+    top: 1rem;
+    font-family: 'Lato black', Arial, sans-serif;
+
+    span {
+      border: none;
     }
   }
 }

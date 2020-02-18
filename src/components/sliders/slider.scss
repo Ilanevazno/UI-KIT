@@ -1,11 +1,12 @@
 .theme-orange {
-  @include getTheme ($orange-template)
-
-  .back-bar .selected-bar {
-    background-color: inherit;
-  }
+  @include slider-theme ($orange-template)
+  
 }
 
 .theme-mint {
-  @include getTheme ($mint-template)
+  @include slider-theme ($mint-template);
+
+  .back-bar .pointer-label {
+    display: none;
+  }
 }

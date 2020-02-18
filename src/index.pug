@@ -42,8 +42,9 @@ body
         .widgets__sliders
             h2.widgets__title Sliders
             include components/sliders/slider.pug
-            +slider('first-slider')
-            +slider('second-slider')
+            .widgets__sliders-container
+                +slider('first-slider')
+                +slider('second-slider')
         .widgets__stages
             h2.widgets__title Stages
             include components/stages/stages.pug
@@ -52,14 +53,21 @@ body
             include components/message-form/message.pug
             include components/toggles-form/toggles/toggles.pug
             include components/toggles-form/tick-boxes/checkbox.pug
-            .message-form
-                +formMessage('form__user-form', 'example__userName', 'example__userEmail', 'example__userMessage')
-            .toggles-form
-                .toggles
-                    +toggles
-                .tick-boxes
-                    +checkbox
-                    +checkbox
+            h2.widgets__title Form elements
+            .widgets__form-elements-container
+                .widgets__form-elements-message
+                    +formMessage('form__user-form', 'example__userName', 'example__userEmail', 'example__userMessage')
+                .widgets__form-elements-toggles
+                    .toggles__container
+                        h2.widgets__title Toggles
+                        .toggles__container-items
+                            +toggles
+                            +toggles
+                    .tick-boxes__container
+                        h2.widgets__title Tick boxes
+                        .tick-boxes__container-items
+                            +checkbox
+                            +checkbox
         .widgets__user
             include components/search/search.pug
             include components/profile/profile.pug

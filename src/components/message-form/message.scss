@@ -1,86 +1,70 @@
 .message {
-    &__form-container {
-        display: flex;
-        flex-direction: column;
-    }
+    &__form {
+        &-container {
+            display: flex;
+            flex-direction: column;
     
-    &__fields {
-        display: flex;
-        align-items: flex-end;
-
-        .text-error {
-            background-color: $orange-template;
+            button {
+                align-self: flex-end;
+            }
         }
 
-        .text-success {
-            background-color: $mint-template;
+        &-fields {
+            display: flex;
+            align-items: flex-end;
+    
+            .text-error {
+                background-color: $orange-template;
+            }
+    
+            .text-success {
+                background-color: $mint-template;
+            }
+    
+            input {
+                outline: none;
+                width: 66%;
+                height: 3rem;
+                position: relative;
+                font-size: 1.74rem;
+                font-family: 'Source Sans Pro', Arial, sans-serif;
+            }
         }
 
-        input {
-            width: 25.35rem;
-            height: 3.5rem;
+        &-item {
+            margin-top: 1.4rem;
+            border-radius: 4px;
+            border: none;
+            background-color: $gray-template;
+            padding-left: 4%;
+            padding-right: 4%;
             position: relative;
-            font-size: 1.74rem;
-            font-family: Source Sans Pro;
         }
 
-        textarea {
-            height: 10.8rem;
-            width: 35.2rem;
+        &-textarea {
+            padding-top: 12px;
+            height: 8.8rem;
+            width: 100%;
             display: flex;
             padding-bottom: 5px;
             flex-wrap: wrap;
             resize: none;
             font-size: 1.74rem;
-            font-family: Source Sans Pro;
-        }
-    }
-
-    &__form-item {
-        margin-top: 1.27rem;
-        border-radius: 4px;
-        border: none;
-        background-color: $gray-template;
-        padding-left: 21px;
-        padding-right: 12px;
-        position: relative;
-    }
-
-    &__form-textarea {
-        padding-top: 12px;
-        font-family: Source Sans Pro;
-
-        &:focus {
-            outline: none;
-        }
-
-        &::placeholder {
-            font-weight: bold;
-        }   
-    }
-
-    &__button-submit {
-        width: 14.4rem;;
-        height: 4rem;
-        background-color: $mint-template;
-        color: white;
-        font-family: lato black;
-        text-transform: uppercase;
-        outline: none;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: bold;
-        margin-top: 1.2rem;
-        box-shadow: 0px 3px 1px -1px darken($mint-template, 15%);
-        padding: 0;
-        align-self: flex-end;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
     
-        &:active{
-            transform: scale(0.9);
+            &:focus {
+                outline: none;
+            }
+    
+            &::placeholder {
+                font-weight: bold;
+            }   
         }
-        p{
-            font-size: 1.3rem;
+
+        &-submit-btn {
+            background: $mint-template;
+            color: white;
+            margin-top: 1.4rem;
         }
     }
 }
@@ -102,8 +86,20 @@
     background-color: inherit;
     margin-left: 12px;
     animation: 0.8s flash;
-    font-family: Lato black;
+    font-family: 'Lato black', Arial, sans-serif;
     font-size: 1.3rem;
+    position: relative;
+
+    &:before {
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        background: inherit;
+        left: -3px;
+        transform: rotate(45deg);
+        border-radius: 2px;
+    }
 }
 
 @keyframes flash {

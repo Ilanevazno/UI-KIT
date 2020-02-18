@@ -1,14 +1,13 @@
-.form__container
-    mixin formMessage(formName, NameField, emailField, messageField)
-        form(id="message__form" class='message__form-container '+ formName)
-            .message__fields
-                input(type="text" id= NameField name= NameField class="message__name message__form-item "+ NameField placeholder="Your Name")
-                label(for= NameField class="field-status")
-            .message__fields
-                input(type="email" id= emailField name= emailField class="message__email message__form-item "+ emailField placeholder="Your Email")
-                label(for= emailField class="field-status")
-            .message__fields
-                textarea(id= messageField class="message__form-item message__form-textarea "+ messageField placeholder="Your Message")
-            +button('mint', 'message__button-submit', 'Submit')
+mixin formMessage(formName, NameField, emailField, messageField)
+    form(id="message__form" class='message__form-container '+ formName)
+        .message__form-fields
+            input(type="text" id= NameField name= NameField class="message__name message__form-item "+ NameField placeholder="Your Name")
+            label(for= NameField class="field-status")
+        .message__form-fields
+            input(type="email" id= emailField name= emailField class="message__email message__form-item "+ emailField placeholder="Your Email")
+            label(for= emailField class="field-status")
+        .message__form-fields
+            textarea(id= messageField class="message__form-item message__form-textarea "+ messageField placeholder="Your Message")
+        +button({theme: 'mint', size: 'hight', text: 'Submit', className: 'message__btn message__form-submit-btn'})
 
 //первым заполняется имя всей формы, далее класс username, useremail, usermessage
