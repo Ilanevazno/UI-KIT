@@ -68,28 +68,41 @@ body
                         .tick-boxes__container-items
                             +checkbox
                             +checkbox
-        .widgets__user
+        .widgets__user-container
             include components/search/search.pug
             include components/profile/profile.pug
-            .search
+            .widgets__user-search
+                h2.widgets__title Search / drop down 
                 +search('example-search')    
-            .profile
-            -
-                var users = [
-                    {avatar: 'assets/images/profile-man.jpg', name: 'John Smith', job: 'Ux designer', social: { facebook: 'http://facebook.com', twitter: 'http://twitter.com', dbb: 'http://dbb.com'}},
-                    {avatar: 'assets/images/profile-girl.jpg', name: 'Sarah Brown', job: 'Developer', social: { facebook: 'http://facebook.com', twitter: 'http://twitter.com', dbb: 'http://dbb.com'}}
-                ]
-            each user in users
-                +user_profile(user.avatar, user.name, user.job, user.social.facebook, user.social.twitter, user.social.dbb) 
+            .widgets__user-profile
+                h2.widgets__title User profile 
+                -
+                    var users = [
+                        {avatar: 'assets/images/profile-man.jpg', name: 'John Smith', job: 'Ux designer', social: { facebook: 'http://facebook.com', twitter: 'http://twitter.com', dbb: 'http://dbb.com'}},
+                        {avatar: 'assets/images/profile-girl.jpg', name: 'Sarah Brown', job: 'Developer', social: { facebook: 'http://facebook.com', twitter: 'http://twitter.com', dbb: 'http://dbb.com'}}
+                    ]
+                each user in users
+                    .widgets__user-profile-item
+                        +user_profile(user.avatar, user.name, user.job, user.social.facebook, user.social.twitter, user.social.dbb) 
         .widgets__news-events
             include components/News/News.pug
             include components/Events/Events.pug
-            .news
-                h2.widgets__title News
-                +News('divRss')
-            .events
-                h2.widgets__title Events
-                +Events('THIS IS THE TITLE', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Events_example')
+            h2.widgets__title News & Events
+            .news-events-wrapper
+                .news-container
+                    -
+                        var newsList = [
+                            {widgetClass: 'widget-news', picture: 'assets/images/widget-news-picture.jpg', title: 'It’s all going downhill', date: '24  AUGUST  2013', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.'}
+                        ]
+                    each news in newsList
+                        +News(news)
+                .events-container
+                    -
+                        var eventsList = [
+                            {widgetClass: 'widget-events', picture: 'assets/images/widget-events-picture.jpg', date: { day: '24', month: 'Aug' }, title: 'This is the title', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
+                        ]
+                    each event in eventsList
+                        +Events(event)
         .widgets__location
             include components/location/location.pug
             h2.widgets__title Location

@@ -8,11 +8,20 @@
 }
 
 @font-face{
-    font-family: 'Lato light';
+    font-family: 'Lato Light';
     src: url('./lato-light.woff') format('woff'),
     url('./lato-light.ttf') format('ttf'),
     url('./lato-light.svg') format('svg');
-    font-weight: normal;
+    font-weight: light;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Lato Regular';
+    src: url('./lato-regular.woff') format('woff'),
+    url('./lato-regular.ttf') format('ttf'),
+    url('./lato-regular.svg') format('svg');
+    font-weight: light;
     font-style: normal;
 }
 

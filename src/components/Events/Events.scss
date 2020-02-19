@@ -1,99 +1,83 @@
-.widget-events {
-    width: 35.2rem;
-    height: 25.8rem;
-    background-color: $mint-template;
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    border-radius: 4px;
-    color: white;
-    font-family: Lato regular;
-    font-size: 1.499rem;
-    word-spacing: 0rem;
-
-    &__picture {
-        width: 33%;
-    }
-
-    &__information {
-        width: 67%;
-        box-sizing: border-box;
-        background-color: $mint-template;
-    }
-
-    &__information-wrap {
-        box-sizing: border-box;
+@mixin widget-events ($className, $width: 33.8rem, $height: 24.5rem) {
+    #{$className} {
+        width: $width;
+        height: $height;
+        background: $mint-template;
         display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        padding-left: 2.6rem;
-        padding-right: 20px;
-        height: 100%;
-        padding-bottom: 50px;
 
-        h2,
-        h3,
-        p {
+        &__picture {
+            width: 33%;
+            background-size: cover;
+        }
+
+        &__information {
+            width: 53%;
+            margin: 0 auto;
+        }
+        
+        &__date {
+            font-family: 'Lato Light', Arial, sans-serif;
+            font-size: 8rem;
+            color: $white;
+            margin: 8% 0 0 0;
+
+            &-title {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        &__month {
+            font-family: 'Lato Light', Arial, sans-serif;
+            font-size: 3.5rem;
+            color: $white;
             margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        h2 {
-            font-family: Lato black;
-            font-size: 1.67rem;
-            word-spacing: normal;
-            color: white;
-            height: 37px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-        }
-    }
-
-    &__date-title {
-        display: flex;
-        font-family: Lato light;
-
-        p:nth-child(1) {
-            font-size: 9.5rem;
             display: flex;
             align-items: flex-end;
+            padding: 7%;
         }
 
-        p:nth-child(2) {
-            font-size: 4.2rem;
+        &__event {
+            &-title {
+                font-family: 'Lato Black', Arial, sans-serif;
+                color: white;
+                font-size: 1.6rem;
+                text-transform: uppercase;
+                margin: 2% 0 0 0;
+            }
+
+            &-text {
+                font-family: 'Lato Regular', Arial, sans-serif;
+                font-size: 1.43rem;
+                margin: 2% 0 0 0;
+                color: $white;
+            }
+        }
+
+        &__btn-add {
+            background: $white;
             display: flex;
-            align-items: flex-end;
-            padding-bottom: 10px;
-        }
-    }
+            justify-content: center;
+            margin: 9% auto 0 auto;
+            width: 86%;
+            height: 3rem;
+            font-size: 1.1rem;
+            letter-spacing: 0.15rem;
+            border-radius: 8px;
 
-    &__add-event {
-        width: 45%;
-        height: 11%;
-        background-color: white;
-        position: absolute;
-        bottom: 12%;
-        left: 44%;
-        border: none;
-        outline: none;
-        box-shadow: 0px 6px 2px -1px rgba(55,146,133,1);
-        border-radius: 4px;
-        cursor: pointer;
+            &:hover {
+                transform: translate(-3px, -3px);
+                box-shadow: 4px 5px 1px -1px #3d9589;
+                background: $white;
+                color: $mint-template;
+            }
 
-        &:active {
-            transform: scale(0.9)
-        }
-
-        p {
-            color: #43ac9d;
-            font-weight: bold;
-            font-family: lato black;
-            word-spacing: 0rem;
-            font-size: 1.4rem;
-            text-transform: uppercase;
+            &:active {
+                transform: translate(0, 0);
+                box-shadow: 0px 3.5px 1px -1px #3d9589;
+            }
         }
     }
 }
+
+@include widget-events('.widget-events')

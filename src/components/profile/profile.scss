@@ -1,18 +1,20 @@
 .user-profile{
+    width: 100%;
     display: flex;
+    justify-content: flex-end;
 
     &:hover svg {
         fill: darken($gray-template, 45%);
     }
 
     &__picture {
-        height: 10.5rem;
-        width: 10.5rem;
+        height: 9.5rem;
+        width: 9.5rem;
         background-color: $gray-template;
         border-radius: 50%;
         position: relative;
         overflow: hidden;
-        border: 5px solid $gray-template;
+        border: 6px solid darken($gray-template, 3);
         cursor: pointer;
 
         img {
@@ -22,8 +24,8 @@
     }
 
     &__info {
-        width: 45%;
-        height: 11.4rem;
+        width: 19.1rem;
+        height: 11rem;
         background-color:$mint-template;
         border-radius: 15px;
         display: flex;
@@ -34,6 +36,7 @@
         padding-bottom: 1.2rem;
         position: relative;
         cursor: pointer;
+        margin-left: 4%;
 
         &:before {
             content: "";
@@ -48,12 +51,8 @@
             transform: rotate(220deg);
         }
 
-        h2 {
-
-        }
-
         h3 {
-            font-family: lato black;
+            font-family: 'Lato black', Arial, sans-serif;
             font-size: 1.45rem;
             color: white;
         }
@@ -68,7 +67,7 @@
             font-weight: normal;
             color: white;
             font-size: 2.1rem;
-            font-family: lato regular;
+            font-family: 'Lato Regular', Arial, sans-serif;
             padding-top: 1rem;
             text-transform: none;
             word-spacing: 0.1rem;
@@ -116,15 +115,10 @@
 
     &:hover > .user-profile__info {
         background-color: $gray-template;
-        border-radius: 0;
     }
 
     &:hover > .user-profile__info:before {
         display: none;
-    }
-
-    &:hover > .user-profile__picture {
-        border-radius: 0;
     }
 
     &:hover .user-profile__info-name {
