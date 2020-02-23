@@ -193,4 +193,12 @@ body {
             justify-content: space-between;
         }
     }
+
+    &__location {
+        margin-top: 5.5rem;
+
+        .widgets__title {
+            margin-bottom: 3.4rem;
+        }
+    }
 }

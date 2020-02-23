@@ -1,3 +1,10 @@
-<script src="https://api-maps.yandex.ru/2.1/?apikey=79b72ac1-283a-4e55-aae5-b240c31c0b17&lang=ru_RU" type="text/javascript"></script>
-mixin location(mapClass)
-    div(id="map" class= ''+mapClass)
+mixin location({mapClass, welcomeText, address})
+    div(id="map" class='location '+mapClass)
+        .location__overlay
+            .location__overlay-text-wrapper
+                p.location__overlay-welcome-text= welcomeText
+                p.location__overlay-address-text= address
+            .location__overlay-controls-wrapper
+                .location__overlay-controls-container
+                    button.location__overlay-controls.location__overlay-btn-set-address.js-overlay-btn-set-address
+                    button.location__overlay-controls.location__overlay-btn-find-marker.js-overlay-btn-find-marker

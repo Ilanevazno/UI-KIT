@@ -106,7 +106,7 @@ body
         .widgets__location
             include components/location/location.pug
             h2.widgets__title Location
-            +location('class')
+            +location({className: 'example-location', welcomeText: 'Meet us!', address: '1259  CALIFORNIA ST San Francisco, CA' })
         .widgets__calendar-with-messaging
             include components/calendar/calendar.pug
             include components/messaging/messaging.pug

@@ -1,47 +1,78 @@
 #map{
     width: 100%;
-    height: 400px;
+    height: 380px;
 }
 
-.mark-circle{
-    width: 12px;
-    height: 12px;
-    border: 1px solid white;
-    border-radius: 50%;
-    background-color: white;
-}
+.location {
 
-.control {
-    &__panel {
+    &__overlay {
         width: 100%;
+        height: 8rem;
         position: absolute;
-        bottom: -390px;
-        left: 0;
-        height: 8.7rem;
-        background-color: $orange-template;
+        bottom: 0;
+        background: $orange-template;
         display: flex;
         align-items: center;
+        padding: 0 3% 0 5%;
+        box-sizing: border-box;
+        z-index: 10;
 
-        &-title {
-            color: white;
-            padding-left: 4.5%;
-            font-family: Lato light;
-            font-size: 2.8vw;
-        }
-
-        &-address {
-            font-size: 21px;
-            width: 250px;
-            word-spacing: 4px;
-            letter-spacing: 2px;
-            line-height: 22px;
-            color: white;
+        &-text-wrapper {
             display: flex;
             align-items: center;
-            padding-left: 4.3%;
-            padding-bottom: 1%;
-            font-family: lato black;
+            justify-content: space-between;
+            height: 100%;
+            width: 49%;
+        }
+
+        &-welcome-text {
+            font-family: 'Lato light', Arial, sans-serif;
+            color: $white;
+            font-size: 3.4rem;
+        }
+
+        &-address-text {
+            font-family: 'Lato black', Arial, sans-serif;
+            color: $white;
+            font-size: 1.55rem;
+            width: 185px;
             text-transform: uppercase;
+            padding-left: 4.5%;
+            line-height: 21px;
+        }
+
+        &-controls {
+            padding: 0;
+            border: none;
+            outline: none;
+            background: none;
+            width: 33px;
+            height: 33px;
+            cursor: pointer;
+
+            &-wrapper {
+                display: flex;
+                height: 100%;
+                width: 50%;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            &-container {
+                width: 25%;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        &-btn-set-address {
+            background: url('../../assets/images/location.png') no-repeat;
+            background-size: contain;
+        }
+
+        &-btn-find-marker {
+            background: url('../../assets/images/pin.png') no-repeat;
+            background-size: contain;
         }
     }
 }
