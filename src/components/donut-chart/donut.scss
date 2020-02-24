@@ -1,7 +1,11 @@
 .donut-chart {
-  height: 11rem;
+  height: 140px;
 
   svg {
     width: 100%;
+  }
+
+  .canvasjs-chart-credit {
+    display: none;  
   }
 }

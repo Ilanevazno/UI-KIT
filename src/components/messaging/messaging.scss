@@ -1,7 +1,7 @@
 .messaging {
     &__widget {
         background: $gray-template;
-        width: 290px;
+        width: 33.7rem;
         border-radius: 3px;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
@@ -9,25 +9,25 @@
 
     &__header {
         background: $mint-template;
-        box-shadow: inset 0px -40px 0px -8px darken($mint-template, 5%);
+        box-shadow: inset 0 -5rem 0 -1rem darken($mint-template, 5%);
         position: relative;
         border-radius: inherit;
     }
 
     &__interlocutor-name {
         text-align: center;
-        font-family: 'SourceSansPro light', Arial, sans-serif;
-        font-size: 34px;
+        font-family: 'Source Sans Pro', Arial, sans-serif;
+        font-size: 3.7rem;
         color: $white;
         margin: 0;
-        padding: 2rem 0 5rem 0;
+        padding: 2rem 0 7rem 0;
     }
 
     &__interlocutor-picture {
-        height: 85px;
-        width: 85px;
+        height: 10rem;
+        width: 10rem;
         margin: 0 auto;
-        border: 2px solid darken($gray-template, 5);
+        border: 6px solid darken($gray-template, 5);
         border-radius: 50%;
         overflow: hidden;
         position: absolute;
@@ -39,8 +39,8 @@
     }
 
     &__dialog-button {
-        width: 30px;
-        height: 30px;
+        width: 5rem;
+        height: 4rem;
         border: none;
         outline: none;
         cursor: pointer;
@@ -52,7 +52,7 @@
     }
 
     &__wrap {
-        width: 87%;
+        width: 84%;
         margin: 0 auto;
     }
 
@@ -60,16 +60,17 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 5.1rem;
+        height: 7rem;
     }
 
     &__textarea {
         resize: none;
         width: 100%;
         box-sizing: border-box;
-        padding: 1rem;
+        padding: 2rem;
         border-radius: 5px;
         font-family: 'Lato bold', Arial, sans-serif;
+        font-size: 1.6rem;
     }
 
     &__message-to {
@@ -80,8 +81,9 @@
     &__message-from {
         background: darken($gray-template, 8%);
         border: 2px solid $white;
-        margin-top: 1rem;
-        min-height: 6.7rem;
+        margin-top: 2rem;
+        min-height: 10rem;
+        outline: none;
     }
 
     &__reply-button {
@@ -92,5 +94,12 @@
         font-family: 'Lato black', Arial, sans-serif;
         margin-top: 1rem;
         height: 2.6rem;
+    }
+
+    &__reply_message {
+        width: 100%;
+        margin-top: 1.6rem;
+        background: $mint-template;
+        color: white;
     }
 }

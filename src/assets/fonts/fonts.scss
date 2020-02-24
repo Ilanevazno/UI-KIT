@@ -17,6 +17,15 @@
 }
 
 @font-face{
+    font-family: 'Lato Bold';
+    src: url('./lato-bold.woff') format('woff'),
+    url('./lato-bold.ttf') format('ttf'),
+    url('./lato-bold.svg') format('svg');
+    font-weight: light;
+    font-style: normal;
+}
+
+@font-face{
     font-family: 'Lato Regular';
     src: url('./lato-regular.woff') format('woff'),
     url('./lato-regular.ttf') format('ttf'),

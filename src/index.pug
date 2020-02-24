@@ -32,6 +32,7 @@ body
             .widgets__pie-container
                 .widgets__pie-charts
                     include components/percentages-chart/percentages.pug
+                    include components/donut-chart/donut.pug
                     +pieChart('0')
                     +pieChart('38')
                     +pieChart('62')
@@ -107,16 +108,17 @@ body
             include components/location/location.pug
             h2.widgets__title Location
             +location({className: 'example-location', welcomeText: 'Meet us!', address: '1259  CALIFORNIA ST San Francisco, CA' })
-        .widgets__calendar-with-messaging
+        .widgets__calendar-and-messaging
             include components/calendar/calendar.pug
             include components/messaging/messaging.pug
-            .calendar
-                h2.widgets__title Calendar
-                +calendar('example-calendar')
-            .messaging
-                h2.widgets__title Messaging
-                +messaging('assets/images/profile-girl.jpg', 'Sarah Brown', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'example-messaging')
+            .widgets__calendar-and-messaging-container
+                .widgets__calendar-container
+                    h2.widgets__title Calendar
+                    +calendar('example-calendar')
+                .widgets__messaging-container
+                    h2.widgets__title Messaging
+                    +messaging('assets/images/profile-girl.jpg', 'Sarah Brown', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'example-messaging')
         .widgets__video
             include components/video/video.pug
             h2.widgets__title Video
-            +videoPlayer('src/assets/video/New-zeland.mp4','example')
+            +videoPlayer('src/assets/video/New-zeland.mp4','example-video')

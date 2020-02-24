@@ -1,0 +1,29 @@
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    html {
+        font-size: 6px;
+    }
+
+    .widgets {
+        &__pie {
+            &-container {
+                flex-direction: column;
+            }
+
+            &-charts {
+                justify-content: center;
+            }
+        }
+
+        &__donut {
+            &-charts {
+                width: 100%;
+            }
+        }
+    }
+}

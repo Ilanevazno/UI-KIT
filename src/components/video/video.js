@@ -1,50 +1,69 @@
 import './video.scss';
 
-$(document).ready(function(){
-    let videoContainer = $('.video-player__container');
-    let video = $('.video-player__screen');
-    let progress = $('.video-player__progress');
-    
-    $(".video-player__screen").on(
-        "timeupdate", 
-        function(event){
-          onTrackedVideoFrame(this.currentTime, this.duration);
-        });
-
-        function onTrackedVideoFrame(currentTime, duration){
-            let c = video[0].currentTime;
-            let d = video[0].duration;
-            progress[0].value = 100 * c / d;
+class Video {
+    constructor (videoSrc, selector) {
+        this.$videoContainer = $(selector);
+        this.$videoScreen = this.$videoContainer.find('.video-player__screen');
+        this.$videoProgress = this.$videoContainer.find('.video-player__progress')
+        this.controls = {
+            $buttonPlay: this.$videoContainer.find('.video-player__play'),
+            $buttonPause: this.$videoContainer.find('.video-player__pause'),
+            $buttonFullScreen: this.$videoContainer.find('.video-player__fullscreen')
         }
+    }
 
-    progress.click(function(videoRewind){
-        $('.videoplayer__play-btn').addClass('hidden');
-        $('.videoplayer__pause-btn').removeClass('hidden');
+    render () {
         
-        let w = this.offsetWidth;
+    }
+
+    bootstrap () {
+        $.merge(this.controls.$buttonPlay, this.controls.$buttonPause).on('click', this.toggleVideoState.bind(this));
+        this.$videoScreen.on('timeupdate', function(event) { this.runningProgressBar(this.$videoScreen[0].currentTime, this.$videoScreen[0].duration) }.bind(this));
+        this.controls.$buttonFullScreen.on('click', this.requestFullScreen.bind(this));
+        this.$videoProgress.on('click', this.setVideoState.bind(this));
+    }
+
+    init () {
+        this.render();
+        this.bootstrap();
+    }
+
+    toggleVideoState () {
+        this.controls.$buttonPlay.toggleClass('video-player__hidden-item');
+
+        if (this.$videoScreen[0].paused) {
+            this.$videoScreen[0].play();
+        } else {
+            this.$videoScreen[0].pause();
+        }
+    }
+
+    runningProgressBar (currentTime, duration) {
+        this.$videoProgress[0].value = 100 * currentTime / duration;
+    }
+
+    setVideoState (e) {
+        console.log(this);
+        let w = this.$videoProgress.width();
         let o = event.offsetX;
-        let c = video[0].currentTime;
-        let d = video[0].duration;
+        let c = this.$videoScreen[0].currentTime;
+        let d = this.$videoScreen[0].duration;
         
-        progress[0].value = 100 * o / w;
-        video[0].pause();
-        video[0].currentTime = d * (o/w);
-        video[0].play();
-    })
+        this.$videoProgress[0].value = 100 * o / w;
+        this.$videoScreen[0].pause();
+        this.$videoScreen[0].currentTime = d * (o/w);
+        this.$videoScreen[0].play();
+    }
 
-    videoContainer.find('.video-player__play').on('click', function(){
-        video[0].play();
-        $(this).hide();
-        $(this).parent().find('.video-player__pause').show();
-    });
+    requestFullScreen () {
+        this.$videoScreen[0].requestFullscreen();
+    }
+}
 
-    videoContainer.find('.video-player__pause').on('click', function(){
-        video[0].pause();
-        $(this).hide();
-        $(this).parent().find('.video-player__play').show();
-    });
+const videoObj = {
+    src: 'src/assets/video/new-zeland.mp4',
+    selector: '.video-player__container'
+}
 
-    videoContainer.find('.video-player__fullscreen').on('click', function() {
-        video[0].requestFullscreen();
-    })
-})
+const video = new Video (videoObj.src, videoObj.selector);
+video.init();

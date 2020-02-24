@@ -1,6 +1,10 @@
 .video-player {
     width: 100%;
 
+    &__hidden-item {
+        display: none;
+    }
+
     &__container {
         position: relative;
     }
@@ -12,12 +16,39 @@
 
     &__controls {
         position: absolute;
-        bottom: 4px;
-        width: 100%;
+        bottom: 0.21rem;
+        width: 100.1%;
         display: flex;
         align-items: center;
         justify-content: space-between;
         height: 6rem;
+        cursor: pointer;
+
+        progress {
+            border:0;
+            width: 100%;
+            height: 0.6rem;
+            border-radius: 5px;
+            background: $white;
+            cursor: pointer;
+
+            &::-webkit-progress-bar {
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+                background: $white;
+            }
+
+            &::-webkit-progress-value {
+                border-radius: 5px;
+                background: $orange-template;
+            }
+
+            &::-moz-progress-bar {
+                border-radius: 5px;
+                background: $orange-template;
+            }
+        }
     }
 
     &__control {
@@ -27,17 +58,18 @@
     }
 
     &__play {
-        flex-basis: 8%;
+        flex-basis: 10%;
+        cursor: pointer;
 
         svg {
             fill: white;
-            width: 20px;
-            height: 20px;
+            width: 1.4rem;
+            height: 1.4rem;
         }
     }
 
     &__pause {
-        display: none;
+        cursor: pointer;
         flex-basis: 8%;
     }
 
@@ -47,9 +79,11 @@
     }
 
     &__fullscreen {
-        height: 6rem;
-        background: $orange-template;
+        height: 5.7rem;
+        background: $orange-template url('../../assets/images/video-fullscreen-btn.png') 50% 50% no-repeat;
+        background-size: 44%;
         flex-basis: 6rem;
-        margin-left: 40;
+        cursor: pointer;
+        box-sizing: border-box;
     }
 }
