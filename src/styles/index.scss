@@ -41,7 +41,7 @@ body {
 
         &_enabled-buttons,
         &_disabled-buttons {
-            width: 30%;
+            width: 50%;
             display: flex;
             justify-content: space-between;
         }
@@ -80,13 +80,16 @@ body {
     }
 
     &__sliders {
-        margin-top: 4rem;
+        margin-top: 3rem;
+
+        .widgets__title {
+            margin-bottom: 5.5rem;
+        }
 
         &-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 5rem;
         }
     }
 
@@ -132,7 +135,7 @@ body {
                     &-items {
                         display: flex;
                         justify-content: space-between;
-                        width: 45%;
+                        width: 15.5rem;
                     }
                 }
             }
@@ -152,7 +155,7 @@ body {
                     &-items {
                         display: flex;
                         justify-content: space-between;
-                        width: 20%;
+                        width: 8rem;
                     }
                 }
             }

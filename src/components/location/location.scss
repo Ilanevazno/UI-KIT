@@ -22,13 +22,14 @@
             align-items: center;
             justify-content: space-between;
             height: 100%;
-            width: 49%;
+            min-width: 49%;
         }
 
         &-welcome-text {
             font-family: 'Lato light', Arial, sans-serif;
             color: $white;
             font-size: 3.4rem;
+            white-space: nowrap;
         }
 
         &-address-text {
@@ -38,7 +39,7 @@
             width: 185px;
             text-transform: uppercase;
             padding-left: 4.5%;
-            line-height: 21px;
+            line-height: 1.7rem;
         }
 
         &-controls {
@@ -59,9 +60,15 @@
             }
 
             &-container {
-                width: 25%;
+                width: 8rem;
                 display: flex;
                 justify-content: space-between;
+                height: 100%;
+                align-items: center;
+
+                @media screen and (max-width: 900px) {
+                    width: 14rem;
+                }
             }
         }
 
