@@ -1,6 +1,5 @@
 import '../../vendor/jRange/jquery.range-min';
 import '../../vendor/jRange/jquery.range.css'
-import './slider.scss';
 
 class Slider {
 	constructor (selector, settings) {

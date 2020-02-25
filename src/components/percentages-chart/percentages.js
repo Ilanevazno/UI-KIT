@@ -1,6 +1,3 @@
-import './percentages.scss'
-import $ from 'jquery'
-
 class Percentages {
   constructor (selector) {
     this.$htmlContainer = $(selector);

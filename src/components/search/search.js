@@ -1,5 +1,3 @@
-import './search.scss';
-
 class Search {
     constructor (selector) {
       this.$htmlElement = $(selector);

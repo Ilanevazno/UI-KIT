@@ -1,5 +1,3 @@
-import './message.scss';
-
 class MessageForm {
   constructor (selector) {
     this.$htmlContainer = $('.form__user-form#message__form');

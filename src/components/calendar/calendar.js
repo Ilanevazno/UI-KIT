@@ -1,4 +1,3 @@
-import './calendar.scss';
 import 'air-datepicker';
 
 class Calendar {

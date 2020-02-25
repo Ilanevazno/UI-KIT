@@ -1,7 +1,3 @@
-import './buttons.scss'
-import $ from 'jquery';
-import jQuery from 'jquery';
-
 class Button {
   constructor (selector) {
     this.$rippleHtmlButton = $(selector);

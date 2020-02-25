@@ -1,6 +1,3 @@
-
-import './toggles.scss'
-
 class Toggle {
     constructor (selector) {
       this.$toggleHtml = $(selector);

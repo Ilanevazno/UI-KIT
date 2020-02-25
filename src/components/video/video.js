@@ -1,5 +1,3 @@
-import './video.scss';
-
 class Video {
     constructor (videoSrc, selector) {
         this.$videoContainer = $(selector);

@@ -54,7 +54,7 @@
             }
         }
 
-        &__btn-add {
+        #{$className} &__btn-add {
             background: $white;
             display: flex;
             justify-content: center;

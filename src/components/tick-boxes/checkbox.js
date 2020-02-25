@@ -1,5 +1,3 @@
-import './checkbox.scss';
-
 class TickBox {
     constructor (selector) {
       this.$tickBoxHtml = $(selector);

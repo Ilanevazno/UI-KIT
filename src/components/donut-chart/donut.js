@@ -1,5 +1,3 @@
-import $ from 'jquery';
-import './donut.scss';
 import '../../vendor/canvas2d/canvasjs.min';
 
 const chart = new CanvasJS.Chart("donut-chart", {

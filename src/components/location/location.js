@@ -1,4 +1,3 @@
-import './location.scss';
 import 'leaflet';
 import 'leaflet-css';
 
@@ -6,6 +5,7 @@ class Location {
     constructor (coords) {
         this.mymap = L.map('map').setView(coords, 13);
         this.coords = coords;
+        this.mapIcon = require('../../assets/images/marker-icon.png');
     }
 
     bindActions () {
@@ -27,7 +27,7 @@ class Location {
         if (requestLatitude && requestLongitude) {
             this.mymap.setView([requestLatitude, requestLongitude],13);
             const placeMark = L.icon({
-                iconUrl: 'src/assets/images/marker-icon.png',
+                iconUrl: this.mapIcon,
                 iconSize: [40, 56],
                 iconAnchor: [22, 94],
                 popupAnchor: [-3, -76],
@@ -53,7 +53,7 @@ class Location {
         
         
         var placeMark = L.icon({
-            iconUrl: 'src/assets/images/marker-icon.png',
+            iconUrl: this.mapIcon,
             iconSize: [40, 56],
             iconAnchor: [22, 94],
             popupAnchor: [-3, -76],

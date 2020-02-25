@@ -1,5 +1,3 @@
-import './stages.scss';
-
 class Stages {
     constructor (selector) {
         this.$htmlContainer = $(selector);
