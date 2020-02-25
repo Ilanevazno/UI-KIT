@@ -8,6 +8,9 @@ html
 head
     title ui-kit
 body
+    .page__preloader.js-page-preloader
+        svg(class="page__preloader-spinner" width="100" height="100" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg")
+            circle(class="page__preloader-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30")
     .widgets
         .widgets__buttons
             include components/buttons/buttons.pug
@@ -22,11 +25,11 @@ body
             h2.widgets__title Arrow buttons
             .widgets__arrows-container
                 .widgets__arrows_enabled-buttons
-                    +arrow('arrow-left', false, 'first-arrow-enabled')
-                    +arrow('arrow-right', false, 'second-arrow-enabled')
+                    +arrow({ direction: 'arrow-left', isDisable: false, className: 'first-arrow-enabled' })
+                    +arrow({ direction: 'arrow-right', isDisable: false, className: 'second-arrow-enabled' })
                 .widgets__arrows_disabled-buttons
-                    +arrow('arrow-left', true, 'first-arrow-disabled')
-                    +arrow('arrow-right', true, 'second-arrow-disabled')
+                    +arrow({ direction: 'arrow-left', isDisable: true, className: 'first-arrow-disabled' })
+                    +arrow({ direction: 'arrow-right', isDisable: true, className: 'second-arrow-disabled' })
         .widgets__pie
             h2.widgets__title Percentages / pie chart
             .widgets__pie-container
@@ -52,23 +55,23 @@ body
             +stages('5', 'example-stages')
         .widgets__form-elements
             include components/message-form/message.pug
-            include components/toggles-form/toggles/toggles.pug
-            include components/toggles-form/tick-boxes/checkbox.pug
+            include components/toggles/toggles.pug
+            include components/tick-boxes/checkbox.pug
             h2.widgets__title Form elements
             .widgets__form-elements-container
                 .widgets__form-elements-message
-                    +formMessage('form__user-form', 'example__userName', 'example__userEmail', 'example__userMessage')
+                    +formMessage({formName: 'form__user-form', NameField: 'example__userName', emailField: 'example__userEmail', messageField: 'example__userMessage'})
                 .widgets__form-elements-toggles
                     .toggles__container
                         h2.widgets__title Toggles
                         .toggles__container-items
-                            +toggles
-                            +toggles
+                            +toggles('toggle-first-option')
+                            +toggles('toggle-second-option')
                     .tick-boxes__container
                         h2.widgets__title Tick boxes
                         .tick-boxes__container-items
-                            +checkbox
-                            +checkbox
+                            +checkbox('tickbox-first-option')
+                            +checkbox('tickbox-second-option')
         .widgets__user-container
             include components/search/search.pug
             include components/profile/profile.pug
@@ -79,8 +82,8 @@ body
                 h2.widgets__title User profile 
                 -
                     var users = [
-                        {avatar: 'assets/images/profile-man.jpg', name: 'John Smith', job: 'Ux designer', social: { facebook: 'http://facebook.com', twitter: 'http://twitter.com', dbb: 'http://dbb.com'}},
-                        {avatar: 'assets/images/profile-girl.jpg', name: 'Sarah Brown', job: 'Developer', social: { facebook: 'http://facebook.com', twitter: 'http://twitter.com', dbb: 'http://dbb.com'}}
+                        {avatar: require('./assets/images/profile-man.jpg'), name: 'John Smith', job: 'Ux designer', social: { facebook: 'http://facebook.com', twitter: 'http://twitter.com', dbb: 'http://dbb.com'}},
+                        {avatar: require('./assets/images/profile-girl.jpg'), name: 'Sarah Brown', job: 'Developer', social: { facebook: 'http://facebook.com', twitter: 'http://twitter.com', dbb: 'http://dbb.com'}}
                     ]
                 each user in users
                     .widgets__user-profile-item
@@ -93,14 +96,14 @@ body
                 .news-container
                     -
                         var newsList = [
-                            {widgetClass: 'widget-news', picture: 'assets/images/widget-news-picture.jpg', title: 'It’s all going downhill', date: '24  AUGUST  2013', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.'}
+                            {widgetClass: 'widget-news', picture: require('./assets/images/widget-news-picture.jpg'), title: 'It’s all going downhill', date: '24  AUGUST  2013', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.'}
                         ]
                     each news in newsList
                         +News(news)
                 .events-container
                     -
                         var eventsList = [
-                            {widgetClass: 'widget-events', picture: 'assets/images/widget-events-picture.jpg', date: { day: '24', month: 'Aug' }, title: 'This is the title', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
+                            {widgetClass: 'widget-events', picture: require("./assets/images/widget-events-picture.jpg"), date: { day: '24', month: 'Aug' }, title: 'This is the title', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
                         ]
                     each event in eventsList
                         +Events(event)
@@ -117,8 +120,8 @@ body
                     +calendar('example-calendar')
                 .widgets__messaging-container
                     h2.widgets__title Messaging
-                    +messaging('assets/images/profile-girl.jpg', 'Sarah Brown', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'example-messaging')
+                    +messaging(require('./assets/images/profile-girl.jpg'), 'Sarah Brown', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'example-messaging')
         .widgets__video
             include components/video/video.pug
             h2.widgets__title Video
-            +videoPlayer('src/assets/video/New-zeland.mp4','example-video')
+            +videoPlayer({src: require('./assets/video/new-zeland.mp4'), className: 'example-video'})

@@ -1,6 +1,6 @@
 mixin Events(event)
     div(class= event.widgetClass)
-        div(class= event.widgetClass + '__picture' style=`background-image: url(src/${event.picture})`)
+        div(class= event.widgetClass + '__picture' style=`background-image: url(${event.picture})`)
         div(class= event.widgetClass + "__information")
             div(class= event.widgetClass + "__information-wrapper")
                 div(class= event.widgetClass + "__date-title")

@@ -39,7 +39,7 @@ class Slider {
 	}
 }
 
-let sliderWidth = window.innerWidth > 960 ? 360 : 230;
+let sliderWidth = window.innerWidth > 400 ? 360 : 230;
  
 
 const orangeSlider = new Slider ('.first-slider', {

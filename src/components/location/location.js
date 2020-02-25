@@ -8,7 +8,7 @@ class Location {
         this.coords = coords;
     }
 
-    bootstrap () {
+    bindActions () {
         const $mapContainer = $(this.mymap._container);
         const $showCurrentPosition = $mapContainer.find('.js-overlay-btn-set-address');
         const $findMarker = $mapContainer.find('.js-overlay-btn-find-marker');
@@ -64,11 +64,11 @@ class Location {
         L.marker([37.791362, -122.414720], {icon: placeMark}).addTo(this.mymap);
     }
 
-    init () {
+    bootstrap () {
         this.render();
-        this.bootstrap();
+        this.bindActions();
     }
 }
 
 const widgetLocation = new Location([37.787509, -122.444838]);
-widgetLocation.init();
+widgetLocation.bootstrap();

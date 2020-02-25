@@ -36,27 +36,18 @@ class Calendar {
     });
   }
 
-  bootstrap () {
+  bindActions () {
     $(document).on('DOMContentLoaded', this.prepareCalendar.bind(this))
-    this.$htmlContainer.find('.datepicker--nav-action').on('click', this.disableTitle.bind(this));
   }
 
-  init () {
+  bootstrap () {
     this.render();
-    this.bootstrap();
-  }
-
-  disableTitle () {
-    console.log(this.$htmlContainer)
+    this.bindActions();
   }
 
   prepareCalendar () {
     //get current day
     const $selectedDay = this.$htmlContainer.find(('.datepicker--cell-day.-current-'));
-
-    // disable title month select
-    console.log(this.$htmlContainer)
-    // this.$htmlContainer.find('.datepicker--nav-title').addClass('-disabled-')
 
     //create current month label
     const currentDay = $('<div/>', {
@@ -68,4 +59,4 @@ class Calendar {
 }
 
 const datePicker = new Calendar('#datepicker');
-datePicker.init();
+datePicker.bootstrap();

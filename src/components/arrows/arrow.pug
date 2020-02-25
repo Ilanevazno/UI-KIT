@@ -1,10 +1,3 @@
-mixin arrow(direction, disabled, name)
-    button(class="arrows__button" disabled= disabled, class= ''+name)
+mixin arrow({ direction, isDisable, className })
+    button(class="arrows__button" disabled= isDisable, class= ''+className)
         div(class="arrows__arrow-inner arrows__" +direction)
-
-//- Подсказка:
-
-//- 'true' = disabled
-//- 'false' = enabled
-
-//- 'arrow-left', 'arrow-right' и 'disabled'

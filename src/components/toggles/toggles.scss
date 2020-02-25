@@ -1,4 +1,8 @@
 .toggles {
+    &__hidden-input {
+        display: none;
+    }
+
     &__icon {
         width: 7rem;
         height: 3rem;
@@ -17,7 +21,7 @@
             color: white;
         }
 
-        &--active {
+        &_active {
             background-color: $mint-template;
             cursor: pointer;
 
@@ -32,7 +36,7 @@
             }
         }
 
-        &--active > .toggles__handle {
+        &_active > .toggles__handle {
             left: 65%;
             transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
             cursor: pointer;

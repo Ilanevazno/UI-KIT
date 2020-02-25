@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import './donut.scss';
-import '../../vendor/canvas2d/jquery.canvasjs.min'
+import '../../vendor/canvas2d/canvasjs.min';
 
 const chart = new CanvasJS.Chart("donut-chart", {
 	animationEnabled: true,

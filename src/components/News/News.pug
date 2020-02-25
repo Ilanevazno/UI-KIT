@@ -1,6 +1,6 @@
 mixin News(news)
     div(class= news.widgetClass)
-        div(class= news.widgetClass+ '__picture' style=`background-image: url("src/${news.picture}")`)
+        div(class= news.widgetClass+ '__picture' style=`background-image: url("${news.picture}")`)
         div(class= news.widgetClass+ '__information')
             h3(class= news.widgetClass+ '__title')= news.title
             p(class= news.widgetClass+ '__date')= news.date

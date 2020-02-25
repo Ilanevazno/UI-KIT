@@ -9,6 +9,36 @@ body {
     margin: 0 auto;
 }
 
+.page {
+    &__preloader {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 99999;
+        background: white;
+        top: 0;
+        left: 0;
+        transition: 1s ease-in-out all;
+        opacity: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-spinner {
+            animation: rotator $spinnerDuration linear infinite;
+        }
+
+        &-spinner-path {
+            stroke-dasharray: $spinnerOffset;
+            stroke-dashoffset: 0;
+            transform-origin: center;
+            animation:
+              dash $spinnerDuration ease-in-out infinite, 
+              colors ($spinnerDuration*4) ease-in-out infinite;
+        }
+    }
+}
+
 .widgets {
     &__title {
         text-transform: uppercase;

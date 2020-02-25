@@ -1,41 +1,67 @@
 import './message.scss';
 
-$(document).on("DOMContentLoaded", () => {
-  $('.form__user-form#message__form').on('submit', (e) => {
+class MessageForm {
+  constructor (selector) {
+    this.$htmlContainer = $('.form__user-form#message__form');
+    this.$userNameLabel = this.$htmlContainer.find('.message__name'),
+    this.$userEmailLabel = this.$htmlContainer.find('.message__email');
+  }
+
+  bindActions () {
+    this.$htmlContainer.on('submit', this.submitForm.bind(this));
+  }
+
+  bootstrap () {
+    this.bindActions();
+  }
+
+  submitForm (e) {
     e.preventDefault();
-    const form = e.target,
-          userNameLabel = $(form).find('.message__name'),
-          userEmailLabel = $(form).find('.message__email');
-          
+    
     const data = [
       {
-        label: userNameLabel,
-        match: /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u
+        label: this.$userNameLabel,
+        match: /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u,
+        correct: false
       },
       {
-        label: userEmailLabel,
-        match: /^[0-9a-z-\.]+\@[0-9a-z-]{2,}\.[a-z]{2,}$/i
+        label: this.$userEmailLabel,
+        match: /^[0-9a-z-\.]+\@[0-9a-z-]{2,}\.[a-z]{2,}$/i,
+        correct: false
       }
     ]
 
-    let correctForm = false;
-    
-    const testLabel = (label,regexp) => {
-      label.siblings('.field-status').removeClass('text-success text-error')
 
-      if (regexp.test(label.val())) {
+    const checkedData = data.map(item => {
+      if (this.testLabel(item.label, item.match)) {
+        return {
+          label: item.label,
+          checked: true
+        }
+      } else {
+        return false;
+      }
+    });
+
+    const checkResult = (el, idx, arr) => {
+      return el.checked;
+    }
+    
+    checkedData.every(checkResult) ? alert('Форма успешно отправлена!') : '' // logs here 
+  }
+
+  testLabel (label,regexp) {
+    label.siblings('.field-status').removeClass('text-success text-error')
+    
+    if (regexp.test(label.val())) {
         label.siblings('.field-status').addClass('text-success').text('Thanks!');
-        correctForm = true;
+        return true;
       } else {
         label.siblings('.field-status').addClass('text-error').text('Error');
-        correctForm = false;
+        return false;
       }
-    }
+  }
+}
 
-    data.map(item => {
-      testLabel(item.label, item.match);
-    })
-
-    correctForm ? alert('Форма успешно отправлена!') : false;
-  })
-})
+const messageForm = new MessageForm ('.form__user-form#message__form');
+messageForm.bootstrap();

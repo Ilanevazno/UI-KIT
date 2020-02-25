@@ -27,14 +27,29 @@ module.exports = {
         },]
       },
       {
-        test: /\.(png|jpe?g|gif|mp4)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: './assets/images',
-              publicPath: './assets/images',
+              outputPath: './assets/images/',
+              publicPath: './assets/images/',
+              useRelativePath: true,
+              esModule: false,
+            }
+          },
+        ],
+      },
+      {
+        test: /\.(mp4)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: './assets/video/',
+              publicPath: './assets/video/',
               useRelativePath: true,
               esModule: false,
             }
@@ -43,11 +58,15 @@ module.exports = {
       },
       {
         test: /\.pug$/,
-        use: [
-          "html-loader",
-          "pug-html-loader"
-        ]
-      },
+         use: {
+          loader: 'pug-loader',
+           options: {
+            self: true,
+            pretty: true,
+            root: path.resolve(__dirname, 'src')
+           },
+         },
+       },
       {
         test: /\.(s(a|c)|c)ss$/,
         use: [
@@ -68,7 +87,7 @@ module.exports = {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: ['./src/modules/mixins.scss', './src/modules/variables.scss']
+              resources: ['./src/modules/mixins.scss', './src/modules/variables.scss', './src/modules/keyframes.scss']
             }
           }
         ]
@@ -88,6 +107,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
-    })
+    }),
   ]
 };

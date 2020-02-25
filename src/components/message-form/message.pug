@@ -1,4 +1,4 @@
-mixin formMessage(formName, NameField, emailField, messageField)
+mixin formMessage({formName, NameField, emailField, messageField})
     form(id="message__form" class='message__form-container '+ formName)
         .message__form-fields
             input(type="text" id= NameField name= NameField class="message__name message__form-item "+ NameField placeholder="Your Name")
@@ -9,5 +9,3 @@ mixin formMessage(formName, NameField, emailField, messageField)
         .message__form-fields
             textarea(id= messageField class="message__form-item message__form-textarea "+ messageField placeholder="Your Message")
         +button({theme: 'mint', size: 'hight', text: 'Submit', className: 'message__btn message__form-submit-btn'})
-
-//первым заполняется имя всей формы, далее класс username, useremail, usermessage

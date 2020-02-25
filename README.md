@@ -1,15 +1,32 @@
-# Resume layout
-Homework for fullstack development. Here we make html layout for resume. 
+# UI-Kit
+Beautiful widget pack with using PUG/SCSS/jQuery
 ## Used technologies
 - [x] Pixel perfect
 - [x] Webpack
 - [x] PUG
 - [x] SCSS
 - [x] BEM methodology
+- [x] JavaScript (es6)
 - [x] Webpack
 
+## Widget List
+- Buttons;
+- Arrow buttons;
+- Percentages chart & Pie chart;
+- Slider with 2 themes;
+- Stages;
+- Form elements (form with validate, toggles, tick boxes);
+- Search line with automatically showing options while you type any text;
+- User profile cards;
+- News widget;
+- Events widget;
+- Calendar widget;
+- Messaging widget;
+- Custom video player;
+
+
 # Demo page
-You can enter to [Demo page](https://ilanevazno.github.io/Resume-the-first-lesson/ "Demo page") for looking at this project.
+You can enter to [Demo page](https://ilanevazno.github.io/UI-KIT/ "Demo page") for looking at this project.
 
 ## NPM scripts
 
