@@ -1,15 +1,15 @@
 class Stages {
-    constructor (selector) {
-        this.$htmlContainer = $(selector);
-    }
+  constructor(selector) {
+    this.$htmlContainer = $(selector);
+  }
 
-    render () {
-        this.$htmlContainer.find('li').eq(2).addClass('is-active');
-    }
+  render() {
+    this.$htmlContainer.find('li').eq(2).addClass('is-active');
+  }
 
-    bootstrap () {
-        this.render();
-    }
+  bootstrap() {
+    this.render();
+  }
 }
 
 const stages = new Stages('.example-stages');

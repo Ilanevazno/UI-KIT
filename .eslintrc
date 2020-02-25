@@ -1,0 +1,18 @@
+{
+    "extends": ["airbnb-base"],
+    "globals": {
+      "$": true,
+      "window": true,
+      "document": true,
+      "MouseEvent": true,
+      "TouchEvent": true,
+      "Touch": true,
+      "CanvasJS": true,
+      "L": true
+    },
+    "env": {
+      "commonjs": true,
+      "node": true,
+        "jquery": true
+    },
+  }

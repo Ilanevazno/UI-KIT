@@ -7,7 +7,8 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "watch": "webpack-dev-server --mode development --open",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "eslint": "eslint ./src/components"
   },
   "author": "impulse",
   "license": "MIT",
@@ -20,6 +21,10 @@
     "@babel/preset-env": "7.8.4",
     "babel-loader": "8.0.6",
     "css-loader": "3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.20.1",
     "file-loader": "^5.0.2",
     "gh-pages": "^2.2.0",
     "html-loader": "0.5.5",

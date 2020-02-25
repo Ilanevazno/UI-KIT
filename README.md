@@ -42,3 +42,6 @@ You can enter to [Demo page](https://ilanevazno.github.io/UI-KIT/ "Demo page") f
 #### To deploy
 - ```npm run deploy``` building and deploying project to github pages
 
+#### Eslint
+- ```npm run eslint``` checking all .js files in 'components' folder on esLint with airBnb preset
+

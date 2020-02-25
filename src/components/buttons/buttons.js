@@ -1,18 +1,18 @@
 class Button {
-  constructor (selector) {
+  constructor(selector) {
     this.$rippleHtmlButton = $(selector);
   }
 
-  bindActions () {
+  bindActions() {
     this.$rippleHtmlButton.on('click.ui.ripple', this.startRipple);
     this.$rippleHtmlButton.on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', this.finishRipple);
   }
 
-  init () {
+  init() {
     this.bindActions();
   }
 
-  startRipple (e) {
+  startRipple(e) {
     const $this = $(this);
     const $offset = $this.parent().offset();
     const $circle = $this.find('.js-ripple-circle');
@@ -21,14 +21,14 @@ class Button {
     const y = e.pageY - $offset.top;
 
     $circle.css({
-      top: y + 'px',
-      left: x + 'px'
+      top: `${y}px`,
+      left: `${x}px`,
     });
 
     $this.addClass('is-active');
   }
 
-  finishRipple () {
+  finishRipple() {
     $(this).removeClass('is-active');
   }
 }

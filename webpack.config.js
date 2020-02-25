@@ -1,7 +1,8 @@
 const path = require('path');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
+
 module.exports = {
   output: {
     path: path.join(__dirname, 'build'),
@@ -13,7 +14,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader'
         }
       },
       {
@@ -98,15 +99,15 @@ module.exports = {
     new webpack.ProvidePlugin({
       '$': 'jquery',
       'jQuery': 'jquery',
-      'datepicker': 'air-datepicker'
+      'window.jQuery': 'jquery'
     }),
     new HtmlWebPackPlugin({
-      template: "./src/index.pug",
-      filename: "./index.html"
+      template: './src/index.pug',
+      filename: './index.html'
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
+      filename: '[name].css',
+      chunkFilename: '[id].css'
     }),
   ]
 };

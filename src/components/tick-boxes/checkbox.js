@@ -1,24 +1,24 @@
 class TickBox {
-    constructor (selector) {
-      this.$tickBoxHtml = $(selector);
-    }
-  
-    bindActions () {
-        this.$tickBoxHtml.on('click', this.toggleBox);
-    }
-
-    toggleBox () {
-        if($(this).hasClass('tick__checkbox-icon--active')) {
-            return $(this).removeClass('tick__checkbox-icon--active');
-        } else {
-            return $(this).addClass('tick__checkbox-icon--active');
-        }
-    }
-  
-    bootstrap () {
-      this.bindActions();
-    }
+  constructor(selector) {
+    this.$tickBoxHtml = $(selector);
   }
-  
-  const tickBox = new TickBox('.js-checkbox-icon');
-  tickBox.bootstrap();
+
+  bindActions() {
+    this.$tickBoxHtml.on('click', this.toggleBox);
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  toggleBox(event) {
+    if ($(event.currentTarget).hasClass('tick__checkbox-icon--active')) {
+      return $(event.currentTarget).removeClass('tick__checkbox-icon--active');
+    }
+    return $(event.currentTarget).addClass('tick__checkbox-icon--active');
+  }
+
+  bootstrap() {
+    this.bindActions();
+  }
+}
+
+const tickBox = new TickBox('.js-checkbox-icon');
+tickBox.bootstrap();
