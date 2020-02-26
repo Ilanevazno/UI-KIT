@@ -115,3 +115,210 @@
     }
   }
 }
+
+@mixin calendar ($class, $width: 32.8rem) {
+  #{$class} {
+      width: $width;
+      .datepicker {
+          background-color: $orange-template;
+          position: relative;
+
+          &--current-day {
+              height: 12.7rem;
+              font-family: 'Lato Light', Arial, sans-serif;
+              color: $white;
+              font-size: 9rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+          }
+
+          &--nav {
+              display: flex;
+              justify-content: space-around;
+              color: $white;
+              height: 5rem;
+              // background-color: darken($orange-template, 7);
+              background: #d54c2c;
+
+              &-title {
+                  display: flex;
+                  align-items: center;
+                  font-family: 'Lato Light', Arial, sans-serif;
+                  font-size: 2.6rem;
+                  width: 59%;
+                  justify-content: center;
+              }
+          }
+
+          &--nav-action {
+              width: 1.7rem;
+
+              svg {
+                  width: 100%;
+                  height: 100%;
+                  fill: $white;
+              }
+          }
+
+          &--days-names {
+              background-color: $orange-template;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              color: $white;
+              text-transform: uppercase;
+              height: 3.1rem;
+              font-family: 'Lato black', Arial, sans-serif;
+          }
+
+          &--cells-days {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+              background-color: $gray-template;
+
+              .-other-month- {
+                  color: $white;
+              }
+          }
+
+          &--cell-day {
+              height: 4.53rem;
+              border: 1px solid $white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #868686;
+              cursor: pointer;
+              font-family: 'Source Sans Pro', Arial, sans-serif;
+              font-size: 2.5rem;
+          }
+
+          .-selected-,
+          .-current- {
+              background-color: $orange-template;
+              color: $white;
+          }
+
+          &--buttons {
+              background-color: darken($gray-template, 10%);
+              height: 5.8rem;
+              display: flex;
+              align-items: center;
+              padding: 0 2.5rem;
+          }
+
+          &--button {
+              font-size: 1.7rem;
+              font-family: 'Lato black', Arial, sans-serif;
+              text-transform: uppercase;
+              color: #868686;
+          }
+
+          &--months,
+          &--years {
+              display: none;
+
+              &.active {
+                  display: block;
+              }
+          }
+
+          &--cell-month,
+          &--cell-year {
+              font-family: 'Source Sans Pro', Arial, sans-serif;
+              font-size: 2rem;
+              color: $white;
+              text-align: center;
+              cursor: pointer;
+
+              &:hover {
+                  background: white;
+                  color: $orange-template;
+              }
+          }
+      }
+  }
+}
+
+@mixin widget-events ($className, $width: 33.8rem, $height: 24.5rem) {
+  #{$className} {
+      width: $width;
+      height: $height;
+      background: $mint-template;
+      display: flex;
+
+      &__picture {
+          width: 33%;
+          background-size: cover;
+      }
+
+      &__information {
+          width: 53%;
+          margin: 0 auto;
+      }
+      
+      &__date {
+          font-family: 'Lato Light', Arial, sans-serif;
+          font-size: 8rem;
+          color: $white;
+          margin: 8% 0 0 0;
+
+          &-title {
+              display: flex;
+              justify-content: space-between;
+          }
+      }
+
+      &__month {
+          font-family: 'Lato Light', Arial, sans-serif;
+          font-size: 3.5rem;
+          color: $white;
+          margin: 0;
+          display: flex;
+          align-items: flex-end;
+          padding: 7%;
+      }
+
+      &__event {
+          &-title {
+              font-family: 'Lato Black', Arial, sans-serif;
+              color: white;
+              font-size: 1.6rem;
+              text-transform: uppercase;
+              margin: 2% 0 0 0;
+          }
+
+          &-text {
+              font-family: 'Lato Regular', Arial, sans-serif;
+              font-size: 1.43rem;
+              margin: 2% 0 0 0;
+              color: $white;
+          }
+      }
+
+      #{$className} &__btn-add {
+          background: $white;
+          display: flex;
+          justify-content: center;
+          margin: 9% auto 0 auto;
+          width: 86%;
+          height: 3rem;
+          font-size: 1.1rem;
+          letter-spacing: 0.15rem;
+          border-radius: 8px;
+
+          &:hover {
+              transform: translate(-3px, -3px);
+              box-shadow: 4px 5px 1px -1px #3d9589;
+              background: $white;
+              color: $mint-template;
+          }
+
+          &:active {
+              transform: translate(0, 0);
+              box-shadow: 0px 3.5px 1px -1px #3d9589;
+          }
+      }
+  }
+}
