@@ -1,6 +1,7 @@
 import 'air-datepicker';
+import './calendar.scss';
 
-class Calendar {
+export default class Calendar {
   constructor(selector) {
     this.selector = selector;
     this.htmlObjects = {
@@ -56,6 +57,3 @@ class Calendar {
       .text($selectedDay.text());
   }
 }
-
-const datePicker = new Calendar('#datepicker');
-datePicker.bootstrap();

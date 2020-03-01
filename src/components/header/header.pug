@@ -1,0 +1,28 @@
+include ../buttons/buttons
+mixin header-links()
+    - const data = require('../../assets/data/data.json')
+    ul.header__links-list
+        each page in data.pages
+            li
+                a(href= page.url).header__topline-pages= page.name
+
+mixin header-buttons()
+    +button({theme: 'mint', size: 'hight', text: 'Вход'})
+    a(href="./register.html")
+        +button({theme: 'mint', size: 'hight', text: 'Регистрация'})
+
+mixin header ()
+    .header__topline
+        .global__wrapper.header__topline-wrapper
+            .header__topline-links
+                +header-links()
+            a.header__topline-logo
+            .header__topline-account
+                p.header__topline-account-text Аккаунт
+                .header__topline-account-controls
+                    +header-buttons()
+                
+    .header__mobile
+        a.header__hamburger-button.js-hamburger-button &#9776;
+        aside.header__hamburger-menu.js-hamburger-menu
+           +header-links() 

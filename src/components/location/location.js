@@ -4,9 +4,9 @@
 import 'leaflet';
 import 'leaflet-css';
 
-class Location {
-  constructor(coords) {
-    this.mymap = L.map('map').setView(coords, 13);
+export default class Location {
+  constructor(mapContainer, coords) {
+    this.mymap = L.map(mapContainer).setView(coords, 13);
     this.coords = coords;
     this.mapIcon = require('../../assets/images/marker-icon.png');
   }
@@ -62,7 +62,7 @@ class Location {
       shadowSize: [68, 95],
       shadowAnchor: [22, 94],
     });
-    L.marker([37.791362, -122.414720], { icon: placeMark }).addTo(this.mymap);
+    L.marker(this.coords, { icon: placeMark }).addTo(this.mymap);
   }
 
   bootstrap() {
@@ -70,6 +70,3 @@ class Location {
     this.bindActions();
   }
 }
-
-const widgetLocation = new Location([37.787509, -122.444838]);
-widgetLocation.bootstrap();

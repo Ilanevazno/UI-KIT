@@ -1,11 +1,23 @@
-mixin Events(event)
-    div(class= event.widgetClass)
-        div(class= event.widgetClass + '__picture' style=`background-image: url(${event.picture})`)
-        div(class= event.widgetClass + "__information")
-            div(class= event.widgetClass + "__information-wrapper")
-                div(class= event.widgetClass + "__date-title")
-                    p(class= event.widgetClass + "__date")= event.date.day
-                    p(class= event.widgetClass + "__month")= event.date.month
-                h3(class= event.widgetClass + "__event-title")=  event.title
-                p(class= event.widgetClass + "__event-text")=  event.text
-                +button({theme: 'mint', size: 'hight', className: event.widgetClass+ '__btn-add', text: 'Add to calendar'})
+mixin events(event = {})
+    -
+        let {
+            picture = require('../../assets/images/gray-bg.jpg'),
+            date = {
+                day: '0',
+                month: 'mon'
+            },
+            title = 'This is the title',
+            text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            className = ''
+        } = event
+    div(class="widget-events " + className)
+        div(class='widget-events__picture' style=`background-image: url(${picture})`)
+        div(class="widget-events__information")
+            div(class="widget-events__information-wrapper")
+                div(class="widget-events__date-title")
+                    p(class="widget-events__date")= date.day
+                    p(class="widget-events__month")= date.month
+                h3(class="widget-events__event-title")=  title
+                p(class="widget-events__event-text")=  text
+                .widget-events__to-calendar
+                    +button({theme: 'mint', size: 'low', isResponsive: true, text: 'Add to calendar'})

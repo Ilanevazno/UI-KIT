@@ -1,3 +1,7 @@
+.widget-stages {
+  width: 100%;
+}
+
 %remain-steps{
   &:before {
     content: counter(stepNum);

@@ -8,24 +8,26 @@
   font-family: 'Lato light', Arial, sans-serif;
 }
 
-@mixin button__ripple-color-modify($color) {
-  border: 1.5px solid $color;
-  box-shadow: 0px 3.5px 1px -1px darken($color, 10%);
+@mixin button-size-modify($width: 9.2rem, $height: 2.5rem, $fontSize: 1.2rem) {
+  width: $width;
+  height: $height;
+  font-size: $fontSize;
+}
+
+@mixin button-color-modify($color: $white, $background: $orange-template, $border: $orange-template) {
   color: $color;
+  box-shadow: 0px 3.5px 1px -1px darken($border, 10%);
+  background: $background;
+  border: 1.5px solid $border;
 
   &:hover {
-    background: $color;
+    background: $border;
   }
 
   &:active {
     box-shadow: none;
+    transform: translate(0.1rem, 0.1rem);
   }
-}
-
-@mixin button__ripple-size-modify($width, $height, $font-size) {
-  width: $width;
-  height: $height;
-  font-size: $font-size;
 }
 
 @mixin arrows__template($width: 6rem, $height: 6rem){
@@ -241,16 +243,68 @@
   }
 }
 
-@mixin widget-events ($className, $width: 33.8rem, $height: 24.5rem) {
+@mixin widget-news ($className, $width: 33.8rem) {
   #{$className} {
       width: $width;
-      height: $height;
+      height: max-content;
+      background-color: $orange-template;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      border-radius: 4px;
+  
+      &__picture {
+          width: 33%;
+          box-sizing: border-box;
+          background-size: cover;
+      }
+  
+      &__information {
+          z-index: 2;
+          width: 50%;
+          margin: 0 auto;
+          height: 100%;
+          background-color: $orange-template;
+          box-sizing: border-box;
+      }
+
+      &__title {
+          font-family: 'Lato Light', Arial, sans-serif;
+          font-size: 3.2rem;
+          color: $white;
+          margin: 15% 0 0 0;
+          line-height: 3rem;
+      }
+
+      &__date {
+          font-family: 'Lato Black', Arial, sans-serif;
+          font-size: 1.45rem;
+          margin: 7% 0 0 0;
+          color: $white;
+      }
+
+      &__text {
+          font-family: 'Lato Regular', Arial, sans-serif;
+          font-size: 1.37rem;
+          margin: 8% 0 3.9rem 0;
+          color: $white;
+      }
+  }
+}
+
+@mixin widget-events ($className, $width: 33.8rem) {
+  #{$className} {
+      width: $width;
+      height: max-content;
       background: $mint-template;
       display: flex;
+      border-radius: 5px;
 
       &__picture {
           width: 33%;
           background-size: cover;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
       }
 
       &__information {
@@ -297,28 +351,19 @@
           }
       }
 
-      #{$className} &__btn-add {
-          background: $white;
-          display: flex;
-          justify-content: center;
-          margin: 9% auto 0 auto;
-          width: 86%;
-          height: 3rem;
-          font-size: 1.1rem;
-          letter-spacing: 0.15rem;
-          border-radius: 8px;
-
-          &:hover {
-              transform: translate(-3px, -3px);
-              box-shadow: 4px 5px 1px -1px #3d9589;
-              background: $white;
-              color: $mint-template;
-          }
-
-          &:active {
-              transform: translate(0, 0);
-              box-shadow: 0px 3.5px 1px -1px #3d9589;
-          }
+      #{$className} &__to-calendar {
+        width: 100%;
+        margin: 2rem 0 3rem 0;
+        padding: 0 1.4rem;
+        box-sizing: border-box;
       }
   }
 }
+
+@mixin media-screen($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+

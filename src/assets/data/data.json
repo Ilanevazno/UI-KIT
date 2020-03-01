@@ -1,0 +1,6 @@
+{
+    "pages": [
+        { "name": "main", "url": "/index.html" },
+        { "name": "ui-kit", "url": "/ui-kit.html" }
+    ]
+}

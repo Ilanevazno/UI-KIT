@@ -1,4 +1,4 @@
-class Search {
+export default class Search {
   constructor(selector) {
     this.$htmlElement = $(selector);
     this.htmlItemList = {
@@ -71,6 +71,3 @@ class Search {
     this.bindActions();
   }
 }
-
-const searchLine = new Search('.example-search');
-searchLine.bootstrap();

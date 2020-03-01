@@ -1,7 +1,16 @@
-mixin user_profile(src, userName, job, hrefFb, hrefTw, hrefDbb)
+mixin user-profile(profile = {})
+    -
+        let {
+            picture = 'gray-bg.jpg',
+            userName = 'test',
+            job = 'jobName',
+            hrefFb = 'http://facebook.com',
+            hrefTw = 'http://twitter.com',
+            hrefDbb = 'http://dbb.com',
+        } = profile
     .user-profile
         .user-profile__picture
-            img(src= ''+src, alt="profile-picture")
+            img(src=require(`../../assets/images/${picture}`), alt="profile-picture")
         .user-profile__info
             h2.user-profile__info-name= userName
             h3.user-profile__info-job= job

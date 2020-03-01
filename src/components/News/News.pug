@@ -1,8 +1,16 @@
-mixin News(news)
-    div(class= news.widgetClass)
-        div(class= news.widgetClass+ '__picture' style=`background-image: url("${news.picture}")`)
-        div(class= news.widgetClass+ '__information')
-            h3(class= news.widgetClass+ '__title')= news.title
-            p(class= news.widgetClass+ '__date')= news.date
-            p(class= news.widgetClass+ '__text')= news.text
+mixin news(news = {})
+    -
+        let {
+            picture = require('../../assets/images/gray-bg.jpg'),
+            title = 'It’s all going downhill',
+            date = '24  AUGUST  2013',
+            text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.',
+            widgetClass = ''
+        } = news
+    div(class=('widget-news ') + widgetClass)
+        div(class= news.widgetClass+ '__picture widget-news__picture' style=`background-image: url('${picture}')`)
+        div(class= news.widgetClass+ '__information widget-news__information')
+            h3(class= news.widgetClass+ '__title widget-news__title')= title
+            p(class= news.widgetClass+ '__date widget-news__date')= date
+            p(class= news.widgetClass+ '__text widget-news__text')= text
 

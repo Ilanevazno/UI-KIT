@@ -3,7 +3,10 @@
     height: 380px;
 }
 
-.location {
+.widget-location {
+    position: relative;
+    background: url('../../assets/images/location-fallen.jpg') no-repeat;
+    background-size: cover;
 
     &__overlay {
         width: 100%;

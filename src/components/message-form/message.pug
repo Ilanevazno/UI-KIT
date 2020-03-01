@@ -8,4 +8,4 @@ mixin formMessage({formName, NameField, emailField, messageField})
             label(for= emailField class="field-status")
         .message__form-fields
             textarea(id= messageField class="message__form-item message__form-textarea "+ messageField placeholder="Your Message")
-        +button({theme: 'mint', size: 'hight', text: 'Submit', className: 'message__btn message__form-submit-btn'})
+        +button({theme: 'mint', size: 'hight', text: 'Submit', isReversedColor: true})

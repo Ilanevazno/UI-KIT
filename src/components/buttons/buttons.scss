@@ -3,7 +3,7 @@
     outline: none;
     background: inherit;
     position: relative;
-    transition: .3s ease-in-out all;
+    transition: all 0.3s, visibility 0s;
     border-radius: 4px;
     text-transform: uppercase;
     font-family: 'Lato black', Arial, sans-serif;
@@ -12,22 +12,39 @@
       color: white;
     }
 
-    &_low {
-      @include button__ripple-size-modify(9rem, 2.5rem, 1.2rem);
+    &_size {
+      &_low {
+        @include button-size-modify();
+      }
+      
+      &_hight {
+        @include button-size-modify($height: 3.9rem, $width: 14rem, $fontSize: 1.45rem);
+      }
     }
 
-    &_hight {
-      @include button__ripple-size-modify(13.7rem, 3.9rem, 1.45rem);
+    &_width {
+      &_responsive {
+        width: 100%;
+      }
     }
 
-    &_mint {
-      @include button__ripple-color-modify($mint-template);
-    }
+    &_theme {
+      &_orange {
+        @include button-color-modify($background: $white, $color: $orange-template);
+      }
 
-    &_orange {
-      @include button__ripple-color-modify($orange-template);
-    }
+      &_orange-reverse {
+        @include button-color-modify();
+      }
 
+      &_mint {
+        @include button-color-modify($background: $white, $color: $mint-template, $border: $mint-template);
+      }
+
+      &_mint-reverse {
+        @include button-color-modify($background: $mint-template, $color: $white, $border: $mint-template);
+      }
+    }
 
     p {
       margin: 0;

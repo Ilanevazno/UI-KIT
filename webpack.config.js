@@ -1,9 +1,17 @@
+
 const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
+const glob = require('glob');
 
 module.exports = {
+  devServer: {
+    port: 8080,
+    historyApiFallback: {
+      index: '/src/pages/index'
+    },
+  },
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
@@ -101,10 +109,11 @@ module.exports = {
       'jQuery': 'jquery',
       'window.jQuery': 'jquery'
     }),
-    new HtmlWebPackPlugin({
-      template: './src/index.pug',
-      filename: './index.html'
-    }),
+    ...glob.sync('src/pages/**/*.pug')
+      .map(html => new HtmlWebpackPlugin({
+        template: html,
+        filename: path.basename(html).replace('.pug', '.html'),
+      })),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css'

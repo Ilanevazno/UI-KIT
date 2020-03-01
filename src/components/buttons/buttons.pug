@@ -1,5 +1,21 @@
-mixin button({theme, size, text, className = ''})
-    button(class= 'button__ripple-btn button__ripple-btn_'+theme+' button__ripple-btn_'+size+' '+className type="submit")
+mixin button(button = {})
+    -
+        let {
+            theme = 'orange',
+            size = 'low',
+            isResponsive = false,
+            isReversedColor = false,
+            text = 'test'
+        } = button
+
+        theme = !!isReversedColor ? `${theme}-reverse` : theme
+
+        let className = 'button__ripple-btn js-ripple-btn'
+        className = className += ' button__ripple-btn_size_' + size 
+        className = className += ' button__ripple-btn_theme_' + theme
+        className += !!isResponsive ? ' button__ripple-btn_width_responsive' : ''
+
+    button(type="submit" class= className)
         .button__ripple-effect.js-ripple-effect
             span.js-ripple-circle
         p= text

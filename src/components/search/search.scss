@@ -33,11 +33,13 @@
     background-color: $orange-template;
     background-repeat: no-repeat;
     background-position: 50%;
-    background-size: 43%;
+    background-size: 2rem;
     background-image: url('../../assets/images/search-loupe.png');
 }
 
 .form-search {
+    position: relative;
+
     &__str-wrapper {
         width: 100%;
     }
@@ -64,6 +66,8 @@
     &__find-str {
         position: relative;
         display: flex;
+        max-width: 60rem;
+        min-width: 33rem;
         width: 100%;
 
         input[type="text"] {
@@ -82,13 +86,9 @@
 
         li {
             color: white;
-            font-size: 1.7rem;
-            padding: 2.3% 5%;
+            font-size: 1.67rem;
+            padding: 0.71rem 1.8rem;
             font-family: 'Source Sans Pro', Arial, sans-serif;
-
-            &:last-child {
-                padding-bottom: 5%;
-            }
 
             &:hover {
                 background: darken(white, 10%);
@@ -110,6 +110,12 @@
             background-color: $mint-template;
             background-image: url('../../assets/images/search-success.png');
         }
+    }
+
+    &__options {
+        position: absolute;
+        max-width: 60rem;
+        width: 100%;
     }
 }
 

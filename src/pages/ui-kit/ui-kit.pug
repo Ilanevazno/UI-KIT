@@ -1,0 +1,103 @@
+extends ../index/index
+block title
+    | UI kit
+block content
+    include ../../components/buttons/buttons.pug
+    include ../../components/arrows/arrow.pug
+    include ../../components/percentages-chart/percentages.pug
+    include ../../components/donut-chart/donut.pug
+    include ../../components/donut-chart/donut.pug
+    include ../../components/sliders/slider.pug
+    include ../../components/stages/stages.pug
+    include ../../components/message-form/message.pug
+    include ../../components/toggles/toggles.pug
+    include ../../components/tick-boxes/checkbox.pug
+    include ../../components/search/search.pug
+    include ../../components/profile/profile.pug
+    include ../../components/news/news.pug
+    include ../../components/events/events.pug
+    include ../../components/location/location.pug
+    include ../../components/calendar/calendar.pug
+    include ../../components/messaging/messaging.pug
+    include ../../components/video/video.pug
+    - const data = require('./ui-kit.json')
+    .widgets
+        .widgets__buttons
+            h2.widgets__title Standard buttons
+            .widgets__buttons-container
+                +button({theme: 'mint', size: 'low', text: 'Button'})
+                +button({theme: 'mint', size: 'hight', text: 'Button'})
+                +button({theme: 'orange', size: 'hight', text: 'Button'})
+                +button({theme: 'orange', size: 'low', text: 'Button'})
+        .widgets__arrows
+            h2.widgets__title Arrow buttons
+            .widgets__arrows-container
+                .widgets__arrows_enabled-buttons
+                    +arrow({ direction: 'arrow-left', isDisable: false, className: 'first-arrow-enabled' })
+                    +arrow({ direction: 'arrow-right', isDisable: false, className: 'second-arrow-enabled' })
+                .widgets__arrows_disabled-buttons
+                    +arrow({ direction: 'arrow-left', isDisable: true, className: 'first-arrow-disabled' })
+                    +arrow({ direction: 'arrow-right', isDisable: true, className: 'second-arrow-disabled' })
+        .widgets__pie
+            h2.widgets__title Percentages / pie chart
+            .widgets__pie-container
+                .widgets__pie-charts
+                    +pieChart('0')
+                    +pieChart('38')
+                    +pieChart('62')
+                    +pieChart('89')
+                .widgets__donut-charts
+                    +donutChart
+        .widgets__sliders
+            h2.widgets__title Sliders
+            .widgets__sliders-container
+                +slider('first-slider')
+                +slider('second-slider')
+        .widgets__stages
+            h2.widgets__title Stages
+            +stages('5', 'example-stages')
+        .widgets__form-elements
+            h2.widgets__title Form elements
+            .widgets__form-elements-container
+                .widgets__form-elements-message
+                    +formMessage({formName: 'form__user-form', NameField: 'example__userName', emailField: 'example__userEmail', messageField: 'example__userMessage'})
+                .widgets__form-elements-toggles
+                    .toggles__container
+                        h2.widgets__title Toggles
+                        .toggles__container-items
+                            +toggles('toggle-first-option')
+                            +toggles('toggle-second-option')
+                    .tick-boxes__container
+                        h2.widgets__title Tick boxes
+                        .tick-boxes__container-items
+                            +checkbox('tickbox-first-option')
+                            +checkbox('tickbox-second-option')
+        .widgets__user-container
+            .widgets__user-search
+                h2.widgets__title Search / drop down 
+                +search()    
+            .widgets__user-profile
+                h2.widgets__title User profile 
+                each profile in data.users
+                    .widgets__user-profile-item
+                        +user-profile({picture: profile.avatar, userName: profile.name, job: profile.job, hrefFb: profile.facebook, hrefTw: profile.twitter, hrefDbb: profile.dbb}) 
+        .widgets__news-events
+            h2.widgets__title News & Events
+            .news-events-wrapper
+                +news({picture: require('../../assets/images/' + data.news.picture)})
+                .events-container
+                    +events({picture: require('../../assets/images/' + data.events.picture), date: {day: data.events.date.day, month: data.events.date.month}, title: data.events.title, text: data.events.text})
+        .widgets__location
+            h2.widgets__title Location
+            +location({welcomeText: 'Meet us!', address: '1259  CALIFORNIA ST San Francisco, CA' })
+        .widgets__calendar-and-messaging
+            .widgets__calendar-and-messaging-container
+                .widgets__calendar-container
+                    h2.widgets__title Calendar
+                    +calendar('example-calendar')
+                .widgets__messaging-container
+                    h2.widgets__title Messaging
+                    +messaging(require('../../assets/images/profile-girl.jpg'), 'Sarah Brown', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'example-messaging')
+        .widgets__video
+            h2.widgets__title Video
+            +videoPlayer({src: require('../../assets/video/new-zeland.mp4'), className: 'example-video'})
