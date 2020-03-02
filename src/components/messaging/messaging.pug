@@ -1,8 +1,15 @@
-mixin messaging(Picture, userName, placeholder, messagingClass, messaginHeader)
-    div(class="messaging__widget" class= ''+messagingClass)
+mixin messaging(data = {})
+    -
+        let {
+            picture = require('../../assets/images/profile-girl.jpg'),
+            userName,
+            placeholder,
+            widgetClass,
+        } = data
+    div(class="messaging__widget" class= ''+widgetClass)
         div(class="messaging__header")
             p.messaging__interlocutor-name= userName
-            div(class="messaging__interlocutor-picture" style=`background-image: url(${Picture})`)
+            div(class="messaging__interlocutor-picture" style=`background-image: url(${picture})`)
         div(class="messaging__body")
             div(class="messaging__wrap")
                 div(class="messaging__interlocutor-area")

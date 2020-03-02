@@ -1,0 +1,18 @@
+.contacts {
+  &__title {
+    font-family: 'Lato black', Arial, sans-serif;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  &__text {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 2rem;
+  }
+
+  &__widgets {
+    min-width: 54rem;
+    width: 50%;
+    margin: 3rem auto;
+  }
+}

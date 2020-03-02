@@ -1,8 +1,15 @@
-mixin formMessage({formName, NameField, emailField, messageField})
-    form(id="message__form" class='message__form-container '+ formName)
+mixin formMessage(data = {})
+    -
+        let {
+            formName,
+            nameField,
+            emailField,
+            messageField
+        } = data
+    form(class="message__form" class='message__form-container '+ formName)
         .message__form-fields
-            input(type="text" id= NameField name= NameField class="message__name message__form-item "+ NameField placeholder="Your Name")
-            label(for= NameField class="field-status")
+            input(type="text" id= nameField name= nameField class="message__name message__form-item "+ nameField placeholder="Your Name")
+            label(for= nameField class="field-status")
         .message__form-fields
             input(type="email" id= emailField name= emailField class="message__email message__form-item "+ emailField placeholder="Your Email")
             label(for= emailField class="field-status")

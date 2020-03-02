@@ -1,0 +1,25 @@
+extends ../index/index
+block title
+    | Контакты
+block content
+  include ../../components/message-form/message
+  include ../../components/location/location
+  include ../../components/video/video
+  .global__wrapper
+    h2.contacts__title Хотите пообщаться?
+    p.contacts__text Вы можете посетить наш офис по адресу:
+    p.contacts__text Россия. Санкт-Петербург, Итальянская ул. 3 (БЦ рандомный, 2 этаж)
+    .contacts__widgets
+      +location({welcomeText: 'Meet us!', address: 'Итальянская ул. дом 3' })
+  hr
+  .global__wrapper
+    h2.contacts__title Как мы работаем?
+    p.contacts__text О работе нашей компании вы сможете увидеть в нашем видео ролике:
+    .contacts__widgets
+      +videoPlayer({src: require('../../assets/video/new-zeland.mp4'), className: 'contacts__video'})
+  hr
+  .global__wrapper
+    h2.contacts__title Остались ещё вопросы?
+    p.contacts__text Вы можете отправить нам сообщение, и мы ответим вам на почту
+    .contacts__widgets
+      +formMessage()

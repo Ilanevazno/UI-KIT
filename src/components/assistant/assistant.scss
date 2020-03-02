@@ -1,0 +1,52 @@
+.assistant {
+  position: fixed;
+  bottom: 10vh;
+  right: 5vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+
+  &__start {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+
+  &__messenger {
+    opacity: 1;
+  }
+
+  &__dialog {
+    display: none;
+
+    &_open {
+      display: block;
+      animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+  }
+
+  &__request {
+    &-avatar {
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-left: 2rem;
+      cursor: pointer;
+
+      &:hover + p {
+        display: block;
+      }
+      
+      img {
+        width: 100%;
+      }
+    }
+
+    &-help {
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      font-size: 2rem;
+      display: none;
+    }
+  }
+}

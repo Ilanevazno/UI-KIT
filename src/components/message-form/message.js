@@ -64,5 +64,7 @@ class MessageForm {
   }
 }
 
-const messageForm = new MessageForm('.form__user-form#message__form');
-messageForm.bootstrap();
+[...$('.message__form')].map((forma) => {
+  const messageForm = new MessageForm(forma);
+  return messageForm.bootstrap();
+})

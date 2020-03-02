@@ -1,4 +1,4 @@
-class Video {
+export default class Video {
   constructor(videoSrc, selector) {
     this.$videoContainer = $(selector);
     this.$videoScreen = this.$videoContainer.find('.video-player__screen');
@@ -10,15 +10,15 @@ class Video {
     };
   }
 
-  bootstrap() {
+  bindActions() {
     $.merge(this.controls.$buttonPlay, this.controls.$buttonPause).on('click', this.toggleVideoState.bind(this));
     this.$videoScreen.on('timeupdate', () => { this.runningProgressBar(this.$videoScreen[0].currentTime, this.$videoScreen[0].duration); });
     this.controls.$buttonFullScreen.on('click', this.requestFullScreen.bind(this));
     this.$videoProgress.on('click', this.setVideoState.bind(this));
   }
 
-  init() {
-    this.bootstrap();
+  bootstrap() {
+    this.bindActions();
   }
 
   toggleVideoState() {
@@ -57,4 +57,4 @@ const videoObj = {
 };
 
 const video = new Video(videoObj.src, videoObj.selector);
-video.init();
+video.bootstrap();

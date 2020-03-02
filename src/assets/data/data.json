@@ -1,6 +1,7 @@
 {
     "pages": [
         { "name": "main", "url": "/index.html" },
-        { "name": "ui-kit", "url": "/ui-kit.html" }
+        { "name": "ui-kit", "url": "/ui-kit.html" },
+        { "name": "contacts", "url": "/contacts.html" }
     ]
 }
