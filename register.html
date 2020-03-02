@@ -6,7 +6,7 @@
 <link rel="icon" sizes="any" mask href="./assets/favicons/safari-pinned-tab.svg">
 <html></html>
 <head>
-  <title>Главная страница
+  <title>Registration
   </title>
 <link href="main.css" rel="stylesheet"></head>
 <body>    
@@ -45,66 +45,93 @@
               </ul>
           </aside>
         </div>
-      <div class="main-container">
-        <div class="global__wrapper main__search">
-          <h2>Поиск по сайту: (имитация)</h2>
-          <div class="main__search-line">
-              <div class="form-search">
-                <div class="form-search__find-str">
-                  <div class="form-search__str-wrapper">
-                    <input class="form-search__str" type="text" name="form-search__str" id="form-search__str" placeholder="Search">
-                    <label class="form-search__str-status" for="form-search__str">I’ve not found what I’m looking for...</label>
-                  </div>
-                  <input class="form-search__btn-find" type="button" id="form-search__btn-find" name="form-search__btn-find">
-                </div>
-                <div class="form-search__options">
-                  <ul class="form-search__items hidden" id="form-search__items">
-                    <li>ilya</li>
-                    <li>sigidin</li>
-                    <li>education 1</li>
-                    <li>Fullstack Development</li>
-                    <li>hello</li>
-                    <li>pick me</li>
-                    <li>Press F</li>
+      <form class="registration__form">
+        <div class="registration__form-control">
+          <h2>Для прохождения регистрации пожалуйста заполните необходимые поля</h2>
+                <button class="button__ripple-btn js-ripple-btn button__ripple-btn_size_hight button__ripple-btn_theme_mint" type="submit">
+                  <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
+                  <p>Начать</p>
+                </button>
+                <div class="widget-stages container-fluid register-stage">
+                  <ul class="list-unstyled multi-steps">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                   </ul>
                 </div>
-              </div>
-          </div>
         </div>
-        <div class="global__wrapper main__container">
-          <div class="main__news-list">
-            <div class="main__news-item">
-              <h2 class="main__news-item-title">Welcome!</h2>
-              <p class="main__news-item-text">Добро пожаловать в мой полигон! Данный ресурс необходим в первую очередь мне, так как наверное каждый разработчик должен оттачивать получаемые навыки, иначе они просто не будут закрепляться в его голове, и это будет малоэффективно.</p>
-            </div>
-            <div class="main__news-item">
-              <h2 class="main__news-item-title">Технология сайта</h2>
-              <p class="main__news-item-text">На данный момент страница построена на модульной архитектуре при использовании webpack, pug, scss, но в будущем планируется перенести это чудо на React. Меня радует то что данный контент подгружается динамически, я использую в качестве базы данных JSON файл, в котором находятся все эти новости, а при помощи PUG'a это всё тянется сюда.</p>
-            </div>
-          </div>
-          <div class="main__block-events">
-              <div class="widget-events main__events-widget">
-                <div class="widget-events__picture" style="background-image: url(./assets/images/widget-events-picture.jpg)"></div>
-                <div class="widget-events__information">
-                  <div class="widget-events__information-wrapper">
-                    <div class="widget-events__date-title">
-                      <p class="widget-events__date"></p>
-                      <p class="widget-events__month"></p>
-                    </div>
-                    <h3 class="widget-events__event-title">8 Марта</h3>
-                    <p class="widget-events__event-text">Междунаро́дный же́нский день — праздник, отмечаемый ежегодно 8 марта в ряде стран как «женский день». Исторически появился как день солидарности женщин во многих странах в борьбе за равные права и эмансипацию.</p>
-                    <div class="widget-events__to-calendar">
-                        <button class="button__ripple-btn js-ripple-btn button__ripple-btn_size_low button__ripple-btn_theme_mint button__ripple-btn_width_responsive" type="submit">
-                          <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                          <p>Add to calendar</p>
-                        </button>
-                    </div>
-                  </div>
+        <div class="registration__form-control">
+          <h2>Ваш email</h2>
+          <input class="registration__form-item" type="email" name="user-email">
+          <label for="user-email"></label>
+                <button class="button__ripple-btn js-ripple-btn button__ripple-btn_size_hight button__ripple-btn_theme_mint" type="submit">
+                  <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
+                  <p>Следующий шаг</p>
+                </button>
+                <div class="widget-stages container-fluid register-stage">
+                  <ul class="list-unstyled multi-steps">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
                 </div>
-              </div>
-          </div>
         </div>
-      </div>
+        <div class="registration__form-control">
+          <h2>Придумайте пароль</h2>
+          <input class="registration__form-item" type="password" name="user-nickname">
+          <label for="user-nickname"></label>
+          <h2>Повторите пароль</h2>
+          <input class="registration__form-item" type="password" name="user-password">
+          <label for="user-password"></label>
+                <button class="button__ripple-btn js-ripple-btn button__ripple-btn_size_hight button__ripple-btn_theme_mint" type="submit">
+                  <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
+                  <p>Следующий шаг</p>
+                </button>
+                <div class="widget-stages container-fluid register-stage">
+                  <ul class="list-unstyled multi-steps">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+        </div>
+        <div class="registration__form-control">
+          <h2>Придумайте псевдоним</h2>
+          <input class="registration__form-item" type="text" name="user-nickname">
+          <label for="user-nickname"></label>
+                <button class="button__ripple-btn js-ripple-btn button__ripple-btn_size_hight button__ripple-btn_theme_mint" type="submit">
+                  <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
+                  <p>Следующий шаг</p>
+                </button>
+                <div class="widget-stages container-fluid register-stage">
+                  <ul class="list-unstyled multi-steps">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+        </div>
+        <div class="registration__form-control">
+          <h2>Спасибо</h2>
+                <div class="widget-stages container-fluid register-stage">
+                  <ul class="list-unstyled multi-steps">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+        </div>
+      </form>
     </div>
     <div class="global__assistant">
         <div class="assistant">
@@ -128,10 +155,10 @@
                         <textarea class="messaging__textarea messaging__message-to" disabled placeholder="Здравствуйте, чем я могу вам помочь?"></textarea>
                         <textarea class="messaging__textarea messaging__message-from"></textarea>
                       </div>
-                        <button class="button__ripple-btn js-ripple-btn button__ripple-btn_size_hight button__ripple-btn_theme_mint-reverse button__ripple-btn_width_responsive" type="submit">
-                          <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                          <p>Submit</p>
-                        </button>
+                            <button class="button__ripple-btn js-ripple-btn button__ripple-btn_size_hight button__ripple-btn_theme_mint-reverse button__ripple-btn_width_responsive" type="submit">
+                              <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
+                              <p>Submit</p>
+                            </button>
                     </div>
                   </div>
                 </div>

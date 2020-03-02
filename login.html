@@ -6,7 +6,7 @@
 <link rel="icon" sizes="any" mask href="./assets/favicons/safari-pinned-tab.svg">
 <html></html>
 <head>
-  <title>Главная страница
+  <title>Login
   </title>
 <link href="main.css" rel="stylesheet"></head>
 <body>    
@@ -45,66 +45,20 @@
               </ul>
           </aside>
         </div>
-      <div class="main-container">
-        <div class="global__wrapper main__search">
-          <h2>Поиск по сайту: (имитация)</h2>
-          <div class="main__search-line">
-              <div class="form-search">
-                <div class="form-search__find-str">
-                  <div class="form-search__str-wrapper">
-                    <input class="form-search__str" type="text" name="form-search__str" id="form-search__str" placeholder="Search">
-                    <label class="form-search__str-status" for="form-search__str">I’ve not found what I’m looking for...</label>
-                  </div>
-                  <input class="form-search__btn-find" type="button" id="form-search__btn-find" name="form-search__btn-find">
-                </div>
-                <div class="form-search__options">
-                  <ul class="form-search__items hidden" id="form-search__items">
-                    <li>ilya</li>
-                    <li>sigidin</li>
-                    <li>education 1</li>
-                    <li>Fullstack Development</li>
-                    <li>hello</li>
-                    <li>pick me</li>
-                    <li>Press F</li>
-                  </ul>
-                </div>
-              </div>
-          </div>
+      <form class="login__form">
+        <div class="login__form-control">
+          <input class="login__form-item" type="email" name="user-email" placeholder="Ваш логин">
+          <label for="user-email"></label>
         </div>
-        <div class="global__wrapper main__container">
-          <div class="main__news-list">
-            <div class="main__news-item">
-              <h2 class="main__news-item-title">Welcome!</h2>
-              <p class="main__news-item-text">Добро пожаловать в мой полигон! Данный ресурс необходим в первую очередь мне, так как наверное каждый разработчик должен оттачивать получаемые навыки, иначе они просто не будут закрепляться в его голове, и это будет малоэффективно.</p>
-            </div>
-            <div class="main__news-item">
-              <h2 class="main__news-item-title">Технология сайта</h2>
-              <p class="main__news-item-text">На данный момент страница построена на модульной архитектуре при использовании webpack, pug, scss, но в будущем планируется перенести это чудо на React. Меня радует то что данный контент подгружается динамически, я использую в качестве базы данных JSON файл, в котором находятся все эти новости, а при помощи PUG'a это всё тянется сюда.</p>
-            </div>
-          </div>
-          <div class="main__block-events">
-              <div class="widget-events main__events-widget">
-                <div class="widget-events__picture" style="background-image: url(./assets/images/widget-events-picture.jpg)"></div>
-                <div class="widget-events__information">
-                  <div class="widget-events__information-wrapper">
-                    <div class="widget-events__date-title">
-                      <p class="widget-events__date"></p>
-                      <p class="widget-events__month"></p>
-                    </div>
-                    <h3 class="widget-events__event-title">8 Марта</h3>
-                    <p class="widget-events__event-text">Междунаро́дный же́нский день — праздник, отмечаемый ежегодно 8 марта в ряде стран как «женский день». Исторически появился как день солидарности женщин во многих странах в борьбе за равные права и эмансипацию.</p>
-                    <div class="widget-events__to-calendar">
-                        <button class="button__ripple-btn js-ripple-btn button__ripple-btn_size_low button__ripple-btn_theme_mint button__ripple-btn_width_responsive" type="submit">
-                          <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                          <p>Add to calendar</p>
-                        </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
+        <div class="login__form-control">
+          <input class="login__form-item" type="password" name="user-password" placeholder="Пароль">
+          <label for="user-password"></label>
         </div>
-      </div>
+          <button class="button__ripple-btn js-ripple-btn button__ripple-btn_size_hight button__ripple-btn_theme_mint" type="submit">
+            <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
+            <p>Вход в аккаунт</p>
+          </button>
+      </form>
     </div>
     <div class="global__assistant">
         <div class="assistant">

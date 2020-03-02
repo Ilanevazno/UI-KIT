@@ -6,7 +6,7 @@
 <link rel="icon" sizes="any" mask href="./assets/favicons/safari-pinned-tab.svg">
 <html></html>
 <head>
-  <title>Главная страница
+  <title>Контакты
   </title>
 <link href="main.css" rel="stylesheet"></head>
 <body>    
@@ -45,64 +45,67 @@
               </ul>
           </aside>
         </div>
-      <div class="main-container">
-        <div class="global__wrapper main__search">
-          <h2>Поиск по сайту: (имитация)</h2>
-          <div class="main__search-line">
-              <div class="form-search">
-                <div class="form-search__find-str">
-                  <div class="form-search__str-wrapper">
-                    <input class="form-search__str" type="text" name="form-search__str" id="form-search__str" placeholder="Search">
-                    <label class="form-search__str-status" for="form-search__str">I’ve not found what I’m looking for...</label>
+      <div class="global__wrapper">
+        <h2 class="contacts__title">Хотите пообщаться?</h2>
+        <p class="contacts__text">Вы можете посетить наш офис по адресу:</p>
+        <p class="contacts__text">Россия. Санкт-Петербург, Итальянская ул. 3 (БЦ рандомный, 2 этаж)</p>
+        <div class="contacts__widgets">
+                <div class="widget-location" id="map">
+                  <div class="widget-location__overlay">
+                    <div class="widget-location__overlay-text-wrapper">
+                      <p class="widget-location__overlay-welcome-text">Meet us!</p>
+                      <p class="widget-location__overlay-address-text">Итальянская ул. дом 3</p>
+                    </div>
+                    <div class="widget-location__overlay-controls-wrapper">
+                      <div class="widget-location__overlay-controls-container">
+                        <button class="widget-location__overlay-controls widget-location__overlay-btn-set-address js-overlay-btn-set-address"></button>
+                        <button class="widget-location__overlay-controls widget-location__overlay-btn-find-marker js-overlay-btn-find-marker"></button>
+                      </div>
+                    </div>
                   </div>
-                  <input class="form-search__btn-find" type="button" id="form-search__btn-find" name="form-search__btn-find">
                 </div>
-                <div class="form-search__options">
-                  <ul class="form-search__items hidden" id="form-search__items">
-                    <li>ilya</li>
-                    <li>sigidin</li>
-                    <li>education 1</li>
-                    <li>Fullstack Development</li>
-                    <li>hello</li>
-                    <li>pick me</li>
-                    <li>Press F</li>
-                  </ul>
-                </div>
-              </div>
-          </div>
         </div>
-        <div class="global__wrapper main__container">
-          <div class="main__news-list">
-            <div class="main__news-item">
-              <h2 class="main__news-item-title">Welcome!</h2>
-              <p class="main__news-item-text">Добро пожаловать в мой полигон! Данный ресурс необходим в первую очередь мне, так как наверное каждый разработчик должен оттачивать получаемые навыки, иначе они просто не будут закрепляться в его голове, и это будет малоэффективно.</p>
-            </div>
-            <div class="main__news-item">
-              <h2 class="main__news-item-title">Технология сайта</h2>
-              <p class="main__news-item-text">На данный момент страница построена на модульной архитектуре при использовании webpack, pug, scss, но в будущем планируется перенести это чудо на React. Меня радует то что данный контент подгружается динамически, я использую в качестве базы данных JSON файл, в котором находятся все эти новости, а при помощи PUG'a это всё тянется сюда.</p>
-            </div>
-          </div>
-          <div class="main__block-events">
-              <div class="widget-events main__events-widget">
-                <div class="widget-events__picture" style="background-image: url(./assets/images/widget-events-picture.jpg)"></div>
-                <div class="widget-events__information">
-                  <div class="widget-events__information-wrapper">
-                    <div class="widget-events__date-title">
-                      <p class="widget-events__date"></p>
-                      <p class="widget-events__month"></p>
-                    </div>
-                    <h3 class="widget-events__event-title">8 Марта</h3>
-                    <p class="widget-events__event-text">Междунаро́дный же́нский день — праздник, отмечаемый ежегодно 8 марта в ряде стран как «женский день». Исторически появился как день солидарности женщин во многих странах в борьбе за равные права и эмансипацию.</p>
-                    <div class="widget-events__to-calendar">
-                        <button class="button__ripple-btn js-ripple-btn button__ripple-btn_size_low button__ripple-btn_theme_mint button__ripple-btn_width_responsive" type="submit">
-                          <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                          <p>Add to calendar</p>
-                        </button>
-                    </div>
+      </div>
+      <hr>
+      <div class="global__wrapper">
+        <h2 class="contacts__title">Как мы работаем?</h2>
+        <p class="contacts__text">О работе нашей компании вы сможете увидеть в нашем видео ролике:</p>
+        <div class="contacts__widgets">
+                <div class="video-player__container">
+                  <video class="video-player__screen contacts__video" id="contacts__video">
+                    <source src="./assets/video/new-zeland.mp4" type="video/mp4">
+                  </video>
+                  <div class="video-player__controls">
+                    <button class="video-player__control video-player__play" id="video-player__play"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 320.001 320.001" style="enable-background:new 0 0 320.001 320.001;" xml:space="preserve"><path d="M295.84,146.049l-256-144c-4.96-2.784-11.008-2.72-15.904,0.128C19.008,5.057,16,10.305,16,16.001v288c0,5.696,3.008,10.944,7.936,13.824c2.496,1.44,5.28,2.176,8.064,2.176c2.688,0,5.408-0.672,7.84-2.048l256-144c5.024-2.848,8.16-8.16,8.16-13.952S300.864,148.897,295.84,146.049z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></button>
+                    <button class="video-player__control video-player__pause video-player__hidden-item" id="video-player__pause"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path fill="rgb(255, 255, 255)" d="M10 24h-6v-24h6v24zm10 0h-6v-24h6v24zm-11-23h-4v22h4v-22zm10 0h-4v22h4v-22z"/></svg></button>
+                    <progress class="video-player__progress" max="100" value="0" id="video-player__progress" onTimeUpdate="progressUpdate()"></progress>
+                    <button class="video-player__control video-player__fullscreen" id="video-player__fullscreen"></button>
                   </div>
                 </div>
-              </div>
-          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="global__wrapper">
+        <h2 class="contacts__title">Остались ещё вопросы?</h2>
+        <p class="contacts__text">Вы можете отправить нам сообщение, и мы ответим вам на почту</p>
+        <div class="contacts__widgets">
+                <form class="message__form message__form-container undefined">
+                  <div class="message__form-fields">
+                    <input class="message__name message__form-item undefined" type="text" placeholder="Your Name">
+                    <label class="field-status"></label>
+                  </div>
+                  <div class="message__form-fields">
+                    <input class="message__email message__form-item undefined" type="email" placeholder="Your Email">
+                    <label class="field-status"></label>
+                  </div>
+                  <div class="message__form-fields">
+                    <textarea class="message__form-item message__form-textarea undefined" placeholder="Your Message"></textarea>
+                  </div>
+                    <button class="button__ripple-btn js-ripple-btn button__ripple-btn_size_hight button__ripple-btn_theme_mint-reverse" type="submit">
+                      <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
+                      <p>Submit</p>
+                    </button>
+                </form>
         </div>
       </div>
     </div>
