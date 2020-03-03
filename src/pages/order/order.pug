@@ -1,0 +1,32 @@
+extends ../index/index
+block title
+    | Сделать заказ
+block content
+  include ../../components/news/news
+  include ../../components/arrows/arrow.pug
+  include ../../components/toggles/toggles
+  include ../../components/dropdown/dropdown
+  include ../../components/percentages-chart/percentages
+  .global__wrapper
+    h2.order__title Сделать заказ
+    form
+      .order__form-presentation
+        p.order__text Отлично, вы выбрали правильное решение! Давайте заполним несколько полей, и мы будем готовы выезжать :)
+        p.order__text Для начала укажите кол-во людей (взрослых)
+        .order__dropdown-wrapper
+          +dropdown({widgetClass: 'js-people-count'})
+        .order__childrens-wrapper
+          .order__childrens-question
+            p.order__text На празднике будут дети?
+            +toggles('order__childrens-count js-childrens-state')
+          .order__childrens-count.order__childrens-count_show
+            p.order__text Сколько будет детей?
+            .order__dropdown-wrapper
+              +dropdown({widgetClass: 'js-childrens-count'})
+        .order__room-choose
+          p.order__text Выберите комнату для мероприятия
+          +arrow({ direction: 'arrow-left', isDisable: false, className: 'order__room-prev' })
+          +arrow({ direction: 'arrow-right', isDisable: false, className: 'order__room-next' })
+    .order__fully-state
+      +pieChart('1')
+    form

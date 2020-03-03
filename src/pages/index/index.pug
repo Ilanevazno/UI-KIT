@@ -13,6 +13,7 @@ body
     include ../../components/assistant/assistant
     include ../../components/search/search
     include ../../components/events/events
+    include ../../components/news/news
     include ../../components/header/header
     include ../../components/footer/footer
     .wrapper
@@ -32,8 +33,11 @@ body
                                 .main__news-item
                                     h2.main__news-item-title= item.title
                                     p.main__news-item-text= item.text
-                        .main__block-events
-                            +events({title: '8 Марта', text: 'Междунаро́дный же́нский день — праздник, отмечаемый ежегодно 8 марта в ряде стран как «женский день». Исторически появился как день солидарности женщин во многих странах в борьбе за равные права и эмансипацию.', date: '03.08.2020', picture: require('../../assets/images/widget-events-picture.jpg'), className: 'main__events-widget'})
+                        .main__news-info
+                            .main__block-events
+                                +events({title: '8 Марта', text: 'Междунаро́дный же́нский день — праздник, отмечаемый ежегодно 8 марта в ряде стран как «женский день». Исторически появился как день солидарности женщин во многих странах в борьбе за равные права и эмансипацию.', date: '03.08.2020', picture: require('../../assets/images/widget-events-picture.jpg'), className: 'main__events-widget'})
+                            .main__block-news
+                                +news({title: data.news[0].title, date: data.news[0].date, text: data.news[0].text, picture: require('../../assets/images/' + data.news[0].picture)})
         .global__assistant
             +assistant()
         .footer

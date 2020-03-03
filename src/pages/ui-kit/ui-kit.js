@@ -29,7 +29,7 @@ class UiKitPage {
   }
 }
 
-if (window.location.pathname === '/ui-kit.html') {
+if (window.location.href.split('/')[window.location.href.split('/').length - 1] === 'ui-kit.html') {
   const uiKitPage = new UiKitPage();
   uiKitPage.bootstrap();
 }

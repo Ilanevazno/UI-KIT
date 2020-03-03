@@ -49,7 +49,7 @@ class RegisterPage {
   }
 }
 
-if (window.location.pathname === '/register.html') {
+if (window.location.href.split('/')[window.location.href.split('/').length - 1] === 'register.html') {
   const registerPage = new RegisterPage();
   registerPage.bootstrap();
 }

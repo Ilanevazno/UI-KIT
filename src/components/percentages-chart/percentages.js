@@ -1,4 +1,4 @@
-class Percentages {
+export default class Percentages {
   constructor(selector) {
     this.$htmlContainer = $(selector);
   }
@@ -24,6 +24,3 @@ class Percentages {
     this.render();
   }
 }
-
-const percentageCharts = new Percentages('.pie-chart');
-percentageCharts.init();

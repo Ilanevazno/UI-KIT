@@ -1,0 +1,20 @@
+mixin dropdown (options = {})
+  -
+    let {
+      selectName = '',
+      optionList = [
+        {value: 'first', text: 'This is option 1'},
+        {value: 'second', text: 'This is option 2'},
+        {value: 'third', text: 'This is option 3'},
+        {value: 'fourth', text: 'This is option 4'},
+      ],
+      widgetClass = ''
+    } = options
+
+  .widget-select
+    .widget-select__area.js-dropdown-textarea
+      div(class= widgetClass).widget-select__area-text.js-dropdown-text-inner Choose an option
+      .widget-select__area-btn
+    ul.widget-select__label.js-dropdown-menu
+      each item in optionList
+        li(class="widget-select__label-item js-dropdown-label-item")= item.text

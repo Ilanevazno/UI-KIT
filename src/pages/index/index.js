@@ -12,7 +12,7 @@ class PageIndex {
   }
 }
 
-if (window.location.pathname === '/index.html') {
+if (window.location.href.split('/')[window.location.href.split('/').length - 1] === 'index.html') {
   const indexPage = new PageIndex();
   indexPage.bootstrap();
 }

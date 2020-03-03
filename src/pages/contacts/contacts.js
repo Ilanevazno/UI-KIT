@@ -18,7 +18,7 @@ class ContactsPage {
   }
 }
 
-if (window.location.pathname === '/contacts.html') {
+if (window.location.href.split('/')[window.location.href.split('/').length - 1] === 'contacts.html') {
   const videoObj = {
     src: 'src/assets/video/new-zeland.mp4',
     selector: '.video-player__container',

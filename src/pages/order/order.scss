@@ -1,0 +1,43 @@
+.order {
+  &__title {
+    font-family: 'Lato black', Arial, sans-serif;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  &__text {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 1.5rem;
+  }
+
+  &__dropdown-wrapper {
+    max-width: 25rem;
+  }
+
+  &__fully-state {
+    position: fixed;
+    bottom: 7vh;
+    left: 3vw;
+  }
+
+  &__form-presentation-item {
+    margin: 3rem 0;
+  }
+
+  &__form {
+    &-slide-1 {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__childrens {
+    &-count {
+      display: none;
+
+      &_show {
+        display: block;
+      }
+    }
+  }
+}

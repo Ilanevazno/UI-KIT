@@ -18,7 +18,7 @@ class LoginPage {
   }
 }
 
-if (window.location.pathname === '/login.html') {
+if (window.location.href.split('/')[window.location.href.split('/').length - 1] === 'login.html') {
   const loginPage = new LoginPage();
   loginPage.bootstrap();
 }

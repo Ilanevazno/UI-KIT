@@ -13,6 +13,7 @@ block content
     include ../../components/toggles/toggles.pug
     include ../../components/tick-boxes/checkbox.pug
     include ../../components/search/search.pug
+    include ../../components/dropdown/dropdown.pug
     include ../../components/profile/profile.pug
     include ../../components/news/news.pug
     include ../../components/events/events.pug
@@ -75,7 +76,10 @@ block content
         .widgets__user-container
             .widgets__user-search
                 h2.widgets__title Search / drop down 
-                +search()    
+                .widgets__user-findline
+                    +search() 
+                .widgets__user-dropdown   
+                    +dropdown()
             .widgets__user-profile
                 h2.widgets__title User profile 
                 each profile in data.users

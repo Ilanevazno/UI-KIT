@@ -5,12 +5,13 @@ mixin button(button = {})
             size = 'low',
             isResponsive = false,
             isReversedColor = false,
-            text = 'test'
+            text = 'test',
+            widgetClass = ''
         } = button
 
         theme = !!isReversedColor ? `${theme}-reverse` : theme
 
-        let className = 'button__ripple-btn js-ripple-btn'
+        let className = 'button__ripple-btn js-ripple-btn ' + widgetClass
         className = className += ' button__ripple-btn_size_' + size 
         className = className += ' button__ripple-btn_theme_' + theme
         className += !!isResponsive ? ' button__ripple-btn_width_responsive' : ''
