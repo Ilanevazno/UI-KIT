@@ -1,5 +1,6 @@
 .widget-select {
   position: relative;
+  min-width: 20rem;
 
   &__area {
     @include input-search;

@@ -1,5 +1,7 @@
 /* eslint-disable class-methods-use-this */
+import 'air-datepicker';
 import Percentages from '../../components/percentages-chart/percentages';
+import Calendar from '../../components/calendar/calendar';
 
 class OrderPage {
   constructor() {
@@ -7,11 +9,48 @@ class OrderPage {
     this.$fullyState = $('.order__fully-state').find('.pie-chart');
     this.fullyState = 1;
     this.currentState = 'personCount';
+    this.roomList = [...$('.order__room-picture-item')];
   }
 
   render() {
     this.getPercChart();
     this.prepareObserver();
+    this.prepareRoomPictures();
+    this.getCalendar();
+  }
+
+  prepareRoomPictures() {
+    $(this.roomList[0]).addClass('order__room-picture-item_active');
+  }
+
+  nextRoom(event) {
+    event.preventDefault();
+    const checkPicturesRange = (idx) => {
+      return idx >= 0 && idx < this.roomList.length - 1 ? true : false;
+    }
+
+    for (let i = 0; i < this.roomList.length; i++) {
+      if ($(this.roomList[i]).is('.order__room-picture-item_active') && checkPicturesRange(i)) {
+        $(this.roomList[i]).removeClass('order__room-picture-item_active');
+        $(this.roomList[i + 1]).addClass('order__room-picture-item_active');
+        break;
+      }
+    }
+  }
+
+  prevRoom(event) {
+    event.preventDefault();
+    const checkPicturesRange = (idx) => {
+      return idx > 0 && idx <= this.roomList.length - 1 ? true : false;
+    }
+
+    for (let i = 0; i < this.roomList.length; i++) {
+      if ($(this.roomList[i]).is('.order__room-picture-item_active') && checkPicturesRange(i)) {
+        $(this.roomList[i]).removeClass('order__room-picture-item_active');
+        $(this.roomList[i - 1]).addClass('order__room-picture-item_active');
+        break;
+      }
+    }
   }
 
   prepareObserver() {
@@ -36,8 +75,24 @@ class OrderPage {
     this.percentageCharts = percentageCharts;
   }
 
-  bindActions() {
+  getCalendar() {
+    const calendar = new Calendar('.order__meet-date');
+    calendar.bootstrap();
+  }
 
+  bindActions() {
+    $('.js-next-room').on('click', this.nextRoom.bind(this));
+    $('.js-prev-room').on('click', this.prevRoom.bind(this));
+    $('.js-order-picture-continue').on('click', this.moveToOrder.bind(this));
+  }
+
+  moveToOrder(event) {
+    event.preventDefault();
+    if (this.checkTargetState('selectRoom')) {
+      $('.order__checkout').addClass('order__checkout_open');
+      this.fullyState += 70;
+      this.changeState('getPersonData');
+    }
   }
 
   checkMutationTarget(label, targetClass) {
@@ -56,8 +111,8 @@ class OrderPage {
       }
 
       if (this.checkMutationTarget(mutation.target, '.js-childrens-count') && this.checkTargetState('childsCount')) {
-        this.fullyState += 10;
-        this.changeState('nextStep');
+        this.fullyState += 5;
+        this.changeState('selectRoom');
       }
     });
   }

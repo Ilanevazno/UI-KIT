@@ -11,8 +11,11 @@
   }
 
   &__widgets {
-    min-width: 54rem;
     width: 50%;
     margin: 3rem auto;
+
+    @include media-screen ($tablet) {
+      width: 100%;
+    }
   }
 }

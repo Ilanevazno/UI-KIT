@@ -8,8 +8,8 @@
     }
 
     &__picture {
-        height: 9.5rem;
-        width: 9.5rem;
+        min-height: 9.5rem;
+        min-width: 9.5rem;
         background-color: $gray-template;
         border-radius: 50%;
         position: relative;
