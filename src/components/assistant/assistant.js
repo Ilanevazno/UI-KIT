@@ -5,7 +5,6 @@ export default class Assistant {
   }
 
   openMessenger() {
-    // this.$htmlContainer.draggable();
     this.$htmlContainer.find('.assistant__start').hide();
     this.$htmlContainer.find('.assistant__dialog').addClass('assistant__dialog_open');
   }
@@ -26,3 +25,8 @@ export default class Assistant {
     this.bindActions();
   }
 }
+
+$('.js-assistant-widget').each((idx, itm) => {
+  const assistant = new Assistant($(itm));
+  assistant.bootstrap();
+});

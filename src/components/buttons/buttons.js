@@ -32,3 +32,8 @@ export default class Button {
     $(this).removeClass('is-active');
   }
 }
+
+$('.js-ripple-effect').each((idx, itm) => {
+  const button = new Button($(itm));
+  button.bootstrap();
+});

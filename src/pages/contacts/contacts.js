@@ -1,44 +1,44 @@
-/* eslint-disable class-methods-use-this */
-import Location from '../../components/location/location';
-import Video from '../../components/video/video';
-import MessageForm from '../../components/message-form/message';
+// /* eslint-disable class-methods-use-this */
+// import Location from '../../components/location/location';
+// import Video from '../../components/video/video';
+// import MessageForm from '../../components/message-form/message';
 
 
-class ContactsPage {
-  render() {
-    this.prepareLocation('js-widget-location', [59.936903, 30.329112]);
-    const videoObj = {
-      src: 'src/assets/video/new-zeland.mp4',
-      selector: '.js-contacts-video',
-    };
+// class ContactsPage {
+//   render() {
+//     this.prepareLocation('js-widget-location', JSON.stringify([59.936903, 30.329112]));
+//     const videoObj = {
+//       src: 'src/assets/video/new-zeland.mp4',
+//       selector: '.js-contacts-video',
+//     };
 
-    this.prepareVideo(videoObj);
-    this.prepareMessageForm('.js-message-form-widget');
-  }
+//     // this.prepareVideo(videoObj);
+//     this.prepareMessageForm('.js-message-form-widget');
+//   }
 
-  prepareLocation(selector, coords) {
-    const location = new Location(selector, coords);
-    location.bootstrap();
-  }
+//   prepareLocation(selector, coords) {
+//     const location = new Location(selector, coords);
+//     location.bootstrap();
+//   }
 
-  prepareVideo() {
-    const videoPLayer = new Video();
-    videoPLayer.bootstrap();
-  }
+//   prepareVideo() {
+//     const videoPLayer = new Video();
+//     videoPLayer.bootstrap();
+//   }
 
-  prepareMessageForm(selector) {
-    $(selector).each((idx, itm) => {
-      const messageForm = new MessageForm($(itm));
-      messageForm.bootstrap();
-    });
-  }
+//   prepareMessageForm(selector) {
+//     $(selector).each((idx, itm) => {
+//       const messageForm = new MessageForm($(itm));
+//       messageForm.bootstrap();
+//     });
+//   }
 
-  bootstrap() {
-    this.render();
-  }
-}
+//   bootstrap() {
+//     this.render();
+//   }
+// }
 
-if (window.location.pathname === '/contacts.html') {
-  const contacts = new ContactsPage();
-  contacts.bootstrap();
-}
+// if (window.location.pathname === '/contacts.html') {
+//   const contacts = new ContactsPage();
+//   contacts.bootstrap();
+// }

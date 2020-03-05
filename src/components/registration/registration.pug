@@ -1,0 +1,32 @@
+mixin registration()
+    include ../buttons/buttons.pug
+    include ../stages/stages.pug
+    form.registration__form
+        .registration__form-control
+            h2 Для прохождения регистрации пожалуйста заполните необходимые поля
+            +button({theme: 'mint', size: 'hight', text: 'Начать'})
+            +stages('5', 'register-stage')
+        .registration__form-control
+            h2 Ваш email
+            input(type="email" name="user-email" class="registration__form-item")
+            label(for="user-email")
+            +button({theme: 'mint', size: 'hight', text: 'Следующий шаг'})
+            +stages('5', 'register-stage')
+        .registration__form-control
+            h2 Придумайте пароль
+            input(type="password" name="user-nickname" class="registration__form-item")
+            label(for="user-nickname")
+            h2 Повторите пароль
+            input(type="password" name="user-password" class="registration__form-item")
+            label(for="user-password")
+            +button({theme: 'mint', size: 'hight', text: 'Следующий шаг'})
+            +stages('5', 'register-stage')
+        .registration__form-control
+            h2 Придумайте псевдоним
+            input(type="text" name="user-nickname" class="registration__form-item")
+            label(for="user-nickname")
+            +button({theme: 'mint', size: 'hight', text: 'Следующий шаг'})
+            +stages('5', 'register-stage')
+        .registration__form-control
+            h2 Спасибо
+            +stages('5', 'register-stage')

@@ -71,3 +71,8 @@ export default class Search {
     this.bindActions();
   }
 }
+
+$('.js-seach-form-widget').each((idx, itm) => {
+  const searchLine = new Search($(itm));
+  searchLine.bootstrap();
+});

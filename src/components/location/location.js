@@ -5,9 +5,10 @@ import 'leaflet';
 import 'leaflet-css';
 
 export default class Location {
-  constructor(mapContainer, coords) {
-    this.mymap = L.map(mapContainer).setView(coords, 13);
-    this.coords = coords;
+  constructor(mapContainer) {
+    this.$htmlContainer = $(mapContainer);
+    this.coords = JSON.parse(this.$htmlContainer.attr('data-coords'));
+    this.mymap = L.map(mapContainer).setView(this.coords, 13);
     this.mapIcon = require('../../assets/images/marker-icon.png');
   }
 
@@ -70,3 +71,8 @@ export default class Location {
     this.bindActions();
   }
 }
+
+$('.js-widget-location').each((idx, itm) => {
+  const location = new Location(itm);
+  location.bootstrap();
+});

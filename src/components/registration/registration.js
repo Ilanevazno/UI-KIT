@@ -1,7 +1,7 @@
 import Stages from '../../components/stages/stages';
 
 /* eslint-disable class-methods-use-this */
-class RegisterPage {
+class Registration {
   constructor() {
     this.requiredLabels = null;
   }
@@ -48,7 +48,5 @@ class RegisterPage {
   }
 }
 
-if (window.location.pathname === '/register.html') {
-  const registerPage = new RegisterPage();
-  registerPage.bootstrap();
-}
+const registerPage = new Registration();
+registerPage.bootstrap();
