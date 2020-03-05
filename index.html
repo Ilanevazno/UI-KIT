@@ -19,16 +19,17 @@
                   <li><a class="header__topline-pages" href="./index.html">main</a></li>
                   <li><a class="header__topline-pages" href="./ui-kit.html">ui-kit</a></li>
                   <li><a class="header__topline-pages" href="./contacts.html">contacts</a></li>
+                  <li><a class="header__topline-pages" href="./order.html">order</a></li>
                 </ul>
             </div><a class="header__topline-logo"></a>
             <div class="header__topline-account">
               <p class="header__topline-account-text">Аккаунт</p>
               <div class="header__topline-account-controls"><a href="./login.html">
-                      <button class="button__ripple-btn js-ripple-btn button__ripple-btn_size_hight button__ripple-btn_theme_mint" type="submit">
+                      <button class="button__ripple-btn js-ripple-btn  button__ripple-btn_size_hight button__ripple-btn_theme_mint" type="submit">
                         <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
                         <p>Вход</p>
                       </button></a><a href="./register.html">
-                      <button class="button__ripple-btn js-ripple-btn button__ripple-btn_size_hight button__ripple-btn_theme_mint" type="submit">
+                      <button class="button__ripple-btn js-ripple-btn  button__ripple-btn_size_hight button__ripple-btn_theme_mint" type="submit">
                         <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
                         <p>Регистрация</p>
                       </button></a>
@@ -42,6 +43,7 @@
                 <li><a class="header__topline-pages" href="./index.html">main</a></li>
                 <li><a class="header__topline-pages" href="./ui-kit.html">ui-kit</a></li>
                 <li><a class="header__topline-pages" href="./contacts.html">contacts</a></li>
+                <li><a class="header__topline-pages" href="./order.html">order</a></li>
               </ul>
           </aside>
         </div>
@@ -75,33 +77,45 @@
           <div class="main__news-list">
             <div class="main__news-item">
               <h2 class="main__news-item-title">Welcome!</h2>
-              <p class="main__news-item-text">Добро пожаловать в мой полигон! Данный ресурс необходим в первую очередь мне, так как наверное каждый разработчик должен оттачивать получаемые навыки, иначе они просто не будут закрепляться в его голове, и это будет малоэффективно.</p>
+              <p class="main__news-item-text">Здравствуйте всем, привет всем! Данный сайт посвящён псевдо компании которая занимается организацией праздников. Хоть никакой компании и не существует в природе, но в любом случае, мне необходимо было создать проект, где были бы использованы все компоненты UI-kit'a которые я делал (очевидно НЕ ВСЕ виджеты на 100% мои, ибо где-то пришлось использовать готовые решения, но ради этого данное задание и было собственно сделано, вот) (см. page ui-kit).</p>
             </div>
             <div class="main__news-item">
               <h2 class="main__news-item-title">Технология сайта</h2>
               <p class="main__news-item-text">На данный момент страница построена на модульной архитектуре при использовании webpack, pug, scss, но в будущем планируется перенести это чудо на React. Меня радует то что данный контент подгружается динамически, я использую в качестве базы данных JSON файл, в котором находятся все эти новости, а при помощи PUG'a это всё тянется сюда.</p>
             </div>
           </div>
-          <div class="main__block-events">
-              <div class="widget-events main__events-widget">
-                <div class="widget-events__picture" style="background-image: url(./assets/images/widget-events-picture.jpg)"></div>
-                <div class="widget-events__information">
-                  <div class="widget-events__information-wrapper">
-                    <div class="widget-events__date-title">
-                      <p class="widget-events__date"></p>
-                      <p class="widget-events__month"></p>
-                    </div>
-                    <h3 class="widget-events__event-title">8 Марта</h3>
-                    <p class="widget-events__event-text">Междунаро́дный же́нский день — праздник, отмечаемый ежегодно 8 марта в ряде стран как «женский день». Исторически появился как день солидарности женщин во многих странах в борьбе за равные права и эмансипацию.</p>
-                    <div class="widget-events__to-calendar">
-                        <button class="button__ripple-btn js-ripple-btn button__ripple-btn_size_low button__ripple-btn_theme_mint button__ripple-btn_width_responsive" type="submit">
-                          <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                          <p>Add to calendar</p>
-                        </button>
+          <div class="main__news-info">
+            <div class="main__block-events">
+                <div class="widget-events main__events-widget">
+                  <div class="widget-events__picture" style="background-image: url(./assets/images/widget-events-picture.jpg)"></div>
+                  <div class="widget-events__information">
+                    <div class="widget-events__information-wrapper">
+                      <div class="widget-events__date-title">
+                        <p class="widget-events__date"></p>
+                        <p class="widget-events__month"></p>
+                      </div>
+                      <h3 class="widget-events__event-title">8 Марта</h3>
+                      <p class="widget-events__event-text">Междунаро́дный же́нский день — праздник, отмечаемый ежегодно 8 марта в ряде стран как «женский день». Исторически появился как день солидарности женщин во многих странах в борьбе за равные права и эмансипацию.</p>
+                      <div class="widget-events__to-calendar">
+                          <button class="button__ripple-btn js-ripple-btn  button__ripple-btn_size_low button__ripple-btn_theme_mint button__ripple-btn_width_responsive" type="submit">
+                            <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
+                            <p>Add to calendar</p>
+                          </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+            </div>
+            <div class="main__block-news">
+                <div class="widget-news ">
+                  <div class="undefined__picture widget-news__picture" style="background-image: url('./assets/images/holiday-picture.jpg')"></div>
+                  <div class="undefined__information widget-news__information">
+                    <h3 class="undefined__title widget-news__title">АКЦИЯ на утренние праздники!</h3>
+                    <p class="undefined__date widget-news__date">02 Февраля 2020</p>
+                    <p class="undefined__text widget-news__text">Подарите любимым праздники со скидкой в 20% с 8 по 25 марта!</p>
+                  </div>
+                </div>
+            </div>
           </div>
         </div>
       </div>
@@ -128,7 +142,7 @@
                         <textarea class="messaging__textarea messaging__message-to" disabled placeholder="Здравствуйте, чем я могу вам помочь?"></textarea>
                         <textarea class="messaging__textarea messaging__message-from"></textarea>
                       </div>
-                        <button class="button__ripple-btn js-ripple-btn button__ripple-btn_size_hight button__ripple-btn_theme_mint-reverse button__ripple-btn_width_responsive" type="submit">
+                        <button class="button__ripple-btn js-ripple-btn  button__ripple-btn_size_hight button__ripple-btn_theme_mint-reverse button__ripple-btn_width_responsive" type="submit">
                           <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
                           <p>Submit</p>
                         </button>
