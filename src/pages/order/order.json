@@ -3,5 +3,9 @@
     {"name": "USA традиции", "picture": "holiday-picture-1.jpg"},
     {"name": "Творческий беспорядок", "picture": "holiday-picture-2.jpg"},
     {"name": "Семейные посиделки", "picture": "holiday-picture-3.jpg"}
-  ]
+  ],
+  "orderState": {
+    "START": "personCount",
+    "BUDGET": "budget"
+  }
 }

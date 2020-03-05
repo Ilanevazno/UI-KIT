@@ -3,6 +3,8 @@ block title
     | Сделать заказ
 block content
   include ../../components/news/news
+  include ../../components/sliders/slider
+  include ../../components/tick-boxes/checkbox
   include ../../components/arrows/arrow.pug
   include ../../components/buttons/buttons.pug
   include ../../components/toggles/toggles
@@ -26,6 +28,11 @@ block content
               h2.order__title Сколько будет детей?
               .order__dropdown-wrapper
                 +dropdown({widgetClass: 'js-childrens-count'})
+      .order__budget-count
+        .order__widgets-container
+          h2.order__title Укажите ваш бюджет
+          span.order__budget-title.js-budget-count 0р.
+          +slider('order__budget-slider js-budget-slider')
       .order__room-choose
         h2.order__title Выберите комнату для мероприятия
         .order__room-picture-container
@@ -34,7 +41,7 @@ block content
               img(src= require('../../assets/images/' + picture.picture))
               p.order__room-picture-title= picture.name
         .order__widgets-container
-          .order__arrows-container
+          .order__room-arrows-container
             +arrow({ direction: 'arrow-left', isDisable: false, className: 'order__room-prev js-prev-room' })
             +arrow({ direction: 'arrow-right', isDisable: false, className: 'order__room-next js-next-room' })
         .order__widgets-container
@@ -52,6 +59,11 @@ block content
           .order__checkout-label-control
             label(for="order__person-number").order__checkout-text Телефон для связи:
             input(type="text" name="order__person-number" class="order__checkout-control" placeholder="В формате +x (xxx) xxx-xx-xx")
+          .order__checkout-label-control
+            .order__checkout-personal-data
+              +checkbox('order__confrim-checkbox')
+              span.order__checkout-confrim Я согласен на обработку
+                a(href="http://google.com" target="_blank") персональных данных
           .order__checkout-label-control
             +button({theme: 'mint', size: 'hight', text: 'Позвоните мне'})
     .order__fully-state

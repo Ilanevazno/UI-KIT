@@ -1,7 +1,7 @@
 import '../../vendor/jRange/jquery.range-min';
 import '../../vendor/jRange/jquery.range.css';
 
-class Slider {
+export default class Slider {
   constructor(selector, settings) {
     this.$htmlContainer = $(selector);
     this.settings = settings;

@@ -1,4 +1,4 @@
-class TickBox {
+export default class TickBox {
   constructor(selector) {
     this.$tickBoxHtml = $(selector);
   }
@@ -19,6 +19,3 @@ class TickBox {
     this.bindActions();
   }
 }
-
-const tickBox = new TickBox('.js-checkbox-icon');
-tickBox.bootstrap();

@@ -1,5 +1,5 @@
-mixin location({welcomeText, address})
-    div(id="map" class='widget-location')
+mixin location({welcomeText, address, className})
+    div(class='widget-location ' + className id='js-widget-location')
         .widget-location__overlay
             .widget-location__overlay-text-wrapper
                 p.widget-location__overlay-welcome-text= welcomeText

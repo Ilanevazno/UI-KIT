@@ -1,8 +1,8 @@
 {
     "pages": [
-        { "name": "main", "url": "./index.html" },
-        { "name": "ui-kit", "url": "./ui-kit.html" },
-        { "name": "contacts", "url": "./contacts.html" },
-        { "name": "order", "url": "./order.html" }
+        { "name": "Главная", "url": "./index.html" },
+        { "name": "Ui-kit", "url": "./ui-kit.html" },
+        { "name": "Контакты", "url": "./contacts.html" },
+        { "name": "Заказать", "url": "./order.html" }
     ]
 }

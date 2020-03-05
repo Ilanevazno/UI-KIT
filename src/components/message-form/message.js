@@ -1,4 +1,4 @@
-class MessageForm {
+export default class MessageForm {
   constructor(selector) {
     this.$htmlContainer = $(selector);
     this.$userNameLabel = this.$htmlContainer.find('.message__name');
@@ -63,8 +63,3 @@ class MessageForm {
     return false;
   }
 }
-
-[...$('.message__form')].map((forma) => {
-  const messageForm = new MessageForm(forma);
-  return messageForm.bootstrap();
-})

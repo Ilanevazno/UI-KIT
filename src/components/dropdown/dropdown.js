@@ -28,12 +28,7 @@ export default class Dropdown {
     return this.currentState;
   }
 
-  init() {
+  bootstrap() {
     this.bindActions();
   }
 }
-
-$('.widget-select').each((idx, itm) => {
-  const dropdown = new Dropdown($(itm));
-  dropdown.init();
-});

@@ -1,4 +1,4 @@
-class Button {
+export default class Button {
   constructor(selector) {
     this.$rippleHtmlButton = $(selector);
   }
@@ -8,7 +8,7 @@ class Button {
     this.$rippleHtmlButton.on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', this.finishRipple);
   }
 
-  init() {
+  bootstrap() {
     this.bindActions();
   }
 
@@ -32,6 +32,3 @@ class Button {
     $(this).removeClass('is-active');
   }
 }
-
-const button = new Button('.js-ripple-effect');
-button.init();

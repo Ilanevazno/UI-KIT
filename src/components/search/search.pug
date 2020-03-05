@@ -1,5 +1,9 @@
-mixin search()
-    div(class="form-search")
+mixin search(settings = {})
+    -
+        let {
+            className = ''
+        } = settings
+    div(class="form-search js-seach-form-widget " + className)
         .form-search__find-str
             .form-search__str-wrapper
                 input(type="text" name="form-search__str" id="form-search__str" class="form-search__str" placeholder="Search")

@@ -1,10 +1,30 @@
 /* eslint-disable class-methods-use-this */
 import Search from '../../components/search/search';
+import Assistant from '../../components/assistant/assistant';
+import Button from '../../components/buttons/buttons';
 
 class PageIndex {
   render() {
-    const searchLine = new Search('.form-search');
+    this.prepareSearchLine('.js-seach-form-widget');
+    this.getAssistant('.js-assistant-widget');
+    this.prepareButtons('.js-ripple-effect');
+  }
+
+  prepareSearchLine(selector) {
+    const searchLine = new Search(selector);
     searchLine.bootstrap();
+  }
+
+  getAssistant(selector) {
+    const assistant = new Assistant(selector);
+    assistant.bootstrap();
+  }
+
+  prepareButtons(selector) {
+    $(selector).each((idx, itm) => {
+      const button = new Button($(itm));
+      button.bootstrap();
+    });
   }
 
   bootstrap() {
@@ -12,7 +32,7 @@ class PageIndex {
   }
 }
 
-if (window.location.href.split('/')[window.location.href.split('/').length - 1] === 'index.html') {
+if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
   const indexPage = new PageIndex();
   indexPage.bootstrap();
 }

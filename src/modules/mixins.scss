@@ -378,7 +378,7 @@
 
 //Стилизация кнопки
 
-@mixin button-search($height: 100%, $width: 11.3%){
+@mixin button-search($height: 100%, $width: 3.8rem){
   position: absolute;
   right: 0;
   cursor: pointer;

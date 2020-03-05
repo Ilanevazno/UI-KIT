@@ -1,2 +1,7 @@
-mixin donutChart
-    .donut-chart#donut-chart
+mixin donutChart(settings = {})
+    -
+        let {
+            className = '',
+            id = ''
+        } = settings
+    div(class=className id= id)

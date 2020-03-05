@@ -48,7 +48,7 @@ block content
                     +pieChart('62')
                     +pieChart('89')
                 .widgets__donut-charts
-                    +donutChart
+                    +donutChart({ className: 'donut-chart', id: 'js-ui-kit-donut' })
         .widgets__sliders
             h2.widgets__title Sliders
             .widgets__sliders-container
@@ -93,7 +93,7 @@ block content
                     +events({picture: require('../../assets/images/' + data.events.picture), date: {day: data.events.date.day, month: data.events.date.month}, title: data.events.title, text: data.events.text})
         .widgets__location
             h2.widgets__title Location
-            +location({welcomeText: 'Meet us!', address: '1259  CALIFORNIA ST San Francisco, CA' })
+            +location({welcomeText: 'Meet us!', address: '1259  CALIFORNIA ST San Francisco, CA', className: 'js-ui-kit-location' })
         .widgets__calendar-and-messaging
             .widgets__calendar-and-messaging-container
                 .widgets__calendar-container
@@ -101,7 +101,7 @@ block content
                     +calendar('example-calendar')
                 .widgets__messaging-container
                     h2.widgets__title Messaging
-                    +messaging(require('../../assets/images/profile-girl.jpg'), 'Sarah Brown', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'example-messaging')
+                    +messaging({userName: 'Sarah Brown', placeholder: 'Hey! So are we cool to meet at the art gallery? Say 8pm?'})
         .widgets__video
             h2.widgets__title Video
-            +videoPlayer({src: require('../../assets/video/new-zeland.mp4'), className: 'example-video'})
+            +videoPlayer({src: require('../../assets/video/new-zeland.mp4'), className: 'js-ui-kit-video'})

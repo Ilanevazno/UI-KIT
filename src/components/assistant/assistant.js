@@ -22,10 +22,7 @@ export default class Assistant {
     $(document).on('click', this.hideMessenger.bind(this));
   }
 
-  init() {
+  bootstrap() {
     this.bindActions();
   }
 }
-
-const assistant = new Assistant('.assistant');
-assistant.init();

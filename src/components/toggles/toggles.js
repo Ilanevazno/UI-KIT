@@ -1,4 +1,4 @@
-class Toggle {
+export default class Toggle {
   constructor(selector) {
     this.$toggleHtml = $(selector);
   }
@@ -19,6 +19,3 @@ class Toggle {
     this.bindActions();
   }
 }
-
-const toggler = new Toggle('.js-toggles-icon');
-toggler.bootstrap();

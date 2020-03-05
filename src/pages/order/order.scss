@@ -11,7 +11,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    margin: 3rem auto 3rem auto;
+    margin: 5rem auto 5rem auto;
   }
 
   &__dropdown-wrapper {
@@ -46,6 +46,14 @@
     }
   }
 
+  &__budget {
+    &-title {
+      font-family: 'Lato Light', Arial, sans-serif;
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
+  }
+
   &__room {
     &-picture {
       &-container {
@@ -55,7 +63,7 @@
       }
 
       &-title {
-        font-family: 'Lato black', Arial, sans-serif;
+        font-family: 'Lato Light', Arial, sans-serif;
         text-align: center;
         font-size: 2rem;
       }
@@ -75,17 +83,26 @@
         }
       }
     }
+    
+    &-arrows-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+    }
   }
 
   &__checkout {
-    @include media-screen($tablet) {
-      flex-direction: column;
-      align-items: center;
-    }
-
     height: 89vh;
     display: none;
     justify-content: space-between;
+
+    &-container {
+      background: darken($white, 5);
+      border-radius: 31px;
+      padding: 3%;
+      box-shadow: 2px 8px 7px 0px darken(white, 10);
+      margin: 0 2%;
+    }
 
     &_open {
       display: flex;
@@ -102,6 +119,27 @@
 
     &-control {
       @include input-search();
+    }
+
+    &-personal-data {
+      display: flex;
+      align-items: center;
+    }
+
+    &-confrim {
+      display: flex;
+      font-family: 'Lato Regular', Arial, sans-serif;
+      font-size: 1.6rem;
+      margin-left: 1rem;
+
+      a {
+        margin-left: 1rem;
+      }
+    }
+
+    @include media-screen($tablet) {
+      flex-direction: column;
+      align-items: center;
     }
   }
 }

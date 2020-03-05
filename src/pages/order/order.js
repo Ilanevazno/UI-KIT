@@ -2,21 +2,68 @@
 import 'air-datepicker';
 import Percentages from '../../components/percentages-chart/percentages';
 import Calendar from '../../components/calendar/calendar';
+import Slider from '../../components/sliders/slider';
+import Dropdown from '../../components/dropdown/dropdown';
+import Toggle from '../../components/toggles/toggles';
+import TickBox from '../../components/tick-boxes/checkbox';
+
+const state = require('./order.json');
 
 class OrderPage {
   constructor() {
     this.percentageCharts = null;
     this.$fullyState = $('.order__fully-state').find('.pie-chart');
     this.fullyState = 1;
-    this.currentState = 'personCount';
+    this.currentState = state.orderState.START;
     this.roomList = [...$('.order__room-picture-item')];
   }
 
   render() {
-    this.getPercChart();
+    this.prepareDropDown('.js-dropdown-widget');
+    this.getPercChart('.js-percentages-chart');
+    this.prepareToggle('.js-toggles-icon');
+    this.prepareTickBoxes('.js-checkbox-icon');
     this.prepareObserver();
+    this.prepareSlider('.js-budget-slider', 'theme-mint');
     this.prepareRoomPictures();
-    this.getCalendar();
+    this.getCalendar('.js-calendar-widget');
+  }
+
+  prepareDropDown(selector) {
+    $(selector).each((idx, itm) => {
+      const dropdown = new Dropdown($(itm));
+      dropdown.bootstrap();
+    });
+  }
+
+  prepareSlider(selector, sliderTheme) {
+    const orangeSlider = new Slider(selector, {
+      from: 0,
+      to: 100,
+      theme: sliderTheme,
+      step: 1,
+      scale: [],
+      format: '%s',
+      width: 290,
+      onstatechange: () => {
+        $('.js-budget-count').text(`${Number(orangeSlider.$htmlContainer[0].value * 1000)} Руб.`);
+      },
+    });
+    orangeSlider.bootstrap();
+  }
+
+  prepareToggle(selector) {
+    $(selector).each((idx, itm) => {
+      const toggler = new Toggle($(itm));
+      toggler.bootstrap();
+    });
+  }
+
+  prepareTickBoxes(selector) {
+    $(selector).each((idx, itm) => {
+      const tickBox = new TickBox($(itm));
+      tickBox.bootstrap();
+    });
   }
 
   prepareRoomPictures() {
@@ -27,7 +74,7 @@ class OrderPage {
     event.preventDefault();
     const checkPicturesRange = (idx) => {
       return idx >= 0 && idx < this.roomList.length - 1 ? true : false;
-    }
+    };
 
     for (let i = 0; i < this.roomList.length; i++) {
       if ($(this.roomList[i]).is('.order__room-picture-item_active') && checkPicturesRange(i)) {
@@ -42,7 +89,7 @@ class OrderPage {
     event.preventDefault();
     const checkPicturesRange = (idx) => {
       return idx > 0 && idx <= this.roomList.length - 1 ? true : false;
-    }
+    };
 
     for (let i = 0; i < this.roomList.length; i++) {
       if ($(this.roomList[i]).is('.order__room-picture-item_active') && checkPicturesRange(i)) {
@@ -61,22 +108,22 @@ class OrderPage {
     };
 
     const peopleCountObserver = $('.js-people-count')[0];
-    const childrensCountObserver = $('.js-childrens-count')[0];
+    const budgetObserver = $('.js-budget-count')[0];
 
-    [peopleCountObserver, childrensCountObserver].map((target) => {
+    [peopleCountObserver, budgetObserver].map((target) => {
       const observer = new MutationObserver(this.selectMutation.bind(this));
       observer.observe(target, config);
     });
   }
 
-  getPercChart() {
-    const percentageCharts = new Percentages('.pie-chart');
-    percentageCharts.init();
+  getPercChart(selector) {
+    const percentageCharts = new Percentages(selector);
+    percentageCharts.bootstrap();
     this.percentageCharts = percentageCharts;
   }
 
-  getCalendar() {
-    const calendar = new Calendar('.order__meet-date');
+  getCalendar(selector) {
+    const calendar = new Calendar(selector);
     calendar.bootstrap();
   }
 
@@ -107,10 +154,10 @@ class OrderPage {
     mutationsList.map((mutation) => {
       if (this.checkMutationTarget(mutation.target, '.js-people-count') && this.checkTargetState('personCount')) {
         this.fullyState += 10;
-        this.changeState('childsCount');
+        this.changeState('budget');
       }
 
-      if (this.checkMutationTarget(mutation.target, '.js-childrens-count') && this.checkTargetState('childsCount')) {
+      if (this.checkMutationTarget(mutation.target, '.js-budget-count') && this.checkTargetState('budget')) {
         this.fullyState += 5;
         this.changeState('selectRoom');
       }
@@ -138,7 +185,7 @@ class OrderPage {
   }
 }
 
-if (window.location.href.split('/')[window.location.href.split('/').length - 1] === 'order.html') {
+if (window.location.pathname === '/order.html') {
   const orderPage = new OrderPage();
   orderPage.bootstrap();
 }

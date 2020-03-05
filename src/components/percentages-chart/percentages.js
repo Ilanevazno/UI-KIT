@@ -20,7 +20,7 @@ export default class Percentages {
     });
   }
 
-  init() {
+  bootstrap() {
     this.render();
   }
 }
