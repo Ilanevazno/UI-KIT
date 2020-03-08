@@ -1,17 +1,17 @@
 mixin events(event = {})
     -
         let {
-            picture = require('../../assets/images/gray-bg.jpg'),
+            picture = require("../../assets/images/gray-bg.jpg"),
             date = {
-                day: '0',
-                month: 'mon'
+                day: "0",
+                month: "mon"
             },
-            title = 'This is the title',
-            text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            className = ''
+            title = "This is the title",
+            text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            className = ""
         } = event
     div(class="widget-events " + className)
-        div(class='widget-events__picture' style=`background-image: url(${picture})`)
+        div(class="widget-events__picture" style=`background-image: url(${picture})`)
         div(class="widget-events__information")
             div(class="widget-events__information-wrapper")
                 div(class="widget-events__date-title")
@@ -20,4 +20,4 @@ mixin events(event = {})
                 h3(class="widget-events__event-title")=  title
                 p(class="widget-events__event-text")=  text
                 .widget-events__to-calendar
-                    +button({theme: 'mint', size: 'low', isResponsive: true, text: 'Add to calendar'})
+                    +button({theme: "mint", size: "low", isResponsive: true, text: "Add to calendar"})

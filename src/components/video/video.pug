@@ -1,6 +1,6 @@
 mixin videoPlayer({src, className})
-    .video-player__container
-        video(id= className class="video-player__screen " +className)
+    .video-player__container(class= className)
+        video(id= className class="video-player__screen")
             source(src= src type="video/mp4")
         .video-player__controls
             button(id="video-player__play" class="video-player__control video-player__play")

@@ -8,8 +8,8 @@ export default class Dropdown {
   }
 
   bindActions() {
-    this.$htmlContainer.find('.js-dropdown-textarea').on('click', this.toggleMenuState.bind(this));
-    this.$htmlContainer.find('.js-dropdown-label-item').on('click', this.chooseMenuItem.bind(this));
+    this.$htmlContainer.find('.js-dropdown-textarea').on('click.dopdown-textarea', this.toggleMenuState.bind(this));
+    this.$htmlContainer.find('.js-dropdown-label-item').on('click.dropdown-label', this.chooseMenuItem.bind(this));
   }
 
   toggleMenuState() {
@@ -32,3 +32,8 @@ export default class Dropdown {
     this.bindActions();
   }
 }
+
+$('.js-dropdown-widget').each((idx, itm) => {
+  const dropDown = new Dropdown($(itm));
+  dropDown.bootstrap();
+});

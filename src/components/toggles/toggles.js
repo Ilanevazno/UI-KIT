@@ -4,7 +4,7 @@ export default class Toggle {
   }
 
   bindActions() {
-    this.$toggleHtml.on('click', this.toggleState);
+    this.$toggleHtml.on('click.toggleToggles', this.toggleState);
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -19,3 +19,8 @@ export default class Toggle {
     this.bindActions();
   }
 }
+
+$('.js-toggles-icon').each((idx, itm) => {
+  const toggler = new Toggle($(itm));
+  toggler.bootstrap();
+});

@@ -1,4 +1,4 @@
-import Stages from '../../components/stages/stages';
+import Stages from '../stages/stages';
 
 /* eslint-disable class-methods-use-this */
 class Registration {
@@ -29,7 +29,7 @@ class Registration {
 
   nextStep(event) {
     event.preventDefault();
-    for (let i = 0; i < this.requiredLabels.length; i++) {
+    for (let i = 0; i < this.requiredLabels.length; i += 1) {
       if ($(this.requiredLabels[i]).hasClass('registration__form-control_active')) {
         $(this.requiredLabels[i]).removeClass('registration__form-control_active');
         this.prepareLabel(i + 1);

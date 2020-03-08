@@ -1,12 +1,12 @@
 mixin messaging(data = {})
     -
         let {
-            picture = require('../../assets/images/profile-girl.jpg'),
+            picture = require("../../assets/images/profile-girl.jpg"),
             userName,
             placeholder,
             widgetClass,
         } = data
-    div(class="messaging__widget" class= ''+widgetClass)
+    div(class="messaging__widget" class= ""+widgetClass)
         div(class="messaging__header")
             p.messaging__interlocutor-name= userName
             div(class="messaging__interlocutor-picture" style=`background-image: url(${picture})`)
@@ -20,4 +20,4 @@ mixin messaging(data = {})
                 div(class="messaging__chat-area")
                     textarea(class="messaging__textarea messaging__message-to" disabled placeholder= placeholder)
                     textarea(class="messaging__textarea messaging__message-from")
-                +button({theme: 'mint', size: 'hight', text: 'Submit', isReversedColor: true, isResponsive: true})
+                +button({theme: "mint", size: "hight", text: "Submit", isReversedColor: true, isResponsive: true})

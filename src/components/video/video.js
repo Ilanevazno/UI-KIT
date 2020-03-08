@@ -11,10 +11,10 @@ export default class Video {
   }
 
   bindActions() {
-    $.merge(this.controls.$buttonPlay, this.controls.$buttonPause).on('click', this.toggleVideoState.bind(this));
-    this.$videoScreen.on('timeupdate', () => { this.runningProgressBar(this.$videoScreen[0].currentTime, this.$videoScreen[0].duration); });
-    this.controls.$buttonFullScreen.on('click', this.requestFullScreen.bind(this));
-    this.$videoProgress.on('click', this.setVideoState.bind(this));
+    $.merge(this.controls.$buttonPlay, this.controls.$buttonPause).on('click.videoStateToggler', this.toggleVideoState.bind(this));
+    this.$videoScreen.on('timeupdate.videoPlayer', () => { this.runningProgressBar(this.$videoScreen[0].currentTime, this.$videoScreen[0].duration); });
+    this.controls.$buttonFullScreen.on('click.videoFullScreen', this.requestFullScreen.bind(this));
+    this.$videoProgress.on('click.videoProgress', this.setVideoState.bind(this));
   }
 
   bootstrap() {
@@ -50,11 +50,3 @@ export default class Video {
     this.$videoScreen[0].requestFullscreen();
   }
 }
-
-const videoObj = {
-  src: 'src/assets/video/new-zeland.mp4',
-  selector: '.video-player__container',
-};
-
-const video = new Video(videoObj.src, videoObj.selector);
-video.bootstrap();

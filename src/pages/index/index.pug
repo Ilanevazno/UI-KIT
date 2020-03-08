@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-meta(charset = 'utf-8' name='viewport' content='initial-scale=1.0, width=device-width')
-meta(name='desctiption' content='UI KIT special for Fullstack development')
-link(rel='apple-touch-icon' sizes='180x180' href='./assets/favicons/apple-touch-icon.png')
-link(rel='icon' type='image/png' sizes='32x32' href='./assets/favicons/favicon-32x32.png')
-link(rel='icon' sizes='any' mask href='./assets/favicons/safari-pinned-tab.svg')
+meta(charset = "utf-8" name="viewport" content="initial-scale=1.0, width=device-width")
+meta(name="desctiption" content="UI KIT special for Fullstack development")
+link(rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png")
+link(rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png")
+link(rel="icon" sizes="any" mask href="./assets/favicons/safari-pinned-tab.svg")
 html
 head
     title
@@ -22,7 +22,7 @@ body
                 +header()
             block content
                 .main-container
-                    - const data = require('./index.json')
+                    - const data = require("./index.json")
                     .global__wrapper.main__search
                         h2 Поиск по сайту: (имитация)
                         .main__search-line
@@ -35,9 +35,9 @@ body
                                     p.main__news-item-text= item.text
                         .main__news-info
                             .main__block-events
-                                +events({title: '8 Марта', text: 'Междунаро́дный же́нский день — праздник, отмечаемый ежегодно 8 марта в ряде стран как «женский день». Исторически появился как день солидарности женщин во многих странах в борьбе за равные права и эмансипацию.', date: '03.08.2020', picture: require('../../assets/images/widget-events-picture.jpg'), className: 'main__events-widget'})
+                                +events({title: "8 Марта", text: "Междунаро́дный же́нский день — праздник, отмечаемый ежегодно 8 марта в ряде стран как «женский день». Исторически появился как день солидарности женщин во многих странах в борьбе за равные права и эмансипацию.", date: "03.08.2020", picture: require("../../assets/images/widget-events-picture.jpg"), className: "main__events-widget"})
                             .main__block-news
-                                +news({title: data.news[0].title, date: data.news[0].date, text: data.news[0].text, picture: require('../../assets/images/' + data.news[0].picture)})
+                                +news({title: data.news[0].title, date: data.news[0].date, text: data.news[0].text, picture: require("../../assets/images/" + data.news[0].picture)})
         .global__assistant
             +assistant()
         .footer

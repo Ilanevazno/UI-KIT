@@ -11,7 +11,7 @@
             transition: .3s ease-in-out all;
 
             &:after {
-                content: "";
+                content: '';
                 width: 0%;
                 border-bottom: 2px solid $white;
                 height: 3px;
@@ -29,12 +29,12 @@
 
     &__mobile {
         display: none;
-        height: 5rem;
+        min-height: 5rem;
         background: $mint-template;
     }
 
     &__topline {
-        height: 12rem;
+        min-height: 12rem;
         background: $mint-template;
         display: flex;
 

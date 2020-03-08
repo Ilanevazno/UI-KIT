@@ -4,7 +4,7 @@ export default class TickBox {
   }
 
   bindActions() {
-    this.$tickBoxHtml.on('click', this.toggleBox);
+    this.$tickBoxHtml.on('click.toggleCheckBox', this.toggleBox);
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -19,3 +19,8 @@ export default class TickBox {
     this.bindActions();
   }
 }
+
+$('.js-checkbox-icon').each((idx, itm) => {
+  const tickBox = new TickBox($(itm));
+  tickBox.bootstrap();
+});

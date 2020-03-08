@@ -57,3 +57,8 @@ export default class Calendar {
       .text($selectedDay.text());
   }
 }
+
+$('.js-calendar-widget').each((idx, itm) => {
+  const calendar = new Calendar($(itm));
+  calendar.bootstrap();
+});

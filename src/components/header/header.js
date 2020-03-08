@@ -8,8 +8,8 @@ class Hamburger {
     }
 
     bindActions() {
-        $(document).on('click', this.closeMenu.bind(this));
-        this.$hamburgerBtn.on('click', this.toggleState.bind(this));
+        $(document).on('click.closeHamburger', this.closeMenu.bind(this));
+        this.$hamburgerBtn.on('click.toggleHamburger', this.toggleState.bind(this));
     }
 
     toggleState() {

@@ -16,8 +16,8 @@ export default class Location {
     const $mapContainer = $(this.mymap._container);
     const $showCurrentPosition = $mapContainer.find('.js-overlay-btn-set-address');
     const $findMarker = $mapContainer.find('.js-overlay-btn-find-marker');
-    $showCurrentPosition.on('click', this.setNewAddress.bind(this));
-    $findMarker.on('click', this.showCurrentPosition.bind(this));
+    $showCurrentPosition.on('click.setLocationPosition', this.setNewAddress.bind(this));
+    $findMarker.on('click.findLocationMarker', this.showCurrentPosition.bind(this));
   }
 
   showCurrentPosition() {

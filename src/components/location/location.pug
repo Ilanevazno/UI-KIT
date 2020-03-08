@@ -1,12 +1,12 @@
 mixin location(settings = {})
     -
         let {
-            welcomeText = '',
-            address = '',
-            className = '',
-            coords = ''
+            welcomeText = "",
+            address = "",
+            className = "",
+            coords = ""
         } = settings
-    div(class='widget-location js-widget-location ' + className data-coords = coords)
+    div(class="widget-location js-widget-location " + className data-coords = coords)
         .widget-location__overlay
             .widget-location__overlay-text-wrapper
                 p.widget-location__overlay-welcome-text= welcomeText

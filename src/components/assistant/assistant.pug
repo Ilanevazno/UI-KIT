@@ -1,10 +1,10 @@
 mixin assistant(data = {})
   -
     const {
-      placeholder = 'Здравствуйте, чем я могу вам помочь?',
-      avatar = require('../../assets/images/profile-girl.jpg'),
-      className = '',
-      helperName = 'Elena'
+      placeholder = "Здравствуйте, чем я могу вам помочь?",
+      avatar = require("../../assets/images/profile-girl.jpg"),
+      className = "",
+      helperName = "Elena"
     } = data
   .assistant.js-assistant-widget
     include ../messaging/messaging
@@ -12,4 +12,4 @@ mixin assistant(data = {})
       .assistant__request-avatar
         img(src= avatar, alt="assistant-avatar")
     .assistant__messenger
-      +messaging({userName: helperName, widgetClass: 'assistant__dialog', placeholder: placeholder})
+      +messaging({userName: helperName, widgetClass: "assistant__dialog", placeholder: placeholder})

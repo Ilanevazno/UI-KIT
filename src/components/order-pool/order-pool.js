@@ -1,13 +1,9 @@
 /* eslint-disable class-methods-use-this */
 import 'air-datepicker';
-import Percentages from '../../components/percentages-chart/percentages';
-import Calendar from '../../components/calendar/calendar';
-import Slider from '../../components/sliders/slider';
-import Dropdown from '../../components/dropdown/dropdown';
-import Toggle from '../../components/toggles/toggles';
-import TickBox from '../../components/tick-boxes/checkbox';
+import Slider from '../sliders/slider';
+import Percentages from '../percentages-chart/percentages';
 
-const state = require('./order.json');
+const state = require('./order-pool.json');
 
 class OrderPage {
   constructor() {
@@ -19,21 +15,10 @@ class OrderPage {
   }
 
   render() {
-    this.prepareDropDown('.js-dropdown-widget');
-    this.getPercChart('.js-percentages-chart');
-    this.prepareToggle('.js-toggles-icon');
-    this.prepareTickBoxes('.js-checkbox-icon');
     this.prepareObserver();
     this.prepareSlider('.js-budget-slider', 'theme-mint');
     this.prepareRoomPictures();
-    this.getCalendar('.js-calendar-widget');
-  }
-
-  prepareDropDown(selector) {
-    $(selector).each((idx, itm) => {
-      const dropdown = new Dropdown($(itm));
-      dropdown.bootstrap();
-    });
+    this.getPercChart('.js-percentages-chart');
   }
 
   prepareSlider(selector, sliderTheme) {
@@ -52,31 +37,15 @@ class OrderPage {
     orangeSlider.bootstrap();
   }
 
-  prepareToggle(selector) {
-    $(selector).each((idx, itm) => {
-      const toggler = new Toggle($(itm));
-      toggler.bootstrap();
-    });
-  }
-
-  prepareTickBoxes(selector) {
-    $(selector).each((idx, itm) => {
-      const tickBox = new TickBox($(itm));
-      tickBox.bootstrap();
-    });
-  }
-
   prepareRoomPictures() {
     $(this.roomList[0]).addClass('order__room-picture-item_active');
   }
 
   nextRoom(event) {
     event.preventDefault();
-    const checkPicturesRange = (idx) => {
-      return idx >= 0 && idx < this.roomList.length - 1 ? true : false;
-    };
+    const checkPicturesRange = (idx) => (idx >= 0 && idx < this.roomList.length - 1) || false;
 
-    for (let i = 0; i < this.roomList.length; i++) {
+    for (let i = 0; i < this.roomList.length; i += 1) {
       if ($(this.roomList[i]).is('.order__room-picture-item_active') && checkPicturesRange(i)) {
         $(this.roomList[i]).removeClass('order__room-picture-item_active');
         $(this.roomList[i + 1]).addClass('order__room-picture-item_active');
@@ -87,11 +56,9 @@ class OrderPage {
 
   prevRoom(event) {
     event.preventDefault();
-    const checkPicturesRange = (idx) => {
-      return idx > 0 && idx <= this.roomList.length - 1 ? true : false;
-    };
+    const checkPicturesRange = (idx) => (idx > 0 && idx <= this.roomList.length - 1) || false;
 
-    for (let i = 0; i < this.roomList.length; i++) {
+    for (let i = 0; i < this.roomList.length; i += 1) {
       if ($(this.roomList[i]).is('.order__room-picture-item_active') && checkPicturesRange(i)) {
         $(this.roomList[i]).removeClass('order__room-picture-item_active');
         $(this.roomList[i - 1]).addClass('order__room-picture-item_active');
@@ -111,26 +78,17 @@ class OrderPage {
     const budgetObserver = $('.js-budget-count')[0];
 
     [peopleCountObserver, budgetObserver].map((target) => {
+      // eslint-disable-next-line no-undef
       const observer = new MutationObserver(this.selectMutation.bind(this));
       observer.observe(target, config);
+      return target;
     });
   }
 
-  getPercChart(selector) {
-    const percentageCharts = new Percentages(selector);
-    percentageCharts.bootstrap();
-    this.percentageCharts = percentageCharts;
-  }
-
-  getCalendar(selector) {
-    const calendar = new Calendar(selector);
-    calendar.bootstrap();
-  }
-
   bindActions() {
-    $('.js-next-room').on('click', this.nextRoom.bind(this));
-    $('.js-prev-room').on('click', this.prevRoom.bind(this));
-    $('.js-order-picture-continue').on('click', this.moveToOrder.bind(this));
+    $('.js-next-room').on('click.nextOrderRoom', this.nextRoom.bind(this));
+    $('.js-prev-room').on('click.prevOrderRoom', this.prevRoom.bind(this));
+    $('.js-order-picture-continue').on('click.continueOrder', this.moveToOrder.bind(this));
   }
 
   moveToOrder(event) {
@@ -161,6 +119,7 @@ class OrderPage {
         this.fullyState += 5;
         this.changeState('selectRoom');
       }
+      return mutation;
     });
   }
 
@@ -169,6 +128,7 @@ class OrderPage {
     this.changeFully(this.fullyState);
   }
 
+  // eslint-disable-next-line no-shadow
   changeFully(state) {
     if (this.fullyState > 100) {
       this.fullyState = 100;
@@ -177,6 +137,12 @@ class OrderPage {
     this.$fullyState.attr('data-percent', state);
     this.$fullyState.find('figcaption').html(state);
     this.percentageCharts.render();
+  }
+
+  getPercChart(selector) {
+    const percentageCharts = new Percentages(selector);
+    percentageCharts.bootstrap();
+    this.percentageCharts = percentageCharts;
   }
 
   bootstrap() {

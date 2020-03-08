@@ -23,6 +23,10 @@
     position: fixed;
     bottom: 26vh;
     right: 3vw;
+
+    @include media-screen ($mobile) {
+      display: none;
+    }
   }
 
   &__form-presentation-item {
@@ -92,7 +96,6 @@
   }
 
   &__checkout {
-    height: 89vh;
     display: none;
     justify-content: space-between;
 
@@ -101,7 +104,7 @@
       border-radius: 31px;
       padding: 3%;
       box-shadow: 2px 8px 7px 0px darken(white, 10);
-      margin: 0 2%;
+      margin: 3rem 2%;
     }
 
     &_open {
@@ -115,6 +118,10 @@
 
     &-label-control {
       margin-bottom: 2rem;
+
+      &:last-child {
+        text-align: center;
+      }
     }
 
     &-control {
@@ -144,6 +151,6 @@
   }
 }
 
-input[type="checkbox"]:checked + .order__childrens-count {
+input[type='checkbox']:checked + .order__childrens-count {
   display: block;
 }

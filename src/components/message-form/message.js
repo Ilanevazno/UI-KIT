@@ -7,7 +7,7 @@ export default class MessageForm {
   }
 
   bindActions() {
-    this.$htmlContainer.on('submit', this.submitForm.bind(this));
+    this.$htmlContainer.on('submit.submitFormWidget', this.submitForm.bind(this));
   }
 
   bootstrap() {
@@ -63,3 +63,8 @@ export default class MessageForm {
     return false;
   }
 }
+
+$('.js-message-form-widget').each((idx, itm) => {
+  const messageForm = new MessageForm($(itm));
+  messageForm.bootstrap();
+});

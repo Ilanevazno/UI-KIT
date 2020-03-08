@@ -13,7 +13,7 @@
         cursor: pointer;
 
         &::after {
-            content: "OFF";
+            content: 'OFF';
             position: absolute;
             right: 13%;
             bottom: 28%;
@@ -27,7 +27,7 @@
             cursor: pointer;
 
             &::after {
-                content: "ON";
+                content: 'ON';
                 position: absolute;
                 left: 19%;
                 bottom: 26%;

@@ -11,10 +11,10 @@ export default class Search {
   }
 
   bindActions() {
-    this.htmlItemList.$inputLabel.on('click', this.prepareLine.bind(this));
-    this.htmlItemList.$searchItems.find('li').on('click', this.selectFindedOption.bind(this));
-    this.$htmlElement.find('#form-search__str').on('input', this.startSearch.bind(this));
-    this.htmlItemList.$searchBtn.on('click', this.pressSearchButton.bind(this));
+    this.htmlItemList.$inputLabel.on('click.searchLabel', this.prepareLine.bind(this));
+    this.htmlItemList.$searchItems.find('li').on('click.searchItem', this.selectFindedOption.bind(this));
+    this.$htmlElement.find('#form-search__str').on('input.searchForm', this.startSearch.bind(this));
+    this.htmlItemList.$searchBtn.on('click.searchButton', this.pressSearchButton.bind(this));
   }
 
   prepareLine() {

@@ -10,16 +10,16 @@ block content
     p.contacts__text Вы можете посетить наш офис по адресу:
     p.contacts__text Россия. Санкт-Петербург, Итальянская ул. 3 (БЦ рандомный, 2 этаж)
     .contacts__widgets
-      +location({welcomeText: 'Meet us!', address: 'Итальянская ул. дом 3', className: 'contacts__widgets-location', coords: [59.890138, 30.378240]})
+      +location({welcomeText: "Meet us!", address: "Итальянская ул. дом 3", className: "contacts__widgets-location", coords: [59.890138, 30.378240]})
   hr
   .global__wrapper
     h2.contacts__title Как мы работаем?
     p.contacts__text О работе нашей компании вы сможете увидеть в нашем видео ролике:
     .contacts__widgets
-      +videoPlayer({src: require('../../assets/video/new-zeland.mp4'), className: 'contacts__video'})
+      +videoPlayer({src: require("../../assets/video/new-zeland.mp4"), className: "js-contacts-video"})
   hr
   .global__wrapper
     h2.contacts__title Остались ещё вопросы?
     p.contacts__text Вы можете отправить нам сообщение, и мы ответим вам на почту
     .contacts__widgets
-      +formMessage({className: 'contacts__form-container', NameField: 'contacts__user-name', emailField: 'contacts__user-email', messageField: 'contacts__user-message'})
+      +formMessage({className: "contacts__form-container", NameField: "contacts__user-name", emailField: "contacts__user-email", messageField: "contacts__user-message"})
