@@ -16,10 +16,10 @@
           <div class="global__wrapper header__topline-wrapper">
             <div class="header__topline-links">
                 <ul class="header__links-list">
-                  <li><a class="header__topline-pages" href="./index.html">main</a></li>
-                  <li><a class="header__topline-pages" href="./ui-kit.html">ui-kit</a></li>
-                  <li><a class="header__topline-pages" href="./contacts.html">contacts</a></li>
-                  <li><a class="header__topline-pages" href="./order.html">order</a></li>
+                  <li><a class="header__topline-pages" href="./index.html">Главная</a></li>
+                  <li><a class="header__topline-pages" href="./ui-kit.html">Ui-kit</a></li>
+                  <li><a class="header__topline-pages" href="./contacts.html">Контакты</a></li>
+                  <li><a class="header__topline-pages" href="./order.html">Заказать</a></li>
                 </ul>
             </div><a class="header__topline-logo"></a>
             <div class="header__topline-account">
@@ -40,46 +40,21 @@
         <div class="header__mobile"><a class="header__hamburger-button js-hamburger-button">&#9776;</a>
           <aside class="header__hamburger-menu js-hamburger-menu">
               <ul class="header__links-list">
-                <li><a class="header__topline-pages" href="./index.html">main</a></li>
-                <li><a class="header__topline-pages" href="./ui-kit.html">ui-kit</a></li>
-                <li><a class="header__topline-pages" href="./contacts.html">contacts</a></li>
-                <li><a class="header__topline-pages" href="./order.html">order</a></li>
+                <li><a class="header__topline-pages" href="./index.html">Главная</a></li>
+                <li><a class="header__topline-pages" href="./ui-kit.html">Ui-kit</a></li>
+                <li><a class="header__topline-pages" href="./contacts.html">Контакты</a></li>
+                <li><a class="header__topline-pages" href="./order.html">Заказать</a></li>
               </ul>
           </aside>
         </div>
-      <div class="global__wrapper">
-        <form>
-          <div class="order__people-count">
-            <h2 class="order__title">Для начала укажите кол-во людей (взрослых)</h2>
-            <div class="order__dropdown-wrapper">
-                    <div class="widget-select">
-                      <div class="widget-select__area js-dropdown-textarea">
-                        <div class="js-people-count widget-select__area-text js-dropdown-text-inner">Choose an option</div>
-                        <div class="widget-select__area-btn"></div>
-                      </div>
-                      <ul class="widget-select__label js-dropdown-menu">
-                        <li class="widget-select__label-item js-dropdown-label-item">This is option 1</li>
-                        <li class="widget-select__label-item js-dropdown-label-item">This is option 2</li>
-                        <li class="widget-select__label-item js-dropdown-label-item">This is option 3</li>
-                        <li class="widget-select__label-item js-dropdown-label-item">This is option 4</li>
-                      </ul>
-                    </div>
-            </div>
-          </div>
-          <div class="order__childrens-wrapper">
-            <div class="order__childrens-question">
-              <h2 class="order__title">Наличие детей?</h2>
-              <div class="order__widgets-container">
-                      <label class="js-toggles-icon toggles__icon" for="order__childrens-avail js-childrens-state">
-                        <div class="toggles__handle"></div>
-                      </label>
-                      <input class="toggles__hidden-input order__childrens-avail js-childrens-state" type="checkbox" name="order__childrens-avail js-childrens-state" id="order__childrens-avail js-childrens-state">
-                <div class="order__childrens-count">
-                  <h2 class="order__title">Сколько будет детей?</h2>
+            <div class="global__wrapper">
+              <form>
+                <div class="order__people-count">
+                  <h2 class="order__title">Для начала укажите кол-во людей (взрослых)</h2>
                   <div class="order__dropdown-wrapper">
-                          <div class="widget-select">
+                          <div class="widget-select js-dropdown-widget">
                             <div class="widget-select__area js-dropdown-textarea">
-                              <div class="js-childrens-count widget-select__area-text js-dropdown-text-inner">Choose an option</div>
+                              <div class="js-people-count widget-select__area-text js-dropdown-text-inner">Choose an option</div>
                               <div class="widget-select__area-btn"></div>
                             </div>
                             <ul class="widget-select__label js-dropdown-menu">
@@ -91,82 +66,117 @@
                           </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="order__room-choose">
-            <h2 class="order__title">Выберите комнату для мероприятия</h2>
-            <div class="order__room-picture-container">
-              <div class="order__room-picture-item"><img src="./assets/images/holiday-picture-1.jpg">
-                <p class="order__room-picture-title">USA традиции</p>
-              </div>
-              <div class="order__room-picture-item"><img src="./assets/images/holiday-picture-2.jpg">
-                <p class="order__room-picture-title">Творческий беспорядок</p>
-              </div>
-              <div class="order__room-picture-item"><img src="./assets/images/holiday-picture-3.jpg">
-                <p class="order__room-picture-title">Семейные посиделки</p>
-              </div>
-            </div>
-            <div class="order__widgets-container">
-              <div class="order__arrows-container">
-                      <button class="arrows__button order__room-prev js-prev-room">
-                        <div class="arrows__arrow-inner arrows__arrow-left"></div>
-                      </button>
-                      <button class="arrows__button order__room-next js-next-room">
-                        <div class="arrows__arrow-inner arrows__arrow-right"></div>
-                      </button>
-              </div>
-            </div>
-            <div class="order__widgets-container">
-                    <button class="button__ripple-btn js-ripple-btn js-order-picture-continue button__ripple-btn_size_hight button__ripple-btn_theme_mint" type="submit">
-                      <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                      <p>Продолжить</p>
-                    </button>
-            </div>
-          </div>
-          <h2 class="order__title">Остался последний шаг</h2>
-          <div class="order__checkout">
-            <section class="order__checkout-container">
-              <p class="order__checkout-text">Выберите удобную для созвона дату:</p>
-                    <div class="order__meet-date" id="datepicker"></div>
-            </section>
-            <section class="order__checkout-container">
-              <p class="order__checkout-text">Всё что от вас необходимо, это заполнить два поля ниже, и мы позвоним вам в течение 10 минут.</p>
-              <div class="order__checkout-label-control">
-                <label class="order__checkout-text" for="order__person-name">Ваше имя:</label>
-                <input class="order__checkout-control" type="text" name="order__person-name" placeholder="Имя">
-              </div>
-              <div class="order__checkout-label-control">
-                <label class="order__checkout-text" for="order__person-number">Телефон для связи:</label>
-                <input class="order__checkout-control" type="text" name="order__person-number" placeholder="В формате +x (xxx) xxx-xx-xx">
-              </div>
-              <div class="order__checkout-label-control">
-                      <button class="button__ripple-btn js-ripple-btn  button__ripple-btn_size_hight button__ripple-btn_theme_mint" type="submit">
-                        <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                        <p>Позвоните мне</p>
-                      </button>
-              </div>
-            </section>
-          </div>
-        </form>
-        <div class="order__fully-state">
-                <figure class="pie-chart" data-percent="1">
-                  <div class="pie-chart__figure-inner">
-                    <svg height="100" width="100">
-                      <circle class="pie-chart__outer" width="50" height="50" cx="125" cy="65" r="60" transform="rotate(-90, 95, 95)"></circle>
-                    </svg>
-                    <figcaption>1</figcaption>
+                <div class="order__childrens-wrapper">
+                  <div class="order__childrens-question">
+                    <h2 class="order__title">Наличие детей?</h2>
+                    <div class="order__widgets-container">
+                            <label class="js-toggles-icon toggles__icon" for="order__childrens-avail js-childrens-state">
+                              <div class="toggles__handle"></div>
+                            </label>
+                            <input class="toggles__hidden-input order__childrens-avail js-childrens-state" type="checkbox" name="order__childrens-avail js-childrens-state" id="order__childrens-avail js-childrens-state">
+                      <div class="order__childrens-count">
+                        <h2 class="order__title">Сколько будет детей?</h2>
+                        <div class="order__dropdown-wrapper">
+                                <div class="widget-select js-dropdown-widget">
+                                  <div class="widget-select__area js-dropdown-textarea">
+                                    <div class="js-childrens-count widget-select__area-text js-dropdown-text-inner">Choose an option</div>
+                                    <div class="widget-select__area-btn"></div>
+                                  </div>
+                                  <ul class="widget-select__label js-dropdown-menu">
+                                    <li class="widget-select__label-item js-dropdown-label-item">This is option 1</li>
+                                    <li class="widget-select__label-item js-dropdown-label-item">This is option 2</li>
+                                    <li class="widget-select__label-item js-dropdown-label-item">This is option 3</li>
+                                    <li class="widget-select__label-item js-dropdown-label-item">This is option 4</li>
+                                  </ul>
+                                </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </figure>
-        </div>
-        <form></form>
-      </div>
+                </div>
+                <div class="order__budget-count">
+                  <div class="order__widgets-container">
+                    <h2 class="order__title">Укажите ваш бюджет</h2><span class="order__budget-title js-budget-count">0р.</span>
+                          <div class="order__budget-slider js-budget-slider"></div>
+                  </div>
+                </div>
+                <div class="order__room-choose">
+                  <h2 class="order__title">Выберите комнату для мероприятия</h2>
+                  <div class="order__room-picture-container">
+                    <div class="order__room-picture-item"><img src="./assets/images/holiday-picture-1.jpg">
+                      <p class="order__room-picture-title">USA традиции</p>
+                    </div>
+                    <div class="order__room-picture-item"><img src="./assets/images/holiday-picture-2.jpg">
+                      <p class="order__room-picture-title">Творческий беспорядок</p>
+                    </div>
+                    <div class="order__room-picture-item"><img src="./assets/images/holiday-picture-3.jpg">
+                      <p class="order__room-picture-title">Семейные посиделки</p>
+                    </div>
+                  </div>
+                  <div class="order__widgets-container">
+                    <div class="order__room-arrows-container">
+                            <button class="arrows__button order__room-prev js-prev-room">
+                              <div class="arrows__arrow-inner arrows__arrow-left"></div>
+                            </button>
+                            <button class="arrows__button order__room-next js-next-room">
+                              <div class="arrows__arrow-inner arrows__arrow-right"></div>
+                            </button>
+                    </div>
+                  </div>
+                  <div class="order__widgets-container">
+                          <button class="button__ripple-btn js-ripple-btn js-order-picture-continue button__ripple-btn_size_hight button__ripple-btn_theme_mint" type="submit">
+                            <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
+                            <p>Продолжить</p>
+                          </button>
+                  </div>
+                </div>
+                <h2 class="order__title">Остался последний шаг</h2>
+                <div class="order__checkout">
+                  <section class="order__checkout-container">
+                    <p class="order__checkout-text">Выберите удобную для созвона дату:</p>
+                          <div class="js-calendar-widget order__meet-date"></div>
+                  </section>
+                  <section class="order__checkout-container">
+                    <p class="order__checkout-text">Всё что от вас необходимо, это заполнить два поля ниже, и мы позвоним вам в течение 10 минут.</p>
+                    <div class="order__checkout-label-control">
+                      <label class="order__checkout-text" for="order__person-name">Ваше имя:</label>
+                      <input class="order__checkout-control" type="text" name="order__person-name" placeholder="Имя">
+                    </div>
+                    <div class="order__checkout-label-control">
+                      <label class="order__checkout-text" for="order__person-number">Телефон для связи:</label>
+                      <input class="order__checkout-control" type="text" name="order__person-number" placeholder="В формате +x (xxx) xxx-xx-xx">
+                    </div>
+                    <div class="order__checkout-label-control">
+                      <div class="order__checkout-personal-data">
+                              <input class="tick__checkbox-input order__confrim-checkbox" type="checkbox" name="order__confrim-checkbox" id="order__confrim-checkbox">
+                              <label class="js-checkbox-icon tick__checkbox-icon" for="order__confrim-checkbox"></label><span class="order__checkout-confrim">Я согласен на обработку<a target="_blank" rel="noopener noreferrer" href="http://google.com">персональных данных</a></span>
+                      </div>
+                    </div>
+                    <div class="order__checkout-label-control">
+                            <button class="button__ripple-btn js-ripple-btn  button__ripple-btn_size_hight button__ripple-btn_theme_mint" type="submit">
+                              <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
+                              <p>Позвоните мне</p>
+                            </button>
+                    </div>
+                  </section>
+                </div>
+              </form>
+              <div class="order__fully-state">
+                      <figure class="pie-chart js-percentages-chart" data-percent="1">
+                        <div class="pie-chart__figure-inner">
+                          <svg height="100" width="100">
+                            <circle class="pie-chart__outer" width="50" height="50" cx="125" cy="65" r="60" transform="rotate(-90, 95, 95)"></circle>
+                          </svg>
+                          <figcaption>1</figcaption>
+                        </div>
+                      </figure>
+              </div>
+            </div>
     </div>
     <div class="global__assistant">
-        <div class="assistant">
+        <div class="assistant js-assistant-widget">
           <div class="assistant__start">
             <div class="assistant__request-avatar"><img src="./assets/images/profile-girl.jpg" alt="assistant-avatar"></div>
-            <p class="assistant__request-help">Могу ли я чем-то помочь?</p>
           </div>
           <div class="assistant__messenger">
                 <div class="messaging__widget assistant__dialog">

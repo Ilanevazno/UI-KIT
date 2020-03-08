@@ -16,10 +16,10 @@
           <div class="global__wrapper header__topline-wrapper">
             <div class="header__topline-links">
                 <ul class="header__links-list">
-                  <li><a class="header__topline-pages" href="./index.html">main</a></li>
-                  <li><a class="header__topline-pages" href="./ui-kit.html">ui-kit</a></li>
-                  <li><a class="header__topline-pages" href="./contacts.html">contacts</a></li>
-                  <li><a class="header__topline-pages" href="./order.html">order</a></li>
+                  <li><a class="header__topline-pages" href="./index.html">Главная</a></li>
+                  <li><a class="header__topline-pages" href="./ui-kit.html">Ui-kit</a></li>
+                  <li><a class="header__topline-pages" href="./contacts.html">Контакты</a></li>
+                  <li><a class="header__topline-pages" href="./order.html">Заказать</a></li>
                 </ul>
             </div><a class="header__topline-logo"></a>
             <div class="header__topline-account">
@@ -40,10 +40,10 @@
         <div class="header__mobile"><a class="header__hamburger-button js-hamburger-button">&#9776;</a>
           <aside class="header__hamburger-menu js-hamburger-menu">
               <ul class="header__links-list">
-                <li><a class="header__topline-pages" href="./index.html">main</a></li>
-                <li><a class="header__topline-pages" href="./ui-kit.html">ui-kit</a></li>
-                <li><a class="header__topline-pages" href="./contacts.html">contacts</a></li>
-                <li><a class="header__topline-pages" href="./order.html">order</a></li>
+                <li><a class="header__topline-pages" href="./index.html">Главная</a></li>
+                <li><a class="header__topline-pages" href="./ui-kit.html">Ui-kit</a></li>
+                <li><a class="header__topline-pages" href="./contacts.html">Контакты</a></li>
+                <li><a class="header__topline-pages" href="./order.html">Заказать</a></li>
               </ul>
           </aside>
         </div>
@@ -52,7 +52,7 @@
         <p class="contacts__text">Вы можете посетить наш офис по адресу:</p>
         <p class="contacts__text">Россия. Санкт-Петербург, Итальянская ул. 3 (БЦ рандомный, 2 этаж)</p>
         <div class="contacts__widgets">
-                <div class="widget-location" id="map">
+                <div class="widget-location js-widget-location contacts__widgets-location" data-coords="[59.890138,30.37824]">
                   <div class="widget-location__overlay">
                     <div class="widget-location__overlay-text-wrapper">
                       <p class="widget-location__overlay-welcome-text">Meet us!</p>
@@ -73,8 +73,8 @@
         <h2 class="contacts__title">Как мы работаем?</h2>
         <p class="contacts__text">О работе нашей компании вы сможете увидеть в нашем видео ролике:</p>
         <div class="contacts__widgets">
-                <div class="video-player__container">
-                  <video class="video-player__screen contacts__video" id="contacts__video">
+                <div class="video-player__container js-contacts-video">
+                  <video class="video-player__screen" id="js-contacts-video">
                     <source src="./assets/video/new-zeland.mp4" type="video/mp4">
                   </video>
                   <div class="video-player__controls">
@@ -91,17 +91,17 @@
         <h2 class="contacts__title">Остались ещё вопросы?</h2>
         <p class="contacts__text">Вы можете отправить нам сообщение, и мы ответим вам на почту</p>
         <div class="contacts__widgets">
-                <form class="message__form message__form-container undefined">
+                <form class="message__form js-message-form-widget message__form-container contacts__form-container">
                   <div class="message__form-fields">
                     <input class="message__name message__form-item undefined" type="text" placeholder="Your Name">
                     <label class="field-status"></label>
                   </div>
                   <div class="message__form-fields">
-                    <input class="message__email message__form-item undefined" type="email" placeholder="Your Email">
-                    <label class="field-status"></label>
+                    <input class="message__email message__form-item contacts__user-email" type="email" id="contacts__user-email" name="contacts__user-email" placeholder="Your Email">
+                    <label class="field-status" for="contacts__user-email"></label>
                   </div>
                   <div class="message__form-fields">
-                    <textarea class="message__form-item message__form-textarea undefined" placeholder="Your Message"></textarea>
+                    <textarea class="message__form-item message__form-textarea contacts__user-message" id="contacts__user-message" placeholder="Your Message"></textarea>
                   </div>
                     <button class="button__ripple-btn js-ripple-btn  button__ripple-btn_size_hight button__ripple-btn_theme_mint-reverse" type="submit">
                       <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
@@ -112,10 +112,9 @@
       </div>
     </div>
     <div class="global__assistant">
-        <div class="assistant">
+        <div class="assistant js-assistant-widget">
           <div class="assistant__start">
             <div class="assistant__request-avatar"><img src="./assets/images/profile-girl.jpg" alt="assistant-avatar"></div>
-            <p class="assistant__request-help">Могу ли я чем-то помочь?</p>
           </div>
           <div class="assistant__messenger">
                 <div class="messaging__widget assistant__dialog">
