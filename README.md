@@ -30,7 +30,7 @@ You can enter to [Demo page](https://ilanevazno.github.io/UI-KIT/ "Demo page") f
 
 ## Git
 clone this repository with:
-```git clone https://github.com/imin314/CV_project.git```
+```git clone https://github.com/Ilanevazno/UI-KIT.git```
 
 ## NPM scripts
 
