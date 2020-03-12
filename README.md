@@ -40,9 +40,6 @@ clone this repository with:
 #### To build project 
 ```npm run build``` build project in development mode
 
-#### To build project 
-```npm run build``` build project in production mode
-
 #### To deploy
 ```npm run deploy``` building and deploying project to github pages
 
