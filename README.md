@@ -30,22 +30,22 @@ You can enter to [Demo page](https://ilanevazno.github.io/UI-KIT/ "Demo page") f
 
 ## Git
 clone this repository with:
-- ```https://github.com/Ilanevazno/UI-KIT.git```
+```https://github.com/Ilanevazno/UI-KIT.git```
 
 ## NPM scripts
 
 #### To start locally 
-- ```npm run watch``` for development environment in watch mode
+```npm run watch``` for development environment in watch mode
 
 #### To build project 
-- ```npm run build``` build project in development mode
+```npm run build``` build project in development mode
 
 #### To build project 
-- ```npm run build``` build project in production mode
+```npm run build``` build project in production mode
 
 #### To deploy
-- ```npm run deploy``` building and deploying project to github pages
+```npm run deploy``` building and deploying project to github pages
 
 #### Eslint
-- ```npm run eslint``` checking all .js files in 'components' folder on esLint with airBnb preset
+```npm run eslint``` checking all .js files in 'components' folder on esLint with airBnb preset
 
