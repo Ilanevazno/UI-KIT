@@ -4,7 +4,7 @@
 import 'leaflet';
 import 'leaflet-css';
 
-export default class Location {
+class Location {
   constructor(mapContainer) {
     this.$htmlContainer = $(mapContainer);
     this.coords = JSON.parse(this.$htmlContainer.attr('data-coords'));
@@ -76,3 +76,5 @@ $('.js-widget-location').each((idx, itm) => {
   const location = new Location(itm);
   location.bootstrap();
 });
+
+export default Location;

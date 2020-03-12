@@ -1,7 +1,7 @@
 import 'air-datepicker';
 import './calendar.scss';
 
-export default class Calendar {
+class Calendar {
   constructor(selector) {
     this.selector = selector;
     this.htmlObjects = {
@@ -62,3 +62,5 @@ $('.js-calendar-widget').each((idx, itm) => {
   const calendar = new Calendar($(itm));
   calendar.bootstrap();
 });
+
+export default Calendar;

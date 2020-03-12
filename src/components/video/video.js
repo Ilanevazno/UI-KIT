@@ -1,4 +1,4 @@
-export default class Video {
+class Video {
   constructor(videoSrc, selector) {
     this.$videoContainer = $(selector);
     this.$videoScreen = this.$videoContainer.find('.video-player__screen');
@@ -50,3 +50,5 @@ export default class Video {
     this.$videoScreen[0].requestFullscreen();
   }
 }
+
+export default Video;

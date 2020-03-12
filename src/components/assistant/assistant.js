@@ -1,5 +1,5 @@
 /* eslint-disable class-methods-use-this */
-export default class Assistant {
+class Assistant {
   constructor(selector) {
     this.$htmlContainer = $(selector);
   }
@@ -30,3 +30,5 @@ $('.js-assistant-widget').each((idx, itm) => {
   const assistant = new Assistant($(itm));
   assistant.bootstrap();
 });
+
+export default Assistant;

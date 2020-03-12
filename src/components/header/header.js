@@ -31,3 +31,5 @@ class Hamburger {
 
 const hamburger = new Hamburger('.header__mobile');
 hamburger.bootstrap();
+
+export default Hamburger;

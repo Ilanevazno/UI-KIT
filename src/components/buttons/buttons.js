@@ -1,4 +1,4 @@
-export default class Button {
+class Button {
   constructor(selector) {
     this.$rippleHtmlButton = $(selector);
   }
@@ -37,3 +37,5 @@ $('.js-ripple-effect').each((idx, itm) => {
   const button = new Button($(itm));
   button.bootstrap();
 });
+
+export default Button;

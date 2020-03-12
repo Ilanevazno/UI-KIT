@@ -1,4 +1,4 @@
-export default class MessageForm {
+class MessageForm {
   constructor(selector) {
     this.$htmlContainer = $(selector);
     this.$userNameLabel = this.$htmlContainer.find('.message__name');
@@ -68,3 +68,5 @@ $('.js-message-form-widget').each((idx, itm) => {
   const messageForm = new MessageForm($(itm));
   messageForm.bootstrap();
 });
+
+export default MessageForm;

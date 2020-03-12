@@ -1,4 +1,4 @@
-export default class Stages {
+class Stages {
   constructor(selector, activeStage) {
     this.$htmlContainer = $(selector);
     this.activeStage = activeStage;
@@ -20,3 +20,5 @@ export default class Stages {
     this.render();
   }
 }
+
+export default Stages;

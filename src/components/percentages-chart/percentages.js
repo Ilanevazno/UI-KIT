@@ -1,4 +1,4 @@
-export default class Percentages {
+class Percentages {
   constructor(selector) {
     this.$htmlContainer = $(selector);
   }
@@ -29,3 +29,5 @@ $('.js-percentages-chart').each((idx, itm) => {
   const tickBox = new Percentages($(itm));
   tickBox.bootstrap();
 });
+
+export default Percentages;

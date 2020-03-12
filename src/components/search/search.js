@@ -1,4 +1,4 @@
-export default class Search {
+class Search {
   constructor(selector) {
     this.$htmlElement = $(selector);
     this.htmlItemList = {
@@ -76,3 +76,5 @@ $('.js-seach-form-widget').each((idx, itm) => {
   const searchLine = new Search($(itm));
   searchLine.bootstrap();
 });
+
+export default Search;

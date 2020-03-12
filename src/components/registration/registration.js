@@ -50,3 +50,5 @@ class Registration {
 
 const registerPage = new Registration();
 registerPage.bootstrap();
+
+export default Registration;

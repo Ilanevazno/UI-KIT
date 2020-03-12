@@ -77,12 +77,23 @@ class OrderPage {
     const peopleCountObserver = $('.js-people-count')[0];
     const budgetObserver = $('.js-budget-count')[0];
 
-    [peopleCountObserver, budgetObserver].map((target) => {
-      // eslint-disable-next-line no-undef
-      const observer = new MutationObserver(this.selectMutation.bind(this));
-      observer.observe(target, config);
-      return target;
+    const targetArr = [];
+
+    [peopleCountObserver, budgetObserver].map((item) => {
+      if (typeof (item) !== 'undefined') {
+        targetArr.push(item);
+      }
+      return item;
     });
+
+    if (targetArr.length > 0) {
+      [...targetArr].map((target) => {
+        // eslint-disable-next-line no-undef
+        const observer = new MutationObserver(this.selectMutation.bind(this));
+        observer.observe(target, config);
+        return target;
+      });
+    }
   }
 
   bindActions() {
@@ -155,3 +166,8 @@ if (window.location.pathname === '/order.html') {
   const orderPage = new OrderPage();
   orderPage.bootstrap();
 }
+
+const orderPage = new OrderPage();
+orderPage.bootstrap();
+
+export default OrderPage;

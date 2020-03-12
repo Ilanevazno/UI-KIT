@@ -1,5 +1,5 @@
 /* eslint-disable class-methods-use-this */
-export default class Dropdown {
+class Dropdown {
   constructor(selector) {
     this.$htmlContainer = $(selector);
     this.$htmlTextArea = this.$htmlContainer.find('.js-dropdown-textarea');
@@ -37,3 +37,5 @@ $('.js-dropdown-widget').each((idx, itm) => {
   const dropDown = new Dropdown($(itm));
   dropDown.bootstrap();
 });
+
+export default Dropdown;
