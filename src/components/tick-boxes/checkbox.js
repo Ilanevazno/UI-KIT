@@ -26,4 +26,3 @@ $('.js-checkbox-icon').each((idx, itm) => {
 });
 
 export default TickBox;
-

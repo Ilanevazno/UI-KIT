@@ -25,8 +25,12 @@ Beautiful widget pack with using PUG/SCSS/jQuery
 - Custom video player;
 
 
-# Demo page
+## Demo page
 You can enter to [Demo page](https://ilanevazno.github.io/UI-KIT/ "Demo page") for looking at this project.
+
+## Git
+clone this repository with:
+- ```https://github.com/Ilanevazno/UI-KIT.git```
 
 ## NPM scripts
 
