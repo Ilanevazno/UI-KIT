@@ -1,18 +1,18 @@
 mixin formMessage(data = {})
-    -
-        let {
-            className,
-            nameField,
-            emailField,
-            messageField
-        } = data
-    form(class="message__form js-message-form-widget" class="message__form-container "+ className)
-        .message__form-fields
-            input(type="text" id= nameField name= nameField class="message__name message__form-item "+ nameField placeholder="Your Name")
-            label(for= nameField class="field-status")
-        .message__form-fields
-            input(type="email" id= emailField name= emailField class="message__email message__form-item "+ emailField placeholder="Your Email")
-            label(for= emailField class="field-status")
-        .message__form-fields
-            textarea(id= messageField class="message__form-item message__form-textarea "+ messageField placeholder="Your Message")
-        +button({theme: "mint", size: "hight", text: "Submit", isReversedColor: true})
+  -
+    let {
+      className,
+      nameField,
+      emailField,
+      messageField
+    } = data
+  form(class="message__form js-message-form-widget" class="message__form-container "+ className)
+    .message__form-fields
+      input(type="text" id= nameField name= nameField class="message__name message__form-item "+ nameField placeholder="Your Name")
+      label(for= nameField class="field-status")
+    .message__form-fields
+      input(type="email" id= emailField name= emailField class="message__email message__form-item "+ emailField placeholder="Your Email")
+      label(for= emailField class="field-status")
+    .message__form-fields
+      textarea(id= messageField class="message__form-item message__form-textarea "+ messageField placeholder="Your Message")
+    +button({theme: "mint", size: "hight", text: "Submit", isReversedColor: true})

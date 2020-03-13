@@ -96,7 +96,7 @@ module.exports = {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: ['./src/modules/mixins.scss', './src/modules/variables.scss', './src/modules/keyframes.scss']
+              resources: ['./src/styles/mixins.scss', './src/styles/variables.scss', './src/styles/keyframes.scss']
             }
           }
         ]

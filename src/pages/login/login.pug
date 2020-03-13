@@ -1,12 +1,12 @@
 extends ../index/index
 block title
-    | Login
+  | Login
 block content
-    form.login__form
-        .login__form-control
-            input(type="email" name="user-email" class="login__form-item" placeholder="Ваш логин")
-            label(for="user-email")
-        .login__form-control
-            input(type="password" name="user-password" class="login__form-item" placeholder="Пароль")
-            label(for="user-password")
-        +button({theme: "mint", size: "hight", text: "Вход в аккаунт"})
+  form.login__form
+    .login__form-control
+      input(type="email" name="user-email" class="login__form-item" placeholder="Ваш логин")
+      label(for="user-email")
+    .login__form-control
+      input(type="password" name="user-password" class="login__form-item" placeholder="Пароль")
+      label(for="user-password")
+    +button({theme: "mint", size: "hight", text: "Вход в аккаунт"})

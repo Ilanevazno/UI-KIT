@@ -1,17 +1,17 @@
 mixin search(settings = {})
-    -
-        let {
-            className = ''
-        } = settings
-    div(class="form-search js-seach-form-widget " + className)
-        .form-search__find-str
-            .form-search__str-wrapper
-                input(type="text" name="form-search__str" id="form-search__str" class="form-search__str" placeholder="Search")
-                label(for="form-search__str" class="form-search__str-status")
-                    | I’ve not found what I’m looking for...
-            input(type="button" id="form-search__btn-find" name="form-search__btn-find" class="form-search__btn-find")
-        .form-search__options
-            ul(class="form-search__items hidden" id="form-search__items")
-                -var list1 = ["ilya", "sigidin", "education 1", "Fullstack Development", "hello", "pick me", "Press F"]
-                    each item in list1
-                        li= item
+  -
+    let {
+      className = ''
+    } = settings
+  div(class="form-search js-seach-form-widget " + className)
+    .form-search__find-str
+      .form-search__str-wrapper
+        input(type="text" name="form-search__str" id="form-search__str" class="form-search__str" placeholder="Search")
+        label(for="form-search__str" class="form-search__str-status")
+          | I’ve not found what I’m looking for...
+      input(type="button" id="form-search__btn-find" name="form-search__btn-find" class="form-search__btn-find")
+    .form-search__options
+      ul(class="form-search__items hidden" id="form-search__items")
+        -var list1 = ["ilya", "sigidin", "education 1", "Fullstack Development", "hello", "pick me", "Press F"]
+          each item in list1
+            li= item

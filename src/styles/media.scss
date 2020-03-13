@@ -1,11 +1,11 @@
-@include media-screen ($mediumScreen) {
-    html {
-        font-size: 10px;
-    }
+@include media-screen($mediumScreen) {
+  html {
+    font-size: 10px;
+  }
 }
 
-@include media-screen ($tablet) {
-    html {
-        font-size: 8px;
-    }
+@include media-screen($tablet) {
+  html {
+    font-size: 8px;
+  }
 }

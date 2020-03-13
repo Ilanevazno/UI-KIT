@@ -1,56 +1,56 @@
 .main {
-    &__container {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 5rem;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
 
-        @include media-screen($tablet) {
-            flex-direction: column-reverse;
-            align-items: center;
-        }
+    @include media-screen($tablet) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+  &__news {
+    &-list {
+      margin-right: 6rem;
     }
 
-    &__news {
-        &-list {
-            margin-right: 6rem;
-        }
-        
-        &-item {
-            background: $mainNewsItem;
-            padding: 1%;
-            border-radius: 13px;
-            margin-top: 2rem;
-            box-shadow: 2px 2px 6px 0px darken($white, 15);
+    &-item {
+      background: $mainNewsItem;
+      padding: 1%;
+      border-radius: 13px;
+      margin-top: 2rem;
+      box-shadow: 2px 2px 6px 0px darken($white, 15);
 
-            &-title {
-                font-family: 'Lato black', Arial, sans-serif;
-                font-size: 2.5rem;
-            }
+      &-title {
+        font-family: "Lato black", Arial, sans-serif;
+        font-size: 2.5rem;
+      }
 
-            &-text {
-                font-family: 'Source Sans Pro', Arial, sans-serif;
-                font-size: 1.6rem;
-            }
-        }
+      &-text {
+        font-family: "Source Sans Pro", Arial, sans-serif;
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &__block {
+    &-events {
+      padding: 2rem 0;
+    }
+  }
+
+  &__search {
+    h2 {
+      font-family: "Lato black", Arial, sans-serif;
+      text-align: center;
     }
 
-    &__block {
-        &-events {
-            padding: 2rem 0;
-        }
+    &-line {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      margin: 0 auto;
     }
-
-    &__search {
-        h2 {
-            font-family: 'Lato black', Arial, sans-serif;
-            text-align: center;
-        }
-
-        &-line {
-            display: flex;
-            justify-content: center;
-            width: 50%;
-            margin: 0 auto;
-        }
-    }
+  }
 }

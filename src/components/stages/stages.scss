@@ -2,26 +2,26 @@
   width: 100%;
 }
 
-%remain-steps{
+%remain-steps {
   &:before {
     content: counter(stepNum);
     font-family: inherit;
     font-weight: 700;
   }
-  
-  &:after{
+
+  &:after {
     background-color: $grey-light;
   }
 }
-.multi-steps{
+.multi-steps {
   display: flex;
   width: 100%;
   justify-content: space-between;
   width: 100%;
   padding: 0;
-  font-family: 'Lato black', Arial, sans-serif;
+  font-family: "Lato black", Arial, sans-serif;
 
-  > li{
+  > li {
     counter-increment: stepNum;
     text-align: center;
     display: table-cell;
@@ -33,7 +33,7 @@
       width: 100%;
     }
 
-    &:before{
+    &:before {
       content: counter(stepNum);
       display: block;
       margin: 0 0 auto 0px;
@@ -44,7 +44,7 @@
       line-height: 32px;
       text-align: center;
       font-weight: bold;
-      border:{
+      border: {
         width: 2px;
         style: solid;
         color: $orange-template;
@@ -52,8 +52,8 @@
       }
     }
 
-    &:after{
-      content: '';
+    &:after {
+      content: "";
       height: 2px;
       width: 100%;
       background-color: $orange-template;
@@ -63,24 +63,24 @@
       z-index: -1;
     }
 
-    &:last-child{
-      &:after{
+    &:last-child {
+      &:after {
         display: none;
       }
     }
 
-    &.is-active{
+    &.is-active {
       @extend %remain-steps;
-      &:before{
+      &:before {
         background-color: $orange-template;
         color: white;
         border-color: $orange-template;
       }
 
-      ~ li{
+      ~ li {
         color: #808080;
         @extend %remain-steps;
-        &:before{
+        &:before {
           color: darken($grey-light, 40%);
           background-color: $grey-light;
           border-color: $grey-light;

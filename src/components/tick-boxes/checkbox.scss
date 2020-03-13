@@ -2,7 +2,7 @@
   &__checkbox-input {
     display: none;
   }
-  
+
   &__checkbox-icon {
     width: 2.8rem;
     height: 2.8rem;
@@ -15,7 +15,7 @@
     cursor: pointer;
 
     &:after {
-      content: '';
+      content: "";
       height: 40%;
       width: 4px;
       position: absolute;
@@ -23,12 +23,12 @@
       border-right: 2px solid;
       border-bottom: 2px solid;
       border-color: darken($gray-template, 15);
-      transition: .2s ease-in-out all;
+      transition: 0.2s ease-in-out all;
     }
 
     &--active {
       background: $mint-template;
-      
+
       &:after {
         border-color: white;
         transform: rotate(0deg);

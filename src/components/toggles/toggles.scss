@@ -1,57 +1,57 @@
 .toggles {
-    &__hidden-input {
-        display: none;
+  &__hidden-input {
+    display: none;
+  }
+
+  &__icon {
+    display: block;
+    width: 7rem;
+    height: 3rem;
+    background-color: $gray-template;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      content: "OFF";
+      position: absolute;
+      right: 13%;
+      bottom: 28%;
+      font-family: Lato black;
+      font-size: 1.5rem;
+      color: white;
     }
 
-    &__icon {
-        display: block;
-        width: 7rem;
-        height: 3rem;
-        background-color: $gray-template;
-        border-radius: 20px;
-        position: relative;
-        cursor: pointer;
+    &_active {
+      background-color: $mint-template;
+      cursor: pointer;
 
-        &::after {
-            content: 'OFF';
-            position: absolute;
-            right: 13%;
-            bottom: 28%;
-            font-family: Lato black;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        &_active {
-            background-color: $mint-template;
-            cursor: pointer;
-
-            &::after {
-                content: 'ON';
-                position: absolute;
-                left: 19%;
-                bottom: 26%;
-                font-family: Lato black;
-                font-size: 1.5rem;
-                color: white;
-            }
-        }
-
-        &_active > .toggles__handle {
-            left: 65%;
-            transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
-            cursor: pointer;
-        }
-    }
-
-    &__handle {
-        height: 2.3rem;
-        width: 2.3rem;
+      &::after {
+        content: "ON";
         position: absolute;
-        border-radius: 50%;
-        background-color: white;
-        bottom: 14%;
-        left: 4px;
-        transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
+        left: 19%;
+        bottom: 26%;
+        font-family: Lato black;
+        font-size: 1.5rem;
+        color: white;
+      }
     }
+
+    &_active > .toggles__handle {
+      left: 65%;
+      transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
+      cursor: pointer;
+    }
+  }
+
+  &__handle {
+    height: 2.3rem;
+    width: 2.3rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    bottom: 14%;
+    left: 4px;
+    transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
+  }
 }

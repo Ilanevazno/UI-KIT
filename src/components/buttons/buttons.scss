@@ -1,3 +1,25 @@
+@mixin button-size-modify($width: 9.2rem, $height: 2.5rem, $fontSize: 1.2rem) {
+  width: $width;
+  height: $height;
+  font-size: $fontSize;
+}
+
+@mixin button-color-modify($color: $white, $background: $orange-template, $border: $orange-template) {
+  color: $color;
+  box-shadow: 0px 3.5px 1px -1px darken($border, 10%);
+  background: $background;
+  border: 1.5px solid $border;
+
+  &:hover {
+    background: $border;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translate(0.1rem, 0.1rem);
+  }
+}
+
 .button {
   &__ripple-btn {
     outline: none;

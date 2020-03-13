@@ -1,10 +1,77 @@
+@mixin slider-theme($color: #ffffff) {
+  .back-bar {
+    height: 0.6rem;
+    border-radius: 8px;
+    background-color: #eeeeee;
+    background-color: #e7e7e7;
+    background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#dddddd));
+    background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
+    background-image: -o-linear-gradient(top, #eeeeee, #dddddd);
+    background-image: linear-gradient(to bottom, #eeeeee, #dddddd);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffdddddd', GradientType=0);
+
+    .pointer {
+      background-color: $color;
+      border-radius: 50%;
+      width: 2.3rem;
+      height: 2.3rem;
+      top: -0.7rem;
+    }
+
+    .selected-bar {
+      background-color: $color;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+
+    .pointer-label {
+      background: $color;
+      top: -4.3rem;
+      width: 4rem;
+      height: 2.6rem;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      border-radius: 5px;
+      font-family: "Lato black", Arial, sans-serif;
+
+      &:after {
+        content: "";
+        width: 30%;
+        height: 30%;
+        transform: rotate(45deg);
+        border-radius: 3px;
+        background: $color;
+        position: absolute;
+        bottom: -3px;
+      }
+    }
+  }
+
+  .scale {
+    top: 0.7rem;
+    font-family: "Lato black", Arial, sans-serif;
+
+    span {
+      border: none;
+    }
+
+    ins {
+      font-size: 1.3rem;
+    }
+  }
+}
+
 .theme-orange {
-  @include slider-theme ($orange-template)
-  
+  @include slider-theme($orange-template);
 }
 
 .theme-mint {
-  @include slider-theme ($mint-template);
+  @include slider-theme($mint-template);
 
   .back-bar .pointer-label {
     display: none;

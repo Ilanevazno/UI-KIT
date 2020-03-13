@@ -1,88 +1,88 @@
 .widget-location {
-    position: relative;
-    background: url('../../assets/images/location-fallen.jpg') no-repeat;
-    background-size: cover;
-    height: 32rem;
+  position: relative;
+  background: url("../../assets/images/location-fallen.jpg") no-repeat;
+  background-size: cover;
+  height: 32rem;
 
-    &__overlay {
-        width: 100%;
-        height: 8rem;
-        position: absolute;
-        bottom: 0;
-        background: $orange-template;
-        display: flex;
-        align-items: center;
-        padding: 0 3% 0 5%;
-        box-sizing: border-box;
-        z-index: 10;
+  &__overlay {
+    width: 100%;
+    height: 8rem;
+    position: absolute;
+    bottom: 0;
+    background: $orange-template;
+    display: flex;
+    align-items: center;
+    padding: 0 3% 0 5%;
+    box-sizing: border-box;
+    z-index: 10;
 
-        &-text-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 100%;
-            min-width: 49%;
-        }
-
-        &-welcome-text {
-            font-family: 'Lato light', Arial, sans-serif;
-            color: $white;
-            font-size: 3.4rem;
-            white-space: nowrap;
-
-            @include media-screen($mobile) {
-                font-size: 2rem;
-            }
-        }
-
-        &-address-text {
-            font-family: 'Lato black', Arial, sans-serif;
-            color: $white;
-            font-size: 1.55rem;
-            width: 185px;
-            text-transform: uppercase;
-            padding-left: 4.5%;
-            line-height: 1.7rem;
-        }
-
-        &-controls {
-            padding: 0;
-            border: none;
-            outline: none;
-            background: none;
-            width: 33px;
-            height: 33px;
-            cursor: pointer;
-
-            &-wrapper {
-                display: flex;
-                height: 100%;
-                width: 50%;
-                justify-content: flex-end;
-                align-items: center;
-            }
-
-            &-container {
-                width: 8rem;
-                display: flex;
-                justify-content: space-between;
-                height: 100%;
-                align-items: center;
-
-                @include media-screen($tablet) {
-                    width: 10rem;
-                }
-            }
-        }
-
-        &-btn-set-address {
-            background: url('../../assets/images/location.png') no-repeat;
-            background-size: contain;
-        }
-
-        &-btn-find-marker {
-            background: url('../../assets/images/pin.png') no-repeat;
-            background-size: contain;
-        }
+    &-text-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      min-width: 49%;
     }
+
+    &-welcome-text {
+      font-family: "Lato light", Arial, sans-serif;
+      color: $white;
+      font-size: 3.4rem;
+      white-space: nowrap;
+
+      @include media-screen($mobile) {
+        font-size: 2rem;
+      }
+    }
+
+    &-address-text {
+      font-family: "Lato black", Arial, sans-serif;
+      color: $white;
+      font-size: 1.55rem;
+      width: 185px;
+      text-transform: uppercase;
+      padding-left: 4.5%;
+      line-height: 1.7rem;
+    }
+
+    &-controls {
+      padding: 0;
+      border: none;
+      outline: none;
+      background: none;
+      width: 33px;
+      height: 33px;
+      cursor: pointer;
+
+      &-wrapper {
+        display: flex;
+        height: 100%;
+        width: 50%;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      &-container {
+        width: 8rem;
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        align-items: center;
+
+        @include media-screen($tablet) {
+          width: 10rem;
+        }
+      }
+    }
+
+    &-btn-set-address {
+      background: url("../../assets/images/location.png") no-repeat;
+      background-size: contain;
+    }
+
+    &-btn-find-marker {
+      background: url("../../assets/images/pin.png") no-repeat;
+      background-size: contain;
+    }
+  }
 }

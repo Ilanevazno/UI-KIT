@@ -1,117 +1,116 @@
 .message {
-    &__form {
-        &-container {
-            display: flex;
-            flex-direction: column;
-    
-            button {
-                align-self: flex-end;
-            }
-        }
+  &__form {
+    &-container {
+      display: flex;
+      flex-direction: column;
 
-        &-fields {
-            display: flex;
-            align-items: flex-end;
-    
-            .text-error {
-                background-color: $orange-template;
-            }
-    
-            .text-success {
-                background-color: $mint-template;
-            }
-    
-            input {
-                outline: none;
-                width: 66%;
-                height: 3rem;
-                position: relative;
-                font-size: 1.74rem;
-                font-family: 'Source Sans Pro', Arial, sans-serif;
-            }
-        }
-
-        &-item {
-            margin-top: 1.4rem;
-            border-radius: 4px;
-            border: none;
-            background-color: $gray-template;
-            padding-left: 4%;
-            padding-right: 4%;
-            position: relative;
-        }
-
-        &-textarea {
-            padding-top: 12px;
-            height: 8.8rem;
-            width: 100%;
-            display: flex;
-            padding-bottom: 5px;
-            flex-wrap: wrap;
-            resize: none;
-            font-size: 1.74rem;
-            font-family: 'Source Sans Pro', Arial, sans-serif;
-            margin-bottom: 1.5rem;
-    
-            &:focus {
-                outline: none;
-            }
-    
-            &::placeholder {
-                font-weight: bold;
-            }   
-        }
-
-        &-submit-btn {
-            background: $mint-template;
-            color: white;
-            margin-top: 1.4rem;
-        }
+      button {
+        align-self: flex-end;
+      }
     }
-}
 
+    &-fields {
+      display: flex;
+      align-items: flex-end;
+
+      .text-error {
+        background-color: $orange-template;
+      }
+
+      .text-success {
+        background-color: $mint-template;
+      }
+
+      input {
+        outline: none;
+        width: 66%;
+        height: 3rem;
+        position: relative;
+        font-size: 1.74rem;
+        font-family: "Source Sans Pro", Arial, sans-serif;
+      }
+    }
+
+    &-item {
+      margin-top: 1.4rem;
+      border-radius: 4px;
+      border: none;
+      background-color: $gray-template;
+      padding-left: 4%;
+      padding-right: 4%;
+      position: relative;
+    }
+
+    &-textarea {
+      padding-top: 12px;
+      height: 8.8rem;
+      width: 100%;
+      display: flex;
+      padding-bottom: 5px;
+      flex-wrap: wrap;
+      resize: none;
+      font-size: 1.74rem;
+      font-family: "Source Sans Pro", Arial, sans-serif;
+      margin-bottom: 1.5rem;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        font-weight: bold;
+      }
+    }
+
+    &-submit-btn {
+      background: $mint-template;
+      color: white;
+      margin-top: 1.4rem;
+    }
+  }
+}
 
 //Сообщение об ошибке + анимация
 
 .field-status {
-    border-radius: 6px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    text-transform: uppercase;
-    color: white;
-    width: 8.7rem;
-    height: 3.5rem;
-    background-color: inherit;
-    margin-left: 12px;
-    animation: 0.8s flash;
-    font-family: 'Lato black', Arial, sans-serif;
-    font-size: 1.3rem;
-    position: relative;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-transform: uppercase;
+  color: white;
+  width: 8.7rem;
+  height: 3.5rem;
+  background-color: inherit;
+  margin-left: 12px;
+  animation: 0.8s flash;
+  font-family: "Lato black", Arial, sans-serif;
+  font-size: 1.3rem;
+  position: relative;
 
-    &:before {
-        content: '';
-        width: 1rem;
-        height: 1rem;
-        position: absolute;
-        background: inherit;
-        left: -3px;
-        transform: rotate(45deg);
-        border-radius: 2px;
-    }
+  &:before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    background: inherit;
+    left: -3px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+  }
 }
 
 @keyframes flash {
-    from,
-    50%,
-    to {
-      opacity: 1;
-    }
-  
-    25%,
-    75% {
-      opacity: 0;
-    }
+  from,
+  50%,
+  to {
+    opacity: 1;
   }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}

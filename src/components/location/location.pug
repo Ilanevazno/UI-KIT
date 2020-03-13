@@ -1,17 +1,17 @@
 mixin location(settings = {})
-    -
-        let {
-            welcomeText = "",
-            address = "",
-            className = "",
-            coords = ""
-        } = settings
-    div(class="widget-location js-widget-location " + className data-coords = coords)
-        .widget-location__overlay
-            .widget-location__overlay-text-wrapper
-                p.widget-location__overlay-welcome-text= welcomeText
-                p.widget-location__overlay-address-text= address
-            .widget-location__overlay-controls-wrapper
-                .widget-location__overlay-controls-container
-                    button.widget-location__overlay-controls.widget-location__overlay-btn-set-address.js-overlay-btn-set-address
-                    button.widget-location__overlay-controls.widget-location__overlay-btn-find-marker.js-overlay-btn-find-marker
+  -
+    let {
+      welcomeText = "",
+      address = "",
+      className = "",
+      coords = ""
+    } = settings
+  div(class="widget-location js-widget-location " + className data-coords = coords)
+    .widget-location__overlay
+      .widget-location__overlay-text-wrapper
+        p.widget-location__overlay-welcome-text= welcomeText
+        p.widget-location__overlay-address-text= address
+      .widget-location__overlay-controls-wrapper
+        .widget-location__overlay-controls-container
+          button.widget-location__overlay-controls.widget-location__overlay-btn-set-address.js-overlay-btn-set-address
+          button.widget-location__overlay-controls.widget-location__overlay-btn-find-marker.js-overlay-btn-find-marker

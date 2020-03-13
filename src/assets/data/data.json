@@ -1,8 +1,20 @@
 {
-    "pages": [
-        { "name": "Главная", "url": "./index.html" },
-        { "name": "Ui-kit", "url": "./ui-kit.html" },
-        { "name": "Контакты", "url": "./contacts.html" },
-        { "name": "Заказать", "url": "./order.html" }
-    ]
+  "pages": [
+    {
+      "name": "Главная",
+      "url": "./index.html"
+    },
+    {
+      "name": "Ui-kit",
+      "url": "./ui-kit.html"
+    },
+    {
+      "name": "Контакты",
+      "url": "./contacts.html"
+    },
+    {
+      "name": "Заказать",
+      "url": "./order.html"
+    }
+  ]
 }

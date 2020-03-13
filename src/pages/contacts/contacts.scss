@@ -1,12 +1,12 @@
 .contacts {
   &__title {
-    font-family: 'Lato black', Arial, sans-serif;
+    font-family: "Lato black", Arial, sans-serif;
     text-align: center;
     font-size: 2rem;
   }
 
   &__text {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-size: 2rem;
   }
 
@@ -14,7 +14,7 @@
     width: 50%;
     margin: 3rem auto;
 
-    @include media-screen ($tablet) {
+    @include media-screen($tablet) {
       width: 100%;
     }
   }

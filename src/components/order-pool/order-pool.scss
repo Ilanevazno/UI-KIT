@@ -1,3 +1,18 @@
+@mixin input-mixin($background-color: $gray-template, $color: #888888, $width: 100%, $height: 3.2rem){
+  width: $width;
+  height: $height;
+  padding-left: 5%;
+  box-sizing: border-box;
+  position: relative;
+  border: none;
+  outline: none;
+  background-color: $background-color;
+  border-radius: 4px;
+  color: $color;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 1.6rem;
+}
+
 .order {
   &__title {
     font-family: 'Lato black', Arial, sans-serif;
@@ -125,7 +140,7 @@
     }
 
     &-control {
-      @include input-search();
+      @include input-mixin();
     }
 
     &-personal-data {

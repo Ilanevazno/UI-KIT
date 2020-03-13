@@ -1,274 +1,274 @@
 .widgets {
-    max-width: 836px;
-    min-width: 320px;
-    width: 100%;
-    margin: 0 auto;
-    
-    &__title {
-        text-transform: uppercase;
-        font-family: 'Lato black', Arial, sans-serif;
-        text-align: center;
-        font-size: 2.3rem;
+  max-width: 836px;
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+
+  &__title {
+    text-transform: uppercase;
+    font-family: "Lato black", Arial, sans-serif;
+    text-align: center;
+    font-size: 2.3rem;
+    margin: 0;
+  }
+
+  &__buttons {
+    margin-top: 9.3rem;
+
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 78%;
+      margin: 8.6rem auto 0 auto;
+    }
+  }
+
+  &__arrows {
+    margin-top: 6.3rem;
+
+    &-container {
+      display: flex;
+      align-items: flex-end;
+      margin: 4rem 10.5rem 0 10rem;
+    }
+
+    &_enabled-buttons,
+    &_disabled-buttons {
+      width: 15rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &_disabled-buttons {
+      margin-left: 2.4rem;
+
+      @include media-screen($mobile) {
         margin: 0;
+      }
+    }
+  }
+
+  &__pie {
+    margin-top: 5rem;
+
+    .widgets__title {
+      margin-bottom: 3rem;
     }
 
-    &__buttons {
-        margin-top: 9.3rem;
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-        &-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            width: 78%;
-            margin: 8.6rem auto 0 auto;
-        }
+      @include media-screen($tablet) {
+        flex-direction: column;
+      }
     }
 
-    &__arrows {
-        margin-top: 6.3rem;
-        
-        &-container {
-            display: flex;
-            align-items: flex-end;
-            margin: 4rem 10.5rem 0 10rem;
-        }
+    &-charts {
+      display: flex;
+      justify-content: space-between;
+      width: 78%;
+      flex-wrap: wrap;
+    }
+  }
 
-        &_enabled-buttons,
-        &_disabled-buttons {
-            width: 15rem;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        &_disabled-buttons {
-            margin-left: 2.4rem;
+  &__donut {
+    &-charts {
+      width: 18%;
+      height: 140px;
+    }
+  }
 
-            @include media-screen ($mobile) {
-                margin: 0;
-            }
-        }
+  &__sliders {
+    margin-top: 3rem;
+
+    .widgets__title {
+      margin-bottom: 5.5rem;
     }
 
-    &__pie {
-        margin-top: 5rem;
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-        .widgets__title {
+      @include media-screen($tablet) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  &__stages {
+    margin-top: 7rem;
+
+    h2 {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__form-elements {
+    margin-top: 5.5rem;
+
+    h2 {
+      margin-bottom: 4.5rem;
+    }
+
+    &-container {
+      display: flex;
+
+      @include media-screen($tablet) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &-message {
+      width: 48.5%;
+
+      @include media-screen($tablet) {
+        width: 80%;
+      }
+    }
+
+    &-toggles {
+      width: 51%;
+      display: flex;
+      flex-direction: column;
+
+      .toggles {
+        &__container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          h2 {
+            margin-top: 1rem;
             margin-bottom: 3rem;
-        }
+          }
 
-        &-container {
+          &-items {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-
-            @include media-screen ($tablet) {
-                flex-direction: column;
-            }
+            width: 15.5rem;
+          }
         }
+      }
 
-        &-charts {
-            display: flex;
-            justify-content: space-between;
-            width: 78%;
-            flex-wrap: wrap;
-        }
-    }
+      .tick-boxes {
+        &__container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 3rem;
 
-    &__donut {  
-        &-charts {
-            width: 18%;
-            height: 140px;
-        }
-    }
-
-    &__sliders {
-        margin-top: 3rem;
-
-        .widgets__title {
-            margin-bottom: 5.5rem;
-        }
-
-        &-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            @include media-screen($tablet) {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    }
-
-    &__stages {
-        margin-top: 7rem;
-
-        h2 {
-            margin-bottom: 3rem;
-        }
-    }
-
-    &__form-elements {
-        margin-top: 5.5rem;
-
-        h2 {
-            margin-bottom: 4.5rem;
-        }
-
-        &-container {
-            display: flex;
-
-            @include media-screen($tablet) {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        &-message {
-            width: 48.5%;
-
-            @include media-screen ($tablet) {
-                width: 80%;
-            }
-        }
-
-        &-toggles {
-            width: 51%;
-            display: flex;
-            flex-direction: column;
-
-            .toggles {
-                &__container {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    h2 {
-                        margin-top: 1rem;
-                        margin-bottom: 3rem;
-                    }
-
-                    &-items {
-                        display: flex;
-                        justify-content: space-between;
-                        width: 15.5rem;
-                    }
-                }
-            }
-
-            .tick-boxes {
-                &__container {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    margin-top: 3rem;
-
-                    h2 {
-                        margin-top: 1rem;
-                        margin-bottom: 4rem;
-                    }
-
-                    &-items {
-                        display: flex;
-                        justify-content: space-between;
-                        width: 8rem;
-                    }
-                }
-            }
-        }
-    }
-
-    &__user {
-        &-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 7.5rem;
-
-            @include media-screen($tablet) {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        &-search {
-            width: 48.4%;
-
-            h2 {
-                margin-bottom: 2.2rem;
-            }
-        }
-
-        &-dropdown {
-            margin-top: 7.2rem;
-        }
-
-        &-profile {
-            width: 49%;
-
-            @include media-screen($tablet) {
-                margin-top: 10rem;
-            }
-
-            .widgets__title {
-                margin-bottom: 3.3rem;
-            }
-
-            &-item {
-                margin-bottom: 2.7rem;
-            }
-        }
-    }
-
-    &__news-events {
-        margin-top: 8.2rem;
-
-        .widgets__title {
+          h2 {
+            margin-top: 1rem;
             margin-bottom: 4rem;
-        }
+          }
 
-        .news-events-wrapper {
+          &-items {
             display: flex;
             justify-content: space-between;
-
-            @include media-screen($tablet) {
-                flex-direction: column;
-                align-items: center;
-                min-height: 53rem;
-            }
+            width: 8rem;
+          }
         }
+      }
+    }
+  }
+
+  &__user {
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 7.5rem;
+
+      @include media-screen($tablet) {
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
-    &__location {
-        margin-top: 5.5rem;
+    &-search {
+      width: 48.4%;
 
-        .widgets__title {
-            margin-bottom: 3.4rem;
-        }
+      h2 {
+        margin-bottom: 2.2rem;
+      }
     }
 
-    &__calendar-and-messaging {
-        margin-top: 5.8rem;
-
-        .widgets__title {
-            margin-bottom: 2.8rem;
-        }
-
-        &-container {
-            display: flex;
-            justify-content: space-between;
-
-            @include media-screen($tablet) {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
+    &-dropdown {
+      margin-top: 7.2rem;
     }
 
-    &__video {
-        margin-top: 6rem;
+    &-profile {
+      width: 49%;
 
-        .widgets__title {
-            margin-bottom: 2.5rem;
-        }
+      @include media-screen($tablet) {
+        margin-top: 10rem;
+      }
+
+      .widgets__title {
+        margin-bottom: 3.3rem;
+      }
+
+      &-item {
+        margin-bottom: 2.7rem;
+      }
     }
+  }
+
+  &__news-events {
+    margin-top: 8.2rem;
+
+    .widgets__title {
+      margin-bottom: 4rem;
+    }
+
+    .news-events-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      @include media-screen($tablet) {
+        flex-direction: column;
+        align-items: center;
+        min-height: 53rem;
+      }
+    }
+  }
+
+  &__location {
+    margin-top: 5.5rem;
+
+    .widgets__title {
+      margin-bottom: 3.4rem;
+    }
+  }
+
+  &__calendar-and-messaging {
+    margin-top: 5.8rem;
+
+    .widgets__title {
+      margin-bottom: 2.8rem;
+    }
+
+    &-container {
+      display: flex;
+      justify-content: space-between;
+
+      @include media-screen($tablet) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  &__video {
+    margin-top: 6rem;
+
+    .widgets__title {
+      margin-bottom: 2.5rem;
+    }
+  }
 }

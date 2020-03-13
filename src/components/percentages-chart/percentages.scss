@@ -1,3 +1,13 @@
+@mixin percentage-chart($font-size: 4.5rem, $color: #9d9d9d){
+  font-size: $font-size;
+  color: $color;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-family: 'Lato light', Arial, sans-serif;
+}
+
 .pie-chart {
   margin: 0;
 
