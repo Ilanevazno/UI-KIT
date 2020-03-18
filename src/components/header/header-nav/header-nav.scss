@@ -1,0 +1,35 @@
+.header-nav {
+  &__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    &-item {
+      position: relative;
+      font: 2rem 'Lato black', Arial, sans-serif;
+      color: $white;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: 0.3s ease-in-out all;
+      display: block;
+      margin: 1rem;
+
+      &:after {
+        content: '';
+        width: 0%;
+        border-bottom: 2px solid $white;
+        height: 3px;
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+      }
+
+      &:hover:after {
+        animation: menu-anim 0.3s;
+        width: 100%;
+      }
+    }
+  }
+}

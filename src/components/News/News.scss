@@ -24,7 +24,7 @@
     }
 
     &__title {
-      font-family: "Lato Light", Arial, sans-serif;
+      font-family: 'Lato Light', Arial, sans-serif;
       font-size: 3.2rem;
       color: $white;
       margin: 15% 0 0 0;
@@ -32,14 +32,14 @@
     }
 
     &__date {
-      font-family: "Lato Black", Arial, sans-serif;
+      font-family: 'Lato Black', Arial, sans-serif;
       font-size: 1.45rem;
       margin: 7% 0 0 0;
       color: $white;
     }
 
     &__text {
-      font-family: "Lato Regular", Arial, sans-serif;
+      font-family: 'Lato Regular', Arial, sans-serif;
       font-size: 1.37rem;
       margin: 8% 0 3.9rem 0;
       color: $white;
@@ -47,4 +47,4 @@
   }
 }
 
-@include widget-news(".widget-news");
+@include widget-news('.widget-news');

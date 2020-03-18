@@ -1,4 +1,4 @@
-extends ../index/index
+extends ../../templates/main
 block title
   | Контакты
 block content
@@ -22,4 +22,4 @@ block content
     h2.contacts__title Остались ещё вопросы?
     p.contacts__text Вы можете отправить нам сообщение, и мы ответим вам на почту
     .contacts__widgets
-      +formMessage({className: "contacts__form-container", NameField: "contacts__user-name", emailField: "contacts__user-email", messageField: "contacts__user-message"})
+      //- +formMessage({className: "contacts__form-container", NameField: "contacts__user-name", emailField: "contacts__user-email", messageField: "contacts__user-message"})

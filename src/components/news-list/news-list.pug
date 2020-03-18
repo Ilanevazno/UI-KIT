@@ -1,0 +1,11 @@
+mixin news-list (data = {})
+  .news-list
+    each item in data
+      -
+        let {
+          title,
+          text,
+        } = item
+      .news-list__item
+        h2.news-list__item-title= title
+        p.news-list__item-text= text

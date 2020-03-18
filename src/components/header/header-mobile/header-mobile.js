@@ -1,6 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable indent */
-
 class Hamburger {
   constructor(selector) {
     this.$hamburgerMenu = $(selector).find('.js-hamburger-menu');
@@ -14,13 +11,13 @@ class Hamburger {
 
   toggleState() {
     setTimeout(() => {
-      this.$hamburgerMenu.toggleClass('header__hamburger-menu_opened');
+      this.$hamburgerMenu.toggleClass('header-mobile__menu_opened');
     }, 0);
   }
 
   closeMenu(event) {
     if (event.target.className !== 'header__links-list') {
-      this.$hamburgerMenu.removeClass('header__hamburger-menu_opened');
+      this.$hamburgerMenu.removeClass('header-mobile__menu_opened');
     }
   }
 
@@ -29,7 +26,7 @@ class Hamburger {
   }
 }
 
-const hamburger = new Hamburger('.header__mobile');
+const hamburger = new Hamburger('.header-mobile');
 hamburger.bootstrap();
 
 export default Hamburger;

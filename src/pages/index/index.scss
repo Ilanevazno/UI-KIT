@@ -1,4 +1,4 @@
-.main {
+.index {
   &__container {
     display: flex;
     justify-content: space-between;
@@ -10,30 +10,6 @@
     }
   }
 
-  &__news {
-    &-list {
-      margin-right: 6rem;
-    }
-
-    &-item {
-      background: $mainNewsItem;
-      padding: 1%;
-      border-radius: 13px;
-      margin-top: 2rem;
-      box-shadow: 2px 2px 6px 0px darken($white, 15);
-
-      &-title {
-        font-family: "Lato black", Arial, sans-serif;
-        font-size: 2.5rem;
-      }
-
-      &-text {
-        font-family: "Source Sans Pro", Arial, sans-serif;
-        font-size: 1.6rem;
-      }
-    }
-  }
-
   &__block {
     &-events {
       padding: 2rem 0;
@@ -42,7 +18,7 @@
 
   &__search {
     h2 {
-      font-family: "Lato black", Arial, sans-serif;
+      font-family: 'Lato black', Arial, sans-serif;
       text-align: center;
     }
 

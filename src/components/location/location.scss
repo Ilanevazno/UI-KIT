@@ -1,6 +1,6 @@
 .widget-location {
   position: relative;
-  background: url("../../assets/images/location-fallen.jpg") no-repeat;
+  background: url('../../assets/images/location-fallen.jpg') no-repeat;
   background-size: cover;
   height: 32rem;
 
@@ -25,7 +25,7 @@
     }
 
     &-welcome-text {
-      font-family: "Lato light", Arial, sans-serif;
+      font-family: 'Lato light', Arial, sans-serif;
       color: $white;
       font-size: 3.4rem;
       white-space: nowrap;
@@ -36,7 +36,7 @@
     }
 
     &-address-text {
-      font-family: "Lato black", Arial, sans-serif;
+      font-family: 'Lato black', Arial, sans-serif;
       color: $white;
       font-size: 1.55rem;
       width: 185px;
@@ -76,12 +76,12 @@
     }
 
     &-btn-set-address {
-      background: url("../../assets/images/location.png") no-repeat;
+      background: url('../../assets/images/location.png') no-repeat;
       background-size: contain;
     }
 
     &-btn-find-marker {
-      background: url("../../assets/images/pin.png") no-repeat;
+      background: url('../../assets/images/pin.png') no-repeat;
       background-size: contain;
     }
   }

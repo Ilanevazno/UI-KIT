@@ -19,7 +19,7 @@
     }
 
     &__date {
-      font-family: "Lato Light", Arial, sans-serif;
+      font-family: 'Lato Light', Arial, sans-serif;
       font-size: 8rem;
       color: $white;
       margin: 8% 0 0 0;
@@ -31,7 +31,7 @@
     }
 
     &__month {
-      font-family: "Lato Light", Arial, sans-serif;
+      font-family: 'Lato Light', Arial, sans-serif;
       font-size: 3.5rem;
       color: $white;
       margin: 0;
@@ -42,7 +42,7 @@
 
     &__event {
       &-title {
-        font-family: "Lato Black", Arial, sans-serif;
+        font-family: 'Lato Black', Arial, sans-serif;
         color: white;
         font-size: 1.6rem;
         text-transform: uppercase;
@@ -50,7 +50,7 @@
       }
 
       &-text {
-        font-family: "Lato Regular", Arial, sans-serif;
+        font-family: 'Lato Regular', Arial, sans-serif;
         font-size: 1.43rem;
         margin: 2% 0 0 0;
         color: $white;
@@ -66,4 +66,4 @@
   }
 }
 
-@include widget-events(".widget-events");
+@include widget-events('.widget-events');

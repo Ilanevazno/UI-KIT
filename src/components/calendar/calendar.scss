@@ -7,7 +7,7 @@
 
       &--current-day {
         height: 12.7rem;
-        font-family: "Lato Light", Arial, sans-serif;
+        font-family: 'Lato Light', Arial, sans-serif;
         color: $white;
         font-size: 9rem;
         display: flex;
@@ -20,13 +20,12 @@
         justify-content: space-around;
         color: $white;
         height: 5rem;
-        // background-color: darken($orange-template, 7);
         background: #d54c2c;
 
         &-title {
           display: flex;
           align-items: center;
-          font-family: "Lato Light", Arial, sans-serif;
+          font-family: 'Lato Light', Arial, sans-serif;
           font-size: 2.6rem;
           width: 59%;
           justify-content: center;
@@ -51,7 +50,7 @@
         color: $white;
         text-transform: uppercase;
         height: 3.1rem;
-        font-family: "Lato black", Arial, sans-serif;
+        font-family: 'Lato black', Arial, sans-serif;
       }
 
       &--cells-days {
@@ -72,7 +71,7 @@
         justify-content: center;
         color: #868686;
         cursor: pointer;
-        font-family: "Source Sans Pro", Arial, sans-serif;
+        font-family: 'Source Sans Pro', Arial, sans-serif;
         font-size: 2.5rem;
       }
 
@@ -92,7 +91,7 @@
 
       &--button {
         font-size: 1.7rem;
-        font-family: "Lato black", Arial, sans-serif;
+        font-family: 'Lato black', Arial, sans-serif;
         text-transform: uppercase;
         color: #868686;
       }
@@ -108,7 +107,7 @@
 
       &--cell-month,
       &--cell-year {
-        font-family: "Source Sans Pro", Arial, sans-serif;
+        font-family: 'Source Sans Pro', Arial, sans-serif;
         font-size: 2rem;
         color: $white;
         text-align: center;
@@ -123,4 +122,4 @@
   }
 }
 
-@include calendar(".js-calendar-widget");
+@include calendar('.js-calendar-widget');

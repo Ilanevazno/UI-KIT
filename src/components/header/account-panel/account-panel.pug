@@ -1,0 +1,17 @@
+mixin account-panel (data = {})
+  -
+    const {
+      title = '',
+      linkList = [],
+    } = data;
+  .account-panel
+    p.account-panel__title= title
+    .account-panel__controls
+      each link in linkList
+        -
+          const {
+            href = '',
+            desctiption = '',
+          } = link;
+        a(href= href)
+          +button({theme: 'mint', size: 'hight', text: desctiption})
