@@ -1,4 +1,12 @@
 .index {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__content {
+    flex: 1 0 auto;
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
@@ -27,6 +35,10 @@
       justify-content: center;
       width: 50%;
       margin: 0 auto;
+    }
+
+    &__footer {
+      flex: 0 0 auto;
     }
   }
 }
