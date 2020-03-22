@@ -1,8 +1,11 @@
-mixin header-nav()
+mixin header-nav(data = {})
   -
-   const data = require("../../assets/data/data.json");
+   const {
+     url = '',
+     name = ''
+   } = data;
   .header-nav
     ul.header-nav__links
-      each page in data.pages
+      each page in data
         li
           a(href= page.url).header-nav__links-item= page.name

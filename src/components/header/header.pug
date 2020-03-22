@@ -1,18 +1,20 @@
 include ../buttons/buttons
-include ./header-nav/header-nav
-include ./header-mobile/header-mobile
-include ./account-panel/account-panel
+include ../header-nav/header-nav
+include ../header-mobile/header-mobile
+include ../account-panel/account-panel
 
-mixin header (data = {})
+mixin header (pages = {})
   .header__topline
-    nav.header__navigation
-      +header-nav()
-    a(href="./index.html").header__topline-logo
     -
-      const links = [
+      const logo = { link: './index.html' }
+    nav.header__navigation
+      +header-nav(pages)
+    a(href= logo.link).header__topline-logo
+    -
+      const buttonList = [
         { href: './login.html', desctiption: 'Вход' },
         { href: './register.html', desctiption: 'Регистрация' },
       ];
-    +account-panel({ title: 'Аккаунт', linkList: links })
+    +account-panel({ title: 'Аккаунт', buttonList })
   .header__mobile
-    +header-mobile()
+    +header-mobile(pages)

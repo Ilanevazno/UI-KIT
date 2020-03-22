@@ -3,6 +3,7 @@ extends ../../templates/main
 include ../../components/assistant/assistant
 include ../../components/search/search
 include ../../components/events/events
+include ../../components/news/news
 include ../../components/news-list/news-list
 include ../../components/header/header
 include ../../components/footer/footer
@@ -13,18 +14,22 @@ block title
 block content
   -
     const data = require('../../assets/data/data.json');
-    const { newsList, pages } = data;
+    const { newsList, pages, searchLine, lastEvent } = data;
   .index
     header.index__header
       +header(pages)
     main.index__content
-      .index__search
-        h2 Поиск по сайту: (имитация)
-        .index__search-line
-          +search()
-      .index__container
-        +news-list(newsList)
-      .index__assistant
-        +assistant()
+      .index__left-wrapper
+        section.index__search
+          +search(searchLine)
+        section.index__container
+          +news-list(newsList)
+        section.index__assistant
+          +assistant()
+      .index__right-wrapper
+        section.index__last-event
+          +events(lastEvent)
+        section.index__important-news
+          +news()
     footer.index__footer
-      +footer
+      +footer('Ilya sigidin')

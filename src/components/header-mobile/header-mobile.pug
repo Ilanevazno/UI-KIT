@@ -1,5 +1,5 @@
-mixin header-mobile ()
+mixin header-mobile (pages = {})
   .header-mobile
     a.header-mobile__button.js-hamburger-button &#9776;
     aside.header-mobile__menu.js-hamburger-menu
-      +header-nav()
+      +header-nav(pages)

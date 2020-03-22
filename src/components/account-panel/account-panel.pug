@@ -2,12 +2,12 @@ mixin account-panel (data = {})
   -
     const {
       title = '',
-      linkList = [],
+      buttonList = [],
     } = data;
   .account-panel
     p.account-panel__title= title
     .account-panel__controls
-      each link in linkList
+      each link in buttonList
         -
           const {
             href = '',
