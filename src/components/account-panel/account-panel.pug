@@ -12,6 +12,8 @@ mixin account-panel (data = {})
           const {
             href = '',
             desctiption = '',
+            theme= 'mint',
+            size = 'hight',
           } = link;
         a(href= href)
-          +button({theme: 'mint', size: 'hight', text: desctiption})
+          +button({theme, size, text: desctiption})

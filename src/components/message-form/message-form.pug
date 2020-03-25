@@ -1,12 +1,11 @@
-mixin formMessage(data = {})
+mixin message-form(data = {})
   -
-    let {
-      className,
-      nameField,
-      emailField,
-      messageField
-    } = data
-  form(class="message__form js-message-form-widget" class="message__form-container "+ className)
+    const {
+      nameField = '',
+      emailField = '',
+      messageField = '',
+    } = data;
+  form(class="message__form js-message-form-widget" class="message__form-container")
     .message__form-fields
       input(type="text" id= nameField name= nameField class="message__name message__form-item "+ nameField placeholder="Your Name")
       label(for= nameField class="field-status")

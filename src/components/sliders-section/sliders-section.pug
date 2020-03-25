@@ -1,0 +1,8 @@
+include ../../components/slider/slider
+
+mixin sliders-section (title)
+  section.sliders
+    h2.sliders__title= title
+    .sliders__container
+      +slider('js-first-slider')
+      +slider('js-second-slider')

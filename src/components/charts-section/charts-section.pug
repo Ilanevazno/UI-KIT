@@ -1,0 +1,20 @@
+include ../../components/percentages-chart/percentages-chart.pug
+include ../../components/donut-chart/donut-chart.pug
+mixin charts-section(title)
+  -
+    const charts = ['0', '38', '62', '89'];
+    const donutData = [
+      { color: '#E5E5E5', fill: 30 },
+      { color: '#4EB7A8', fill: 30 },
+      { color: '#E75735', fill: 30 },
+      { color: '#747474', fill: 10 },
+    ];
+  section.charts
+    h2.charts__title= title
+    .charts__container
+      .charts__container
+        - for (let i = 0; i < charts.length; i += 1)
+          .charts__item
+            +percentages-chart(charts[i])
+        .charts__item
+          +donut-chart(donutData)

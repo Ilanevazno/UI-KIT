@@ -1,12 +1,12 @@
 mixin order-pool()
-  include ../sliders/slider
-  include ../tick-boxes/checkbox
-  include ../arrows/arrow.pug
-  include ../buttons/buttons.pug
+  include ../slider/slider
+  include ../tickbox/tickbox
+  include ../arrows/arrows
+  include ../buttons/buttons
   include ../toggles/toggles
   include ../dropdown/dropdown
-  include ../percentages-chart/percentages
-  include ../calendar/calendar.pug
+  include ../percentages-chart/percentages-chart
+  include ../calendar/calendar
   -
     const data = require("../../components/order-pool/order-pool.json")
   .global__wrapper
@@ -63,4 +63,4 @@ mixin order-pool()
           .order__checkout-label-control
             +button({theme: "mint", size: "hight", text: "Позвоните мне"})
     .order__fully-state
-      +pieChart("1")
+      +percentages-chart("1")

@@ -1,18 +1,17 @@
 mixin user-profile(profile = {})
   -
     let {
-      picture = "gray-bg.jpg",
-      userName = "test",
-      job = "jobName",
+      avatar = "gray-bg.jpg",
+      name = "user",
+      job = "user-job",
       hrefFb = "http://facebook.com",
       hrefTw = "http://twitter.com",
       hrefDbb = "http://dbb.com",
     } = profile
   .user-profile
-    .user-profile__picture
-      img(src=require(`../../assets/images/${picture}`), alt="profile-picture")
+    div(class="user-profile__picture" style=`background: no-repeat center/100% url(../../assets/images/${avatar})`)
     .user-profile__info
-      h2.user-profile__info-name= userName
+      h2.user-profile__info-name= name
       h3.user-profile__info-job= job
       .user-profile__info-social
         a(target="_blank" rel="noopener noreferrer" href= ""+hrefFb class="UP__social__btn UP__fb__btn")

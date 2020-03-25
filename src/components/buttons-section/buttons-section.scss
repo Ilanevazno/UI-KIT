@@ -1,0 +1,17 @@
+.buttons-section {
+  &__title {
+    text-transform: uppercase;
+    font-family: 'Lato black', Arial, sans-serif;
+    text-align: center;
+    font-size: 2.3rem;
+    margin-bottom: 7.8rem;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 78%;
+    margin: 0 auto 2.4rem auto;
+  }
+}

@@ -3,18 +3,23 @@ include ../header-nav/header-nav
 include ../header-mobile/header-mobile
 include ../account-panel/account-panel
 
-mixin header (pages = {})
-  .header__topline
-    -
-      const logo = { link: './index.html' }
-    nav.header__navigation
+mixin header (pages = {}, theme)
+  -
+    let headerClassName = 'header-line ';
+    const logo = { link: './index.html' };
+    let accountButtonsSize = 'hight';
+    if (theme) {
+      accountButtonsSize = theme === 'low' ? 'low' : 'hight';
+      headerClassName += `header-line_theme_${theme}`;
+    };
+    const buttonList = [
+      { href: './login.html', desctiption: 'Вход', size: accountButtonsSize },
+      { href: './register.html', desctiption: 'Регистрация', size: accountButtonsSize },
+    ];
+  div(class= headerClassName)
+    nav.header-line__navigation
       +header-nav(pages)
-    a(href= logo.link).header__topline-logo
-    -
-      const buttonList = [
-        { href: './login.html', desctiption: 'Вход' },
-        { href: './register.html', desctiption: 'Регистрация' },
-      ];
+    a(href= logo.link).header-line__logo
     +account-panel({ title: 'Аккаунт', buttonList })
-  .header__mobile
+  .header-line__mobile
     +header-mobile(pages)

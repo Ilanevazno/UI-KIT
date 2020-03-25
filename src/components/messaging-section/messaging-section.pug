@@ -1,0 +1,7 @@
+include ../messaging/messaging
+mixin messaging-section (title)
+  h2.messaging-section__title= title
+  section.messaging-section__container
+    +messaging({
+      userName: 'Sarah Brown',
+      placeholder: 'Hey! So are we cool to meet at the art gallery? Say 8pm?'})

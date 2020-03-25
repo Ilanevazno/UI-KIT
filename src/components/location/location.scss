@@ -2,7 +2,8 @@
   position: relative;
   background: url('../../assets/images/location-fallen.jpg') no-repeat;
   background-size: cover;
-  height: 32rem;
+  min-height: 32rem;
+  width: 100%;
 
   &__overlay {
     width: 100%;

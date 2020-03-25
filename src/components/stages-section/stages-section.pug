@@ -1,0 +1,7 @@
+include ../../components/stages/stages
+
+mixin stages-section (title)
+  section.stages
+    h2.stages__title= title
+    .stages__container
+      +stages({ maxStep: 5, currentStep: 3 })

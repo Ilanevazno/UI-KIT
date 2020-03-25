@@ -1,17 +1,18 @@
 mixin events(event = {})
   -
     const {
-      picture = require("../../assets/images/gray-bg.jpg"),
+      picture = 'gray-bg.jpg',
+      parsedPicture = require(`../../components/events/img/${picture}`),
       date = {
-        day: "0",
-        month: "mon",
+        day: '0',
+        month: 'mon',
       },
-      title = "This is the title",
-      text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      className = ""
-    } = event
+      title = 'This is the title',
+      text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      className = '',
+    } = event;
   div(class="widget-events " + className)
-    div(class="widget-events__picture" style=`background-image: url(${picture})`)
+    div(class="widget-events__picture" style=`background-image: url(${parsedPicture})`)
     div(class="widget-events__information")
       div(class="widget-events__information-wrapper")
         div(class="widget-events__date-title")

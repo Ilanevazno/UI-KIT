@@ -1,0 +1,24 @@
+include ../news/news
+include ../events/events
+
+mixin news-events-section (title)
+  section.news-events
+    h2.news-events__title= title
+    .news-events__container
+      .news__container
+        +news({
+        picture: 'widget-events.jpg',
+        title: 'It’s all going downhill',
+        date: '24  AUGUST  2013',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.',
+      })
+      .events__container
+        +events({
+          title: 'This is the title',
+          picture: 'events-picture.jpg',
+          date: {
+            day: '24',
+            month: 'Aug',
+          },
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        })

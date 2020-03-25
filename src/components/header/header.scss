@@ -1,25 +1,34 @@
-.header {
-  &__topline {
-    min-height: 12rem;
-    background: $mint-template;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 2rem;
+.header-line {
+  background: $mint-template;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
 
-    &-logo {
-      background-image: url('../../assets/images/logo.png');
-      width: 12rem;
-      height: 12rem;
-      background-size: cover;
-    }
+  &_theme {
+    &_low {
+      padding: 0.5rem 2rem;
 
-    @include media-screen ($tablet) {
-      display: none;
+      .header-line__logo {
+        width: 7rem;
+        height: 7rem;
+      }
     }
+  }
+
+  &__logo {
+    background-image: url('../../assets/images/logo.png');
+    width: 12rem;
+    height: 12rem;
+    background-size: cover;
   }
 
   &__navigation {
     display: flex;
     align-items: center;
+  }
+
+  @include media-screen ($tablet) {
+    display: none;
   }
 }

@@ -1,2 +1,4 @@
-mixin calendar(datepickerClass)
-  div(class="js-calendar-widget " + datepickerClass)
+mixin calendar(hookClass)
+  -
+    hookClass = hookClass || '';
+  div(class="js-calendar-widget " + hookClass)

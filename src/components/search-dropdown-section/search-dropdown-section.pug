@@ -1,0 +1,12 @@
+include ../../components/search/search
+include ../../components/dropdown/dropdown
+mixin search-dropdown-section (title)
+  section.search-dropdown
+    h2.search-dropdown__title= title
+    .search-dropdown__container
+      .search-dropdown__item
+        +search()
+      .search-dropdown__item
+        +search()
+      .search-dropdown__item
+        +dropdown

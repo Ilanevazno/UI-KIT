@@ -4,6 +4,7 @@
     .datepicker {
       background-color: $orange-template;
       position: relative;
+      border-radius: 5px;
 
       &--current-day {
         height: 12.7rem;

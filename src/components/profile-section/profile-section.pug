@@ -1,0 +1,32 @@
+include ../user-profile/user-profile
+mixin profile-section (title)
+  -
+    const usersList = [
+      {
+        name: 'John Smith',
+        job: 'Ux designer',
+        avatar: 'john-smith.jpg',
+        links: {
+          facebook: 'https://www.facebook.com/',
+          twitter: 'https://twitter.com/',
+          dribbble: 'https://dribbble.com/',
+        }
+      },
+      {
+        name: 'Sarah Brown',
+        job: 'Developer',
+        avatar: 'sarah-brown.jpg',
+        links: {
+          facebook: 'https://www.facebook.com/',
+          twitter: 'https://twitter.com/',
+          dribbble: 'https://dribbble.com/',
+        }
+      },
+    ];
+  section.profile-section
+    h2.profile-section__title= title
+    .profile-section__container
+      -
+      each user in usersList
+        .profile-section__container-item
+          +user-profile(user)

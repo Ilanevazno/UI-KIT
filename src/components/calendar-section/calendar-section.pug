@@ -1,0 +1,5 @@
+include ../calendar/calendar
+mixin calendar-section (title)
+  h2.calendar-section__title= title
+  section.calendar-section__container
+    +calendar()

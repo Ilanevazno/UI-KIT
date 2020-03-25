@@ -1,0 +1,31 @@
+include ../message-form/message-form
+include ../toggles/toggles
+include ../tickbox/tickbox
+
+mixin form-section (data)
+  -
+    const {
+      mainTitle = '',
+      togglesTitle = '',
+      boxesTitle = '',
+    } = data;
+  section.form-section
+    h2.form-section__title= mainTitle
+    .form-section__container
+      .form-section__message
+        +message-form({ formName: 'form-section', NameField: 'user__name', emailField: 'user__email', messageField: 'user__message' })
+      .form-section__tick-boxes
+        .form-section__row
+          h2.form-section__title= togglesTitle
+          .form-section__row-wrap
+            .form-section__row-item
+              +toggles("toggle-first-option")
+            .form-section__row-item
+              +toggles("toggle-second-option")
+        .form-section__row
+          h2.form-section__title= boxesTitle
+          .form-section__row-wrap
+            .form-section__row-item
+              +checkbox("tickbox-first-option")
+            .form-section__row-item
+              +checkbox("tickbox-second-option")

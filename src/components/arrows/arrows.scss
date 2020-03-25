@@ -9,7 +9,7 @@
 }
 
 // правило для иконки внутри тела кнопок
-@mixin arrows__inner($width: 30%, $height: 30%) {
+@mixin arrows__inner($width: 2rem, $height: 2rem) {
   height: $width;
   width: $width;
   position: absolute;

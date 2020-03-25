@@ -8,19 +8,14 @@
   }
 
   &__picture {
-    min-height: 9.5rem;
-    min-width: 9.5rem;
+    height: 11rem;
+    width: 11rem;
     background-color: $gray-template;
     border-radius: 50%;
     position: relative;
     overflow: hidden;
     border: 6px solid darken($gray-template, 3);
     cursor: pointer;
-
-    img {
-      position: absolute;
-      width: 100%;
-    }
   }
 
   &__info {

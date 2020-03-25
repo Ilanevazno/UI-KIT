@@ -14,7 +14,7 @@ block title
 block content
   -
     const data = require('../../assets/data/data.json');
-    const { newsList, pages, searchLine, lastEvent } = data;
+    const { newsList, pages, searchLine, lastEvent, importantNews } = data;
   .index
     header.index__header
       +header(pages)
@@ -30,6 +30,6 @@ block content
         section.index__last-event
           +events(lastEvent)
         section.index__important-news
-          +news()
+          +news(importantNews)
     footer.index__footer
       +footer('Ilya sigidin')

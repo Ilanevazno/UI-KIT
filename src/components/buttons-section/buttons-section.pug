@@ -1,0 +1,10 @@
+include ../buttons/buttons
+mixin buttons-section (title)
+  section.button-section
+    h2.buttons-section__title= title
+    - for (let i = 0; i < 3; i += 1)
+      .buttons-section__container
+        +button({theme: "mint", size: "low", text: "Button"})
+        +button({theme: "mint", size: "hight", text: "Button"})
+        +button({theme: "orange", size: "hight", text: "Button"})
+        +button({theme: "orange", size: "low", text: "Button"})

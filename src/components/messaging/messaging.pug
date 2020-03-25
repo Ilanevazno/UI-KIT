@@ -1,12 +1,12 @@
 mixin messaging(data = {})
   -
     let {
-      picture = require("../../assets/images/profile-girl.jpg"),
-      userName,
-      placeholder,
-      widgetClass,
-    } = data
-  div(class="messaging__widget" class= ""+widgetClass)
+      picture = require("../../assets/images/sarah-brown.jpg"),
+      userName = 'user',
+      placeholder = 'hello there',
+      widgetClassHook = '',
+    } = data;
+  div(class="messaging__widget " + widgetClassHook)
     div(class="messaging__header")
       p.messaging__interlocutor-name= userName
       div(class="messaging__interlocutor-picture" style=`background-image: url(${picture})`)

@@ -6,6 +6,7 @@
   padding: 1.5rem 2%;
   border-radius: 10px;
   box-shadow: 2px 2px 4px 0px lighten($black, 50);
+  height: max-content;
 
   &__title {
     margin: 0;
