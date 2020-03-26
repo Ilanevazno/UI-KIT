@@ -5,7 +5,7 @@ mixin search-dropdown-section (title)
     h2.search-dropdown__title= title
     .search-dropdown__container
       .search-dropdown__item
-        +search()
+        +search({ searchList: [ 'Даже', 'какие-то', 'элементы', 'поиска' ] })
       .search-dropdown__item
         +search()
       .search-dropdown__item

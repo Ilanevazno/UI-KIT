@@ -1,0 +1,24 @@
+mixin button(button = {})
+  -
+    let {
+      theme = 'orange',
+      size = 'low',
+      isResponsive = false,
+      isReversedColor = false,
+      text = 'test',
+      hookClassName = '',
+    } = button;
+
+    size = ` ripple-btn_size_${size}`;
+    theme = ` ripple-btn_theme_${theme}`;
+
+    theme = isReversedColor ? `${theme}-reverse` : theme;
+
+    let className = 'ripple-btn js-ripple-btn ' + hookClassName + theme + size;
+    className += !!isResponsive ? ' ripple-btn_width_responsive' : '';
+
+
+  button(type="submit" class= className)
+    .ripple-btn__ripple-effect.js-ripple-effect
+      span.js-ripple-circle
+    p= text

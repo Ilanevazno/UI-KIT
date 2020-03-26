@@ -13,7 +13,6 @@ class Slider {
   }
 
   fixRangeOffset() {
-    // fix pointer label offset bug
     const moveLabels = (target) => {
       $(document).on('mousemove.slider', () => {
         const position = $(target).position().left;

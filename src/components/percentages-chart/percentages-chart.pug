@@ -1,6 +1,6 @@
 mixin percentages-chart(percent)
-  figure.pie-chart.js-percentages-chart(data-percent= percent)
-      .pie-chart__figure-inner
-        svg(height="100" width="100")
-          circle(class="pie-chart__outer" width="50" height="50" cx="125" cy="65" r="60" transform="rotate(-90, 95, 95)")
-        figcaption= percent
+  figure.percentages-chart.js-percentages-chart(data-percent= percent)
+      .percentages-chart__figure-inner
+        svg(height="100" width="100").percentages-chart__svg
+          circle(class="percentages-chart__outer" width="50" height="50" cx="125" cy="65" r="60" transform="rotate(-90, 95, 95)")
+        figcaption.percentages-chart__current= percent

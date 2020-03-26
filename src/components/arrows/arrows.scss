@@ -1,63 +1,53 @@
-@mixin arrows__template($width: 6rem, $height: 6rem) {
+.arrow-button {
   position: relative;
-  width: $width;
-  height: $height;
-  border-radius: 50%;
-  background-color: white;
+  width: 6rem;
+  height: 6rem;
+  background-color: $white;
   border: 3px solid #4eb7a8;
+  border-radius: 50%;
   transition: 0.1s ease-in-out all;
-}
+  outline: none;
 
-// правило для иконки внутри тела кнопок
-@mixin arrows__inner($width: 2rem, $height: 2rem) {
-  height: $width;
-  width: $width;
-  position: absolute;
-  top: 33%;
-  border: 1px solid #4eb7a8;
-  border-width: 0.4rem 0.4rem 0 0;
-}
-
-.arrows {
-  &__arrow-left {
-    left: 38%;
-    transform: rotate(-130deg);
+  &__inner {
+    height: 2rem;
+    width: 2rem;
+    position: absolute;
+    top: 33%;
+    border: 1px solid #4eb7a8;
+    border-width: 0.4rem 0.4rem 0 0;
   }
 
-  &__arrow-right {
-    left: 26%;
-    transform: rotate(45deg);
-  }
-
-  &__button {
-    @include arrows__template;
-
-    &:active:not(:disabled) {
-      transform: scale(0.9);
+  &_direction {
+    &_left {
+      left: 38%;
+      transform: rotate(-130deg);
     }
 
-    &:hover,
-    &:focus {
-      outline: none;
-      cursor: pointer;
-      background-color: $mint-template;
-
-      & > .arrows__arrow-inner {
-        border-color: white;
-      }
-    }
-
-    &:disabled {
-      background-color: $gray-template;
-      border: 1px solid $gray-template;
-
-      & > .arrows__arrow-inner {
-        border-color: white;
-      }
+    &_right {
+      left: 26%;
+      transform: rotate(45deg);
     }
   }
 
-  &__arrow-inner {
-    @include arrows__inner;
+  &:active:not(:disabled) {
+    transform: scale(0.9);
+  }
+
+  &:hover {
+    background-color: $mint-template;
+    cursor: pointer;
+
+    & > .arrow-button__inner {
+      border-color: $white;
+    }
+  }
+
+  &:disabled {
+    background-color: $gray-template;
+    border: 1px solid $gray-template;
+
+    & > .arrow-button__inner {
+      border-color: $white;
+    }
   }
 }

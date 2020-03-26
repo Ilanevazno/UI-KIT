@@ -13,6 +13,7 @@
     background-color: $grey-light;
   }
 }
+
 .multi-steps {
   display: flex;
   width: 100%;
@@ -24,7 +25,7 @@
   > li {
     counter-increment: stepNum;
     text-align: center;
-    display: table-cell;
+    display: block;
     position: relative;
     color: $orange-template;
     font-size: 16px;
@@ -53,7 +54,7 @@
     }
 
     &:after {
-      content: "";
+      content: '';
       height: 2px;
       width: 100%;
       background-color: $orange-template;
@@ -73,7 +74,7 @@
       @extend %remain-steps;
       &:before {
         background-color: $orange-template;
-        color: white;
+        color: $white;
         border-color: $orange-template;
       }
 

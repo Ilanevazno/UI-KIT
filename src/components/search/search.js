@@ -1,6 +1,6 @@
 class Search {
-  constructor(selector) {
-    this.$htmlElement = $(selector);
+  constructor(element) {
+    this.$htmlElement = $(document).find(element);
     this.htmlItemList = {
       $searchItems: this.$htmlElement.find('.form-search__items'),
       $searchBtn: this.$htmlElement.find('.form-search__btn-find'),
@@ -11,15 +11,16 @@ class Search {
   }
 
   bindActions() {
-    this.htmlItemList.$inputLabel.on('click.searchLabel', this.prepareLine.bind(this));
-    this.htmlItemList.$searchItems.find('li').on('click.searchItem', this.selectFindedOption.bind(this));
-    this.$htmlElement.find('#form-search__str').on('input.searchForm', this.startSearch.bind(this));
-    this.htmlItemList.$searchBtn.on('click.searchButton', this.pressSearchButton.bind(this));
+    $(document).find(this.htmlItemList.$inputLabel).on('click.searchLabel', this.prepareLine.bind(this));
+    $(document).find(this.htmlItemList.$searchItems).find('li').on('click.searchItem', this.selectFindedOption.bind(this));
+    $(document).find(this.$htmlElement).find('.form-search__str').on('input.searchForm', this.startSearch.bind(this));
+    $(document).find(this.htmlItemList.$searchBtn).on('click.searchButton', this.pressSearchButton.bind(this));
+    $(document).find(this.htmlItemList.$errorNotify).on('click.errorNotify', this.prepareLine.bind(this));
   }
 
   prepareLine() {
-    this.htmlItemList.$searchItems.toggleClass('hidden');
-    this.htmlItemList.$errorNotify.css('opacity', '0');
+    this.htmlItemList.$searchItems.toggleClass('form-search__hidden-item');
+    this.htmlItemList.$errorNotify.css('display', 'none');
     this.openMM = true;
   }
 
@@ -27,7 +28,7 @@ class Search {
     const val = e.target.value.trim();
     const itemList = this.htmlItemList.$searchItems.find('li');
 
-    this.htmlItemList.$searchItems.removeClass('hidden');
+    this.htmlItemList.$searchItems.removeClass('form-search__hidden-item');
 
     if (val !== '') {
       itemList.each((idx, elem) => {
@@ -44,7 +45,7 @@ class Search {
     }
   }
 
-  pressSearchButton() {
+  pressSearchButton(e) {
     const itemList = this.htmlItemList.$searchItems.find('li');
 
     const findingElement = [...itemList].some(
@@ -55,16 +56,16 @@ class Search {
 
     if (findingElement) {
       this.htmlItemList.$searchBtn.addClass('form-search__btn-find--valid');
-      this.htmlItemList.$errorNotify.css('opacity', '0');
+      this.htmlItemList.$errorNotify.css('display', 'none');
     } else {
       this.htmlItemList.$searchBtn.addClass('form-search__btn-find--invalid');
-      this.htmlItemList.$errorNotify.css('opacity', '1');
+      this.htmlItemList.$errorNotify.css('display', 'inline-flex');
     }
   }
 
   selectFindedOption(e) {
-    this.$htmlElement.find('#form-search__str').val($(e.target).text());
-    this.htmlItemList.$searchItems.toggleClass('hidden');
+    this.$htmlElement.find('.form-search__str').val($(e.target).text());
+    this.htmlItemList.$searchItems.toggleClass('form-search__hidden-item');
   }
 
   bootstrap() {
@@ -73,7 +74,7 @@ class Search {
 }
 
 $('.js-seach-form-widget').each((idx, itm) => {
-  const searchLine = new Search($(itm));
+  const searchLine = new Search(itm);
   searchLine.bootstrap();
 });
 

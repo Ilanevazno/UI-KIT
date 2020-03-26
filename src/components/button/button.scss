@@ -1,0 +1,109 @@
+@mixin button-size-modify($width: 9.2rem, $height: 2.5rem, $fontSize: 1.2rem) {
+  min-width: $width;
+  min-height: $height;
+  font-size: $fontSize;
+}
+
+@mixin button-color-modify($color: $white, $background: $orange-template, $border: $orange-template) {
+  color: $color;
+  box-shadow: 0px 3.5px 1px -1px darken($border, 10%);
+  background: $background;
+  border: 1.5px solid $border;
+
+  &:hover {
+    background: $border;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translate(0.1rem, 0.1rem);
+  }
+}
+
+.ripple-btn {
+  outline: none;
+  background: inherit;
+  position: relative;
+  transition: all 0.3s, visibility 0s;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-family: 'Lato black', Arial, sans-serif;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    text-decoration: none;
+  }
+
+  &_size {
+    &_low {
+      @include button-size-modify();
+    }
+
+    &_hight {
+      @include button-size-modify($height: 3.9rem, $width: 14rem, $fontSize: 1.45rem);
+    }
+  }
+
+  &_width {
+    &_responsive {
+      width: 100%;
+    }
+  }
+
+  &_theme {
+    &_orange {
+      @include button-color-modify($background: $white, $color: $orange-template);
+    }
+
+    &_orange-reverse {
+      @include button-color-modify();
+    }
+
+    &_mint {
+      @include button-color-modify($background: $white, $color: $mint-template, $border: $mint-template);
+    }
+
+    &_mint-reverse {
+      @include button-color-modify($background: $mint-template, $color: $white, $border: $mint-template);
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__ripple-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+  }
+}
+
+.js {
+  &-ripple-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+
+    .ripple-btn__ripple-effect.is-active & {
+      animation: a-ripple 0.4s ease-in;
+    }
+  }
+}

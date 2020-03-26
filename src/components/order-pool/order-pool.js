@@ -1,7 +1,7 @@
 /* eslint-disable class-methods-use-this */
 import 'air-datepicker';
 import Slider from '../slider/Slider';
-import Percentages from '../percentages-chart/percentages-chart';
+import Percentages from '../percentages-chart/Percentages';
 
 const state = require('./order-pool.json');
 

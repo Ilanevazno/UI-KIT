@@ -13,7 +13,7 @@ mixin form-section (data)
     h2.form-section__title= mainTitle
     .form-section__container
       .form-section__message
-        +message-form({ formName: 'form-section', NameField: 'user__name', emailField: 'user__email', messageField: 'user__message' })
+        +message-form({ nameField: 'user-name', emailField: 'user-email', messageField: 'user-message' })
       .form-section__tick-boxes
         .form-section__row
           h2.form-section__title= togglesTitle

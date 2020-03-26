@@ -1,8 +1,8 @@
 class MessageForm {
   constructor(selector) {
     this.$htmlContainer = $(selector);
-    this.$userNameLabel = this.$htmlContainer.find('.message__name');
-    this.$userEmailLabel = this.$htmlContainer.find('.message__email');
+    this.$userNameLabel = this.$htmlContainer.find('.message-form__name');
+    this.$userEmailLabel = this.$htmlContainer.find('.message-form__email');
     this.logOn = false;
   }
 
@@ -53,18 +53,18 @@ class MessageForm {
 
   // eslint-disable-next-line class-methods-use-this
   testLabel(label, regexp) {
-    label.siblings('.field-status').removeClass('text-success text-error');
+    label.siblings('.message-form__field-status').removeClass('text-success text-error');
 
     if (regexp.test(label.val())) {
-      label.siblings('.field-status').addClass('text-success').text('Thanks!');
+      label.siblings('.message-form__field-status').addClass('text-success').text('Thanks!');
       return true;
     }
-    label.siblings('.field-status').addClass('text-error').text('Error');
+    label.siblings('.message-form__field-status').addClass('text-error').text('Error');
     return false;
   }
 }
 
-$('.js-message-form-widget').each((idx, itm) => {
+$('.js-message-form').each((idx, itm) => {
   const messageForm = new MessageForm($(itm));
   messageForm.bootstrap();
 });
