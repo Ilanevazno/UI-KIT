@@ -1,17 +1,16 @@
 mixin news(news = {})
   -
-    let {
+    const {
       picture = 'gray-bg.jpg',
       pictureUrl = require(`../../components/news/img/${picture}`),
-      title = "It’s all going downhill",
-      date = "24  AUGUST  2013",
-      text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.",
-      widgetClass = ""
-    } = news
-  div(class=("widget-news ") + widgetClass)
-    div(class= news.widgetClass+ "__picture widget-news__picture" style=`background-image: url("${pictureUrl}")`)
-    div(class= news.widgetClass+ "__information widget-news__information")
-      h3(class= news.widgetClass+ "__title widget-news__title")= title
-      p(class= news.widgetClass+ "__date widget-news__date")= date
-      p(class= news.widgetClass+ "__text widget-news__text")= text
+      title = 'title',
+      date = '31  jan  2000',
+      text = 'news-text',
+    } = news;
+  div(class=("widget-news"))
+    div(class="widget-news__picture" style=`background-image: url("${pictureUrl}")`)
+    div(class="widget-news__information")
+      h3(class="widget-news__title")= title
+      p(class="widget-news__date")= date
+      p(class="widget-news__text")= text
 

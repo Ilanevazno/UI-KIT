@@ -1,126 +1,123 @@
-@mixin calendar($class, $width: 32.8rem) {
-  #{$class} {
-    width: $width;
-    .datepicker {
-      background-color: $orange-template;
-      position: relative;
-      border-radius: 5px;
+.js-calendar-widget {
+  width: 32.8rem;
 
-      &--current-day {
-        height: 12.7rem;
+  .datepicker {
+    background-color: $orange-template;
+    position: relative;
+    border-radius: 5px;
+
+    &--current-day {
+      height: 12.7rem;
+      font-family: 'Lato Light', Arial, sans-serif;
+      color: $white;
+      font-size: 9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--nav {
+      display: flex;
+      justify-content: space-around;
+      color: $white;
+      height: 5rem;
+      background: #d54c2c;
+
+      &-title {
+        display: flex;
+        align-items: center;
         font-family: 'Lato Light', Arial, sans-serif;
-        color: $white;
-        font-size: 9rem;
-        display: flex;
-        align-items: center;
+        font-size: 2.6rem;
+        width: 59%;
         justify-content: center;
       }
+    }
 
-      &--nav {
-        display: flex;
-        justify-content: space-around;
-        color: $white;
-        height: 5rem;
-        background: #d54c2c;
+    &--nav-action {
+      width: 1.7rem;
 
-        &-title {
-          display: flex;
-          align-items: center;
-          font-family: 'Lato Light', Arial, sans-serif;
-          font-size: 2.6rem;
-          width: 59%;
-          justify-content: center;
-        }
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: $white;
       }
+    }
 
-      &--nav-action {
-        width: 1.7rem;
+    &--days-names {
+      background-color: $orange-template;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      color: $white;
+      text-transform: uppercase;
+      height: 3.1rem;
+      font-family: 'Lato black', Arial, sans-serif;
+    }
 
-        svg {
-          width: 100%;
-          height: 100%;
-          fill: $white;
-        }
-      }
+    &--cells-days {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      background-color: $gray-template;
 
-      &--days-names {
-        background-color: $orange-template;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        color: $white;
-        text-transform: uppercase;
-        height: 3.1rem;
-        font-family: 'Lato black', Arial, sans-serif;
-      }
-
-      &--cells-days {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        background-color: $gray-template;
-
-        .-other-month- {
-          color: $white;
-        }
-      }
-
-      &--cell-day {
-        height: 4.53rem;
-        border: 1px solid $white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #868686;
-        cursor: pointer;
-        font-family: 'Source Sans Pro', Arial, sans-serif;
-        font-size: 2.5rem;
-      }
-
-      .-selected-,
-      .-current- {
-        background-color: $orange-template;
+      .-other-month- {
         color: $white;
       }
+    }
 
-      &--buttons {
-        background-color: darken($gray-template, 10%);
-        height: 5.8rem;
-        display: flex;
-        align-items: center;
-        padding: 0 2.5rem;
+    &--cell-day {
+      height: 4.53rem;
+      border: 1px solid $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #868686;
+      cursor: pointer;
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      font-size: 2.5rem;
+    }
+
+    .-selected-,
+    .-current- {
+      background-color: $orange-template;
+      color: $white;
+    }
+
+    &--buttons {
+      background-color: darken($gray-template, 10%);
+      height: 5.8rem;
+      display: flex;
+      align-items: center;
+      padding: 0 2.5rem;
+    }
+
+    &--button {
+      font-size: 1.7rem;
+      font-family: 'Lato black', Arial, sans-serif;
+      text-transform: uppercase;
+      color: #868686;
+    }
+
+    &--months,
+    &--years {
+      display: none;
+
+      &.active {
+        display: block;
       }
+    }
 
-      &--button {
-        font-size: 1.7rem;
-        font-family: 'Lato black', Arial, sans-serif;
-        text-transform: uppercase;
-        color: #868686;
-      }
+    &--cell-month,
+    &--cell-year {
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      font-size: 2rem;
+      color: $white;
+      text-align: center;
+      cursor: pointer;
 
-      &--months,
-      &--years {
-        display: none;
-
-        &.active {
-          display: block;
-        }
-      }
-
-      &--cell-month,
-      &--cell-year {
-        font-family: 'Source Sans Pro', Arial, sans-serif;
-        font-size: 2rem;
-        color: $white;
-        text-align: center;
-        cursor: pointer;
-
-        &:hover {
-          background: white;
-          color: $orange-template;
-        }
+      &:hover {
+        background: white;
+        color: $orange-template;
       }
     }
   }
 }
-
-@include calendar('.js-calendar-widget');

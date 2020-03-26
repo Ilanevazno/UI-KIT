@@ -1,19 +1,13 @@
 mixin dropdown (options = {})
   -
-    let {
-      selectName = "",
-      optionList = [
-        {value: "first", text: "This is option 1"},
-        {value: "second", text: "This is option 2"},
-        {value: "third", text: "This is option 3"},
-        {value: "fourth", text: "This is option 4"},
-      ],
-      widgetClass = ""
-    } = options
-
+    const {
+      placeholder = 'Choose an option',
+      optionList = [],
+      widgetHookClass = '',
+    } = options;
   .widget-select.js-dropdown-widget
     .widget-select__area.js-dropdown-textarea
-      div(class= widgetClass).widget-select__area-text.js-dropdown-text-inner Choose an option
+      div(class= widgetHookClass).widget-select__area-text.js-dropdown-text-inner= placeholder
       .widget-select__area-btn
     ul.widget-select__label.js-dropdown-menu
       each item in optionList

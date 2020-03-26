@@ -45,7 +45,7 @@ class Search {
     }
   }
 
-  pressSearchButton(e) {
+  pressSearchButton() {
     const itemList = this.htmlItemList.$searchItems.find('li');
 
     const findingElement = [...itemList].some(

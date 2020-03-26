@@ -1,4 +1,4 @@
-import Video from './video';
+import Video from './Video';
 
 const connectVideo = (settings = {}) => {
   const {

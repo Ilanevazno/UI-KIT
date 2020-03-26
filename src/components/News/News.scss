@@ -1,50 +1,44 @@
-@mixin widget-news($className, $width: 33.8rem) {
-  #{$className} {
-    width: $width;
-    height: max-content;
+.widget-news {
+  width: 33.8rem;
+  height: max-content;
+  background-color: $orange-template;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+
+  &__picture {
+    width: 33%;
+    box-sizing: border-box;
+    background-size: cover;
+  }
+
+  &__information {
+    z-index: 2;
+    width: 50%;
+    margin: 0 auto;
+    height: 100%;
     background-color: $orange-template;
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    border-radius: 4px;
+    box-sizing: border-box;
+  }
 
-    &__picture {
-      width: 33%;
-      box-sizing: border-box;
-      background-size: cover;
-    }
+  &__title {
+    font: 3.2rem/3rem 'Lato Light', Arial, sans-serif;
+    color: $white;
+    margin: 15% 0 0 0;
+  }
 
-    &__information {
-      z-index: 2;
-      width: 50%;
-      margin: 0 auto;
-      height: 100%;
-      background-color: $orange-template;
-      box-sizing: border-box;
-    }
+  &__date {
+    font-family: 'Lato Black', Arial, sans-serif;
+    font-size: 1.45rem;
+    margin: 7% 0 0 0;
+    color: $white;
+  }
 
-    &__title {
-      font-family: 'Lato Light', Arial, sans-serif;
-      font-size: 3.2rem;
-      color: $white;
-      margin: 15% 0 0 0;
-      line-height: 3rem;
-    }
-
-    &__date {
-      font-family: 'Lato Black', Arial, sans-serif;
-      font-size: 1.45rem;
-      margin: 7% 0 0 0;
-      color: $white;
-    }
-
-    &__text {
-      font-family: 'Lato Regular', Arial, sans-serif;
-      font-size: 1.37rem;
-      margin: 8% 0 3.9rem 0;
-      color: $white;
-    }
+  &__text {
+    font-family: 'Lato Regular', Arial, sans-serif;
+    font-size: 1.37rem;
+    margin: 8% 0 3.9rem 0;
+    color: $white;
   }
 }
-
-@include widget-news('.widget-news');

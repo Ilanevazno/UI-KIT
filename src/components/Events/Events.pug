@@ -7,11 +7,10 @@ mixin events(event = {})
         day: '0',
         month: 'mon',
       },
-      title = 'This is the title',
-      text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      className = '',
+      title = 'event - title',
+      text = 'event - text',
     } = event;
-  div(class="widget-events " + className)
+  div(class="widget-events")
     div(class="widget-events__picture" style=`background-image: url(${parsedPicture})`)
     div(class="widget-events__information")
       div(class="widget-events__information-wrapper")
@@ -21,4 +20,4 @@ mixin events(event = {})
         h3(class="widget-events__event-title")=  title
         p(class="widget-events__event-text")=  text
         .widget-events__to-calendar
-          +button({theme: "mint", size: "low", isResponsive: true, text: "Add to calendar"})
+          +button({theme: 'mint', size: 'low', isResponsive: true, text: 'Add to calendar'})
