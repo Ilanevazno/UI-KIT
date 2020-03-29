@@ -18,7 +18,7 @@
     text-align: center;
     font-family: 'Source Sans Pro', Arial, sans-serif;
     font-size: 3.7rem;
-    color: $white;
+    color: white;
     margin: 0;
     padding: 2rem 0 7rem 0;
   }
@@ -45,6 +45,16 @@
     outline: none;
     cursor: pointer;
     background: inherit;
+  }
+
+  &__send {
+    &-message {
+      background: 12%/46% url('./img/Chat-Icon.png') no-repeat;
+    }
+
+    &-photo {
+      background: 70% 34%/56% url('./img/Camera-Icon.png') no-repeat;
+    }
   }
 
   &__body {
@@ -80,7 +90,7 @@
 
   &__message-from {
     background: darken($gray-template, 8%);
-    border: 2px solid $white;
+    border: 2px solid white;
     margin-top: 2rem;
     min-height: 10rem;
     outline: none;
@@ -101,6 +111,6 @@
     width: 100%;
     margin-top: 1.6rem;
     background: $mint-template;
-    color: $white;
+    color: white;
   }
 }

@@ -26,7 +26,4 @@ class Hamburger {
   }
 }
 
-const hamburger = new Hamburger('.header-mobile');
-hamburger.bootstrap();
-
 export default Hamburger;

@@ -9,7 +9,7 @@
     &-item {
       position: relative;
       font: 2rem 'Lato black', Arial, sans-serif;
-      color: $white;
+      color: white;
       text-transform: uppercase;
       text-decoration: none;
       transition: 0.3s ease-in-out all;
@@ -19,7 +19,7 @@
       &:after {
         content: '';
         width: 0%;
-        border-bottom: 2px solid $white;
+        border-bottom: 2px solid white;
         height: 3px;
         position: absolute;
         bottom: -6px;

@@ -4,5 +4,7 @@ mixin sliders-section (title)
   section.sliders
     h2.sliders__title= title
     .sliders__container
-      +slider('js-first-slider')
-      +slider('js-second-slider')
+      .sliders__container-item
+        +slider('js-first-slider')
+      .sliders__container-item
+        +slider('js-second-slider')

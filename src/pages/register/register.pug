@@ -1,6 +1,21 @@
 extends ../../templates/main
+
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/button/button
+include ../../components/input-label/input-label
+include ../../components/register-section/register-section
+
 block title
-  | Registration
+  title Register
 block content
-  include ../../components/registration/registration
-  +registration()
+  -
+    const data = require('../../assets/data/data.json');
+    const { pages } = data;
+  .register
+    header.register__header
+      +header(pages)
+    main.register__content
+      +register-section()
+    footer.register__footer
+      +footer('Ilya sigidin')

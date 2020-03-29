@@ -33,9 +33,4 @@ class Button {
   }
 }
 
-$('.js-ripple-effect').each((idx, itm) => {
-  const button = new Button($(itm));
-  button.bootstrap();
-});
-
 export default Button;

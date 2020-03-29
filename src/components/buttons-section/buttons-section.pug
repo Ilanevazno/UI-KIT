@@ -4,7 +4,11 @@ mixin buttons-section (title)
     h2.buttons-section__title= title
     - for (let i = 0; i < 3; i += 1)
       .buttons-section__container
-        +button({theme: "mint", size: "low", text: "Button"})
-        +button({theme: "mint", size: "hight", text: "Button"})
-        +button({theme: "orange", size: "hight", text: "Button"})
-        +button({theme: "orange", size: "low", text: "Button"})
+        .buttons-section__container-item
+          +button({theme: 'mint', size: 'low', text: 'Button'})
+        .buttons-section__container-item
+          +button({theme: 'mint', size: 'hight', text: 'Button'})
+        .buttons-section__container-item
+          +button({theme: 'orange', size: 'hight', text: 'Button'})
+        .buttons-section__container-item
+          +button({theme: 'orange', size: 'low', text: 'Button'})

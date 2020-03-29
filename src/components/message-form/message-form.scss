@@ -86,6 +86,21 @@
       background-color: $mint-template;
     }
   }
+
+  &__policy {
+    display: flex;
+
+    &-item {
+      margin-right: 0.5rem;
+      text-decoration: none;
+      color: black;
+    }
+
+    &-href {
+      margin-left: 0.5rem;
+      color: #005cf5;
+    }
+  }
 }
 
 @keyframes flash {

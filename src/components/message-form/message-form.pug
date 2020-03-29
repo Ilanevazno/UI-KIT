@@ -1,3 +1,4 @@
+include ../tickbox/tickbox
 mixin message-form(data = {})
   -
     const {
@@ -7,6 +8,13 @@ mixin message-form(data = {})
       emailFieldPlaceholder = 'Your Email',
       messageFieldPlaceholder = 'Your Email',
       messageField = '',
+      isShowedPolicy = false,
+      policy = {
+        isShowed: false,
+        title: 'Я согласен на обработку',
+        policyText: 'персональных данных',
+        policyLink: 'https://policy.com/'
+      },
     } = data;
   form(class="js-message-form message-form__container")
     .message-form__fields
@@ -17,4 +25,10 @@ mixin message-form(data = {})
       label(for= emailField class="message-form__field-status")
     .message-form__fields
       textarea(id= messageField class="message-form__item message-form__textarea "+ messageField placeholder= messageFieldPlaceholder)
+    - if (policy.isShowed)
+      .message-form__policy.message-form__policy-item
+        span.message-form__policy-item
+          +checkbox()
+        p.message-form__policy-text.message-form__policy-item= policy.title
+          a(href= policy.policyLink).message-form__policy-href.message-form__policy-item= policy.policyText
     +button({theme: 'mint', size: 'hight', text: 'Submit', isReversedColor: true})

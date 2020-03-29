@@ -4,7 +4,7 @@
   font-size: $fontSize;
 }
 
-@mixin button-color-modify($color: $white, $background: $orange-template, $border: $orange-template) {
+@mixin button-color-modify($color: white, $background: $orange-template, $border: $orange-template) {
   color: $color;
   box-shadow: 0px 3.5px 1px -1px darken($border, 10%);
   background: $background;
@@ -58,7 +58,7 @@
 
   &_theme {
     &_orange {
-      @include button-color-modify($background: $white, $color: $orange-template);
+      @include button-color-modify($background: white, $color: $orange-template);
     }
 
     &_orange-reverse {
@@ -66,11 +66,11 @@
     }
 
     &_mint {
-      @include button-color-modify($background: $white, $color: $mint-template, $border: $mint-template);
+      @include button-color-modify($background: white, $color: $mint-template, $border: $mint-template);
     }
 
     &_mint-reverse {
-      @include button-color-modify($background: $mint-template, $color: $white, $border: $mint-template);
+      @include button-color-modify($background: $mint-template, $color: white, $border: $mint-template);
     }
   }
 

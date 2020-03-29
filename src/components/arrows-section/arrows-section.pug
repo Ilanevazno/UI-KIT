@@ -3,9 +3,12 @@ mixin arrows-section (title)
   section.arrows-section
     h2.arrows-section__title= title
     .arrows-section__container
-      +arrow({ direction: "left", isDisable: false, })
-      +arrow({ direction: "right", isDisable: false, })
-      +arrow({ direction: "left", isDisable: true, })
-      +arrow({ direction: "right", isDisable: true, })
-      +arrow({ direction: "left", isDisable: false, })
-      +arrow({ direction: "right", isDisable: false })
+      .arrows-section__container-item
+        +arrow({ direction: 'left', isDisable: false, })
+        +arrow({ direction: 'right', isDisable: false, })
+      .arrows-section__container-item
+        +arrow({ direction: 'left', isDisable: true, })
+        +arrow({ direction: 'right', isDisable: true, })
+      .arrows-section__container-item
+        +arrow({ direction: 'left', isDisable: false, })
+        +arrow({ direction: 'right', isDisable: false })

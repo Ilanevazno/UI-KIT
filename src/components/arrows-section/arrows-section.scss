@@ -11,6 +11,21 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    width: 71%;
+    width: 75%;
+
+    &-item {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      justify-content: space-around;
+
+      @include media-screen ($mobile) {
+        margin: 1rem 0;
+      }
+    }
+
+    @include media-screen ($mobile) {
+      flex-direction: column;
+    }
   }
 }

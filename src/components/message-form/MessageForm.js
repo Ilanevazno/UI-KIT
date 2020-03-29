@@ -46,27 +46,21 @@ class MessageForm {
     return checkedData.every(checkResult) ? this.userAlert('Форма успешно отправлена!') : this.userAlert('Ошибка при отправке формы, проверьте поля.');
   }
 
-  // eslint-disable-next-line class-methods-use-this
   userAlert() {
     // alert for users
   }
 
-  // eslint-disable-next-line class-methods-use-this
   testLabel(label, regexp) {
-    label.siblings('.message-form__field-status').removeClass('text-success text-error');
+    const $messageStatus = label.siblings('.message-form__field-status');
+    $messageStatus.removeClass('text-success text-error');
 
     if (regexp.test(label.val())) {
-      label.siblings('.message-form__field-status').addClass('text-success').text('Thanks!');
+      $messageStatus.addClass('text-success').text('Thanks!');
       return true;
     }
-    label.siblings('.message-form__field-status').addClass('text-error').text('Error');
+    $messageStatus.addClass('text-error').text('Error');
     return false;
   }
 }
-
-$('.js-message-form').each((idx, itm) => {
-  const messageForm = new MessageForm($(itm));
-  messageForm.bootstrap();
-});
 
 export default MessageForm;

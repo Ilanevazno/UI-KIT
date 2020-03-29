@@ -1,25 +1,37 @@
 extends ../../templates/main
+
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/contact-section/contact-section
+
 block title
-  | Контакты
+  title Контакты
+
 block content
-  include ../../components/message-form/message-form
-  include ../../components/location/location
-  include ../../components/video/video
-  .global__wrapper
-    h2.contacts__title Хотите пообщаться?
-    p.contacts__text Вы можете посетить наш офис по адресу:
-    p.contacts__text Россия. Санкт-Петербург, Итальянская ул. 3 (БЦ рандомный, 2 этаж)
-    .contacts__widgets
-      +location({welcomeText: "Meet us!", address: "Итальянская ул. дом 3", className: "contacts__widgets-location", coords: [59.890138, 30.378240]})
-  hr
-  .global__wrapper
-    h2.contacts__title Как мы работаем?
-    p.contacts__text О работе нашей компании вы сможете увидеть в нашем видео ролике:
-    .contacts__widgets
-      +videoPlayer({src: require("../../assets/video/new-zeland.mp4"), className: "js-contacts-video"})
-  hr
-  .global__wrapper
-    h2.contacts__title Остались ещё вопросы?
-    p.contacts__text Вы можете отправить нам сообщение, и мы ответим вам на почту
-    .contacts__widgets
-      //- +formMessage({className: "contacts__form-container", NameField: "contacts__user-name", emailField: "contacts__user-email", messageField: "contacts__user-message"})
+  -
+    const data = require('../../assets/data/data.json');
+    const { newsList, pages, searchLine, lastEvent, importantNews } = data;
+  .contacts
+    header.contacts__header
+      +header(pages)
+    main.contacts__content
+      .contacts__item
+        +contact-section({
+          title: 'Хотите пообщаться?',
+          paragraphs: ['Вы можете посетить наш офис по адресу:', 'Россия. Санкт-Петербург, Итальянская ул. 3 (БЦ рандомный, 2 этаж)'],
+          contactType: 'communicate',
+        })
+      .contacts__item
+        +contact-section({
+          title: 'Как мы работаем?',
+          paragraphs: ['О работе нашей компании вы сможете увидеть в нашем видео ролике:'],
+          contactType: 'about-work',
+        })
+      .contacts__item
+        +contact-section({
+          title: 'Остались ещё вопросы?',
+          paragraphs: ['Вы можете отправить нам сообщение, и мы ответим вам на почту'],
+          contactType: 'any-question',
+        })
+    footer.contacts__footer
+      +footer('Ilya sigidin')

@@ -6,8 +6,8 @@ include ../account-panel/account-panel
 mixin header (pages = {}, theme)
   -
     let headerClassName = 'header-line ';
-    const logo = { link: './index.html' };
     let accountButtonsSize = 'hight';
+    const logo = { link: './index.html' };
     if (theme) {
       accountButtonsSize = theme === 'low' ? 'low' : 'hight';
       headerClassName += `header-line_theme_${theme}`;

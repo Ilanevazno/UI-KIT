@@ -12,6 +12,14 @@ html {
   font-family: 'Myriad pro', Arial, sans-serif;
   background: white;
   color: black;
+
+  @include media-screen($mediumScreen) {
+    font-size: 10px;
+  }
+
+  @include media-screen($tablet) {
+    font-size: 8px;
+  }
 }
 
 h1,

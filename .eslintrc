@@ -15,4 +15,7 @@
       "node": true,
         "jquery": true
     },
+    "rules": {
+      "class-methods-use-this": "off"
+    }
   }

@@ -1,0 +1,29 @@
+.register {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__content {
+    flex: 1 0 auto;
+    display: flex;
+    padding: 0 2rem;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+
+    @include media-screen($tablet) {
+      align-items: center;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    &-control {
+      margin-bottom: 2rem;
+    }
+  }
+}

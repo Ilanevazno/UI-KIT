@@ -1,6 +1,7 @@
 mixin button(button = {})
   -
     let {
+      buttonType = 'submit',
       theme = 'orange',
       size = 'low',
       isResponsive = false,
@@ -18,7 +19,7 @@ mixin button(button = {})
     className += !!isResponsive ? ' ripple-btn_width_responsive' : '';
 
 
-  button(type="submit" class= className)
+  button(type= buttonType class= className)
     .ripple-btn__ripple-effect.js-ripple-effect
       span.js-ripple-circle
     p= text

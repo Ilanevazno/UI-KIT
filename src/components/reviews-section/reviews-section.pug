@@ -1,0 +1,31 @@
+include ../button/button
+include ../dropdown/dropdown
+include ../user-profile/user-profile
+
+mixin reviews-section(reviews = [], title)
+  -
+    const [] = reviews;
+  section.reviews-section
+    h2.reviews-section__title= title
+    .reviews-section__sort
+      +dropdown({
+        placeholder: 'Сортировка по',
+        optionList: [
+          {value: 'first', text: 'Самые новые'},
+          {value: 'second', text: 'Наиболее актуальные'},
+          {value: 'third', text: 'Подтверждённые'},
+        ]
+      })
+    .reviews-section__container
+      each item in reviews
+        -
+          const {
+            name = '',
+            text = '',
+          } = item;
+        .reviews-section__review-item
+          textarea(disabled class="reviews-section__user-review")= text
+          .reviews-section__user-profile
+            +user-profile({
+              name,
+            })

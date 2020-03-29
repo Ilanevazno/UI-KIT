@@ -2,10 +2,10 @@ mixin news-list (data = {})
   .news-list
     each item in data
       -
-        let {
+        const {
           title,
           text,
-        } = item
+        } = item;
       .news-list__item
         h2.news-list__item-title= title
         p.news-list__item-text= text

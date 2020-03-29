@@ -1,34 +1,30 @@
-/* eslint-disable class-methods-use-this */
 class Assistant {
   constructor(selector) {
     this.$htmlContainer = $(selector);
+    this.$startIcon = this.$htmlContainer.find('.assistant__start');
+    this.$modalBody = this.$htmlContainer.find('.assistant__messenger');
   }
 
   openMessenger() {
-    this.$htmlContainer.find('.assistant__start').hide();
-    this.$htmlContainer.find('.assistant__dialog').addClass('assistant__dialog_open');
+    this.$startIcon.hide();
+    this.$modalBody.addClass('assistant__messenger_opened');
   }
 
   hideMessenger(event) {
     if (!this.$htmlContainer.find($(event.target)).length) {
-      this.$htmlContainer.find('.assistant__start').fadeIn();
-      this.$htmlContainer.find('.assistant__dialog').removeClass('assistant__dialog_open');
+      this.$startIcon.fadeIn();
+      this.$modalBody.removeClass('assistant__messenger_opened');
     }
   }
 
   bindActions() {
-    this.$htmlContainer.on('click', this.openMessenger.bind(this));
-    $(document).on('click', this.hideMessenger.bind(this));
+    this.$htmlContainer.on('click.openMessenger', this.openMessenger.bind(this));
+    $(document).on('click.hideMessenger', this.hideMessenger.bind(this));
   }
 
   bootstrap() {
     this.bindActions();
   }
 }
-
-$('.js-assistant-widget').each((idx, itm) => {
-  const assistant = new Assistant($(itm));
-  assistant.bootstrap();
-});
 
 export default Assistant;

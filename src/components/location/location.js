@@ -9,7 +9,7 @@ class Location {
     this.$htmlContainer = $(mapContainer);
     this.coords = JSON.parse(this.$htmlContainer.attr('data-coords'));
     this.mymap = L.map(mapContainer).setView(this.coords, 13);
-    this.mapIcon = require('../../assets/images/marker-icon.png');
+    this.mapIcon = require('./img/marker-icon.png');
   }
 
   bindActions() {
@@ -25,9 +25,7 @@ class Location {
   }
 
   setNewAddress() {
-    // eslint-disable-next-line no-alert
     const requestLatitude = prompt('Введите долготу');
-    // eslint-disable-next-line no-alert
     const requestLongitude = prompt('Введите ширину');
     if (requestLatitude && requestLongitude) {
       this.mymap.setView([requestLatitude, requestLongitude], 13);
@@ -71,10 +69,5 @@ class Location {
     this.bindActions();
   }
 }
-
-$('.js-widget-location').each((idx, itm) => {
-  const location = new Location(itm);
-  location.bootstrap();
-});
 
 export default Location;

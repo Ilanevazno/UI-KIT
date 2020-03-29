@@ -44,8 +44,8 @@
 
       &:after {
         content: '';
-        border-bottom: 3px solid $white;
-        border-right: 3px solid $white;
+        border-bottom: 3px solid white;
+        border-right: 3px solid white;
         width: 1rem;
         height: 1rem;
         transform: rotate(39deg);
@@ -67,7 +67,7 @@
     display: none;
 
     &-item {
-      color: $white;
+      color: white;
       font-size: 1.67rem;
       padding: 0.71rem 1.8rem;
       font-family: 'Source Sans Pro', Arial, sans-serif;
@@ -78,8 +78,8 @@
       }
 
       &:hover {
-        background: darken($white, 10%);
-        color: $black;
+        background: darken(white, 10%);
+        color: black;
         cursor: pointer;
       }
     }

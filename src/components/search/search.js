@@ -11,11 +11,11 @@ class Search {
   }
 
   bindActions() {
-    $(document).find(this.htmlItemList.$inputLabel).on('click.searchLabel', this.prepareLine.bind(this));
-    $(document).find(this.htmlItemList.$searchItems).find('li').on('click.searchItem', this.selectFindedOption.bind(this));
-    $(document).find(this.$htmlElement).find('.form-search__str').on('input.searchForm', this.startSearch.bind(this));
-    $(document).find(this.htmlItemList.$searchBtn).on('click.searchButton', this.pressSearchButton.bind(this));
-    $(document).find(this.htmlItemList.$errorNotify).on('click.errorNotify', this.prepareLine.bind(this));
+    this.htmlItemList.$inputLabel.on('click.searchLabel', this.prepareLine.bind(this));
+    this.htmlItemList.$searchItems.find('li').on('click.searchItem', this.selectFindedOption.bind(this));
+    this.htmlItemList.$inputLabel.on('input.searchForm', this.startSearch.bind(this));
+    this.htmlItemList.$searchBtn.on('click.searchButton', this.pressSearchButton.bind(this));
+    this.htmlItemList.$errorNotify.on('click.errorNotify', this.prepareLine.bind(this));
   }
 
   prepareLine() {
@@ -64,7 +64,7 @@ class Search {
   }
 
   selectFindedOption(e) {
-    this.$htmlElement.find('.form-search__str').val($(e.target).text());
+    this.htmlItemList.$inputLabel.val($(e.target).text());
     this.htmlItemList.$searchItems.toggleClass('form-search__hidden-item');
   }
 
@@ -72,10 +72,5 @@ class Search {
     this.bindActions();
   }
 }
-
-$('.js-seach-form-widget').each((idx, itm) => {
-  const searchLine = new Search(itm);
-  searchLine.bootstrap();
-});
 
 export default Search;

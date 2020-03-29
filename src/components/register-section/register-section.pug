@@ -1,0 +1,32 @@
+include ../input-label/input-label
+include ../button/button
+include ../stages/stages.pug
+
+mixin register-section(data = {})
+  -
+    const {
+      finishBtnText = 'Регистрация',
+      requiredFields = [
+        {
+          placeholder: 'Придумайте логин',
+          fieldName: 'user-login',
+        },
+        {
+          placeholder: 'Придумайте пароль',
+          fieldName: 'user-password',
+        },
+        {
+          placeholder: 'Повторите пароль',
+          fieldName: 'repeat-password',
+        },
+      ],
+    } = data;
+    let filledCount = 0;
+  section.register-section
+    form.register-section__form
+      - for (let i = 0; i < requiredFields.length; i++)
+        .register-section__form-item
+          h2.register-section__item-title= requiredFields[i].placeholder
+          +input-label({ name: requiredFields[i].fieldName, labelType: 'text' })
+      +stages({ maxStep: 3, currentStep: 1 })
+      +button({ theme: 'mint', size: 'hight', text: finishBtnText })

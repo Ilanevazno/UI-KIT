@@ -1,12 +1,25 @@
 extends ../../templates/main
+
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/button/button
+include ../../components/input-label/input-label
+
 block title
-  | Login
+  title Login
 block content
-  form.login__form
-    .login__form-control
-      input(type="email" name="user-email" class="login__form-item" placeholder="Ваш логин")
-      label(for="user-email")
-    .login__form-control
-      input(type="password" name="user-password" class="login__form-item" placeholder="Пароль")
-      label(for="user-password")
-    //- +button({theme: "mint", size: "hight", text: "Вход в аккаунт"})
+  -
+    const data = require('../../assets/data/data.json');
+    const { pages } = data;
+  .login
+    header.login__header
+      +header(pages)
+    main.login__content
+      form.login__form
+        .login__form-control
+          +input-label({ name: 'user-email', labelType: 'text', placeholder: 'Ваш логин' })
+        .login__form-control
+          +input-label({ name: 'user-email', labelType: 'password', placeholder: 'Ваш пароль' })
+        +button({theme: 'mint', size: 'hight', text: 'Вход в аккаунт'})
+    footer.login__footer
+      +footer('Ilya sigidin')

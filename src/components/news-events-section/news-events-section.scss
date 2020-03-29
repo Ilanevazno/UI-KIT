@@ -8,7 +8,18 @@
   }
 
   &__container {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+
+    &-item {
+      @include media-screen ($tablet) {
+        margin: 1rem 0;
+      }
+    }
+
+    @include media-screen ($tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }

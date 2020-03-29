@@ -91,16 +91,16 @@
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 2rem;
-    background-image: url('../../assets/images/search-loupe.png');
+    background-image: url('./img/search-loupe.png');
 
     &--invalid {
       background-color: $orange-template;
-      background-image: url('../../assets/images/search-loupe.png');
+      background-image: url('./img/search-loupe.png');
     }
 
     &--valid {
       background-color: $mint-template;
-      background-image: url('../../assets/images/search-success.png');
+      background-image: url('./img/search-success.png');
     }
   }
 

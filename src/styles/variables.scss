@@ -2,14 +2,6 @@ $mint-template: #4eb7a8;
 $orange-template: #e75735;
 $gray-template: #e5e5e5;
 $grey-light: #ededed;
-$white: white;
-$black: black;
-
-// page-components
-$header: #64a8f9;
-
-//for calendar
-$datepicker-bg: #e75735;
 
 //spinner
 $spinnerOffset: 187;
@@ -19,8 +11,14 @@ $spinnerDuration: 1.4s;
 $fullHD: 1920px;
 $mediumScreen: 1600px;
 $tablet: 960px;
-$mobile: 600px;
+$mobile: 760px;
 
 // main page
 
 $mainNewsItem: #fbfbfb;
+
+@mixin media-screen($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}

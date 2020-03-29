@@ -1,0 +1,34 @@
+include ../message-form/message-form
+include ../location/location
+include ../video/video
+
+mixin contact-section (data = {})
+  -
+    const {
+      title = 'Заголовок',
+      paragraphs = [],
+      contactType = '',
+    } = data;
+  section.contact-section
+    h2.contact-section__title= title
+    - for (let i = 0; i < paragraphs.length; i += 1)
+      p.contact-section__text= paragraphs[i]
+    .contact-section__widget
+      case contactType
+        when 'communicate'
+          +location({welcomeText: 'Meet us!', address: 'Итальянская ул. дом 3', className: 'contacts__widgets-location', coords: [59.890138, 30.378240]})
+        when 'about-work'
+          +videoPlayer({src: require('../../assets/video/new-zeland.mp4'), className: 'js-contacts-video'})
+        when 'any-question'
+          +message-form({
+            className: 'js-contact-message',
+            NameField: 'contact__user-name',
+            emailField: 'contact__user-email',
+            messageField: 'contact__user-message',
+            policy: {
+              isShowed: true,
+              title: 'Я согласен на обработку',
+              policyText: 'персональных данных',
+              policyLink: 'https://policy.com/',
+            }
+          })

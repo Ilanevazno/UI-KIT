@@ -9,11 +9,21 @@
 
   &__container {
     display: flex;
+
+    @include media-screen ($mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__message {
     width: 48.5%;
     margin-right: 3rem;
+
+    @include media-screen ($mobile) {
+      width: 100%;
+      margin: 0;
+    }
   }
 
   &__tick-boxes {
@@ -34,6 +44,17 @@
 
     &-item {
       margin-right: 1rem;
+    }
+
+    @include media-screen ($mobile) {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  &__item {
+    @include media-screen ($mobile) {
+      margin: 1rem 0;
     }
   }
 }

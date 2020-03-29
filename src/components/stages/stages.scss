@@ -20,7 +20,7 @@
   justify-content: space-between;
   width: 100%;
   padding: 0;
-  font-family: "Lato black", Arial, sans-serif;
+  font-family: 'Lato black', Arial, sans-serif;
 
   > li {
     counter-increment: stepNum;
@@ -74,7 +74,7 @@
       @extend %remain-steps;
       &:before {
         background-color: $orange-template;
-        color: $white;
+        color: white;
         border-color: $orange-template;
       }
 

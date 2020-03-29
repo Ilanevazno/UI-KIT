@@ -4,6 +4,10 @@
     min-width: 320px;
     width: 100%;
     margin: 0 auto;
+
+    @include media-screen ($tablet) {
+      padding: 0 2rem;
+    }
   }
 
   &__arrows {
@@ -23,13 +27,18 @@
   }
 
   &__stages {
-    margin-top: 7rem;
+    margin-top: 2.3rem;
   }
 
   &__search-and-profile {
     display: flex;
     justify-content: space-between;
-    margin-top: 6rem;
+    margin-top: 6.3rem;
+
+    @include media-screen ($mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__search {
@@ -52,6 +61,18 @@
     margin-top: 5.3rem;
     display: flex;
     justify-content: space-between;
+
+    @include media-screen ($tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__calendar,
+  &__messaging {
+    @include media-screen ($tablet) {
+      margin: 1rem 0;
+    }
   }
 
   &__video {

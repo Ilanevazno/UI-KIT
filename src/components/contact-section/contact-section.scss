@@ -1,0 +1,22 @@
+.contact-section {
+  &__title {
+    font-family: 'Lato black', Arial, sans-serif;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  &__text {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &__widget {
+    width: 60%;
+    margin: 0 auto;
+
+    @include media-screen ($tablet) {
+      width: 100%;
+    }
+  }
+}
