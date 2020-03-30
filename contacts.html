@@ -1,151 +1,139 @@
 <!DOCTYPE html>
-<meta charset="utf-8" name="viewport" content="initial-scale=1.0, width=device-width">
-<meta name="desctiption" content="UI KIT special for Fullstack development">
-<link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
-<link rel="icon" sizes="any" mask href="./assets/favicons/safari-pinned-tab.svg">
-<html></html>
-<head>
-  <title>Контакты
-  </title>
-<link href="main.css" rel="stylesheet"></head>
-<body>    
-  <div class="wrapper">
-    <div class="content">
-        <div class="header__topline">
-          <div class="global__wrapper header__topline-wrapper">
-            <div class="header__topline-links">
-                <ul class="header__links-list">
-                  <li><a class="header__topline-pages" href="./index.html">Главная</a></li>
-                  <li><a class="header__topline-pages" href="./ui-kit.html">Ui-kit</a></li>
-                  <li><a class="header__topline-pages" href="./contacts.html">Контакты</a></li>
-                  <li><a class="header__topline-pages" href="./order.html">Заказать</a></li>
-                </ul>
-            </div><a class="header__topline-logo"></a>
-            <div class="header__topline-account">
-              <p class="header__topline-account-text">Аккаунт</p>
-              <div class="header__topline-account-controls"><a href="./login.html">
-                      <button class="button__ripple-btn js-ripple-btn  button__ripple-btn_size_hight button__ripple-btn_theme_mint" type="submit">
-                        <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                        <p>Вход</p>
-                      </button></a><a href="./register.html">
-                      <button class="button__ripple-btn js-ripple-btn  button__ripple-btn_size_hight button__ripple-btn_theme_mint" type="submit">
-                        <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                        <p>Регистрация</p>
-                      </button></a>
-              </div>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="desctiption" content="UI-kit">
+    <meta name="keywords" content="PUG, SCSS, webpack, resume, BEM">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
+    <link rel="icon" sizes="any" mask href="./assets/favicons/safari-pinned-tab.svg">
+    <title>Контакты</title>
+  <link href="main.css" rel="stylesheet"></head>
+  <body>
+    <div class="contacts">
+      <header class="contacts__header">
+        <div class="header-line ">
+          <nav class="header-line__navigation">
+            <div class="header-nav">
+              <ul class="header-nav__links">
+                <li><a class="header-nav__links-item" href="./index.html">Главная</a></li>
+                <li><a class="header-nav__links-item" href="./ui-kit.html">Ui-kit</a></li>
+                <li><a class="header-nav__links-item" href="./contacts.html">Контакты</a></li>
+                <li><a class="header-nav__links-item" href="./reviews.html">Отзывы</a></li>
+              </ul>
+            </div>
+          </nav><a class="header-line__logo" href="./index.html"></a>
+          <div class="account-panel">
+            <p class="account-panel__title">Аккаунт</p>
+            <div class="account-panel__controls"><a href="./login.html">
+                <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_hight" type="submit">
+                  <div class="ripple-btn__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
+                  <p>Вход</p>
+                </button></a><a href="./register.html">
+                <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_hight" type="submit">
+                  <div class="ripple-btn__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
+                  <p>Регистрация</p>
+                </button></a>
             </div>
           </div>
         </div>
-        <div class="header__mobile"><a class="header__hamburger-button js-hamburger-button">&#9776;</a>
-          <aside class="header__hamburger-menu js-hamburger-menu">
-              <ul class="header__links-list">
-                <li><a class="header__topline-pages" href="./index.html">Главная</a></li>
-                <li><a class="header__topline-pages" href="./ui-kit.html">Ui-kit</a></li>
-                <li><a class="header__topline-pages" href="./contacts.html">Контакты</a></li>
-                <li><a class="header__topline-pages" href="./order.html">Заказать</a></li>
-              </ul>
-          </aside>
-        </div>
-      <div class="global__wrapper">
-        <h2 class="contacts__title">Хотите пообщаться?</h2>
-        <p class="contacts__text">Вы можете посетить наш офис по адресу:</p>
-        <p class="contacts__text">Россия. Санкт-Петербург, Итальянская ул. 3 (БЦ рандомный, 2 этаж)</p>
-        <div class="contacts__widgets">
-                <div class="widget-location js-widget-location contacts__widgets-location" data-coords="[59.890138,30.37824]">
-                  <div class="widget-location__overlay">
-                    <div class="widget-location__overlay-text-wrapper">
-                      <p class="widget-location__overlay-welcome-text">Meet us!</p>
-                      <p class="widget-location__overlay-address-text">Итальянская ул. дом 3</p>
-                    </div>
-                    <div class="widget-location__overlay-controls-wrapper">
-                      <div class="widget-location__overlay-controls-container">
-                        <button class="widget-location__overlay-controls widget-location__overlay-btn-set-address js-overlay-btn-set-address"></button>
-                        <button class="widget-location__overlay-controls widget-location__overlay-btn-find-marker js-overlay-btn-find-marker"></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        </div>
-      </div>
-      <hr>
-      <div class="global__wrapper">
-        <h2 class="contacts__title">Как мы работаем?</h2>
-        <p class="contacts__text">О работе нашей компании вы сможете увидеть в нашем видео ролике:</p>
-        <div class="contacts__widgets">
-                <div class="video-player__container js-contacts-video">
-                  <video class="video-player__screen" id="js-contacts-video">
-                    <source src="./assets/video/new-zeland.mp4" type="video/mp4">
-                  </video>
-                  <div class="video-player__controls">
-                    <button class="video-player__control video-player__play" id="video-player__play"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 320.001 320.001" style="enable-background:new 0 0 320.001 320.001;" xml:space="preserve"><path d="M295.84,146.049l-256-144c-4.96-2.784-11.008-2.72-15.904,0.128C19.008,5.057,16,10.305,16,16.001v288c0,5.696,3.008,10.944,7.936,13.824c2.496,1.44,5.28,2.176,8.064,2.176c2.688,0,5.408-0.672,7.84-2.048l256-144c5.024-2.848,8.16-8.16,8.16-13.952S300.864,148.897,295.84,146.049z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></button>
-                    <button class="video-player__control video-player__pause video-player__hidden-item" id="video-player__pause"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path fill="rgb(255, 255, 255)" d="M10 24h-6v-24h6v24zm10 0h-6v-24h6v24zm-11-23h-4v22h4v-22zm10 0h-4v22h4v-22z"/></svg></button>
-                    <progress class="video-player__progress" max="100" value="0" id="video-player__progress" onTimeUpdate="progressUpdate()"></progress>
-                    <button class="video-player__control video-player__fullscreen" id="video-player__fullscreen"></button>
-                  </div>
-                </div>
-        </div>
-      </div>
-      <hr>
-      <div class="global__wrapper">
-        <h2 class="contacts__title">Остались ещё вопросы?</h2>
-        <p class="contacts__text">Вы можете отправить нам сообщение, и мы ответим вам на почту</p>
-        <div class="contacts__widgets">
-                <form class="message__form js-message-form-widget message__form-container contacts__form-container">
-                  <div class="message__form-fields">
-                    <input class="message__name message__form-item undefined" type="text" placeholder="Your Name">
-                    <label class="field-status"></label>
-                  </div>
-                  <div class="message__form-fields">
-                    <input class="message__email message__form-item contacts__user-email" type="email" id="contacts__user-email" name="contacts__user-email" placeholder="Your Email">
-                    <label class="field-status" for="contacts__user-email"></label>
-                  </div>
-                  <div class="message__form-fields">
-                    <textarea class="message__form-item message__form-textarea contacts__user-message" id="contacts__user-message" placeholder="Your Message"></textarea>
-                  </div>
-                    <button class="button__ripple-btn js-ripple-btn  button__ripple-btn_size_hight button__ripple-btn_theme_mint-reverse" type="submit">
-                      <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                      <p>Submit</p>
-                    </button>
-                </form>
-        </div>
-      </div>
-    </div>
-    <div class="global__assistant">
-        <div class="assistant js-assistant-widget">
-          <div class="assistant__start">
-            <div class="assistant__request-avatar"><img src="./assets/images/profile-girl.jpg" alt="assistant-avatar"></div>
-          </div>
-          <div class="assistant__messenger">
-                <div class="messaging__widget assistant__dialog">
-                  <div class="messaging__header">
-                    <p class="messaging__interlocutor-name">Elena</p>
-                    <div class="messaging__interlocutor-picture" style="background-image: url(./assets/images/profile-girl.jpg)"></div>
-                  </div>
-                  <div class="messaging__body">
-                    <div class="messaging__wrap">
-                      <div class="messaging__interlocutor-area">
-                        <button class="messaging__dialog-button button__send-message"><svg height="83%" viewBox="0 -24 480 480" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="m408 0h-336c-39.746094.0429688-71.9570312 32.253906-72 72v208c.0429688 39.746094 32.253906 71.957031 72 72h22.238281l-14.078125 70.398438c-.605468 3.027343.585938 6.128906 3.054688 7.976562s5.78125 2.109375 8.511718.671875l150.25-79.046875h166.023438c39.746094-.042969 71.957031-32.253906 72-72v-208c-.042969-39.746094-32.253906-71.9570312-72-72zm56 280c-.035156 30.914062-25.085938 55.964844-56 56h-168c-1.300781 0-2.578125.316406-3.726562.921875l-137.128907 72.175781 12.695313-63.496094c.480468-2.355468-.121094-4.800781-1.640625-6.660156-1.519531-1.863281-3.796875-2.941406-6.199219-2.941406h-32c-30.914062-.035156-55.964844-25.085938-56-56v-208c.035156-30.914062 25.085938-55.964844 56-56h336c30.914062.035156 55.964844 25.085938 56 56zm0 0"/></svg>                        </button>
-                        <button class="messaging__dialog-button button__send-photo"><svg height="83%" viewBox="1 -62 511.999 511" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="m7.5 272.636719c4.140625 0 7.5-3.359375 7.5-7.5v-30.335938c0-4.144531-3.359375-7.5-7.5-7.5s-7.5 3.355469-7.5 7.5v30.335938c0 4.140625 3.359375 7.5 7.5 7.5zm0 0"/><path d="m483.132812 49.464844h-31.066406v-3.539063c0-10.023437-8.15625-18.183593-18.183594-18.183593h-3.183593v-9.058594c0-10.027344-8.160157-18.183594-18.183594-18.183594h-35.832031c-10.023438 0-18.183594 8.15625-18.183594 18.183594v9.058594h-3.183594c-10.027344 0-18.183594 8.15625-18.183594 18.183593v3.539063h-106.753906v-7.8125c0-10.023438-8.15625-18.183594-18.183594-18.183594h-14.460937c-10.023437 0-18.183594 8.15625-18.183594 18.183594v7.8125h-17.546875v-18.496094c0-10.023438-8.15625-18.183594-18.183594-18.183594h-78.5625c-10.023437 0-18.183593 8.160156-18.183593 18.183594v18.496094h-18.207031c-15.917969 0-28.867188 12.953125-28.867188 28.867187v123.804688c0 4.144531 3.359375 7.5 7.5 7.5s7.5-3.355469 7.5-7.5v-71.226563h41.046875c3.300781 12.085938 14.375 21 27.492187 21 13.121094 0 24.191407-8.914062 27.492188-21h59.5625c-34.597656 26.007813-57.015625 67.382813-57.015625 113.898438 0 30.539062 9.664063 58.859375 26.089844 82.074218h-124.667969v-29.085937c0-4.144531-3.359375-7.5-7.5-7.5s-7.5 3.355469-7.5 7.5v46.914063c0 15.917968 12.949219 28.867187 28.867188 28.867187h166.320312c18.453125 8.75 39.070312 13.652344 60.8125 13.652344 21.75 0 42.371094-4.90625 60.828125-13.664063.058594.003906.113281.011719.171875.011719h166.132812c15.917969 0 28.867188-12.949219 28.867188-28.867187v-266.378907c0-15.914062-12.949219-28.867187-28.867188-28.867187zm-109.632812-30.78125c0-1.753906 1.429688-3.183594 3.1875-3.183594h35.828125c1.753906 0 3.183594 1.425781 3.183594 3.183594v9.058594h-42.195313v-9.058594zm-21.367188 27.242187c0-1.753906 1.429688-3.183593 3.1875-3.183593h78.5625c1.753907 0 3.183594 1.429687 3.183594 3.183593v3.539063h-84.929687v-3.539063zm-157.582031-4.273437c0-1.753906 1.429688-3.183594 3.183594-3.183594h14.460937c1.757813 0 3.183594 1.429688 3.183594 3.183594v7.8125h-20.828125zm-132.476562-10.683594c0-1.753906 1.429687-3.183594 3.183593-3.183594h78.566407c1.753906 0 3.183593 1.429688 3.183593 3.183594v18.496094h-84.933593zm21.464843 105.941406c-7.441406 0-13.5-6.054687-13.5-13.5 0-7.441406 6.058594-13.5 13.5-13.5 7.445313 0 13.5 6.058594 13.5 13.5 0 7.445313-6.054687 13.5-13.5 13.5zm27.492188-21c-3.300781-12.085937-14.371094-21-27.492188-21-13.121093 0-24.191406 8.914063-27.492187 21h-41.046875v-37.578125c0-7.644531 6.222656-13.867187 13.867188-13.867187h315.757812.007812.011719 138.488281c7.644532 0 13.867188 6.222656 13.867188 13.867187v37.578125h-22.320312v-27.25c0-4.140625-3.359376-7.5-7.5-7.5h-69.800782c-4.140625 0-7.5 3.359375-7.5 7.5v27.25h-73.378906c-18.738281-8.796875-39.367188-13.519531-60.5-13.519531-21.632812 0-42.148438 4.855469-60.527344 13.519531zm293.847656 0v-19.75h54.800782v19.75zm-376.011718 242.667969c-7.644532 0-13.867188-6.222656-13.867188-13.867187v-2.828126h136.890625c5.675781 6.085938 11.875 11.675782 18.527344 16.695313zm99.710937-113.765625c0-70.261719 57.164063-127.421875 127.421875-127.421875 36.441406 0 71.214844 15.664063 95.410156 42.972656 2.746094 3.101563 7.484375 3.390625 10.585938.640625 3.101562-2.746094 3.386718-7.484375.640625-10.585937-6.433594-7.261719-13.542969-13.777344-21.183594-19.507813h155.546875v195.972656h-124.667969c11.453125-16.1875 19.609375-34.859374 23.503907-55.035156h19.621093c11.0625 0 20.066407-9 20.066407-20.066406v-18.683594c0-11.066406-9-20.066406-20.066407-20.066406h-20.644531c-2.726562-11.933594-6.960938-23.507812-12.644531-34.328125-1.925781-3.667969-6.460938-5.082031-10.125-3.152344-3.667969 1.925781-5.082031 6.457031-3.15625 10.125 9.507812 18.109375 14.535156 38.558594 14.535156 59.136719 0 70.261719-57.160156 127.421875-127.421875 127.421875-70.257812 0-127.421875-57.164063-127.421875-127.421875zm268.839844-16.785156h18.039062c2.792969 0 5.066407 2.273437 5.066407 5.066406v18.6875c0 2.792969-2.273438 5.066406-5.066407 5.066406h-17.550781c.335938-3.96875.515625-7.984375.515625-12.039062 0-5.613282-.339844-11.21875-1.003906-16.78125zm85.714843 130.550781h-141.550781c6.652344-5.019531 12.851563-10.609375 18.527344-16.695313h136.890625v2.828126c0 7.644531-6.222656 13.867187-13.867188 13.867187zm0 0"/><path d="m256 143.898438c-55.644531 0-100.910156 45.269531-100.910156 100.914062 0 55.640625 45.265625 100.910156 100.910156 100.910156s100.910156-45.269531 100.910156-100.910156c0-55.644531-45.265625-100.914062-100.910156-100.914062zm0 186.824218c-47.371094 0-85.910156-38.539062-85.910156-85.910156s38.539062-85.914062 85.910156-85.914062 85.910156 38.542968 85.910156 85.914062-38.539062 85.910156-85.910156 85.910156zm0 0"/><path d="m256 174.332031c-38.859375 0-70.476562 31.617188-70.476562 70.480469s31.613281 70.476562 70.476562 70.476562 70.480469-31.613281 70.480469-70.476562-31.617188-70.480469-70.480469-70.480469zm0 125.957031c-30.589844 0-55.476562-24.886718-55.476562-55.476562 0-30.59375 24.886718-55.480469 55.476562-55.480469s55.480469 24.886719 55.480469 55.480469c0 30.589844-24.890625 55.476562-55.480469 55.476562zm0 0"/></svg></button>
-                      </div>
-                      <div class="messaging__chat-area">
-                        <textarea class="messaging__textarea messaging__message-to" disabled placeholder="Здравствуйте, чем я могу вам помочь?"></textarea>
-                        <textarea class="messaging__textarea messaging__message-from"></textarea>
-                      </div>
-                        <button class="button__ripple-btn js-ripple-btn  button__ripple-btn_size_hight button__ripple-btn_theme_mint-reverse button__ripple-btn_width_responsive" type="submit">
-                          <div class="button__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                          <p>Submit</p>
-                        </button>
-                    </div>
-                  </div>
-                </div>
+        <div class="header-line__mobile">
+          <div class="header-mobile js-header-mobile"><a class="header-mobile__button js-hamburger-button">&#9776;</a>
+            <aside class="header-mobile__menu js-hamburger-menu">
+              <div class="header-nav">
+                <ul class="header-nav__links">
+                  <li><a class="header-nav__links-item" href="./index.html">Главная</a></li>
+                  <li><a class="header-nav__links-item" href="./ui-kit.html">Ui-kit</a></li>
+                  <li><a class="header-nav__links-item" href="./contacts.html">Контакты</a></li>
+                  <li><a class="header-nav__links-item" href="./reviews.html">Отзывы</a></li>
+                </ul>
+              </div>
+            </aside>
           </div>
         </div>
-    </div>
-    <div class="footer">
+      </header>
+      <main class="contacts__content">
+        <div class="contacts__item">
+          <section class="contact-section">
+            <h2 class="contact-section__title">Хотите пообщаться?</h2>
+            <p class="contact-section__text">Вы можете посетить наш офис по адресу:</p>
+            <p class="contact-section__text">Россия. Санкт-Петербург, Итальянская ул. 3 (БЦ рандомный, 2 этаж)</p>
+            <div class="contact-section__widget">
+              <div class="widget-location js-widget-location" data-coords="[59.890138,30.37824]">
+                <div class="widget-location__overlay">
+                  <div class="widget-location__overlay-text-wrapper">
+                    <p class="widget-location__overlay-welcome-text">Meet us!</p>
+                    <p class="widget-location__overlay-address-text">Итальянская ул. дом 3</p>
+                  </div>
+                  <div class="widget-location__overlay-controls-wrapper">
+                    <div class="widget-location__overlay-controls-container">
+                      <button class="widget-location__overlay-controls widget-location__overlay-btn-set-address js-overlay-btn-set-address"></button>
+                      <button class="widget-location__overlay-controls widget-location__overlay-btn-find-marker js-overlay-btn-find-marker"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="contacts__item">
+          <section class="contact-section">
+            <h2 class="contact-section__title">Как мы работаем?</h2>
+            <p class="contact-section__text">О работе нашей компании вы сможете увидеть в нашем видео ролике:</p>
+            <div class="contact-section__widget">
+              <div class="video-player__container">
+                <video class="video-player__screen">
+                  <source src="./assets/video/new-zeland.mp4" type="video/mp4">
+                </video>
+                <div class="video-player__controls">
+                  <button class="video-player__control video-player__play" id="video-player__play"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 320.001 320.001" style="enable-background:new 0 0 320.001 320.001;" xml:space="preserve"><path d="M295.84,146.049l-256-144c-4.96-2.784-11.008-2.72-15.904,0.128C19.008,5.057,16,10.305,16,16.001v288c0,5.696,3.008,10.944,7.936,13.824c2.496,1.44,5.28,2.176,8.064,2.176c2.688,0,5.408-0.672,7.84-2.048l256-144c5.024-2.848,8.16-8.16,8.16-13.952S300.864,148.897,295.84,146.049z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></button>
+                  <button class="video-player__control video-player__pause video-player__hidden-item" id="video-player__pause"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path fill="rgb(255, 255, 255)" d="M10 24h-6v-24h6v24zm10 0h-6v-24h6v24zm-11-23h-4v22h4v-22zm10 0h-4v22h4v-22z"/></svg></button>
+                  <progress class="video-player__progress" max="100" value="0" id="video-player__progress" onTimeUpdate="progressUpdate()"></progress>
+                  <button class="video-player__control video-player__fullscreen" id="video-player__fullscreen"></button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="contacts__item">
+          <section class="contact-section">
+            <h2 class="contact-section__title">Остались ещё вопросы?</h2>
+            <p class="contact-section__text">Вы можете отправить нам сообщение, и мы ответим вам на почту</p>
+            <div class="contact-section__widget">
+              <form class="js-message-form message-form__container">
+                <div class="message-form__fields">
+                  <input class="message-form__name message-form__item " type="text" id="" name="" placeholder="Your Name">
+                  <label class="message-form__field-status" for=""></label>
+                </div>
+                <div class="message-form__fields">
+                  <input class="message-form__email message-form__item contact__user-email" type="email" id="contact__user-email" name="contact__user-email" placeholder="Your Email">
+                  <label class="message-form__field-status" for="contact__user-email"></label>
+                </div>
+                <div class="message-form__fields">
+                  <textarea class="message-form__item message-form__textarea contact__user-message" id="contact__user-message" placeholder="Your Email"></textarea>
+                </div>
+                <div class="message-form__policy message-form__policy-item"><span class="message-form__policy-item">
+                    <input class="tick__checkbox-input policy-accept" type="checkbox" name="policy-accept" id="policy-accept">
+                    <label class="js-checkbox-icon tick__checkbox-icon" for="policy-accept"></label></span>
+                  <p class="message-form__policy-text message-form__policy-item">Я согласен на обработку<a class="message-form__policy-href message-form__policy-item" href="https://policy.com/">персональных данных</a></p>
+                </div>
+                <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint-reverse ripple-btn_size_hight" type="submit">
+                  <div class="ripple-btn__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
+                  <p>Submit</p>
+                </button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="contacts__footer">
         <div class="footer__topline">
-          <p class="footer__topline-copyright">Ilya Sigidin </p>
+          <p class="footer__topline-copyright">Ilya sigidin</p>
         </div>
+      </footer>
     </div>
-  </div>
-<script type="text/javascript" src="bundle.js"></script></body>
+  <script type="text/javascript" src="bundle.js"></script></body>
+</html>
