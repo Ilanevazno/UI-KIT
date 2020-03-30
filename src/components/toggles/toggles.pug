@@ -1,5 +1,5 @@
 
-mixin toggles(toggleName)
+mixin toggles(toggleName = 'empty')
+  input(type="checkbox" name= toggleName id= toggleName class=`toggles__input ${toggleName}`)
   label(for= toggleName class="js-toggles-icon toggles__icon")
     .toggles__handle
-  input(type="checkbox" name= toggleName id= toggleName class=`toggles__hidden-input ${toggleName}`)

@@ -1,6 +1,26 @@
 .toggles {
-  &__hidden-input {
+  &__input {
     display: none;
+  }
+
+  &__input:checked + &__icon {
+    background: $mint-template;
+
+    &:after {
+      content: 'ON';
+      position: absolute;
+      left: 19%;
+      bottom: 26%;
+      font-family: Lato black;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    & > .toggles__handle {
+      left: 65%;
+      transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
+      cursor: pointer;
+    }
   }
 
   &__icon {
@@ -20,27 +40,6 @@
       font-family: Lato black;
       font-size: 1.5rem;
       color: white;
-    }
-
-    &_active {
-      background-color: $mint-template;
-      cursor: pointer;
-
-      &::after {
-        content: 'ON';
-        position: absolute;
-        left: 19%;
-        bottom: 26%;
-        font-family: Lato black;
-        font-size: 1.5rem;
-        color: white;
-      }
-    }
-
-    &_active > .toggles__handle {
-      left: 65%;
-      transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
-      cursor: pointer;
     }
   }
 

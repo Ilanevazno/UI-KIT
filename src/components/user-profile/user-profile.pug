@@ -1,7 +1,8 @@
 mixin user-profile(profile = {})
   -
     const {
-      avatar = 'gray-bg.jpg',
+      avatar = 'fallen-bg.jpg',
+      parsedPicture = require(`../../assets/images/${avatar}`),
       name = 'user',
       job = '',
       hrefFb = 'http://facebook.com',
@@ -9,7 +10,7 @@ mixin user-profile(profile = {})
       hrefDbb = 'http://dbb.com',
     } = profile;
   .user-profile
-    div(class="user-profile__picture" style=`background: no-repeat center/100% url(../../assets/images/${avatar})`)
+    div(class="user-profile__picture" style=`background: no-repeat center/100% url(${parsedPicture})`)
     .user-profile__info
       h2.user-profile__info-name= name
       h3.user-profile__info-job= job

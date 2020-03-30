@@ -3,8 +3,8 @@ mixin message-form(data = {})
   -
     const {
       nameField = '',
-      nameFieldPlaceholder = 'Your Name',
       emailField = '',
+      nameFieldPlaceholder = 'Your Name',
       emailFieldPlaceholder = 'Your Email',
       messageFieldPlaceholder = 'Your Email',
       messageField = '',
@@ -28,7 +28,7 @@ mixin message-form(data = {})
     - if (policy.isShowed)
       .message-form__policy.message-form__policy-item
         span.message-form__policy-item
-          +checkbox()
+          +checkbox('policy-accept')
         p.message-form__policy-text.message-form__policy-item= policy.title
           a(href= policy.policyLink).message-form__policy-href.message-form__policy-item= policy.policyText
     +button({theme: 'mint', size: 'hight', text: 'Submit', isReversedColor: true})
