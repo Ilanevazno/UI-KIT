@@ -1,34 +1,19 @@
 .percentages-chart {
-  margin: 0;
-
-  &__current {
-    font-size: 4.5rem;
-    color: #9d9d9d;
-    left: 50%;
-    top: 50%;
-    position: absolute;
-    transform: translateX(-50%) translateY(-50%);
-    font-family: 'Lato light', Arial, sans-serif;
-  }
-
-  &__svg {
-    height: 140px;
-    width: 140px;
-  }
-
-  &__figure-inner {
-    position: relative;
+  &__container {
     display: flex;
+    align-items: center;
     justify-content: center;
   }
 
-  &__outer {
-    fill: transparent;
+  &__filled {
     stroke: $orange-template;
-    stroke-width: 8;
-    stroke-dasharray: 534;
-    transition: stroke-dashoffset 1s;
-    -webkit-animation-play-state: running;
-    -moz-transform: rotate(-89deg) translateX(-190px);
+    transition: .3s ease-in-out all;
+  }
+
+  &__text {
+    font-size: 4.5rem;
+    color: #9d9d9d;
+    position: absolute;
+    font-family: 'Lato light', Arial, sans-serif;
   }
 }

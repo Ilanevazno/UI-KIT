@@ -16,6 +16,24 @@ class Search {
     this.htmlItemList.$inputLabel.on('input.searchForm', this.startSearch.bind(this));
     this.htmlItemList.$searchBtn.on('click.searchButton', this.pressSearchButton.bind(this));
     this.htmlItemList.$errorNotify.on('click.errorNotify', this.prepareLine.bind(this));
+    $(document).on('click.closeSearch', this.closeMenu.bind(this));
+  }
+
+  closeMenu(e) {
+    const $catchedTarget = $(e.target);
+
+    const checkTarget = () => {
+      if (!this.htmlItemList.$searchItems.is('.form-search__hidden-item') && (this.$htmlElement.find($catchedTarget).length === 0)) {
+        return true;
+      }
+      return false;
+    };
+
+    const canClose = checkTarget();
+
+    if (canClose) {
+      this.htmlItemList.$searchItems.toggleClass('form-search__hidden-item');
+    }
   }
 
   prepareLine() {
@@ -52,13 +70,13 @@ class Search {
       (element) => element.innerText === this.htmlItemList.$inputLabel.val(),
     );
 
-    this.htmlItemList.$searchBtn.removeClass('form-search__btn-find--valid form-search__btn-find--invalid');
+    this.htmlItemList.$searchBtn.removeClass('form-search__btn-find_check_valid form-search__btn-find_check_invalid');
 
     if (findingElement) {
-      this.htmlItemList.$searchBtn.addClass('form-search__btn-find--valid');
+      this.htmlItemList.$searchBtn.addClass('form-search__btn-find_check_valid');
       this.htmlItemList.$errorNotify.css('display', 'none');
     } else {
-      this.htmlItemList.$searchBtn.addClass('form-search__btn-find--invalid');
+      this.htmlItemList.$searchBtn.addClass('form-search__btn-find_check_invalid');
       this.htmlItemList.$errorNotify.css('display', 'inline-flex');
     }
   }

@@ -1,6 +1,6 @@
-mixin percentages-chart(percent)
-  figure.percentages-chart.js-percentages-chart(data-percent= percent)
-      .percentages-chart__figure-inner
-        svg(height="100" width="100").percentages-chart__svg
-          circle(class="percentages-chart__outer" width="50" height="50" cx="125" cy="65" r="60" transform="rotate(-90, 95, 95)")
-        figcaption.percentages-chart__current= percent
+mixin percentages-chart(currentFill = 0)
+  - const maxCount = 100;
+  .percentages-chart__container
+    svg(width="100%" height="100%" viewBox="0 0 42 42")
+      circle(class="percentages-chart__filled" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="2" stroke-dasharray=`${currentFill} ${maxCount - currentFill}` stroke-dashoffset="25")
+        div.percentages-chart__text= currentFill
