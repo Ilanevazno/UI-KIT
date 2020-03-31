@@ -10,6 +10,16 @@
     "deploy": "gh-pages -d build",
     "eslint": "eslint ./src/components"
   },
+  "babel": {
+    "plugins": [
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ]
+    ]
+  },
   "author": "impulse",
   "license": "MIT",
   "dependencies": {
