@@ -14,4 +14,4 @@ mixin search(data = {})
     .form-search__options
       ul(class="form-search__items form-search__hidden-item" id="form-search__items")
           each item in searchList
-            li= item
+            li(tabindex="0")= item
