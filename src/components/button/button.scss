@@ -4,14 +4,14 @@
   font-size: $fontSize;
 }
 
-@mixin button-color-modify($color: white, $background: $orange-template, $border: $orange-template) {
+@mixin button-color-modify($color: $orange-template, $background: $orange-template, $border: #BF3E1F) {
   color: $color;
   box-shadow: 0 3.5px 0 0 $border;
   background: $background;
   border: 1px solid $border;
 
   &:hover {
-    background: $border;
+    background: $color;
   }
 
   &:active {
@@ -25,7 +25,7 @@
   background: inherit;
   position: relative;
   transition: all 0.3s, visibility 0s;
-  border-radius: 6px;
+  border-radius: 5px;
   text-transform: uppercase;
   font-family: 'Lato black', Arial, sans-serif;
   cursor: pointer;
@@ -66,7 +66,7 @@
     }
 
     &_mint {
-      @include button-color-modify($background: white, $color: $mint-template, $border: $mint-template);
+      @include button-color-modify($background: white, $color: $mint-template, $border: #28A290);
     }
 
     &_mint-reverse {

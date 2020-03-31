@@ -1,0 +1,65 @@
+.widget-events {
+  width: 33.8rem;
+  height: max-content;
+  background: $mint-template;
+  display: flex;
+  border-radius: 5px;
+
+  &__picture {
+    width: 33%;
+    background-size: cover;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  &__information {
+    width: 53%;
+    margin: 0 auto;
+  }
+
+  &__date {
+    font-family: 'Lato Light', Arial, sans-serif;
+    font-size: 8rem;
+    color: white;
+    margin: 8% 0 0 0;
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__month {
+    font-family: 'Lato Light', Arial, sans-serif;
+    font-size: 3.5rem;
+    color: white;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 7%;
+  }
+
+  &__event {
+    &-title {
+      font-family: 'Lato Black', Arial, sans-serif;
+      color: white;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      margin: 2% 0 0 0;
+    }
+
+    &-text {
+      font-family: 'Lato Regular', Arial, sans-serif;
+      font-size: 1.43rem;
+      margin: 2% 0 0 0;
+      color: white;
+    }
+  }
+
+  &__to-calendar {
+    width: 100%;
+    margin: 2rem 0 3rem 0;
+    padding: 0 1.4rem;
+    box-sizing: border-box;
+  }
+}
