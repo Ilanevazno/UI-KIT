@@ -1,10 +1,8 @@
 .messaging {
   &__widget {
-    background: $gray-template;
+    background: $gray-light;
     width: 33.7rem;
-    border-radius: 3px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-radius: 4px;
   }
 
   &__header {
@@ -16,16 +14,16 @@
 
   &__interlocutor-name {
     text-align: center;
-    font-family: 'Source Sans Pro', Arial, sans-serif;
-    font-size: 3.7rem;
+    font-family: 'Lato Light', Arial, sans-serif;
+    font-size: 3.5rem;
     color: white;
     margin: 0;
-    padding: 2rem 0 7rem 0;
+    padding: 2.5rem 0 7rem 0;
   }
 
   &__interlocutor-picture {
-    height: 10rem;
-    width: 10rem;
+    height: 11rem;
+    width: 11rem;
     margin: 0 auto;
     border: 6px solid darken($gray-template, 5);
     border-radius: 50%;
@@ -81,20 +79,45 @@
     border-radius: 5px;
     font-family: 'Lato bold', Arial, sans-serif;
     font-size: 1.6rem;
+
+    &-wrapper{
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      &:after {
+        content: "";
+        display: block;
+        background: white;
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        border-radius: 2px;
+        transform: translate(-60%, -40%) rotate(45deg);
+      }
+    }
   }
 
   &__message-to {
     background: white;
     border: none;
+    color: darken($gray-template, 50);
+
+
+    &:after {
+      content: "";
+      display: block;
+    }
   }
 
   &__message-from {
-    background: darken($gray-template, 8%);
-    border: 2px solid white;
-    margin-top: 2rem;
+    background: $gray-template;
+    border: 3px solid white;
+    margin-top: 2.3rem;
     min-height: 10rem;
     outline: none;
     margin-bottom: 1.6rem;
+    color: darken($gray-template, 50);
   }
 
   &__reply-button {

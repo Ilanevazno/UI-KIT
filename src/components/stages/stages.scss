@@ -10,7 +10,7 @@
   }
 
   &:after {
-    background-color: $grey-light;
+    background-color: $gray-template;
   }
 }
 
@@ -82,9 +82,9 @@
         color: #808080;
         @extend %remain-steps;
         &:before {
-          color: darken($grey-light, 40%);
-          background-color: $grey-light;
-          border-color: $grey-light;
+          color: darken($gray-template, 40%);
+          background-color: $gray-template;
+          border-color: $gray-template;
         }
       }
     }

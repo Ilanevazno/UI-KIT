@@ -1,6 +1,6 @@
 class Video {
-  constructor(videoSrc, selector) {
-    this.$videoContainer = $(selector);
+  constructor(selector) {
+    this.$videoContainer = selector;
     this.$videoScreen = this.$videoContainer.find('.video-player__screen');
     this.$videoProgress = this.$videoContainer.find('.video-player__progress');
     this.controls = {
@@ -15,6 +15,10 @@ class Video {
     this.$videoScreen.on('timeupdate.videoPlayer', () => { this.runningProgressBar(this.$videoScreen[0].currentTime, this.$videoScreen[0].duration); });
     this.controls.$buttonFullScreen.on('click.videoFullScreen', this.requestFullScreen.bind(this));
     this.$videoProgress.on('click.videoProgress', this.setVideoState.bind(this));
+  }
+
+  setCurrentTime(time) {
+    this.$videoScreen[0].currentTime = time;
   }
 
   bootstrap() {

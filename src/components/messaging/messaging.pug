@@ -16,6 +16,7 @@ mixin messaging(data = {})
           button(class="messaging__dialog-button messaging__send-message")
           button(class="messaging__dialog-button messaging__send-photo")
         div(class="messaging__chat-area")
-          textarea(class="messaging__textarea messaging__message-to" disabled placeholder= placeholder)
-          textarea(class="messaging__textarea messaging__message-from")
-        +button({theme: 'mint', size: 'hight', text: 'Submit', isReversedColor: true, isResponsive: true})
+          .messaging__textarea-wrapper
+            textarea(class="messaging__textarea messaging__message-to" disabled placeholder= placeholder)
+          textarea(class="messaging__textarea messaging__message-from") Yeah that sounds great. See you then.
+        +button({theme: 'mint', size: 'hight', text: 'Reply', isReversedColor: true, isResponsive: true})

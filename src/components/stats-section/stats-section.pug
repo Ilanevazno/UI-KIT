@@ -6,21 +6,21 @@ include ../percentages-chart/percentages-chart
 include ../donut-chart/donut-chart
 
 
-mixin stats-section ()
+mixin stats-section (data = {})
   -
-    const donutData = [
-      { color: '#5ac832', fill: 90, desc: 'Положительных отзывов' },
-      { color: '#d32727', fill: 3, desc: 'Негативных отзывов' },
-      { color: '#b4b1b1', fill: 7, desc: 'Нейтральных отзывов' },
-    ];
+    const {
+      donutData = [],
+      statsTitle = '',
+      statsText = '',
+      donutTitle = '',
+    } = data;
   section.stats-section
-    h2.stats-section__title Наша статистика
+    h2.stats-section__title= statsTitle
     .stats-section__container
-      p.stats-section__text Мы работаем с 2010 года, и за 10 лет мы собрали довольно позитивную статистику:
-      p.stats-section__text Процент довольных клиентов:
+      p.stats-section__text= statsText
       .stats-section__chart
         +percentages-chart('98')
-      p.stats-section__title Соотношение отзывов:
+      p.stats-section__title= donutTitle
       .stats-section__review
         each review in donutData
           .stats-section__review-desc
