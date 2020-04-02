@@ -48,9 +48,9 @@ class Calendar {
     // get current day
     const $selectedDay = this.$htmlContainer.find(('.datepicker--cell-day.-current-'));
 
-    // create current month label
+    // create current day - month label
     $('<div/>', {
-      class: 'datepicker--current-day',
+      class: 'datepicker__current-day',
     })
       .prependTo($('.datepicker'))
       .text($selectedDay.text());

@@ -10,7 +10,7 @@ mixin user-profile(profile = {})
       hrefDbb = 'http://dbb.com',
     } = profile;
   .user-profile
-    div(class="user-profile__picture" style=`background: no-repeat center/100% url(${parsedPicture})`)
+    div(class="user-profile__picture" style=`background: no-repeat center/cover url(${parsedPicture})`)
     .user-profile__info
       h2.user-profile__info-name= name
       h3.user-profile__info-job= job
