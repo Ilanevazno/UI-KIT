@@ -101,7 +101,7 @@
   &__message-to {
     background: white;
     border: none;
-    color: darken($gray-template, 50);
+    color: darken($gray-template, 35);
 
 
     &:after {
@@ -117,7 +117,7 @@
     min-height: 10rem;
     outline: none;
     margin-bottom: 1.6rem;
-    color: darken($gray-template, 50);
+    color: darken($gray-template, 35);
   }
 
   &__reply-button {

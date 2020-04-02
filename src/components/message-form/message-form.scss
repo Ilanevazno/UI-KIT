@@ -26,6 +26,7 @@
     position: relative;
     font-size: 1.74rem;
     font-family: 'Source Sans Pro', Arial, sans-serif;
+    color: $gray-template;
 
     &:focus {
       box-shadow: 0px 0px 4px 0px $mint-template;
