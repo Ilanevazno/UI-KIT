@@ -1,8 +1,14 @@
 .percentages-chart {
+
+  &__figure {
+    animation: spin 1s;
+  }
+
   &__container {
     display: flex;
     align-items: center;
     justify-content: center;
+
   }
 
   &__filled {
