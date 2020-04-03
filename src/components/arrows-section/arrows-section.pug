@@ -4,11 +4,11 @@ mixin arrows-section (title)
     h2.arrows-section__title= title
     .arrows-section__container
       .arrows-section__container-item
-        +arrow-button({ direction: 'left', isDisable: false, })
-        +arrow-button({ direction: 'right', isDisable: false, })
+        +arrow-button({ direction: 'left' })
+        +arrow-button({ direction: 'right' })
       .arrows-section__container-item
-        +arrow-button({ direction: 'left', isDisable: true, })
-        +arrow-button({ direction: 'right', isDisable: true, })
+        +arrow-button({ direction: 'left', isDisabled: true, })
+        +arrow-button({ direction: 'right', isDisabled: true, })
       .arrows-section__container-item
-        +arrow-button({ direction: 'left', isDisable: false, })
-        +arrow-button({ direction: 'right', isDisable: false })
+        +arrow-button({ direction: 'left' })
+        +arrow-button({ direction: 'right' })

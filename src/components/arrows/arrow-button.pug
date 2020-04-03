@@ -2,7 +2,7 @@ mixin arrow-button(data = {})
   -
     const {
       direction = 'arrow-left',
-      isDisable = false,
+      isDisabled = false,
     } = data;
-  button(class="arrow-button" disabled= isDisable)
+  button(class="arrow-button" disabled= isDisabled)
     div(class="arrow-button__inner arrow-button_direction_" + direction)
