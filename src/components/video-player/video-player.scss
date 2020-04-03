@@ -58,15 +58,15 @@
     outline: none;
   }
 
+  &__figure {
+    fill: white;
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
   &__play {
     flex-basis: 10%;
     cursor: pointer;
-
-    svg {
-      fill: white;
-      width: 1.4rem;
-      height: 1.4rem;
-    }
   }
 
   &__pause {

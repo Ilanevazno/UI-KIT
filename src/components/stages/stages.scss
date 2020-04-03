@@ -22,7 +22,7 @@
   padding: 0;
   font-family: 'Lato black', Arial, sans-serif;
 
-  > li {
+  &__item {
     counter-increment: stepNum;
     text-align: center;
     display: block;
@@ -78,7 +78,7 @@
         border-color: $orange-template;
       }
 
-      ~ li {
+      ~ .multi-steps__item {
         color: #808080;
         @extend %remain-steps;
         &:before {

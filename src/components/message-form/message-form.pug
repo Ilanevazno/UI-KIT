@@ -32,4 +32,5 @@ mixin message-form(data = {})
           +tick-box('policy-accept')
         p.message-form__policy-text.message-form__policy-item= policy.title
           a(href= policy.policyLink).message-form__policy-href.message-form__policy-item= policy.policyText
-    +ripple-btn({theme: 'mint', size: 'hight', text: 'Submit', isReversedColor: true})
+    .message-form__submit-btn
+      +ripple-btn({theme: 'mint', size: 'large', text: 'Submit', isReversedColor: true})

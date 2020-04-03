@@ -10,6 +10,6 @@ mixin assistant(data = {})
     include ../messaging/messaging
     .assistant__start
       .assistant__request-avatar
-        img(src= avatar, alt="assistant-avatar")
+        img(src= avatar, alt="assistant-avatar").assistant__request-picture
     .assistant__messenger
       +messaging({userName: helperName, widgetClass: "assistant__dialog", placeholder: placeholder})
