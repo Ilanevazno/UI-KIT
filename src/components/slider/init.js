@@ -2,7 +2,7 @@ import Slider from './Slider';
 
 const sliderWidth = window.innerWidth > 400 ? 360 : 230;
 
-const orangeSlider = new Slider('.js-first-slider', {
+const orangeSlider = new Slider('.slider__item-first > .js-slider-widget', {
   from: 0,
   to: 100,
   theme: 'theme-orange',
@@ -13,7 +13,7 @@ const orangeSlider = new Slider('.js-first-slider', {
 });
 orangeSlider.bootstrap();
 
-const mintSlider = new Slider('.js-second-slider', {
+const mintSlider = new Slider('.slider__item-second > .js-slider-widget', {
   theme: 'theme-mint',
   from: 0,
   to: 100,

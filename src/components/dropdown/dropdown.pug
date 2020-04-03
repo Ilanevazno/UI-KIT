@@ -3,11 +3,10 @@ mixin dropdown (options = {})
     const {
       placeholder = 'Choose an option',
       optionList = [],
-      widgetHookClass = '',
     } = options;
   .widget-select.js-dropdown-widget
     div(class="widget-select__area js-dropdown-textarea" tabindex="0")
-      div(class= widgetHookClass).widget-select__area-text.js-dropdown-text-inner= placeholder
+      .widget-select__area-text.js-dropdown-text-inner= placeholder
       .widget-select__area-btn
     ul(tabindex="0").widget-select__label.js-dropdown-menu
       each item in optionList

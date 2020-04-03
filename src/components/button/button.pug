@@ -7,7 +7,6 @@ mixin button(button = {})
       isResponsive = false,
       isReversedColor = false,
       text = 'test',
-      hookClassName = '',
     } = button;
 
     size = ` ripple-btn_size_${size}`;
@@ -15,7 +14,7 @@ mixin button(button = {})
 
     theme = isReversedColor ? `${theme}-reverse` : theme;
 
-    let className = 'ripple-btn js-ripple-btn ' + hookClassName + theme + size;
+    let className = 'ripple-btn js-ripple-btn ' + theme + size;
     className += !!isResponsive ? ' ripple-btn_width_responsive' : '';
 
 

@@ -1,14 +1,14 @@
-include ../arrows/arrows
+include ../arrows/arrow-button
 mixin arrows-section (title)
   section.arrows-section
     h2.arrows-section__title= title
     .arrows-section__container
       .arrows-section__container-item
-        +arrow({ direction: 'left', isDisable: false, })
-        +arrow({ direction: 'right', isDisable: false, })
+        +arrow-button({ direction: 'left', isDisable: false, })
+        +arrow-button({ direction: 'right', isDisable: false, })
       .arrows-section__container-item
-        +arrow({ direction: 'left', isDisable: true, })
-        +arrow({ direction: 'right', isDisable: true, })
+        +arrow-button({ direction: 'left', isDisable: true, })
+        +arrow-button({ direction: 'right', isDisable: true, })
       .arrows-section__container-item
-        +arrow({ direction: 'left', isDisable: false, })
-        +arrow({ direction: 'right', isDisable: false })
+        +arrow-button({ direction: 'left', isDisable: false, })
+        +arrow-button({ direction: 'right', isDisable: false })

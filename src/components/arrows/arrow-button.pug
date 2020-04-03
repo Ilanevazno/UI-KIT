@@ -1,9 +1,8 @@
-mixin arrow(data = {})
+mixin arrow-button(data = {})
   -
     const {
       direction = 'arrow-left',
       isDisable = false,
-      hookClassName = '',
     } = data;
-  button(class="arrow-button " + hookClassName disabled= isDisable)
+  button(class="arrow-button" disabled= isDisable)
     div(class="arrow-button__inner arrow-button_direction_" + direction)

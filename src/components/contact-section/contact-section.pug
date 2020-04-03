@@ -16,12 +16,11 @@ mixin contact-section (data = {})
     .contact-section__widget
       case contactType
         when 'communicate'
-          +location({ welcomeText: 'Meet us!', address: 'Итальянская ул. дом 3', className: 'contacts__widgets-location', coords: [59.890138, 30.378240] })
+          +location({ welcomeText: 'Meet us!', address: 'Итальянская ул. дом 3', coords: [59.890138, 30.378240] })
         when 'about-work'
           +videoPlayer({ src: require('../../assets/video/new-zeland.mp4') })
         when 'any-question'
           +message-form({
-            className: 'js-contact-message',
             NameField: 'contact__user-name',
             emailField: 'contact__user-email',
             messageField: 'contact__user-message',
