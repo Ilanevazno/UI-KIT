@@ -17,12 +17,12 @@
     border-width: 0.4rem 0.4rem 0 0;
   }
 
-  &_left {
+  &_left > &__inner {
     left: 38%;
     transform: rotate(-135deg);
   }
 
-  &_right {
+  &_right > &__inner {
     left: 26%;
     transform: rotate(45deg);
   }
