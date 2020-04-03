@@ -5,10 +5,10 @@ include ../account-panel/account-panel
 mixin header (pages = {}, theme)
   -
     let headerClassName = 'header-line ';
-    let accountButtonsSize = 'hight';
+    let accountButtonsSize = 'large';
     const logo = { link: './index.html' };
     if (theme) {
-      accountButtonsSize = theme === 'low' ? 'low' : 'hight';
+      accountButtonsSize = theme === 'small' ? 'small' : 'large';
       headerClassName += `header-line_theme_${theme}`;
     };
     const buttonList = [
