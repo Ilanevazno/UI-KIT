@@ -1,12 +1,12 @@
-mixin button(button = {})
+mixin ripple-btn(button = {})
   -
     let {
       buttonType = 'submit',
       theme = 'orange',
-      size = 'low',
+      size = 'small',
       isResponsive = false,
       isReversedColor = false,
-      text = 'test',
+      text = 'text',
     } = button;
 
     size = ` ripple-btn_size_${size}`;

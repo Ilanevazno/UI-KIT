@@ -1,4 +1,4 @@
-class Search {
+class FormSearch {
   constructor(element) {
     this.$htmlElement = $(document).find(element);
     this.htmlItemList = {
@@ -91,4 +91,4 @@ class Search {
   }
 }
 
-export default Search;
+export default FormSearch;

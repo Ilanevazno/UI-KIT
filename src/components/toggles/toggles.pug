@@ -1,5 +1,6 @@
 
 mixin toggles(toggleName = 'empty')
-  input(type="checkbox" name= toggleName id= toggleName class=`toggles__input ${toggleName}`)
-  label(for= toggleName class="js-toggles-icon toggles__icon" tabindex="0")
-    .toggles__handle
+  section.toggles
+    input(type="checkbox" name= toggleName id= toggleName class="toggles__input")
+    label(for= toggleName class="js-toggles-icon toggles__icon" tabindex="0")
+      .toggles__handle

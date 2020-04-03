@@ -1,4 +1,5 @@
-include ../tickbox/tickbox
+include ../tick-box/tick-box
+include ../ripple-btn/ripple-btn
 mixin message-form(data = {})
   -
     const {
@@ -16,7 +17,7 @@ mixin message-form(data = {})
         policyLink: 'https://policy.com/'
       },
     } = data;
-  form(class="js-message-form message-form__container")
+  form(class="js-message-form message-form message-form__container")
     .message-form__fields
       input(type="text" id= nameField name= nameField class="message-form__name message-form__item "+ nameField placeholder= nameFieldPlaceholder)
       label(for= nameField class="message-form__field-status")
@@ -28,7 +29,7 @@ mixin message-form(data = {})
     - if (policy.isShowed)
       .message-form__policy.message-form__policy-item
         span.message-form__policy-item
-          +checkbox('policy-accept')
+          +tick-box('policy-accept')
         p.message-form__policy-text.message-form__policy-item= policy.title
           a(href= policy.policyLink).message-form__policy-href.message-form__policy-item= policy.policyText
-    +button({theme: 'mint', size: 'hight', text: 'Submit', isReversedColor: true})
+    +ripple-btn({theme: 'mint', size: 'hight', text: 'Submit', isReversedColor: true})

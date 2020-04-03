@@ -1,10 +1,12 @@
+include ../ripple-btn/ripple-btn
+
 mixin account-panel (data = {})
   -
     const {
       title = '',
       buttonList = [],
     } = data;
-  .account-panel
+  section.account-panel
     p.account-panel__title= title
     .account-panel__controls
       each link in buttonList
@@ -16,4 +18,4 @@ mixin account-panel (data = {})
             size = 'hight',
           } = link;
         a(href= href)
-          +button({theme, size, text: description})
+          +ripple-btn({theme, size, text: description})

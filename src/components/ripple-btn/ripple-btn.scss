@@ -42,11 +42,11 @@
   }
 
   &_size {
-    &_low {
+    &_small {
       @include button-size-modify();
     }
 
-    &_hight {
+    &_large {
       @include button-size-modify($height: 3.9rem, $width: 14rem, $fontSize: 1.45rem);
     }
   }

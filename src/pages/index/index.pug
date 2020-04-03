@@ -1,9 +1,9 @@
 extends ../../templates/main
 
 include ../../components/assistant/assistant
-include ../../components/search/search
-include ../../components/events/events
-include ../../components/news/news
+include ../../components/form-search/form-search
+include ../../components/widget-events/widget-events
+include ../../components/widget-news/widget-news
 include ../../components/news-list/news-list
 include ../../components/header/header
 include ../../components/footer/footer
@@ -21,15 +21,15 @@ block content
     main.index__content
       .index__left-wrapper
         section.index__search
-          +search(searchLine)
+          +form-search(searchLine)
         section.index__container
           +news-list(newsList)
         section.index__assistant
           +assistant()
       .index__right-wrapper
         section.index__last-event
-          +events(lastEvent)
+          +widget-events(lastEvent)
         section.index__important-news
-          +news(importantNews)
+          +widget-news(importantNews)
     footer.index__footer
       +footer('Ilya sigidin')

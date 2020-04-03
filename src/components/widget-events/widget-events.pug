@@ -1,8 +1,10 @@
-mixin events(event = {})
+include ../ripple-btn/ripple-btn
+
+mixin widget-events(event = {})
   -
     const {
       picture = 'gray-bg.jpg',
-      parsedPicture = require(`../../components/events/img/${picture}`),
+      parsedPicture = require(`../../components/widget-events/img/${picture}`),
       date = {
         day: '0',
         month: 'mon',
@@ -10,7 +12,7 @@ mixin events(event = {})
       title = 'event - title',
       text = 'event - text',
     } = event;
-  div(class="widget-events")
+  section.widget-events
     div(class="widget-events__picture" style=`background-image: url(${parsedPicture})`)
     div(class="widget-events__information")
       div(class="widget-events__information-wrapper")
@@ -20,4 +22,4 @@ mixin events(event = {})
         h3(class="widget-events__event-title")=  title
         p(class="widget-events__event-text")=  text
         .widget-events__to-calendar
-          +button({theme: 'mint', size: 'low', isResponsive: true, text: 'Add to calendar'})
+          +ripple-btn({theme: 'mint', size: 'low', isResponsive: true, text: 'Add to calendar'})

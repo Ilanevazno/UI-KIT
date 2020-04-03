@@ -1,5 +1,5 @@
-include ../video/video
+include ../video-player/video-player
 mixin video-section (title)
-  h2.video-section__title= title
-  section.video-section__container
-    +videoPlayer({ src: require('../../assets/video/new-zeland.mp4') })
+  section.video-section.video-section__container
+    h2.video-section__title= title
+    +video-player({ src: require('../../assets/video/new-zeland.mp4') })

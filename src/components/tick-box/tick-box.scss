@@ -1,19 +1,17 @@
-.tick {
-  &__checkbox {
-    &-input {
-      display: none;
-    }
+.tick-box {
+  &__input {
+    display: none;
+  }
 
-    &-input:checked + &-icon{
-      background: $mint-template;
+  &__input:checked + &__icon{
+    background: $mint-template;
 
-      &:after {
-        border-color: white;
-      }
+    &:after {
+      border-color: white;
     }
   }
 
-  &__checkbox-icon {
+  &__icon {
     width: 2.8rem;
     height: 2.8rem;
     border-radius: 50%;

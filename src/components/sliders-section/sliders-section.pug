@@ -1,12 +1,12 @@
 include ../../components/slider/slider
 
 mixin sliders-section (title)
-  section.sliders
-    h2.sliders__title= title
-    .sliders__container
-      .sliders__container-item
-        .slider__item-first
+  section.sliders-section
+    h2.sliders-section__title= title
+    .sliders-section__container
+      .sliders-section__container-item
+        .sliders-section__item-first
           +slider('js-first-slider')
-      .sliders__container-item
-        .slider__item-second
+      .sliders-section__container-item
+        .sliders-section__item-second
           +slider('js-second-slider')

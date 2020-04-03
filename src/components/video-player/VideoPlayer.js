@@ -1,4 +1,4 @@
-class Video {
+class VideoPlayer {
   constructor(selector) {
     this.$videoContainer = selector;
     this.$videoScreen = this.$videoContainer.find('.video-player__screen');
@@ -55,4 +55,4 @@ class Video {
   }
 }
 
-export default Video;
+export default VideoPlayer;

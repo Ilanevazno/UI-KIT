@@ -1,6 +1,6 @@
 include ../message-form/message-form
 include ../location/location
-include ../video/video
+include ../video-player/video-player
 
 mixin contact-section (data = {})
   -
@@ -18,7 +18,7 @@ mixin contact-section (data = {})
         when 'communicate'
           +location({ welcomeText: 'Meet us!', address: 'Итальянская ул. дом 3', coords: [59.890138, 30.378240] })
         when 'about-work'
-          +videoPlayer({ src: require('../../assets/video/new-zeland.mp4') })
+          +video-player({ src: require('../../assets/video/new-zeland.mp4') })
         when 'any-question'
           +message-form({
             NameField: 'contact__user-name',

@@ -1,19 +1,19 @@
-include ../news/news
-include ../events/events
+include ../widget-news/widget-news
+include ../widget-events/widget-events
 
 mixin news-events-section (title)
-  section.news-events
-    h2.news-events__title= title
-    .news-events__container
-      .news-container.news-events__container-item
-        +news({
+  section.news-events-section
+    h2.news-events-section__title= title
+    .news-events-section__container
+      .news-container.news-events-section__container-item
+        +widget-news({
         picture: 'widget-events.jpg',
         title: 'It’s all going downhill',
         date: '24  AUGUST  2013',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.',
       })
-      .events-container.news-events__container-item
-        +events({
+      .events-container.news-events-section__container-item
+        +widget-events({
           title: 'This is the title',
           picture: 'events-picture.jpg',
           date: {

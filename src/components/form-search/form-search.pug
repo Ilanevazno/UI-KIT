@@ -1,11 +1,11 @@
-mixin search(data = {})
+mixin form-search(data = {})
   -
     const {
       searchList = [],
       placeholder = 'Search',
       errorMessage = 'I’ve not found what I’m looking for...',
     } = data;
-  div(class="form-search js-seach-form-widget")
+  section.form-search.js-seach-form-widget
     .form-search__find-str
       .form-search__str-wrapper
         input(type="text" class="form-search__str" placeholder= placeholder)

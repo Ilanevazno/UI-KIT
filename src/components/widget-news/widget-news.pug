@@ -1,13 +1,13 @@
-mixin news(news = {})
+mixin widget-news(news = {})
   -
     const {
       picture = 'gray-bg.jpg',
-      pictureUrl = require(`../../components/news/img/${picture}`),
+      pictureUrl = require(`../../components/widget-news/img/${picture}`),
       title = 'title',
       date = '31  jan  2000',
       text = 'news-text',
     } = news;
-  div(class=("widget-news"))
+  section.widget-news
     div(class="widget-news__picture" style=`background-image: url("${pictureUrl}")`)
     div(class="widget-news__information")
       h3(class="widget-news__title")= title

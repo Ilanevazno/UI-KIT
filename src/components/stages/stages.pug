@@ -4,7 +4,7 @@ mixin stages(data = {})
       maxStep = '',
       currentStep = '',
     } = data;
-  div(class="widget-stages")
+  section.stages
     ul.list-unstyled.multi-steps
       - for (var i = 0; i < maxStep; i += 1)
       - if ((i + 1) === currentStep)

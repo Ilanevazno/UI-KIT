@@ -1,4 +1,4 @@
-class Button {
+class RippleBtn {
   constructor(selector) {
     this.$rippleHtmlButton = $(selector);
   }
@@ -33,4 +33,4 @@ class Button {
   }
 }
 
-export default Button;
+export default RippleBtn;

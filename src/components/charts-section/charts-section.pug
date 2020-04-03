@@ -9,11 +9,11 @@ mixin charts-section(title)
       { color: '#E5E5E5', fill: 30 },
       { color: '#747474', fill: 10 },
     ];
-  section.charts
-    h2.charts__title= title
-    .charts__container
+  section.charts-section
+    h2.charts-section__title= title
+    .charts-section__container
       - for (let i = 0; i < charts.length; i += 1)
-        .charts__container-item
+        .charts-section__container-item
           +percentages-chart(charts[i])
-      .charts__container-item
+      .charts-section__container-item
         +donut-chart(donutData)

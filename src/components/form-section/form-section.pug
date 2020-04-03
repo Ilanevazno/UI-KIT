@@ -1,6 +1,6 @@
 include ../message-form/message-form
 include ../toggles/toggles
-include ../tickbox/tickbox
+include ../tick-box/tick-box
 
 mixin form-section (data)
   -
@@ -26,6 +26,6 @@ mixin form-section (data)
           h2.form-section__title= boxesTitle
           .form-section__row-wrap
             .form-section__row-item
-              +checkbox('tickbox-first-option')
+              +tick-box('tickbox-first-option')
             .form-section__row-item
-              +checkbox('tickbox-second-option')
+              +tick-box('tickbox-second-option')

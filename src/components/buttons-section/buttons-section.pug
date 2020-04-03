@@ -1,14 +1,14 @@
-include ../button/button
+include ../ripple-btn/ripple-btn
 mixin buttons-section (title)
   section.button-section
     h2.buttons-section__title= title
     - for (let i = 0; i < 3; i += 1)
       .buttons-section__container
         .buttons-section__container-item
-          +button({theme: 'mint', size: 'low', text: 'Button'})
+          +ripple-btn({theme: 'mint', size: 'small', text: 'Button'})
         .buttons-section__container-item
-          +button({theme: 'mint', size: 'hight', text: 'Button'})
+          +ripple-btn({theme: 'mint', size: 'large', text: 'Button'})
         .buttons-section__container-item
-          +button({theme: 'orange', size: 'hight', text: 'Button'})
+          +ripple-btn({theme: 'orange', size: 'large', text: 'Button'})
         .buttons-section__container-item
-          +button({theme: 'orange', size: 'low', text: 'Button'})
+          +ripple-btn({theme: 'orange', size: 'small', text: 'Button'})
