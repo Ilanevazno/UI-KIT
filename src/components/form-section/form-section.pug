@@ -12,20 +12,21 @@ mixin form-section (data)
   section.form-section
     h2.form-section__title= mainTitle
     .form-section__container
-      .form-section__message.form-section__item
+      .form-section__item
         +message-form({ nameField: 'user-name', emailField: 'user-email', messageField: 'user-message' })
-      .form-section__tick-boxes.form-section__item
-        .form-section__row.form-section__item
-          h2.form-section__title= togglesTitle
-          .form-section__row-wrap
-            .form-section__row-item
-              +toggles('toggle-first-option')
-            .form-section__row-item
-              +toggles('toggle-second-option')
-        .form-section__row.form-section__item
-          h2.form-section__title= boxesTitle
-          .form-section__row-wrap
-            .form-section__row-item
-              +tick-box('tickbox-first-option')
-            .form-section__row-item
-              +tick-box('tickbox-second-option')
+      .form-section__item
+        .form-section__tick-boxes
+          .form-section__row
+            h2.form-section__title= togglesTitle
+            .form-section__row-wrap
+              .form-section__row-item
+                +toggles('toggle-first-option')
+              .form-section__row-item
+                +toggles('toggle-second-option')
+          .form-section__row
+            h2.form-section__title= boxesTitle
+            .form-section__row-wrap
+              .form-section__row-item
+                +tick-box('tickbox-first-option')
+              .form-section__row-item
+                +tick-box('tickbox-second-option')
