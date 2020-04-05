@@ -17,7 +17,7 @@ class Dropdown {
     const $catchedTarget = $(e.target);
 
     const checkTarget = () => {
-      if (this.$menu.is('.widget-select__label_open') && (this.$htmlContainer.find($catchedTarget).length === 0)) {
+      if (this.$menu.is('.dropdown__label_open') && (this.$htmlContainer.find($catchedTarget).length === 0)) {
         return true;
       }
       return false;
@@ -26,12 +26,12 @@ class Dropdown {
     const canClose = checkTarget();
 
     if (canClose) {
-      this.$menu.toggleClass('widget-select__label_open');
+      this.$menu.toggleClass('dropdown__label_open');
     }
   }
 
   toggleMenuState() {
-    this.$menu.toggleClass('widget-select__label_open');
+    this.$menu.toggleClass('dropdown__label_open');
   }
 
   chooseMenuItem(event) {

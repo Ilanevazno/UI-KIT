@@ -5,9 +5,9 @@ mixin stages(data = {})
       currentStep = '',
     } = data;
   section.stages
-    ul.list-unstyled.multi-steps
+    ul.stages__multi-steps
       - for (var i = 0; i < maxStep; i += 1)
       - if ((i + 1) === currentStep)
-        li.multi-steps__item.is-active
+        li.stages__multi-steps-item.is-active
       - else
-        li.multi-steps__item
+        li.stages__multi-steps-item

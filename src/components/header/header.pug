@@ -4,12 +4,12 @@ include ../account-panel/account-panel
 
 mixin header (pages = {}, theme)
   -
-    let headerClassName = 'header-line ';
+    let headerClassName = 'header ';
     let accountButtonsSize = 'large';
     const logo = { link: './index.html' };
     if (theme) {
       accountButtonsSize = theme === 'small' ? 'small' : 'large';
-      headerClassName += `header-line_theme_${theme}`;
+      headerClassName += `header_theme_${theme}`;
     };
     const buttonList = [
       { href: './login.html', description: 'Вход', size: accountButtonsSize },

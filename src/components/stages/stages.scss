@@ -1,5 +1,82 @@
 .stages {
   width: 100%;
+
+  &__multi-steps {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    font-family: 'Lato black', Arial, sans-serif;
+
+    &-item {
+      counter-increment: stepNum;
+      text-align: center;
+      display: block;
+      position: relative;
+      color: $orange-template;
+      font-size: 16px;
+
+      &:not(:last-child) {
+        width: 100%;
+      }
+
+      &:before {
+        content: counter(stepNum);
+        display: block;
+        margin: 0 0 auto 0px;
+        background-color: $orange-template;
+        color: white;
+        width: 36px;
+        height: 36px;
+        line-height: 32px;
+        text-align: center;
+        font-weight: bold;
+        border: {
+          width: 2px;
+          style: solid;
+          color: $orange-template;
+          radius: 50%;
+        }
+      }
+
+      &:after {
+        content: '';
+        height: 7px;
+        width: 100%;
+        background-color: $orange-template;
+        position: absolute;
+        top: 16px;
+        left: 13%;
+        z-index: -1;
+      }
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+
+      &.is-active {
+        @extend %remain-steps;
+        &:before {
+          background-color: $orange-template;
+          color: white;
+          border-color: $orange-template;
+        }
+
+        ~ .stages__multi-steps-item {
+          color: #808080;
+          @extend %remain-steps;
+          &:before {
+            color: darken($gray-template, 40%);
+            background-color: $gray-template;
+            border-color: $gray-template;
+          }
+        }
+      }
+    }
+  }
 }
 
 %remain-steps {
@@ -11,82 +88,5 @@
 
   &:after {
     background-color: $gray-template;
-  }
-}
-
-.multi-steps {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0;
-  font-family: 'Lato black', Arial, sans-serif;
-
-  &__item {
-    counter-increment: stepNum;
-    text-align: center;
-    display: block;
-    position: relative;
-    color: $orange-template;
-    font-size: 16px;
-
-    &:not(:last-child) {
-      width: 100%;
-    }
-
-    &:before {
-      content: counter(stepNum);
-      display: block;
-      margin: 0 0 auto 0px;
-      background-color: $orange-template;
-      color: white;
-      width: 36px;
-      height: 36px;
-      line-height: 32px;
-      text-align: center;
-      font-weight: bold;
-      border: {
-        width: 2px;
-        style: solid;
-        color: $orange-template;
-        radius: 50%;
-      }
-    }
-
-    &:after {
-      content: '';
-      height: 7px;
-      width: 100%;
-      background-color: $orange-template;
-      position: absolute;
-      top: 16px;
-      left: 13%;
-      z-index: -1;
-    }
-
-    &:last-child {
-      &:after {
-        display: none;
-      }
-    }
-
-    &.is-active {
-      @extend %remain-steps;
-      &:before {
-        background-color: $orange-template;
-        color: white;
-        border-color: $orange-template;
-      }
-
-      ~ .multi-steps__item {
-        color: #808080;
-        @extend %remain-steps;
-        &:before {
-          color: darken($gray-template, 40%);
-          background-color: $gray-template;
-          border-color: $gray-template;
-        }
-      }
-    }
   }
 }

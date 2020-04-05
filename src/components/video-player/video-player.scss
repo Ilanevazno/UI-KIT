@@ -1,12 +1,9 @@
 .video-player {
   width: 100%;
+  position: relative;
 
   &__hidden-item {
     display: none;
-  }
-
-  &__container {
-    position: relative;
   }
 
   &__screen {

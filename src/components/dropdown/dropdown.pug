@@ -4,10 +4,10 @@ mixin dropdown (options = {})
       placeholder = 'Choose an option',
       optionList = [],
     } = options;
-  section.dropdown.widget-select.js-dropdown-widget
-    div(class="widget-select__area js-dropdown-textarea" tabindex="0")
-      .widget-select__area-text.js-dropdown-text-inner= placeholder
-      .widget-select__area-btn
-    ul(tabindex="0").widget-select__label.js-dropdown-menu
+  section.dropdown.js-dropdown-widget
+    div(class="dropdown__area js-dropdown-textarea" tabindex="0")
+      .dropdown__area-text.js-dropdown-text-inner= placeholder
+      .dropdown__area-btn
+    ul(tabindex="0").dropdown__label.js-dropdown-menu
       each item in optionList
-        li(class="widget-select__label-item js-dropdown-label-item" tabindex="0")= item.text
+        li(class="dropdown__label-item js-dropdown-label-item" tabindex="0")= item.text
