@@ -8,7 +8,7 @@ class Dropdown {
   }
 
   bindActions() {
-    this.$htmlContainer.find('.js-dropdown-textarea').on('click.dopdown-textarea keypress', this.toggleMenuState.bind(this));
+    this.$htmlContainer.find('.js-dropdown-textarea').on('click.dropdown-textarea keypress', this.toggleMenuState.bind(this));
     this.$htmlContainer.find('.js-dropdown-label-item').on('click.dropdown-label', this.chooseMenuItem.bind(this));
     $(document).on('click.closeDropdown', this.closeMenu.bind(this));
   }
