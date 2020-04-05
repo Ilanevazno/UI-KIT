@@ -1,6 +1,6 @@
 import Slider from './Slider';
 
-const sliderWidth = window.innerWidth > 400 ? 360 : 230;
+// const sliderWidth = window.innerWidth > 400 ? 360 : 230;
 
 const orangeSlider = new Slider('.sliders-section__item-first > .js-slider-widget', {
   from: 0,
@@ -9,7 +9,7 @@ const orangeSlider = new Slider('.sliders-section__item-first > .js-slider-widge
   step: 1,
   scale: [],
   format: '%s',
-  width: sliderWidth,
+  width: 360,
 });
 orangeSlider.bootstrap();
 
@@ -22,6 +22,6 @@ const mintSlider = new Slider('.sliders-section__item-second > .js-slider-widget
   format: '%s',
   showLabels: true,
   snap: true,
-  width: sliderWidth,
+  width: 360,
 });
 mintSlider.bootstrap();

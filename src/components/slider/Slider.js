@@ -5,11 +5,28 @@ class Slider {
   constructor(selector, settings) {
     this.$htmlContainer = $(selector);
     this.settings = settings;
+    this.maxWidth = 360;
+    this.minWidth = 260;
   }
 
   render() {
     this.$htmlContainer.jRange(this.settings);
     this.fixRangeOffset();
+  }
+
+  bindActions() {
+    $(window).on('resize.resizeScreen', this.adaptiveSlider.bind(this));
+  }
+
+  adaptiveSlider() {
+    const innerContainer = this.$htmlContainer.next('.slider-container');
+    if (window.innerWidth < this.maxWidth + 50) {
+      this.$htmlContainer.css('width', `${this.minWidth}px`);
+      innerContainer.css('width', `${this.minWidth}px`);
+    } else {
+      this.$htmlContainer.css('width', `${this.maxWidth}px`);
+      innerContainer.css('width', `${this.maxWidth}px`);
+    }
   }
 
   fixRangeOffset() {
@@ -34,6 +51,7 @@ class Slider {
 
   bootstrap() {
     this.render();
+    this.bindActions();
   }
 }
 
