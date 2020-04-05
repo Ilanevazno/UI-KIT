@@ -17,14 +17,16 @@
     border-width: 0.4rem 0.4rem 0 0;
   }
 
-  &_left > &__inner {
-    left: 38%;
-    transform: rotate(-135deg);
-  }
+  &_direction {
+    &_left > .arrow-button__inner {
+      left: 38%;
+      transform: rotate(-135deg);
+    }
 
-  &_right > &__inner {
-    left: 26%;
-    transform: rotate(45deg);
+    &_right > .arrow-button__inner {
+      left: 26%;
+      transform: rotate(45deg);
+    }
   }
 
   &:active:not(:disabled) {
