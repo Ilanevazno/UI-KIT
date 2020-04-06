@@ -53,6 +53,31 @@
     background: inherit;
     border: none;
     outline: none;
+
+    &_hidden {
+      display: none;
+    }
+
+    &_type {
+      &_play {
+        flex-basis: 10%;
+        cursor: pointer;
+      }
+
+      &_pause {
+        cursor: pointer;
+        flex-basis: 8%;
+      }
+
+      &_fullscreen {
+        height: 5.7rem;
+        background: $orange-template url('./img/video-fullscreen-btn.png') 50% 50% no-repeat;
+        background-size: 44%;
+        flex-basis: 6rem;
+        cursor: pointer;
+        box-sizing: border-box;
+      }
+    }
   }
 
   &__figure {
@@ -61,27 +86,8 @@
     height: 1.4rem;
   }
 
-  &__play {
-    flex-basis: 10%;
-    cursor: pointer;
-  }
-
-  &__pause {
-    cursor: pointer;
-    flex-basis: 8%;
-  }
-
   &__progress {
     flex-basis: 84%;
     margin-right: 4%;
-  }
-
-  &__fullscreen {
-    height: 5.7rem;
-    background: $orange-template url('./img/video-fullscreen-btn.png') 50% 50% no-repeat;
-    background-size: 44%;
-    flex-basis: 6rem;
-    cursor: pointer;
-    box-sizing: border-box;
   }
 }

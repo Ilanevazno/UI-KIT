@@ -12,5 +12,7 @@ mixin location(settings = {})
         p.location__overlay-address-text= address
       .location__overlay-controls-wrapper
         .location__overlay-controls-container
-          button.location__overlay-controls.location__overlay-btn-set-address.js-overlay-btn-set-address
-          button.location__overlay-controls.location__overlay-btn-find-marker.js-overlay-btn-find-marker
+          .location__overlay-controls
+            button.location__overlay-btn-set-address.js-overlay-btn-set-address
+          .location__overlay-controls
+            button.location__overlay-btn-find-marker.js-overlay-btn-find-marker

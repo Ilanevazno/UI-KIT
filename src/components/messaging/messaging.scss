@@ -41,15 +41,15 @@
     outline: none;
     cursor: pointer;
     background: inherit;
-  }
 
-  &__send {
-    &-message {
-      background: 12%/46% url('./img/Chat-Icon.png') no-repeat;
-    }
+    &_for {
+      &_message {
+        background: 12%/46% url('./img/Chat-Icon.png') no-repeat;
+      }
 
-    &-photo {
-      background: 70% 34%/56% url('./img/Camera-Icon.png') no-repeat;
+      &_photo {
+        background: 70% 34%/56% url('./img/Camera-Icon.png') no-repeat;
+      }
     }
   }
 
@@ -78,13 +78,13 @@
     font-family: 'Lato bold', Arial, sans-serif;
     font-size: 1.6rem;
 
-    &-wrapper{
+    &-wrapper {
       position: relative;
       display: flex;
       justify-content: center;
 
       &:after {
-        content: "";
+        content: '';
         display: block;
         background: white;
         width: 1rem;
@@ -94,28 +94,29 @@
         transform: translate(-60%, -40%) rotate(45deg);
       }
     }
-  }
 
-  &__message-to {
-    background: white;
-    border: none;
-    color: darken($gray-template, 35);
+    &_for {
+      &_to {
+        background: white;
+        border: none;
+        color: darken($gray-template, 35);
 
+        &:after {
+          content: '';
+          display: block;
+        }
+      }
 
-    &:after {
-      content: "";
-      display: block;
+      &_from {
+        background: $gray-template;
+        border: 3px solid white;
+        margin-top: 2.3rem;
+        min-height: 10rem;
+        outline: none;
+        margin-bottom: 1.6rem;
+        color: darken($gray-template, 35);
+      }
     }
-  }
-
-  &__message-from {
-    background: $gray-template;
-    border: 3px solid white;
-    margin-top: 2.3rem;
-    min-height: 10rem;
-    outline: none;
-    margin-bottom: 1.6rem;
-    color: darken($gray-template, 35);
   }
 
   &__reply-button {

@@ -46,14 +46,6 @@
     }
 
     &-controls {
-      padding: 0;
-      border: none;
-      outline: none;
-      background: none;
-      width: 33px;
-      height: 33px;
-      cursor: pointer;
-
       &-wrapper {
         display: flex;
         height: 100%;
@@ -73,6 +65,17 @@
           width: 10rem;
         }
       }
+    }
+
+    &-btn-find-marker,
+    &-btn-set-address {
+      padding: 0;
+      border: none;
+      outline: none;
+      background: none;
+      width: 33px;
+      height: 33px;
+      cursor: pointer;
     }
 
     &-btn-set-address {

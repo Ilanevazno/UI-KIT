@@ -18,8 +18,14 @@
   }
 
   &__item {
-    width: 48.5%;
-    margin-right: 3rem;
+    &:first-child {
+      width: 50%;
+      margin-right: 3rem;
+    }
+
+    &:last-child {
+      width: 48.5%;
+    }
 
     @include media-screen ($mobile) {
       width: 100%;

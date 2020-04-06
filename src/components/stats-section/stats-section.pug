@@ -24,6 +24,6 @@ mixin stats-section (data = {})
         each review in donutData
           .stats-section__review-desc
             div(class="stats-section__review-stat" style=`background-color: ${review.color}; width: ${review.fill}%`)
-            p.stats-section__review-title.stats-section__text= review.desc
+            p.stats-section__text= review.desc
       .stats-section__chart
         +donut-chart(donutData)

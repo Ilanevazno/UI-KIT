@@ -8,10 +8,10 @@ mixin form-search(data = {})
   section.form-search.js-search-form-widget
     .form-search__find-str
       .form-search__str-wrapper
-        input(type="text" class="form-search__str" placeholder= placeholder)
-        label(class="form-search__str-status")= errorMessage
-      input(type="button" id="form-search__btn-find" name="form-search__btn-find" class="form-search__btn-find")
+        input(type="text" class="js-form-search-line form-search__str" placeholder= placeholder)
+        label(class="js-form-search-status form-search__status")= errorMessage
+      input(type="button" class="js-form-search-start form-search__search-btn")
     .form-search__options
-      ul(class="form-search__items form-search__hidden-item" id="form-search__items")
+      ul(class="js-form-items form-search__items" id="form-search__items")
           each item in searchList
-            li(tabindex="0")= item
+            li(tabindex="0").form-search__items-option= item

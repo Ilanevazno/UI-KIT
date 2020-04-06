@@ -19,18 +19,22 @@ mixin message-form(data = {})
     } = data;
   form(class="message-form js-message-form")
     .message-form__fields
-      input(type="text" id= nameField name= nameField class="message-form__name message-form__item "+ nameField placeholder= nameFieldPlaceholder)
-      label(for= nameField class="message-form__field-status")
+      .message-form__item
+        input(type="text" id= nameField name= nameField class="js-form-name message-form__field" placeholder= nameFieldPlaceholder)
+        label(for= nameField class="message-form__field-status js-field-status")
     .message-form__fields
-      input(type="email" id= emailField name= emailField class="message-form__email message-form__item "+ emailField placeholder= emailFieldPlaceholder)
-      label(for= emailField class="message-form__field-status")
+      .message-form__item
+        input(type="email" id= emailField name= emailField class="js-form-email message-form__field " placeholder= emailFieldPlaceholder)
+        label(for= emailField class="message-form__field-status js-field-status")
     .message-form__fields
-      textarea(id= messageField class="message-form__item message-form__textarea "+ messageField placeholder= messageFieldPlaceholder)
+      textarea(id= messageField class="message-form__item message-form__textarea" placeholder= messageFieldPlaceholder)
     - if (policy.isShowed)
-      .message-form__policy.message-form__policy-item
-        span.message-form__policy-item
+      .message-form__policy
+        .message-form__policy-item
           +tick-box('policy-accept')
-        p.message-form__policy-text.message-form__policy-item= policy.title
-          a(href= policy.policyLink).message-form__policy-href.message-form__policy-item= policy.policyText
+        .message-form__policy-item
+          p.message-form__policy-text= policy.title
+        .message-form__policy-item
+          a(href= policy.policyLink).message-form__policy-href= policy.policyText
     .message-form__submit-btn
       +ripple-btn({theme: 'mint', size: 'large', text: 'Submit', isReversedColor: true})
