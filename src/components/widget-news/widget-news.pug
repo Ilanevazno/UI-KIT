@@ -8,9 +8,9 @@ mixin widget-news(news = {})
       text = 'news-text',
     } = news;
   section.widget-news
-    div(class="widget-news__picture" style=`background-image: url("${pictureUrl}")`)
-    div(class="widget-news__information")
-      h3(class="widget-news__title")= title
-      p(class="widget-news__date")= date
-      p(class="widget-news__text")= text
+    .widget-news__picture(style=`background-image: url("${pictureUrl}")`)
+    .widget-news__information
+      h3.widget-news__title= title
+      p.widget-news__date= date
+      p.widget-news__text= text
 

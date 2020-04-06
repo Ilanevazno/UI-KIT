@@ -13,13 +13,13 @@ mixin widget-events(event = {})
       text = 'event - text',
     } = event;
   section.widget-events
-    div(class="widget-events__picture" style=`background-image: url(${parsedPicture})`)
-    div(class="widget-events__information")
-      div(class="widget-events__information-wrapper")
-        div(class="widget-events__date-title")
-          p(class="widget-events__date")= date.day
-          p(class="widget-events__month")= date.month
-        h3(class="widget-events__event-title")=  title
-        p(class="widget-events__event-text")=  text
+    .widget-events__picture(style=`background-image: url(${parsedPicture})`)
+    .widget-events__information
+      .widget-events__information-wrapper
+        .widget-events__date-title
+          p.widget-events__date= date.day
+          p.widget-events__month= date.month
+        h3.widget-events__event-title=  title
+        p.widget-events__event-text=  text
         .widget-events__to-calendar
           +ripple-btn({theme: 'mint', size: 'small', isResponsive: true, text: 'Add to calendar'})

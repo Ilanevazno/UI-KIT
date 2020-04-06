@@ -7,17 +7,17 @@ mixin messaging(data = {})
       userName = 'user',
       placeholder = 'hello there',
     } = data;
-  div(class="messaging")
-    div(class="messaging__header")
+  .messaging
+    div.messaging__header
       p.messaging__interlocutor-name= userName
-      div(class="messaging__interlocutor-picture" style=`background-image: url(${picture})`)
-    div(class="messaging__body")
-      div(class="messaging__wrap")
-        div(class="messaging__interlocutor-area")
-          button(class="messaging__dialog-button messaging__dialog-button_for_message")
-          button(class="messaging__dialog-button messaging__dialog-button_for_photo")
-        div(class="messaging__chat-area")
+      .messaging__interlocutor-picture(style=`background-image: url(${picture})`)
+    .messaging__body
+      .messaging__wrap
+        .messaging__interlocutor-area
+          button.messaging__dialog-button.messaging__dialog-button_for_message
+          button.messaging__dialog-button.messaging__dialog-button_for_photo
+        .messaging__chat-area
           .messaging__textarea-wrapper
-            textarea(class="messaging__textarea messaging__textarea_for_to" disabled placeholder= placeholder)
-          textarea(class="messaging__textarea messaging__textarea_for_from") Yeah that sounds great. See you then.
+            textarea.messaging__textarea.messaging__textarea_for_to(disabled placeholder= placeholder)
+          textarea.messaging__textarea.messaging__textarea_for_from Yeah that sounds great. See you then.
         +ripple-btn({theme: 'mint', size: 'large', text: 'Reply', isReversedColor: true, isResponsive: true})
