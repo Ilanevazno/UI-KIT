@@ -1,4 +1,5 @@
 mixin tick-box (boxName = '')
   section.tick-box
-    input.tick-box__input(type="checkbox" name= boxName id= boxName)
-    label.tick-box__icon(for= boxName tabindex="0")
+    label
+      input.tick-box__input(type="checkbox" name= boxName)
+      .tick-box__icon(tabindex="0")

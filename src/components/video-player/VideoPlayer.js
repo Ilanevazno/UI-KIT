@@ -1,12 +1,12 @@
 class VideoPlayer {
   constructor(selector) {
     this.$videoContainer = selector;
-    this.$videoScreen = this.$videoContainer.find('.js-player-screen');
-    this.$videoProgress = this.$videoContainer.find('.js-player-progress');
+    this.$videoScreen = this.$videoContainer.find('.js-video-player__screen');
+    this.$videoProgress = this.$videoContainer.find('.js-video-player__control-progress');
     this.controls = {
-      $buttonPlay: this.$videoContainer.find('.js-player-play'),
-      $buttonPause: this.$videoContainer.find('.js-player-pause'),
-      $buttonFullScreen: this.$videoContainer.find('.js-player-fullscreen'),
+      $buttonPlay: this.$videoContainer.find('.js-video-player__control-play'),
+      $buttonPause: this.$videoContainer.find('.js-video-player__control-pause'),
+      $buttonFullScreen: this.$videoContainer.find('.js-video-player__control-fullscreen'),
     };
   }
 
@@ -23,15 +23,18 @@ class VideoPlayer {
 
   bootstrap() {
     this.bindActions();
+    this.controls.$buttonPause.hide();
   }
 
   toggleVideoState() {
-    this.controls.$buttonPlay.toggleClass('video-player__control_hidden');
-
     if (this.$videoScreen[0].paused) {
       this.$videoScreen[0].play();
+      this.controls.$buttonPlay.hide();
+      this.controls.$buttonPause.show();
     } else {
       this.$videoScreen[0].pause();
+      this.controls.$buttonPlay.show();
+      this.controls.$buttonPause.hide();
     }
   }
 

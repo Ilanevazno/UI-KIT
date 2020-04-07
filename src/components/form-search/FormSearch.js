@@ -29,10 +29,7 @@ class FormSearch {
       return false;
     };
 
-    console.log(!this.$htmlElement.is('.form-search_open'));
     const isCanClose = checkTarget();
-
-    console.log(this.$htmlElement.find($catchedTarget).length === 0);
 
     if (isCanClose) {
       this.$htmlElement.removeClass('form-search_open');

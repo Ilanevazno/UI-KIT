@@ -19,11 +19,19 @@ mixin message-form(data = {})
   form.message-form.js-message-form
     .message-form__fields
       .message-form__item
-        input.message-form__field.js-message-form__field(type="text" name= nameField placeholder= nameFieldPlaceholder)
+        input.message-form__field.js-message-form__field(
+          type="text"
+          name= nameField
+          placeholder= nameFieldPlaceholder
+        )
         label.message-form__field-status.js-message-form__field-status
     .message-form__fields
       .message-form__item
-        input.message-form__field.js-message-form__field(type="email" name= emailField placeholder= emailFieldPlaceholder)
+        input.message-form__field.js-message-form__field(
+          type="email"
+          name= emailField
+          placeholder= emailFieldPlaceholder
+        )
         label.message-form__field-status.js-message-form__field-status
     .message-form__fields
       .message-form__item
@@ -37,6 +45,10 @@ mixin message-form(data = {})
             .message-form__policy-item
               p.message-form__policy-text= policy.title
             .message-form__policy-item
-              a.message-form__policy-href(href= policy.link target="_blank" rel="noopener noreferrer")= policy.text
+              a.message-form__policy-href(
+                href= policy.link
+                target="_blank"
+                rel="noopener noreferrer"
+              )= policy.text
     .message-form__submit-btn
       +ripple-btn({theme: 'mint', size: 'large', text: 'Submit', isReversedColor: true})

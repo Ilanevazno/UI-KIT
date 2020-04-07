@@ -18,6 +18,16 @@ mixin messaging(data = {})
           button.messaging__dialog-button.messaging__dialog-button_for_photo
         .messaging__chat-area
           .messaging__textarea-wrapper
-            textarea.messaging__textarea.messaging__textarea_for_to(disabled placeholder= placeholder)
-          textarea.messaging__textarea.messaging__textarea_for_from Yeah that sounds great. See you then.
-        +ripple-btn({theme: 'mint', size: 'large', text: 'Reply', isReversedColor: true, isResponsive: true})
+            textarea.messaging__textarea.messaging__textarea_for_to(
+              disabled
+              placeholder= placeholder
+            )
+          textarea.messaging__textarea.messaging__textarea_for_from
+            | Yeah that sounds great. See you then.
+        +ripple-btn({
+          theme: 'mint',
+          size: 'large',
+          text: 'Reply',
+          isReversedColor: true,
+          isResponsive: true
+        })

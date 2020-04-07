@@ -13,7 +13,11 @@ mixin form-section (data)
     h2.form-section__title= mainTitle
     .form-section__container
       .form-section__item
-        +message-form({ nameField: 'user-name', emailField: 'user-email', messageField: 'user-message' })
+        +message-form({
+          nameField: 'user-name',
+          emailField: 'user-email',
+          messageField: 'user-message'
+        })
       .form-section__item
         .form-section__tick-boxes
           .form-section__row
