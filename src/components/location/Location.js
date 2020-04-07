@@ -14,8 +14,8 @@ class Location {
 
   bindActions() {
     const $mapContainer = $(this.mymap._container);
-    const $showCurrentPosition = $mapContainer.find('.js-overlay-btn-set-address');
-    const $findMarker = $mapContainer.find('.js-overlay-btn-find-marker');
+    const $showCurrentPosition = $mapContainer.find('.js-location__overlay-btn-set-address');
+    const $findMarker = $mapContainer.find('.js-location__overlay-btn-find-marker');
     $showCurrentPosition.on('click.setLocationPosition', this.setNewAddress.bind(this));
     $findMarker.on('click.findLocationMarker', this.showCurrentPosition.bind(this));
   }

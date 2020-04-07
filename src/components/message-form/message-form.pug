@@ -5,36 +5,38 @@ mixin message-form(data = {})
     const {
       nameField = '',
       emailField = '',
+      messageField = '',
       nameFieldPlaceholder = 'Your Name',
       emailFieldPlaceholder = 'Your Email',
       messageFieldPlaceholder = 'Your Message',
-      messageField = '',
-      isShowedPolicy = false,
       policy = {
         isShowed: false,
         title: 'Я согласен на обработку',
-        policyText: 'персональных данных',
-        policyLink: 'https://policy.com/'
+        text: 'персональных данных',
+        link: '',
       },
     } = data;
   form.message-form.js-message-form
     .message-form__fields
       .message-form__item
-        input.js-form-name.message-form__field(type="text" id= nameField name= nameField placeholder= nameFieldPlaceholder)
-        label.message-form__field-status.js-field-status(for= nameField)
+        input.message-form__field.js-message-form__field(type="text" name= nameField placeholder= nameFieldPlaceholder)
+        label.message-form__field-status.js-message-form__field-status
     .message-form__fields
       .message-form__item
-        input.js-form-email.message-form__field(type="email" id= emailField name= emailField placeholder= emailFieldPlaceholder)
-        label.message-form__field-status.js-field-status(for= emailField)
+        input.message-form__field.js-message-form__field(type="email" name= emailField placeholder= emailFieldPlaceholder)
+        label.message-form__field-status.js-message-form__field-status
     .message-form__fields
-      textarea.message-form__item.message-form__textarea(id= messageField placeholder= messageFieldPlaceholder)
-    - if (policy.isShowed)
-      .message-form__policy
-        .message-form__policy-item
-          +tick-box('policy-accept')
-        .message-form__policy-item
-          p.message-form__policy-text= policy.title
-        .message-form__policy-item
-          a(href= policy.policyLink).message-form__policy-href= policy.policyText
+      .message-form__item
+        textarea.message-form__textarea(placeholder= messageFieldPlaceholder)
+    .message-form__fields
+      .message-form__item
+        - if (policy.isShowed)
+          .message-form__policy
+            .message-form__policy-item
+              +tick-box('policy-accept')
+            .message-form__policy-item
+              p.message-form__policy-text= policy.title
+            .message-form__policy-item
+              a.message-form__policy-href(href= policy.link target="_blank" rel="noopener noreferrer")= policy.text
     .message-form__submit-btn
       +ripple-btn({theme: 'mint', size: 'large', text: 'Submit', isReversedColor: true})

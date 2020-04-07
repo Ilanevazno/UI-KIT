@@ -1,8 +1,8 @@
 class MessageForm {
   constructor(selector) {
     this.$htmlContainer = $(selector);
-    this.$userNameLabel = this.$htmlContainer.find('.js-form-name');
-    this.$userEmailLabel = this.$htmlContainer.find('.js-form-email');
+    this.$userNameLabel = this.$htmlContainer.find('.js-message-form__field').eq(0);
+    this.$userEmailLabel = this.$htmlContainer.find('.js-message-form__field').eq(1);
     this.logOn = false;
   }
 
@@ -51,7 +51,7 @@ class MessageForm {
   }
 
   testLabel(label, regexp) {
-    const $messageStatus = label.siblings('.js-field-status');
+    const $messageStatus = label.siblings('.js-message-form__field-status');
     $messageStatus.removeClass('text-success text-error');
 
     if (regexp.test(label.val())) {

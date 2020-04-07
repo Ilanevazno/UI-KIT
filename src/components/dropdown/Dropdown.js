@@ -1,15 +1,15 @@
 class Dropdown {
   constructor(selector) {
     this.$htmlContainer = $(selector);
-    this.$htmlTextArea = this.$htmlContainer.find('.js-dropdown-textarea');
-    this.$htmlInnerTextArea = this.$htmlContainer.find('.js-dropdown-text-inner');
-    this.$menu = this.$htmlContainer.find('.js-dropdown-menu');
+    this.$htmlTextArea = this.$htmlContainer.find('.js-dropdown__area');
+    this.$htmlInnerTextArea = this.$htmlContainer.find('.dropdown__area-text');
+    this.$menu = this.$htmlContainer.find('.js-dropdown__label');
     this.currentState = null;
   }
 
   bindActions() {
-    this.$htmlContainer.find('.js-dropdown-textarea').on('click.dropdown-textarea keypress', this.toggleMenuState.bind(this));
-    this.$htmlContainer.find('.js-dropdown-label-item').on('click.dropdown-label', this.chooseMenuItem.bind(this));
+    this.$htmlContainer.find('.js-dropdown__area').on('click.dropdown-textarea keypress', this.toggleMenuState.bind(this));
+    this.$htmlContainer.find('.js-dropdown__label-item').on('click.dropdown-label', this.chooseMenuItem.bind(this));
     $(document).on('click.closeDropdown', this.closeMenu.bind(this));
   }
 

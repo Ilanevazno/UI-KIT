@@ -5,5 +5,5 @@ mixin input-label (data = {})
       labelType = '',
       placeholder = '',
     } = data;
-  input.input-label.input-label__item(type= labelType id= name placeholder= placeholder)
-  label(for= name)
+  label
+    input.input-label.input-label__item(type= labelType name= name placeholder= placeholder)

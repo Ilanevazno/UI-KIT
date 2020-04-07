@@ -2,7 +2,7 @@ import Slider from './Slider';
 
 // const sliderWidth = window.innerWidth > 400 ? 360 : 230;
 
-const orangeSlider = new Slider('.sliders-section__item-first > .js-slider-widget', {
+const orangeSlider = new Slider('.sliders-section__item-first > .js-slider', {
   from: 0,
   to: 100,
   theme: 'theme-orange',
@@ -13,7 +13,7 @@ const orangeSlider = new Slider('.sliders-section__item-first > .js-slider-widge
 });
 orangeSlider.bootstrap();
 
-const mintSlider = new Slider('.sliders-section__item-second > .js-slider-widget', {
+const mintSlider = new Slider('.sliders-section__item-second > .js-slider', {
   theme: 'theme-mint',
   from: 0,
   to: 100,

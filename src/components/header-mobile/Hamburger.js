@@ -1,7 +1,7 @@
 class Hamburger {
   constructor(selector) {
-    this.$hamburgerMenu = $(selector).find('.js-hamburger-menu');
-    this.$hamburgerBtn = this.$hamburgerMenu.prev('.js-hamburger-button');
+    this.$hamburgerMenu = $(selector).find('.js-header-mobile__menu');
+    this.$hamburgerBtn = this.$hamburgerMenu.prev('.js-header-mobile__button');
   }
 
   bindActions() {

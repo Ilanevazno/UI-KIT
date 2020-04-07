@@ -1,6 +1,6 @@
 import Assistant from './Assistant';
 
-$('.js-assistant-widget').each((idx, itm) => {
+$('.js-assistant').each((idx, itm) => {
   const assistant = new Assistant($(itm));
   assistant.bootstrap();
 });

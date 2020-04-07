@@ -5,7 +5,7 @@ mixin location(settings = {})
       address = '',
       coords = '',
     } = settings;
-  div.location.js-widget-location(data-coords = coords)
+  div.location.js-location(data-coords = coords)
     .location__overlay
       .location__overlay-text-wrapper
         p.location__overlay-welcome-text= welcomeText
@@ -13,6 +13,6 @@ mixin location(settings = {})
       .location__overlay-controls-wrapper
         .location__overlay-controls-container
           .location__overlay-controls
-            button.location__overlay-btn-set-address.js-overlay-btn-set-address
+            button.location__overlay-btn-set-address.js-location__overlay-btn-set-address
           .location__overlay-controls
-            button.location__overlay-btn-find-marker.js-overlay-btn-find-marker
+            button.location__overlay-btn-find-marker.js-location__overlay-btn-find-marker

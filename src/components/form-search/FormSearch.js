@@ -2,10 +2,10 @@ class FormSearch {
   constructor(element) {
     this.$htmlElement = $(document).find(element);
     this.htmlItemList = {
-      $searchItems: this.$htmlElement.find('.js-form-items'),
-      $searchBtn: this.$htmlElement.find('.js-form-search-start'),
-      $inputLabel: this.$htmlElement.find('.js-form-search-line'),
-      $errorNotify: this.$htmlElement.find('.js-form-search-status'),
+      $searchItems: this.$htmlElement.find('.js-form-search__items'),
+      $searchBtn: this.$htmlElement.find('.js-form-search__search-btn'),
+      $inputLabel: this.$htmlElement.find('.js-form-search__str'),
+      $errorNotify: this.$htmlElement.find('.js-form-search__status'),
     };
     this.openMM = false;
   }

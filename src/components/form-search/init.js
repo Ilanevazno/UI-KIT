@@ -1,6 +1,6 @@
 import FormSearch from './FormSearch';
 
-$('.js-search-form-widget').each((idx, itm) => {
+$('.js-form-search').each((idx, itm) => {
   const searchLine = new FormSearch(itm);
   searchLine.bootstrap();
 });

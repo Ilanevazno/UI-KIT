@@ -1,6 +1,6 @@
 import Button from './RippleBtn';
 
-$('.js-ripple-effect').each((idx, itm) => {
+$('.js-ripple-btn__ripple-effect').each((idx, itm) => {
   const button = new Button($(itm));
   button.bootstrap();
 });
