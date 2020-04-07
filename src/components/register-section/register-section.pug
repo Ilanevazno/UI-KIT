@@ -29,4 +29,4 @@ mixin register-section(data = {})
           h2.register-section__item-title= requiredFields[i].placeholder
           +input-label({ name: requiredFields[i].fieldName, labelType: 'text' })
       +stages({ maxStep: 3, currentStep: 1 })
-      +ripple-btn({ theme: 'mint', size: 'hight', text: finishBtnText })
+      +ripple-btn({ theme: 'mint', size: 'large', text: finishBtnText })
