@@ -6,7 +6,7 @@ mixin dropdown (options = {})
     } = options;
   section.dropdown.js-dropdown
     .dropdown__area.js-dropdown__area(tabindex="0")
-      .dropdown__area-text.dropdown__area-text= placeholder
+      .dropdown__area-text.js-dropdown__area-text= placeholder
       .dropdown__area-btn
     ul.dropdown__label.js-dropdown__label(tabindex="0")
       each item in optionList

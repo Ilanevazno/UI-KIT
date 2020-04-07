@@ -23,8 +23,6 @@ mixin reviews-section(reviews = [], title)
             text = '',
           } = item;
         .reviews-section__review-item
-          textarea(disabled class="reviews-section__user-review")= text
+          textarea.reviews-section__user-review(disabled)= text
           .reviews-section__user-profile
-            +user-profile({
-              name,
-            })
+            +user-profile({ name })

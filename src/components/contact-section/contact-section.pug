@@ -19,7 +19,8 @@ mixin contact-section (data = {})
           +location({
             welcomeText: 'Meet us!',
             address: 'Итальянская ул. дом 3',
-            coords: [59.890138, 30.378240] })
+            coords: [59.890138, 30.378240],
+          })
         when 'about-work'
           +video-player({ src: require('../../assets/video/new-zeland.mp4') })
         when 'any-question'

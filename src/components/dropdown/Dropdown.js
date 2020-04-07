@@ -2,7 +2,7 @@ class Dropdown {
   constructor(selector) {
     this.$htmlContainer = $(selector);
     this.$htmlTextArea = this.$htmlContainer.find('.js-dropdown__area');
-    this.$htmlInnerTextArea = this.$htmlContainer.find('.dropdown__area-text');
+    this.$htmlInnerTextArea = this.$htmlContainer.find('.js-dropdown__area-text');
     this.$menu = this.$htmlContainer.find('.js-dropdown__label');
     this.currentState = null;
   }

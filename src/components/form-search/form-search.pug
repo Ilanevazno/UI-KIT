@@ -14,4 +14,4 @@ mixin form-search(data = {})
     .form-search__options
       ul.form-search__items.js-form-search__items
           each item in searchList
-            li(tabindex="0").form-search__items-option= item
+            li.form-search__items-option(tabindex="0")= item

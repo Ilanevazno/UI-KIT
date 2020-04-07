@@ -8,4 +8,4 @@ mixin header-nav(data = {})
     ul.header-nav__links
       each page in data
         li
-          a(href= page.url).header-nav__links-item= page.name
+          a.header-nav__links-item(href= page.url)= page.name
