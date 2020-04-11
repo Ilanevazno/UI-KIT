@@ -3,8 +3,28 @@
   display: flex;
   justify-content: flex-end;
 
-  &:hover &__svg-icon {
+  &:hover &__info-social-icon {
     fill: darken($gray-template, 45%);
+
+    &:hover {
+      fill: $orange-template;
+    }
+  }
+
+  &:hover &__info {
+    background-color: $gray-template;
+
+    &:before {
+      display: none;
+    }
+
+    &-name {
+      color: $orange-template;
+    }
+
+    &-job {
+      color: darken($gray-template, 45%);
+    }
   }
 
   &__picture {
@@ -83,14 +103,10 @@
       margin-top: 1.2rem;
       flex-wrap: wrap;
 
-      .user-profile__svg-icon {
+      &-icon {
         height: 2.5rem;
         width: 4.7rem;
         fill: white;
-
-        &:hover {
-          fill: $orange-template;
-        }
       }
 
       &-link {
@@ -103,21 +119,5 @@
         }
       }
     }
-  }
-
-  &:hover > .user-profile__info {
-    background-color: $gray-template;
-  }
-
-  &:hover > .user-profile__info:before {
-    display: none;
-  }
-
-  &:hover .user-profile__info-name {
-    color: $orange-template;
-  }
-
-  &:hover .user-profile__info-job {
-    color: darken($gray-template, 45%);
   }
 }

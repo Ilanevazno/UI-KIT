@@ -23,7 +23,7 @@ class FormSearch {
     const $catchedTarget = $(e.target);
 
     const checkTarget = () => {
-      if (this.$htmlElement.is('.form-search_open') && (this.$htmlElement.find($catchedTarget).length === 0)) {
+      if (this.htmlItemList.$searchItems.is('.form-search__items_showed') && (this.$htmlElement.find($catchedTarget).length === 0)) {
         return true;
       }
       return false;
@@ -32,21 +32,21 @@ class FormSearch {
     const isCanClose = checkTarget();
 
     if (isCanClose) {
-      this.$htmlElement.removeClass('form-search_open');
+      this.htmlItemList.$searchItems.removeClass('form-search__items_showed');
     }
   }
 
   prepareLine() {
-    this.$htmlElement.toggleClass('form-search_open');
-    this.$htmlElement.removeClass('form-search_status_invalid');
+    this.htmlItemList.$searchItems.toggleClass('form-search__items_showed');
+    this.htmlItemList.$searchBtn.removeClass('form-search__search-btn_status_invalid');
+    this.htmlItemList.$errorNotify.hide();
     this.openMM = true;
   }
 
   startSearch(e) {
     const val = e.target.value.trim();
     const itemList = this.htmlItemList.$searchItems.find('li');
-
-    this.$htmlElement.removeClass('form-search_open');
+    this.htmlItemList.$searchItems.removeClass('form-search__items_showed');
 
     if (val !== '') {
       itemList.each((idx, elem) => {
@@ -70,18 +70,19 @@ class FormSearch {
       (element) => element.innerText === this.htmlItemList.$inputLabel.val(),
     );
 
-    this.$htmlElement.removeClass('form-search_status_valid form-search_status_invalid');
+    this.htmlItemList.$searchBtn.removeClass('form-search__search-btn_status_valid form-search__search-btn_status_invalid');
 
     if (findingElement) {
-      this.$htmlElement.addClass('form-search_status_valid');
+      this.htmlItemList.$searchBtn.addClass('form-search__search-btn_status_valid');
     } else {
-      this.$htmlElement.addClass('form-search_status_invalid');
+      this.htmlItemList.$searchBtn.addClass('form-search__search-btn_status_invalid');
+      this.htmlItemList.$errorNotify.show();
     }
   }
 
   selectFindedOption(e) {
     this.htmlItemList.$inputLabel.val($(e.target).text());
-    this.$htmlElement.removeClass('form-search_open');
+    this.htmlItemList.$searchItems.removeClass('form-search__items_showed');
   }
 
   bootstrap() {

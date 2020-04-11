@@ -43,7 +43,9 @@ class MessageForm {
 
     const checkResult = (el) => el.checked;
 
-    return checkedData.every(checkResult) ? this.userAlert('Форма успешно отправлена!') : this.userAlert('Ошибка при отправке формы, проверьте поля.');
+    return checkedData.every(checkResult)
+      ? this.userAlert('Форма успешно отправлена!')
+      : this.userAlert('Ошибка при отправке формы, проверьте поля.');
   }
 
   userAlert() {
@@ -52,13 +54,13 @@ class MessageForm {
 
   testLabel(label, regexp) {
     const $messageStatus = label.siblings('.js-message-form__field-status');
-    $messageStatus.removeClass('text-success text-error');
+    $messageStatus.removeClass('message-form__field-status_state_success message-form__field-status_state_error');
 
     if (regexp.test(label.val())) {
-      $messageStatus.addClass('text-success').text('Thanks!');
+      $messageStatus.addClass('message-form__field-status_state_success').text('Thanks!');
       return true;
     }
-    $messageStatus.addClass('text-error').text('Error');
+    $messageStatus.addClass('message-form__field-status_state_error').text('Error');
     return false;
   }
 }

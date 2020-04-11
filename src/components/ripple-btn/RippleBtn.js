@@ -15,7 +15,7 @@ class RippleBtn {
   startRipple(e) {
     const $this = $(this);
     const $offset = $this.parent().offset();
-    const $circle = $this.find('.js-ripple-circle');
+    const $circle = $this.find('.js-ripple-btn__ripple-circle');
 
     const x = e.pageX - $offset.left;
     const y = e.pageY - $offset.top;
@@ -25,11 +25,11 @@ class RippleBtn {
       left: `${x}px`,
     });
 
-    $this.addClass('is-active');
+    $this.addClass('ripple-btn__ripple-circle_active');
   }
 
   finishRipple() {
-    $(this).removeClass('is-active');
+    $(this).removeClass('ripple-btn__ripple-circle_active');
   }
 }
 

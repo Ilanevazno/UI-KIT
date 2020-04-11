@@ -89,10 +89,8 @@
     overflow: hidden;
     background: transparent;
   }
-}
 
-.js {
-  &-ripple-circle {
+  &__ripple-circle {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -103,7 +101,7 @@
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.25);
 
-    .ripple-btn__ripple-effect.is-active & {
+    &_active & {
       animation: a-ripple 0.4s ease-in;
     }
   }

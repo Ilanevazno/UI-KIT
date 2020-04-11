@@ -15,17 +15,17 @@
     top: 33%;
     border: 1px solid #4eb7a8;
     border-width: 0.4rem 0.4rem 0 0;
-  }
 
-  &_direction {
-    &_left > .arrow-button__inner {
-      left: 38%;
-      transform: rotate(-135deg);
-    }
+    &_direction {
+      &_left {
+        left: 38%;
+        transform: rotate(-135deg);
+      }
 
-    &_right > .arrow-button__inner {
-      left: 26%;
-      transform: rotate(45deg);
+      &_right {
+        left: 26%;
+        transform: rotate(45deg);
+      }
     }
   }
 
@@ -36,18 +36,18 @@
   &:hover {
     background-color: $mint-template;
     cursor: pointer;
-
-    & > .arrow-button__inner {
-      border-color: white;
-    }
   }
 
   &:disabled {
     background-color: $gray-template;
     border: 1px solid $gray-template;
+  }
 
-    & > .arrow-button__inner {
-      border-color: white;
-    }
+  &:hover > &__inner {
+    border-color: white;
+  }
+
+  &:disabled > &__inner {
+    border-color: white;
   }
 }

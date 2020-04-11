@@ -4,5 +4,5 @@ mixin arrow-button(data = {})
       direction = 'left',
       isDisabled = false,
     } = data;
-  button.arrow-button(class=`arrow-button_direction_${direction}` disabled= isDisabled)
-    .arrow-button__inner
+  button.arrow-button(disabled= isDisabled)
+    .arrow-button__inner(class=`arrow-button__inner_direction_${direction}`)
