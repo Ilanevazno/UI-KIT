@@ -1,24 +1,32 @@
 mixin ripple-btn(button = {})
   -
     let {
-      buttonType = 'submit',
       theme = 'orange',
       size = 'small',
       isResponsive = false,
       isReversedColor = false,
       text = 'text',
+      href = false,
+      local = false,
+      target = !!local ? '_blank' : false,
+      rel = !!local ? 'noopener noreferrer' : false,
+      tag = href ? 'a' : 'button',
     } = button;
 
     size = ` ripple-btn_size_${size}`;
     theme = ` ripple-btn_theme_${theme}`;
 
+    entityType = tag === 'button' ? 'button' : false;
     theme = isReversedColor ? `${theme}-reverse` : theme;
 
     let className = 'ripple-btn js-ripple-btn ' + theme + size;
     className += !!isResponsive ? ' ripple-btn_width_responsive' : '';
 
-
-  button(type= buttonType class= className)
+  #{tag}(
+    type= entityType
+    href= href
+    class= className
+  )
     .ripple-btn__ripple-effect.js-ripple-btn__ripple-effect
       span.ripple-btn__ripple-circle.js-ripple-btn__ripple-circle
     p.ripple-btn__text= text
