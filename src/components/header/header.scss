@@ -5,16 +5,16 @@
   align-items: center;
   padding: 1rem 2rem;
 
+  &__navigation {
+    display: flex;
+    align-items: center;
+  }
+
   &__logo {
     background-image: url('./img/logo.png');
     width: 12rem;
     height: 12rem;
     background-size: cover;
-  }
-
-  &__navigation {
-    display: flex;
-    align-items: center;
   }
 
   @include media-screen ($tablet) {

@@ -7,6 +7,15 @@
     margin: 3rem 0;
   }
 
+  &__sort {
+    width: 15%;
+    margin: 0 auto;
+
+    @include media-screen ($tablet) {
+      width: 80%;
+    }
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
@@ -16,15 +25,6 @@
 
     @include media-screen ($mobile) {
       width: 100%;
-    }
-  }
-
-  &__sort {
-    width: 15%;
-    margin: 0 auto;
-
-    @include media-screen ($tablet) {
-      width: 80%;
     }
   }
 

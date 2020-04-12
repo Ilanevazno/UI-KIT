@@ -1,28 +1,23 @@
-@mixin input-mixin($background-color: $gray-template, $color: #888888, $width: 100%, $height: 3.2rem){
-  width: $width;
-  height: $height;
-  padding-left: 5%;
-  box-sizing: border-box;
-  position: relative;
-  border: none;
-  outline: none;
-  background-color: $background-color;
-  border-radius: 4px;
-  color: $color;
-  font-family: 'Source Sans Pro', Arial, sans-serif;
-  font-size: 1.6rem;
-}
-
 .dropdown {
   position: relative;
   min-width: 20rem;
 
   &__area {
-    @include input-mixin;
+    width: 100%;
+    height: 3.2rem;
+    padding-left: 5%;
+    box-sizing: border-box;
+    position: relative;
+    border: none;
+    outline: none;
+    background-color: $gray-template;
+    border-radius: 4px;
+    color: #888888;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 1.6rem;
     cursor: pointer;
     display: flex;
     align-items: center;
-    position: relative;
 
     &-btn {
       position: absolute;

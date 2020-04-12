@@ -7,11 +7,11 @@ mixin video-player({ src })
     .video-player__controls
         .video-player__control-play.js-video-player__control-play
           button.video-player__control.video-player__control_type_play
-            span.video-player__figure
+            span.video-player__control-figure
               +svg-icon('play')
         .video-player__control-pause.js-video-player__control-pause
           button.video-player__control.video-player__control_type_pause
-            span.video-player__figure
+            span.video-player__control-figure
               +svg-icon('pause')
         .video-player__control-progress.js-video-player__control-progress
           progress.video-player__progress(max="100" value="0" onTimeUpdate="progressUpdate()")

@@ -16,16 +16,6 @@
     word-wrap: inherit;
   }
 
-  &__messenger {
-    opacity: 1;
-    display: none;
-
-    &_opened {
-      display: block;
-      animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    }
-  }
-
   &__request {
     &-avatar {
       width: 10rem;
@@ -44,11 +34,15 @@
     &-picture {
       width: 100%;
     }
+  }
 
-    &-help {
-      font-family: 'Source Sans Pro', Arial, sans-serif;
-      font-size: 2rem;
-      display: none;
+  &__messenger {
+    opacity: 1;
+    display: none;
+
+    &_opened {
+      display: block;
+      animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     }
   }
 }

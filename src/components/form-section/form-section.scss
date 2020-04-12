@@ -29,7 +29,7 @@
 
     @include media-screen ($mobile) {
       width: 100%;
-      margin: 0;
+      margin: 1rem 0;
     }
   }
 
@@ -56,12 +56,6 @@
     @include media-screen ($mobile) {
       width: 100%;
       margin: 0;
-    }
-  }
-
-  &__item {
-    @include media-screen ($mobile) {
-      margin: 1rem 0;
     }
   }
 }

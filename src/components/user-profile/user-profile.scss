@@ -3,30 +3,6 @@
   display: flex;
   justify-content: flex-end;
 
-  &:hover &__info-social-icon {
-    fill: darken($gray-template, 45%);
-
-    &:hover {
-      fill: $orange-template;
-    }
-  }
-
-  &:hover &__info {
-    background-color: $gray-template;
-
-    &:before {
-      display: none;
-    }
-
-    &-name {
-      color: $orange-template;
-    }
-
-    &-job {
-      color: darken($gray-template, 45%);
-    }
-  }
-
   &__picture {
     height: 11rem;
     width: 11rem;
@@ -103,12 +79,6 @@
       margin-top: 1.2rem;
       flex-wrap: wrap;
 
-      &-icon {
-        height: 2.5rem;
-        width: 4.7rem;
-        fill: white;
-      }
-
       &-link {
         display: flex;
         justify-content: space-between;
@@ -118,6 +88,36 @@
           cursor: pointer;
         }
       }
+
+      &-icon {
+        height: 2.5rem;
+        width: 4.7rem;
+        fill: white;
+      }
+    }
+  }
+
+  &:hover &__info {
+    background-color: $gray-template;
+
+    &:before {
+      display: none;
+    }
+
+    &-name {
+      color: $orange-template;
+    }
+
+    &-job {
+      color: darken($gray-template, 45%);
+    }
+  }
+
+  &:hover &__info-social-icon {
+    fill: darken($gray-template, 45%);
+
+    &:hover {
+      fill: $orange-template;
     }
   }
 }

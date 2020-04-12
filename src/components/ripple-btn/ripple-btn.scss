@@ -79,11 +79,6 @@
     }
   }
 
-  &__text {
-    margin: 0;
-    padding: 0;
-  }
-
   &__ripple-effect {
     position: absolute;
     top: 0;
@@ -108,5 +103,10 @@
     &_active & {
       animation: a-ripple 0.4s ease-in;
     }
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0;
   }
 }
