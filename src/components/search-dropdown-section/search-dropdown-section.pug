@@ -5,9 +5,9 @@ mixin search-dropdown-section (title = '')
   section.search-dropdown-section
     h2.search-dropdown-section__title= title
     .search-dropdown-section__container
-      .search-dropdown-section__item
+      form.search-dropdown-section__item
         +form-search({ searchList: [ 'Даже', 'какие-то', 'элементы', 'поиска', ] })
-      .search-dropdown-section__item
+      form.search-dropdown-section__item
         +form-search()
       .search-dropdown-section__item
         +dropdown({
