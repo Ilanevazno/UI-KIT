@@ -16,7 +16,7 @@ mixin ripple-btn(button = {})
     size = ` ripple-btn_size_${size}`;
     theme = ` ripple-btn_theme_${theme}`;
 
-    entityType = tag === 'button' ? 'button' : false;
+    entityType = tag === 'button' ? 'submit' : false;
     theme = isReversedColor ? `${theme}-reverse` : theme;
 
     let className = 'ripple-btn js-ripple-btn ' + theme + size;
