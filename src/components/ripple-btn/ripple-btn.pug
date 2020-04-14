@@ -8,16 +8,17 @@ mixin ripple-btn(button = {})
       text = 'text',
       href = false,
       local = false,
-      target = !!local ? '_blank' : false,
-      rel = !!local ? 'noopener noreferrer' : false,
-      tag = href ? 'a' : 'button',
     } = button;
 
     size = ` ripple-btn_size_${size}`;
     theme = ` ripple-btn_theme_${theme}`;
-
-    entityType = tag === 'button' ? 'submit' : false;
     theme = isReversedColor ? `${theme}-reverse` : theme;
+
+    target = !!local ? '_blank' : false,
+    rel = !!local ? 'noopener noreferrer' : false,
+
+    tag = href ? 'a' : 'button',
+    entityType = tag === 'button' ? 'submit' : false;
 
     let className = 'ripple-btn js-ripple-btn ' + theme + size;
     className += !!isResponsive ? ' ripple-btn_width_responsive' : '';
