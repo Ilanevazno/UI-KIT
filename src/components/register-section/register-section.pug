@@ -10,14 +10,17 @@ mixin register-section(data = {})
         {
           placeholder: 'Придумайте логин',
           fieldName: 'user-login',
+          labelType: 'text',
         },
         {
           placeholder: 'Придумайте пароль',
           fieldName: 'user-password',
+          labelType: 'password',
         },
         {
           placeholder: 'Повторите пароль',
           fieldName: 'repeat-password',
+          labelType: 'password',
         },
       ],
     } = data;
@@ -27,6 +30,6 @@ mixin register-section(data = {})
       - for (let i = 0; i < requiredFields.length; i++)
         .register-section__form-item
           h2.register-section__item-title= requiredFields[i].placeholder
-          +input-label({ name: requiredFields[i].fieldName, labelType: 'text' })
+          +input-label({ name: requiredFields[i].fieldName, labelType: requiredFields[i].labelType })
       +stages({ maxStep: 3, currentStep: 1 })
       +ripple-btn({ theme: 'mint', size: 'large', text: finishBtnText })
