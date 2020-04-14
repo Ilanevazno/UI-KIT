@@ -68,6 +68,10 @@
     background-size: 2rem;
     background-image: url('./img/search-loupe.png');
 
+    &:focus {
+      filter: brightness(0.9);
+    }
+
     &_status {
       &_valid {
         background-color: $mint-template;
@@ -77,10 +81,6 @@
       &_invalid {
         display: inline-flex;
       }
-    }
-
-    &:focus {
-      filter: brightness(0.9);
     }
   }
 

@@ -8,27 +8,6 @@
   transition: 0.1s ease-in-out all;
   outline: none;
 
-  &__inner {
-    height: 2rem;
-    width: 2rem;
-    position: absolute;
-    top: 33%;
-    border: 1px solid #4eb7a8;
-    border-width: 0.4rem 0.4rem 0 0;
-
-    &_direction {
-      &_left {
-        left: 38%;
-        transform: rotate(-135deg);
-      }
-
-      &_right {
-        left: 26%;
-        transform: rotate(45deg);
-      }
-    }
-  }
-
   &:active:not(:disabled) {
     transform: scale(0.9);
   }
@@ -49,5 +28,26 @@
 
   &:disabled > &__inner {
     border-color: white;
+  }
+
+  &__inner {
+    height: 2rem;
+    width: 2rem;
+    position: absolute;
+    top: 33%;
+    border: 1px solid #4eb7a8;
+    border-width: 0.4rem 0.4rem 0 0;
+
+    &_direction {
+      &_left {
+        left: 38%;
+        transform: rotate(-135deg);
+      }
+
+      &_right {
+        left: 26%;
+        transform: rotate(45deg);
+      }
+    }
   }
 }

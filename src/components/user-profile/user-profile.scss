@@ -3,6 +3,30 @@
   display: flex;
   justify-content: flex-end;
 
+  &:hover &__info {
+    background-color: $gray-template;
+
+    &:before {
+      display: none;
+    }
+
+    &-name {
+      color: $orange-template;
+    }
+
+    &-job {
+      color: darken($gray-template, 45%);
+    }
+  }
+
+  &:hover &__info-social-icon {
+    fill: darken($gray-template, 45%);
+
+    &:hover {
+      fill: $orange-template;
+    }
+  }
+
   &__picture {
     height: 11rem;
     width: 11rem;
@@ -94,30 +118,6 @@
         width: 4.7rem;
         fill: white;
       }
-    }
-  }
-
-  &:hover &__info {
-    background-color: $gray-template;
-
-    &:before {
-      display: none;
-    }
-
-    &-name {
-      color: $orange-template;
-    }
-
-    &-job {
-      color: darken($gray-template, 45%);
-    }
-  }
-
-  &:hover &__info-social-icon {
-    fill: darken($gray-template, 45%);
-
-    &:hover {
-      fill: $orange-template;
     }
   }
 }
