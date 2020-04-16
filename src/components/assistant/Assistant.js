@@ -5,21 +5,21 @@ class Assistant {
     this.$modalBody = this.$htmlContainer.find('.assistant__messenger');
   }
 
-  openMessenger() {
+  bindActions() {
+    this.$htmlContainer.on('click.assistant', this.handleAssistantClick.bind(this));
+    $(document).on('click.document', this.handleDocumentClick.bind(this));
+  }
+
+  handleAssistantClick() {
     this.$startIcon.hide();
     this.$modalBody.addClass('assistant__messenger_opened');
   }
 
-  hideMessenger(event) {
+  handleDocumentClick(event) {
     if (!this.$htmlContainer.find($(event.target)).length) {
       this.$startIcon.fadeIn();
       this.$modalBody.removeClass('assistant__messenger_opened');
     }
-  }
-
-  bindActions() {
-    this.$htmlContainer.on('click.openMessenger', this.openMessenger.bind(this));
-    $(document).on('click.hideMessenger', this.hideMessenger.bind(this));
   }
 
   bootstrap() {

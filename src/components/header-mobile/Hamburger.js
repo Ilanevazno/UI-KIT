@@ -5,17 +5,17 @@ class Hamburger {
   }
 
   bindActions() {
-    $(document).on('click.closeHamburger', this.closeMenu.bind(this));
-    this.$hamburgerBtn.on('click.toggleHamburger', this.toggleState.bind(this));
+    $(document).on('click.hamburgerMenu', this.handleDocumentClick.bind(this));
+    this.$hamburgerBtn.on('click.hamburgerBtn', this.handleButtonClick.bind(this));
   }
 
-  toggleState() {
+  handleButtonClick() {
     setTimeout(() => {
       this.$hamburgerMenu.toggleClass('header-mobile__menu_opened');
     }, 0);
   }
 
-  closeMenu(event) {
+  handleDocumentClick(event) {
     if (event.target.className !== 'header__links-list') {
       this.$hamburgerMenu.removeClass('header-mobile__menu_opened');
     }

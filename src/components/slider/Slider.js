@@ -15,10 +15,10 @@ class Slider {
   }
 
   bindActions() {
-    $(window).on('resize.resizeScreen', this.adaptiveSlider.bind(this));
+    $(window).on('resize.window', this.handleWindowResize.bind(this));
   }
 
-  adaptiveSlider() {
+  handleWindowResize() {
     const innerContainer = this.$htmlContainer.next('.slider-container');
     if (window.innerWidth < this.maxWidth + 50) {
       this.$htmlContainer.css('width', `${this.minWidth}px`);

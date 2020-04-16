@@ -36,7 +36,7 @@ class Calendar {
   }
 
   bindActions() {
-    $(document).on('DOMContentLoaded', this.prepareCalendar.bind(this));
+    $(document).on('DOMContentLoaded.document', this.handleDocumentDomContentLoaded.bind(this));
   }
 
   bootstrap() {
@@ -44,7 +44,7 @@ class Calendar {
     this.bindActions();
   }
 
-  prepareCalendar() {
+  handleDocumentDomContentLoaded() {
     // get current day
     const $selectedDay = this.$htmlContainer.find(('.datepicker--cell-day.-current-'));
 

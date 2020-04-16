@@ -11,19 +11,35 @@ class VideoPlayer {
   }
 
   bindActions() {
-    $.merge(this.controls.$buttonPlay, this.controls.$buttonPause).on('click.videoStateToggler', this.toggleVideoState.bind(this));
-    this.$videoScreen.on('timeupdate.videoPlayer', () => { this.runningProgressBar(this.$videoScreen[0].currentTime, this.$videoScreen[0].duration); });
-    this.controls.$buttonFullScreen.on('click.videoFullScreen', this.requestFullScreen.bind(this));
-    this.$videoProgress.on('click.videoProgress', this.setVideoState.bind(this));
+    this.controls.$buttonPlay.on('click.controlPlay', this.handleControlPlayClick.bind(this));
+    this.controls.$buttonPause.on('click.controlPause', this.handleControlPauseClick.bind(this));
+    this.$videoScreen.on('timeupdate.screen', this.handleScreenClick.bind(this));
+    this.controls.$buttonFullScreen.on('click.controlFullscreen', this.handleControlFullscreenClick.bind(this));
+    this.$videoProgress.on('click.controlProgress', this.handleControlProgressClick.bind(this));
+  }
+
+  handleControlPlayClick() {
+    this.toggleVideoState();
+  }
+
+  handleControlPauseClick() {
+    this.toggleVideoState();
+  }
+
+  handleControlProgressClick(e) {
+    this.setVideoState(e);
+  }
+
+  handleControlFullscreenClick() {
+    this.$videoScreen[0].requestFullscreen();
+  }
+
+  handleScreenClick() {
+    this.runningProgressBar(this.$videoScreen[0].currentTime, this.$videoScreen[0].duration);
   }
 
   setCurrentTime(time) {
     this.$videoScreen[0].currentTime = time;
-  }
-
-  bootstrap() {
-    this.bindActions();
-    this.controls.$buttonPause.hide();
   }
 
   toggleVideoState() {
@@ -53,8 +69,9 @@ class VideoPlayer {
     this.$videoScreen[0].play();
   }
 
-  requestFullScreen() {
-    this.$videoScreen[0].requestFullscreen();
+  bootstrap() {
+    this.bindActions();
+    this.controls.$buttonPause.hide();
   }
 }
 

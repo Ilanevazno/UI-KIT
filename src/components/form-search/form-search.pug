@@ -6,12 +6,12 @@ mixin form-search(data = {})
       errorMessage = 'I’ve not found what I’m looking for...',
     } = data;
   section.form-search.js-form-search
-    .form-search__find-str
-      .form-search__str-wrapper
-        input.form-search__str.js-form-search__str(type="text" placeholder= placeholder)
+    .form-search__find-line
+      .form-search__line-wrapper
+        input.form-search__input-text-area.js-form-search__input-text-area(type="text" placeholder= placeholder)
         label.form-search__status.js-form-search__status= errorMessage
       input.form-search__search-btn.js-form-search__search-btn(type="button")
     .form-search__options
-      ul.form-search__items.js-form-search__items
+      ul.form-search__item-list.js-form-search__item-list
           each item in searchList
-            li.form-search__items-option(tabindex="0")= item
+            li.form-search__item-list-option.js-form-search__item-list-option(tabindex="0")= item

@@ -8,27 +8,27 @@ class Location {
   constructor(mapContainer) {
     this.$htmlContainer = $(mapContainer);
     this.coords = JSON.parse(this.$htmlContainer.attr('data-coords'));
-    this.mymap = L.map(mapContainer).setView(this.coords, 13);
+    this.mapEntity = L.map(mapContainer).setView(this.coords, 13);
+    this.$mapContainer = $(this.mapEntity._container);
+    this.$currentPositionBtn = this.$mapContainer.find('.js-location__overlay-btn-set-address');
+    this.$findMarkerBtn = this.$mapContainer.find('.js-location__overlay-btn-find-marker');
     this.mapIcon = require('./img/marker-icon.png');
   }
 
   bindActions() {
-    const $mapContainer = $(this.mymap._container);
-    const $showCurrentPosition = $mapContainer.find('.js-location__overlay-btn-set-address');
-    const $findMarker = $mapContainer.find('.js-location__overlay-btn-find-marker');
-    $showCurrentPosition.on('click.setLocationPosition', this.setNewAddress.bind(this));
-    $findMarker.on('click.findLocationMarker', this.showCurrentPosition.bind(this));
+    this.$currentPositionBtn.on('click.overlayBtnSetAddress', this.handleOverlayBtnSetAddressClick.bind(this));
+    this.$findMarkerBtn.on('click.overlayBtnBindMarker', this.handleOverlayBtnBindMarkerClick.bind(this));
   }
 
-  showCurrentPosition() {
-    this.mymap.panTo(this.coords);
+  handleOverlayBtnBindMarkerClick() {
+    this.mapEntity.panTo(this.coords);
   }
 
-  setNewAddress() {
+  handleOverlayBtnSetAddressClick() {
     const requestLatitude = prompt('Введите долготу');
     const requestLongitude = prompt('Введите ширину');
     if (requestLatitude && requestLongitude) {
-      this.mymap.setView([requestLatitude, requestLongitude], 13);
+      this.mapEntity.setView([requestLatitude, requestLongitude], 13);
       const placeMark = L.icon({
         iconUrl: this.mapIcon,
         iconSize: [40, 56],
@@ -38,7 +38,7 @@ class Location {
         shadowSize: [68, 95],
         shadowAnchor: [22, 94],
       });
-      L.marker([requestLatitude, requestLongitude], { icon: placeMark }).addTo(this.mymap);
+      L.marker([requestLatitude, requestLongitude], { icon: placeMark }).addTo(this.mapEntity);
     }
   }
 
@@ -49,7 +49,7 @@ class Location {
       tileSize: 512,
       zoomOffset: -1,
       accessToken: 'pk.eyJ1IjoiaWxhbmV2YXpubzExIiwiYSI6ImNrNndsbGR6ZjBkMWUzaG1vZHp0dWZmNGoifQ.hdk2ziw77v-cKLyCc4ghoA',
-    }).addTo(this.mymap);
+    }).addTo(this.mapEntity);
 
 
     const placeMark = L.icon({
@@ -61,7 +61,7 @@ class Location {
       shadowSize: [68, 95],
       shadowAnchor: [22, 94],
     });
-    L.marker(this.coords, { icon: placeMark }).addTo(this.mymap);
+    L.marker(this.coords, { icon: placeMark }).addTo(this.mapEntity);
   }
 
   bootstrap() {

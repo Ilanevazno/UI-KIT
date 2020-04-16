@@ -4,15 +4,15 @@ class RippleBtn {
   }
 
   bindActions() {
-    this.$rippleHtmlButton.on('click.ui.ripple', this.startRipple);
-    this.$rippleHtmlButton.on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', this.finishRipple);
+    this.$rippleHtmlButton.on('click.rippleEffect', this.handleRippleEffectClick);
+    this.$rippleHtmlButton.on('animationEnd webkitAnimationEnd OAnimationEnd MSAnimationEnd', this.handleRippleEffectAnimationEnd);
   }
 
   bootstrap() {
     this.bindActions();
   }
 
-  startRipple(e) {
+  handleRippleEffectClick(e) {
     const $this = $(this);
     const $offset = $this.parent().offset();
     const $circle = $this.find('.js-ripple-btn__ripple-circle');
@@ -28,7 +28,7 @@ class RippleBtn {
     $this.addClass('ripple-btn__ripple-circle_active');
   }
 
-  finishRipple() {
+  handleRippleEffectAnimationEnd() {
     $(this).removeClass('ripple-btn__ripple-circle_active');
   }
 }

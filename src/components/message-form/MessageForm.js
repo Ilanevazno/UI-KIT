@@ -3,18 +3,17 @@ class MessageForm {
     this.$htmlContainer = $(selector);
     this.$userNameLabel = this.$htmlContainer.find('.js-message-form__field').eq(0);
     this.$userEmailLabel = this.$htmlContainer.find('.js-message-form__field').eq(1);
-    this.logOn = false;
   }
 
   bindActions() {
-    this.$htmlContainer.on('submit.submitFormWidget', this.submitForm.bind(this));
+    this.$htmlContainer.on('submit.messageForm', this.handleMessageFormSubmit.bind(this));
   }
 
   bootstrap() {
     this.bindActions();
   }
 
-  submitForm(e) {
+  handleMessageFormSubmit(e) {
     e.preventDefault();
 
     const data = [

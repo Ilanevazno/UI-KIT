@@ -1,23 +1,24 @@
 class Dropdown {
   constructor(selector) {
     this.$htmlContainer = $(selector);
-    this.$htmlTextArea = this.$htmlContainer.find('.js-dropdown__area');
+    this.$textArea = this.$htmlContainer.find('.js-dropdown__area');
     this.$htmlInnerTextArea = this.$htmlContainer.find('.js-dropdown__area-text');
-    this.$menu = this.$htmlContainer.find('.js-dropdown__label');
+    this.$optionsContainer = this.$htmlContainer.find('.js-dropdown__label');
+    this.$optionsContainerItem = this.$htmlContainer.find('.js-dropdown__label-item');
     this.currentState = null;
   }
 
   bindActions() {
-    this.$htmlContainer.find('.js-dropdown__area').on('click.dropdown-textarea keypress', this.toggleMenuState.bind(this));
-    this.$htmlContainer.find('.js-dropdown__label-item').on('click.dropdown-label', this.chooseMenuItem.bind(this));
-    $(document).on('click.closeDropdown', this.closeMenu.bind(this));
+    this.$textArea.on('click.area', this.handleAreaClick.bind(this));
+    this.$optionsContainerItem.on('click.labelItem', this.handleLabelItemClick.bind(this));
+    $(document).on('click.dropdown', this.handleDocumentClick.bind(this));
   }
 
-  closeMenu(e) {
-    const $catchedTarget = $(e.target);
+  handleDocumentClick(e) {
+    const $caughtTarget = $(e.target);
 
     const checkTarget = () => {
-      if (this.$menu.is('.dropdown__label_open') && (this.$htmlContainer.find($catchedTarget).length === 0)) {
+      if (this.$optionsContainer.is('.dropdown__label_open') && (this.$htmlContainer.find($caughtTarget).length === 0)) {
         return true;
       }
       return false;
@@ -26,19 +27,19 @@ class Dropdown {
     const canClose = checkTarget();
 
     if (canClose) {
-      this.$menu.toggleClass('dropdown__label_open');
+      this.$optionsContainer.toggleClass('dropdown__label_open');
     }
   }
 
-  toggleMenuState() {
-    this.$menu.toggleClass('dropdown__label_open');
+  handleAreaClick() {
+    this.$optionsContainer.toggleClass('dropdown__label_open');
   }
 
-  chooseMenuItem(event) {
+  handleLabelItemClick(event) {
     const targetText = $(event.target).html();
     this.$htmlInnerTextArea.text(targetText);
     this.currentState = targetText;
-    this.toggleMenuState();
+    this.$optionsContainer.toggleClass('dropdown__label_open');
   }
 
   getCurrentState() {
