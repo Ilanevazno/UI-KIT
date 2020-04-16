@@ -1,2 +1,20 @@
-mixin slider()
-  section.slider.js-slider
+mixin slider(attr = {})
+  -
+    const {
+      min = 0,
+      max = 100,
+      theme = 'theme-orange',
+      step = 1,
+      scale = [],
+      format = '%s',
+      width = 360,
+    } = attr;
+  section.slider.js-slider(
+    data-min = min
+    data-max = max
+    data-theme = theme
+    data-step = step
+    data-scale = scale
+    data-format = format
+    data-width = width
+  )

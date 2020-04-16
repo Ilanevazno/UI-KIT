@@ -17,7 +17,6 @@
     &-item {
       flex: 1;
       display: flex;
-      justify-content: space-between;
       justify-content: space-around;
 
       @include media-screen ($mobile) {

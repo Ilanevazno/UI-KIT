@@ -2,9 +2,18 @@ import '../../vendor/jRange/jRange-min';
 import '../../vendor/jRange/jRange.css';
 
 class Slider {
-  constructor(selector, settings) {
+  constructor(selector) {
     this.$htmlContainer = $(selector);
-    this.settings = settings;
+    this.settings = {
+      from: JSON.parse(this.$htmlContainer.attr('data-min')),
+      to: JSON.parse(this.$htmlContainer.attr('data-max')),
+      theme: this.$htmlContainer.attr('data-theme'),
+      step: JSON.parse(this.$htmlContainer.attr('data-step')),
+      scale: JSON.parse(this.$htmlContainer.attr('data-scale')),
+      format: this.$htmlContainer.attr('data-format'),
+      width: JSON.parse(this.$htmlContainer.attr('data-width')),
+      snap: true,
+    };
     this.maxWidth = 360;
     this.minWidth = 260;
   }

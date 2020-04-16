@@ -10,7 +10,8 @@
   background: $background;
   border: 1px solid $border;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: $color;
     color: $background;
   }

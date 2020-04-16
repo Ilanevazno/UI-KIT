@@ -12,18 +12,20 @@
     transform: scale(0.9);
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $mint-template;
     cursor: pointer;
+  }
+
+  &:hover,
+  &:focus > &__inner {
+    border-color: white;
   }
 
   &:disabled {
     background-color: $gray-template;
     border: 1px solid $gray-template;
-  }
-
-  &:hover > &__inner {
-    border-color: white;
   }
 
   &:disabled > &__inner {
