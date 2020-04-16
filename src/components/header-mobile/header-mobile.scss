@@ -2,7 +2,7 @@
   background: $mint-template;
   display: none;
 
-  &__button {
+  &__hamburger-button {
     display: flex;
     height: 100%;
     width: 5rem;
@@ -13,14 +13,13 @@
     transition: 0.3s ease-in-out all;
   }
 
-  &__menu {
+  &__hamburger-menu {
     background: $mint-template;
     position: fixed;
     height: 100vh;
     top: 0;
     width: 40%;
     padding: 5%;
-    box-sizing: border-box;
     transition: 0.3s ease-in-out all;
     transform: translateX(-100%);
     box-shadow: -9px 4px 20px 0px rgb(0, 0, 0);

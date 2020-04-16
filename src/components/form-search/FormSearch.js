@@ -2,7 +2,7 @@ class FormSearch {
   constructor(element) {
     this.$htmlElement = $(document).find(element);
     this.htmlItemList = {
-      $searchItems: this.$htmlElement.find('.js-form-search__item-list'),
+      $searchItemList: this.$htmlElement.find('.js-form-search__item-list'),
       $searchListOptions: this.$htmlElement.find('.js-form-search__item-list-option'),
       $searchBtn: this.$htmlElement.find('.js-form-search__search-btn'),
       $inputLabel: this.$htmlElement.find('.js-form-search__input-text-area'),
@@ -32,7 +32,7 @@ class FormSearch {
     const $catchedTarget = $(e.target);
 
     const checkTarget = () => {
-      if (this.htmlItemList.$searchItems.is('.form-search__item-list_showed') && (this.$htmlElement.find($catchedTarget).length === 0)) {
+      if (this.htmlItemList.$searchItemList.is('.form-search__item-list_showed') && (this.$htmlElement.find($catchedTarget).length === 0)) {
         return true;
       }
       return false;
@@ -41,12 +41,12 @@ class FormSearch {
     const isCanClose = checkTarget();
 
     if (isCanClose) {
-      this.htmlItemList.$searchItems.removeClass('form-search__item-list_showed');
+      this.htmlItemList.$searchItemList.removeClass('form-search__item-list_showed');
     }
   }
 
   prepareLine() {
-    this.htmlItemList.$searchItems.toggleClass('form-search__item-list_showed');
+    this.htmlItemList.$searchItemList.toggleClass('form-search__item-list_showed');
     this.htmlItemList.$searchBtn.removeClass('form-search__search-btn_status_invalid');
     this.htmlItemList.$errorNotify.hide();
     this.openMM = true;
@@ -54,8 +54,8 @@ class FormSearch {
 
   handleInputTextAreaInput(e) {
     const val = e.target.value.trim();
-    const itemList = this.htmlItemList.$searchItems.find('li');
-    this.htmlItemList.$searchItems.removeClass('form-search__item-list_showed');
+    const itemList = this.htmlItemList.$searchItemList.find('li');
+    this.htmlItemList.$searchItemList.removeClass('form-search__item-list_showed');
 
     if (val !== '') {
       itemList.each((idx, elem) => {
@@ -73,7 +73,7 @@ class FormSearch {
   }
 
   handleSearchBtnClick() {
-    const itemList = this.htmlItemList.$searchItems.find('li');
+    const itemList = this.htmlItemList.$searchItemList.find('li');
 
     const findingElement = [...itemList].some(
       (element) => element.innerText === this.htmlItemList.$inputLabel.val(),
@@ -91,7 +91,7 @@ class FormSearch {
 
   handleItemListOptionClick(e) {
     this.htmlItemList.$inputLabel.val($(e.target).text());
-    this.htmlItemList.$searchItems.removeClass('form-search__item-list_showed');
+    this.htmlItemList.$searchItemList.removeClass('form-search__item-list_showed');
   }
 
   bootstrap() {

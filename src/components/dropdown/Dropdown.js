@@ -1,15 +1,15 @@
 class Dropdown {
   constructor(selector) {
     this.$htmlContainer = $(selector);
-    this.$textArea = this.$htmlContainer.find('.js-dropdown__area');
-    this.$htmlInnerTextArea = this.$htmlContainer.find('.js-dropdown__area-text');
+    this.$textArea = this.$htmlContainer.find('.js-dropdown__selected-option-area');
+    this.$htmlInnerTextArea = this.$htmlContainer.find('.js-dropdown__selected-option-area-text');
     this.$optionsContainer = this.$htmlContainer.find('.js-dropdown__label');
     this.$optionsContainerItem = this.$htmlContainer.find('.js-dropdown__label-item');
     this.currentState = null;
   }
 
   bindActions() {
-    this.$textArea.on('click.area', this.handleAreaClick.bind(this));
+    this.$textArea.on('click.optionsArea', this.handleSelectedOptionAreaClick.bind(this));
     this.$optionsContainerItem.on('click.labelItem', this.handleLabelItemClick.bind(this));
     $(document).on('click.dropdown', this.handleDocumentClick.bind(this));
   }
@@ -31,7 +31,7 @@ class Dropdown {
     }
   }
 
-  handleAreaClick() {
+  handleSelectedOptionAreaClick() {
     this.$optionsContainer.toggleClass('dropdown__label_open');
   }
 

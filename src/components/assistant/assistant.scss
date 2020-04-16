@@ -2,37 +2,18 @@
   position: fixed;
   bottom: 10vh;
   right: 5vh;
-  display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
   z-index: 500;
-
-  &__start {
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
-    border-radius: 2rem 2rem;
-    padding-left: 6%;
-    word-wrap: inherit;
-  }
 
   &__request {
     &-avatar {
-      width: 10rem;
       height: 10rem;
       border-radius: 50%;
-      overflow: hidden;
-      margin-left: 2rem;
       cursor: pointer;
       transition: 0.3s ease-in-out all;
 
       &:hover {
         transform: scale(1.1);
       }
-    }
-
-    &-picture {
-      width: 100%;
     }
   }
 

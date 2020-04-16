@@ -1,16 +1,16 @@
 class Assistant {
   constructor(selector) {
     this.$htmlContainer = $(selector);
-    this.$startIcon = this.$htmlContainer.find('.assistant__start');
-    this.$modalBody = this.$htmlContainer.find('.assistant__messenger');
+    this.$startIcon = this.$htmlContainer.find('.js-assistant__open-popup-button');
+    this.$modalBody = this.$htmlContainer.find('.js-assistant__messenger');
   }
 
   bindActions() {
-    this.$htmlContainer.on('click.assistant', this.handleAssistantClick.bind(this));
+    this.$htmlContainer.on('click.assistant', this.handleOpenPopupButtonClick.bind(this));
     $(document).on('click.document', this.handleDocumentClick.bind(this));
   }
 
-  handleAssistantClick() {
+  handleOpenPopupButtonClick() {
     this.$startIcon.hide();
     this.$modalBody.addClass('assistant__messenger_opened');
   }

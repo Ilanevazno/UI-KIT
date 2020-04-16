@@ -4,17 +4,17 @@ class VideoPlayer {
     this.$videoScreen = this.$videoContainer.find('.js-video-player__screen');
     this.$videoProgress = this.$videoContainer.find('.js-video-player__control-progress');
     this.controls = {
-      $buttonPlay: this.$videoContainer.find('.js-video-player__control-play'),
-      $buttonPause: this.$videoContainer.find('.js-video-player__control-pause'),
-      $buttonFullScreen: this.$videoContainer.find('.js-video-player__control-fullscreen'),
+      $play: this.$videoContainer.find('.js-video-player__control-play'),
+      $pause: this.$videoContainer.find('.js-video-player__control-pause'),
+      $fullScreen: this.$videoContainer.find('.js-video-player__control-fullscreen'),
     };
   }
 
   bindActions() {
-    this.controls.$buttonPlay.on('click.controlPlay', this.handleControlPlayClick.bind(this));
-    this.controls.$buttonPause.on('click.controlPause', this.handleControlPauseClick.bind(this));
+    this.controls.$play.on('click.controlPlay', this.handleControlPlayClick.bind(this));
+    this.controls.$pause.on('click.controlPause', this.handleControlPauseClick.bind(this));
+    this.controls.$fullScreen.on('click.controlFullscreen', this.handleControlFullscreenClick.bind(this));
     this.$videoScreen.on('timeupdate.screen', this.handleScreenClick.bind(this));
-    this.controls.$buttonFullScreen.on('click.controlFullscreen', this.handleControlFullscreenClick.bind(this));
     this.$videoProgress.on('click.controlProgress', this.handleControlProgressClick.bind(this));
   }
 
@@ -45,12 +45,12 @@ class VideoPlayer {
   toggleVideoState() {
     if (this.$videoScreen[0].paused) {
       this.$videoScreen[0].play();
-      this.controls.$buttonPlay.hide();
-      this.controls.$buttonPause.show();
+      this.controls.$play.hide();
+      this.controls.$pause.show();
     } else {
       this.$videoScreen[0].pause();
-      this.controls.$buttonPlay.show();
-      this.controls.$buttonPause.hide();
+      this.controls.$play.show();
+      this.controls.$pause.hide();
     }
   }
 
@@ -71,7 +71,7 @@ class VideoPlayer {
 
   bootstrap() {
     this.bindActions();
-    this.controls.$buttonPause.hide();
+    this.controls.$pause.hide();
   }
 }
 

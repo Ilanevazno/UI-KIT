@@ -9,8 +9,7 @@ mixin assistant(data = {})
       helperName = 'Elena',
     } = data;
   section.assistant.js-assistant
-    .assistant__start
-      .assistant__request-avatar
-        img.assistant__request-picture(src= avatar, alt="assistant-avatar")
-    .assistant__messenger
+    .assistant__open-popup-button.js-assistant__open-popup-button
+      img.assistant__request-avatar(src= avatar, alt="assistant-avatar")
+    .assistant__messenger.js-assistant__messenger
       +messaging({ userName: helperName, placeholder: placeholder })

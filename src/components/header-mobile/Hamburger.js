@@ -1,23 +1,23 @@
 class Hamburger {
   constructor(selector) {
-    this.$hamburgerMenu = $(selector).find('.js-header-mobile__menu');
-    this.$hamburgerBtn = this.$hamburgerMenu.prev('.js-header-mobile__button');
+    this.$mobileMenu = $(selector).find('.js-header-mobile__hamburger-menu');
+    this.$mobileMenuButton = this.$mobileMenu.prev('.js-header-mobile__hamburger-button');
   }
 
   bindActions() {
-    $(document).on('click.hamburgerMenu', this.handleDocumentClick.bind(this));
-    this.$hamburgerBtn.on('click.hamburgerBtn', this.handleButtonClick.bind(this));
+    $(document).on('click.mobileMenu', this.handleDocumentClick.bind(this));
+    this.$mobileMenuButton.on('click.mobileMenuButton', this.handleHamburgerButtonClick.bind(this));
   }
 
-  handleButtonClick() {
+  handleHamburgerButtonClick() {
     setTimeout(() => {
-      this.$hamburgerMenu.toggleClass('header-mobile__menu_opened');
+      this.$mobileMenu.toggleClass('header-mobile__menu_opened');
     }, 0);
   }
 
   handleDocumentClick(event) {
     if (event.target.className !== 'header__links-list') {
-      this.$hamburgerMenu.removeClass('header-mobile__menu_opened');
+      this.$mobileMenu.removeClass('header-mobile__menu_opened');
     }
   }
 
