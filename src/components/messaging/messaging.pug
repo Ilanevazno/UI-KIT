@@ -3,14 +3,14 @@ include ../ripple-btn/ripple-btn
 mixin messaging(data = {})
   -
     const {
-      picture = require('../../assets/images/sarah-brown.jpg'),
+      picture = 'sarah-brown.jpg',
       userName = 'user',
       placeholder = 'hello there',
     } = data;
   .messaging
     div.messaging__header
       p.messaging__interlocutor-name= userName
-      .messaging__interlocutor-picture(style=`background-image: url(${picture})`)
+      .messaging__interlocutor-picture(style=`background-image: url(${require(`../../assets/images/${picture}`)})`)
     .messaging__body
       .messaging__wrap
         .messaging__interlocutor-area

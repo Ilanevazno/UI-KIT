@@ -5,11 +5,10 @@ mixin assistant(data = {})
     const {
       placeholder = 'Здравствуйте, чем я могу вам помочь?',
       avatarName = 'sarah-brown.jpg',
-      avatar = require(`../../assets/images/${avatarName}`),
       helperName = 'Elena',
     } = data;
   section.assistant.js-assistant
     .assistant__open-popup-button.js-assistant__open-popup-button
-      img.assistant__request-avatar(src= avatar, alt="assistant-avatar")
+      img.assistant__request-avatar(src= require(`../../assets/images/${avatarName}`), alt="assistant-avatar")
     .assistant__messenger.js-assistant__messenger
       +messaging({ userName: helperName, placeholder: placeholder })

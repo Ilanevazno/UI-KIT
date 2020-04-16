@@ -4,7 +4,6 @@ mixin widget-events(event = {})
   -
     const {
       picture = 'gray-bg.jpg',
-      parsedPicture = require(`../../components/widget-events/img/${picture}`),
       date = {
         day: '0',
         month: 'mon',
@@ -13,7 +12,7 @@ mixin widget-events(event = {})
       text = 'event - text',
     } = event;
   section.widget-events
-    .widget-events__picture(style=`background-image: url(${parsedPicture})`)
+    .widget-events__picture(style=`background-image: url(${require(`../../components/widget-events/img/${picture}`)})`)
     .widget-events__information
       .widget-events__information-wrapper
         .widget-events__date-title

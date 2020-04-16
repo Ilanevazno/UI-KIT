@@ -4,7 +4,6 @@ mixin user-profile(profile = {})
   -
     const {
       avatar = 'fallen-bg.jpg',
-      parsedPicture = require(`../../assets/images/${avatar}`),
       name = 'user',
       job = '',
       social = [
@@ -14,7 +13,7 @@ mixin user-profile(profile = {})
       ],
     } = profile;
   section.user-profile
-    .user-profile__picture(style=`background: no-repeat center/cover url(${parsedPicture})`)
+    .user-profile__picture(style=`background: no-repeat center/cover url(${require(`../../assets/images/${avatar}`)})`)
     .user-profile__info
       h2.user-profile__info-name= name
       h3.user-profile__info-job= job
