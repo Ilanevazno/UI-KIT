@@ -9,7 +9,6 @@
 
   &__picture {
     width: 33%;
-    box-sizing: border-box;
     background-size: cover;
   }
 
@@ -19,7 +18,6 @@
     margin: 0 auto;
     height: 100%;
     background-color: $orange-template;
-    box-sizing: border-box;
   }
 
   &__title {
