@@ -1,11 +1,6 @@
 include ../ripple-btn/ripple-btn
 
-mixin account-panel (data = {})
-  -
-    const {
-      title = '',
-      buttonList = [],
-    } = data;
+mixin account-panel ({ title = '', buttonList = [], })
   section.account-panel
     p.account-panel__title= title
     .account-panel__controls

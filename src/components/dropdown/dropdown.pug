@@ -1,9 +1,4 @@
-mixin dropdown (options = {})
-  -
-    const {
-      placeholder = 'Choose an option',
-      optionList = [],
-    } = options;
+mixin dropdown ({ placeholder = 'Choose an option', optionList = [] })
   section.dropdown.js-dropdown
     .dropdown__selected-option-area.js-dropdown__selected-option-area(tabindex="0")
       .dropdown__selected-option-area-text.js-dropdown__selected-option-area-text= placeholder

@@ -1,9 +1,4 @@
-mixin header-nav(data = {})
-  -
-   const {
-     url = '',
-     name = '',
-   } = data;
+mixin header-nav({ url = '', name = '', })
   section.header-nav
     ul.header-nav__links
       each page in data

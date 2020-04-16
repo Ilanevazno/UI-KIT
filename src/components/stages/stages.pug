@@ -1,9 +1,4 @@
-mixin stages(data = {})
-  -
-    const {
-      maxStep = '',
-      currentStep = '',
-    } = data;
+mixin stages({ maxStep = '', currentStep = '', })
   section.stages
     ul.stages__multi-steps
       - for (var i = 0; i < maxStep; i += 1)
