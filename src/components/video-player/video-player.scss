@@ -16,7 +16,6 @@
     align-items: center;
     justify-content: space-between;
     height: 6rem;
-    cursor: pointer;
 
     progress {
       flex: 1;
@@ -24,8 +23,6 @@
       width: 100%;
       height: 0.6rem;
       border-radius: 5px;
-      background: white;
-      cursor: pointer;
 
       &::-webkit-progress-bar {
         width: 100%;
@@ -50,50 +47,32 @@
     background: inherit;
     border: none;
     outline: none;
-
-    &-play {
-      flex-basis: 10%;
-      text-align: center;
-    }
-
-    &-pause {
-      flex-basis: 8%;
-      text-align: center;
-    }
-
-    &-progress {
-      width: 100%;
-      display: flex;
-    }
-
-    &-fullscreen {
-      flex-basis: 7rem;
-    }
+    fill: white;
+    cursor: pointer;
 
     &_type {
       &_play {
-        cursor: pointer;
-        fill: white;
+        flex-basis: 10%;
+        text-align: center;
       }
 
       &_pause {
-        cursor: pointer;
-        flex-basis: 8%;
+        flex-basis: 10%;
+        text-align: center;
+      }
+
+      &_progress {
+        width: 100%;
+        display: flex;
       }
 
       &_fullscreen {
-        width: 100%;
-        height: 5.7rem;
+        flex-basis: 7rem;
         background: $orange-template url('./img/video-fullscreen-btn.png') 50% 50% no-repeat;
-        background-size: 44%;
-        flex-basis: 6rem;
+        height: 100%;
+        margin-left: 3rem;
         cursor: pointer;
       }
     }
-  }
-
-  &__progress {
-    flex-basis: 84%;
-    margin-right: 4%;
   }
 }

@@ -5,15 +5,18 @@ mixin video-player(src)
     video.video-player__screen.js-video-player__screen
       source(src= src type="video/mp4")
     .video-player__controls
-        .video-player__control-play.js-video-player__control-play
-          button.video-player__control.video-player__control_type_play
+        .video-video-player__control.video-player__control_type_play.js-video-player__control_type_play
+          button.video-player__control
             span.video-player__control-figure
               +svg-icon('play')
-        .video-player__control-pause.js-video-player__control-pause
-          button.video-player__control.video-player__control_type_pause
+        .video-video-player__control.video-player__control_type_pause.js-video-player__control_type_pause
+          button.video-player__control
             span.video-player__control-figure
               +svg-icon('pause')
-        .video-player__control-progress.js-video-player__control-progress
-          progress.video-player__progress(max="100" value="0" onTimeUpdate="progressUpdate()")
-        .video-player__control-fullscreen.js-video-player__control-fullscreen
-          button.video-player__control.video-player__control_type_fullscreen
+        .video-video-player__control.video-player__control_type_progress.js-video-player__control_type_progress
+          progress.video-player__control(
+            max="100"
+            value="0"
+          )
+        .video-video-player__control.video-player__control_type_fullscreen.js-video-player__control_type_fullscreen
+          button.video-player__control

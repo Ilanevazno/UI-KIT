@@ -2,35 +2,35 @@ class VideoPlayer {
   constructor(selector) {
     this.$videoContainer = selector;
     this.$videoScreen = this.$videoContainer.find('.js-video-player__screen');
-    this.$videoProgress = this.$videoContainer.find('.js-video-player__control-progress');
+    this.$videoProgress = this.$videoContainer.find('.js-video-player__control_type_progress');
     this.controls = {
-      $play: this.$videoContainer.find('.js-video-player__control-play'),
-      $pause: this.$videoContainer.find('.js-video-player__control-pause'),
-      $fullScreen: this.$videoContainer.find('.js-video-player__control-fullscreen'),
+      $play: this.$videoContainer.find('.js-video-player__control_type_play'),
+      $pause: this.$videoContainer.find('.js-video-player__control_type_pause'),
+      $fullScreen: this.$videoContainer.find('.js-video-player__control_type_fullscreen'),
     };
   }
 
   bindActions() {
-    this.controls.$play.on('click.controlPlay', this.handleControlPlayClick.bind(this));
-    this.controls.$pause.on('click.controlPause', this.handleControlPauseClick.bind(this));
-    this.controls.$fullScreen.on('click.controlFullscreen', this.handleControlFullscreenClick.bind(this));
+    this.controls.$play.on('click.controlPlay', this.handlePlayControlClick.bind(this));
+    this.controls.$pause.on('click.controlPause', this.handlePauseControlClick.bind(this));
+    this.controls.$fullScreen.on('click.controlFullscreen', this.handleFullscreenControlClick.bind(this));
     this.$videoScreen.on('timeupdate.screen', this.handleScreenClick.bind(this));
-    this.$videoProgress.on('click.controlProgress', this.handleControlProgressClick.bind(this));
+    this.$videoProgress.on('click.controlProgress', this.handleProgressControlClick.bind(this));
   }
 
-  handleControlPlayClick() {
+  handlePlayControlClick() {
     this.toggleVideoState();
   }
 
-  handleControlPauseClick() {
+  handlePauseControlClick() {
     this.toggleVideoState();
   }
 
-  handleControlProgressClick(e) {
+  handleProgressControlClick(e) {
     this.setVideoState(e);
   }
 
-  handleControlFullscreenClick() {
+  handleFullscreenControlClick() {
     this.$videoScreen[0].requestFullscreen();
   }
 
@@ -59,6 +59,8 @@ class VideoPlayer {
   }
 
   setVideoState(event) {
+    this.controls.$play.hide();
+    this.controls.$pause.show();
     const w = this.$videoProgress.width();
     const o = event.offsetX;
     const d = this.$videoScreen[0].duration;
