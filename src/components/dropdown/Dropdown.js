@@ -2,7 +2,7 @@ class Dropdown {
   constructor(selector) {
     this.$htmlContainer = $(selector);
     this.$textArea = this.$htmlContainer.find('.js-dropdown__selected-option-area');
-    this.$htmlInnerTextArea = this.$htmlContainer.find('.js-dropdown__selected-option-area-text');
+    this.$innerTextArea = this.$htmlContainer.find('.js-dropdown__selected-option-area-text');
     this.$optionsContainer = this.$htmlContainer.find('.js-dropdown__label');
     this.$optionsContainerItem = this.$htmlContainer.find('.js-dropdown__label-item');
     this.currentState = null;
@@ -37,7 +37,7 @@ class Dropdown {
 
   handleLabelItemClick(event) {
     const targetText = $(event.target).html();
-    this.$htmlInnerTextArea.text(targetText);
+    this.$innerTextArea.text(targetText);
     this.currentState = targetText;
     this.$optionsContainer.toggleClass('dropdown__label_open');
   }
