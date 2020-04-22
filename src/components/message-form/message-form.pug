@@ -36,9 +36,9 @@ mixin message-form(data = {})
     .message-form__fields
       .message-form__item
         textarea.message-form__textarea(placeholder= messageFieldPlaceholder)
-    .message-form__fields
-      .message-form__item
-        - if (policy.isShowed)
+    - if (policy.isShowed)
+      .message-form__fields
+        .message-form__item
           .message-form__policy
             .message-form__policy-item
               +tick-box('policy-accept')
