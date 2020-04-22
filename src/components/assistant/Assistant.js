@@ -1,7 +1,7 @@
 class Assistant {
   constructor(selector) {
     this.$htmlContainer = $(selector);
-    this.$startIcon = this.$htmlContainer.find('.js-assistant__open-popup-button');
+    this.$iconStart = this.$htmlContainer.find('.js-assistant__open-popup-button');
     this.$modalBody = this.$htmlContainer.find('.js-assistant__messenger');
   }
 
@@ -17,7 +17,7 @@ class Assistant {
 
   handleDocumentClick(event) {
     if (!this.$htmlContainer.find($(event.target)).length) {
-      this.$startIcon.fadeIn();
+      this.$iconStart.fadeIn();
       this.$modalBody.removeClass('assistant__messenger_opened');
     }
   }
