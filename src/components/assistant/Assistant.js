@@ -6,11 +6,11 @@ class Assistant {
   }
 
   bindActions() {
-    this.$htmlContainer.on('click.assistant', this.handleOpenPopupButtonClick.bind(this));
+    this.$htmlContainer.on('click.assistant', this.handleAssistantClick.bind(this));
     $(document).on('click.document', this.handleDocumentClick.bind(this));
   }
 
-  handleOpenPopupButtonClick() {
+  handleAssistantClick() {
     this.$startIcon.hide();
     this.$modalBody.addClass('assistant__messenger_opened');
   }
