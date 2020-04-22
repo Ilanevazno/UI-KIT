@@ -5,7 +5,7 @@ mixin user-profile(profile = {})
     const {
       avatar = 'fallen-bg.jpg',
       name = 'user',
-      job = '',
+      job = 'Должность не указана',
       social = [
         { href: 'http://facebook.com', icon: 'facebook', },
         { href: 'http://twitter.com', icon: 'twitter', },
@@ -25,4 +25,4 @@ mixin user-profile(profile = {})
             href= link.href
           )
             span.user-profile__info-social-icon
-              +svg-icon(link.icon)
+              +svg-icon({ icon: link.icon })

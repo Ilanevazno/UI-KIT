@@ -15,7 +15,7 @@ mixin stats-section (data = {})
     .stats-section__container
       p.stats-section__text= statsText
       .stats-section__chart
-        +percentages-chart('98')
+        +percentages-chart({ currentFill: '98', })
       p.stats-section__title= donutTitle
       .stats-section__review
         each review in donutData
