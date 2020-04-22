@@ -1,4 +1,4 @@
-class Hamburger {
+class HeaderMobile {
   constructor(selector) {
     this.$mobileMenu = $(selector).find('.js-header-mobile__hamburger-menu');
     this.$mobileMenuButton = this.$mobileMenu.prev('.js-header-mobile__hamburger-button');
@@ -11,13 +11,13 @@ class Hamburger {
 
   handleHamburgerButtonClick() {
     setTimeout(() => {
-      this.$mobileMenu.toggleClass('header-mobile__menu_opened');
+      this.$mobileMenu.toggleClass('header-mobile__hamburger-menu_opened');
     }, 0);
   }
 
   handleDocumentClick(event) {
     if (event.target.className !== 'header__links-list') {
-      this.$mobileMenu.removeClass('header-mobile__menu_opened');
+      this.$mobileMenu.removeClass('header-mobile__hamburger-menu_opened');
     }
   }
 
@@ -26,4 +26,4 @@ class Hamburger {
   }
 }
 
-export default Hamburger;
+export default HeaderMobile;

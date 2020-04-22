@@ -1,4 +1,4 @@
-import Hamburger from './Hamburger';
+import HeaderMobile from './HeaderMobile';
 
-const hamburger = new Hamburger('.js-header-mobile');
+const hamburger = new HeaderMobile('.js-header-mobile');
 hamburger.bootstrap();
