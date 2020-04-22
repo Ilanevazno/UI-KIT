@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <meta name="desctiption" content="UI-kit">
-    <meta name="keywords" content="PUG, SCSS, webpack, resume, BEM">
+    <meta name="description" content="UI-kit">
+    <meta name="keywords" content="PUG, SCSS, webpack, ui-kit, BEM">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
@@ -15,66 +15,68 @@
   <body>
     <div class="login">
       <header class="login__header">
-        <div class="header-line ">
-          <nav class="header-line__navigation">
-            <div class="header-nav">
+        <div class="header ">
+          <nav class="header__navigation">
+            <section class="header-nav">
               <ul class="header-nav__links">
                 <li><a class="header-nav__links-item" href="./index.html">Главная</a></li>
                 <li><a class="header-nav__links-item" href="./ui-kit.html">Ui-kit</a></li>
                 <li><a class="header-nav__links-item" href="./contacts.html">Контакты</a></li>
                 <li><a class="header-nav__links-item" href="./reviews.html">Отзывы</a></li>
               </ul>
-            </div>
-          </nav><a class="header-line__logo" href="./index.html"></a>
-          <div class="account-panel">
+            </section>
+          </nav><a class="header__logo" href="./index.html"></a>
+          <section class="account-panel">
             <p class="account-panel__title">Аккаунт</p>
-            <div class="account-panel__controls"><a href="./login.html">
-                <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_hight" type="submit">
-                  <div class="ripple-btn__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                  <p>Вход</p>
-                </button></a><a href="./register.html">
-                <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_hight" type="submit">
-                  <div class="ripple-btn__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                  <p>Регистрация</p>
-                </button></a>
+            <div class="account-panel__controls">
+              <a class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_large" href="./login.html">
+                <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
+                <p class="ripple-btn__text">Вход</p>
+              </a>
+              <a class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_large" href="./register.html">
+                <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
+                <p class="ripple-btn__text">Регистрация</p>
+              </a>
             </div>
-          </div>
+          </section>
         </div>
-        <div class="header-line__mobile">
-          <div class="header-mobile js-header-mobile"><a class="header-mobile__button js-hamburger-button">&#9776;</a>
-            <aside class="header-mobile__menu js-hamburger-menu">
-              <div class="header-nav">
+        <div class="header__mobile">
+          <section class="header-mobile js-header-mobile"><a class="header-mobile__hamburger-button js-header-mobile__hamburger-button">&#9776;</a>
+            <aside class="header-mobile__hamburger-menu js-header-mobile__hamburger-menu">
+              <section class="header-nav">
                 <ul class="header-nav__links">
                   <li><a class="header-nav__links-item" href="./index.html">Главная</a></li>
                   <li><a class="header-nav__links-item" href="./ui-kit.html">Ui-kit</a></li>
                   <li><a class="header-nav__links-item" href="./contacts.html">Контакты</a></li>
                   <li><a class="header-nav__links-item" href="./reviews.html">Отзывы</a></li>
                 </ul>
-              </div>
+              </section>
             </aside>
-          </div>
+          </section>
         </div>
       </header>
       <main class="login__content">
         <form class="login__form">
           <div class="login__form-control">
-            <input class="input-label__item" type="text" name="user-email" placeholder="Ваш логин">
-            <label for="user-email"></label>
+            <label class="input-label">
+              <input class="input-label__item" type="text" name="user-email" placeholder="Ваш логин">
+            </label>
           </div>
           <div class="login__form-control">
-            <input class="input-label__item" type="password" name="user-email" placeholder="Ваш пароль">
-            <label for="user-email"></label>
+            <label class="input-label">
+              <input class="input-label__item" type="password" name="user-email" placeholder="Ваш пароль">
+            </label>
           </div>
-          <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_hight" type="submit">
-            <div class="ripple-btn__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-            <p>Вход в аккаунт</p>
+          <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_large" type="submit">
+            <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
+            <p class="ripple-btn__text">Вход в аккаунт</p>
           </button>
         </form>
       </main>
       <footer class="login__footer">
-        <div class="footer__topline">
-          <p class="footer__topline-copyright">Ilya sigidin</p>
-        </div>
+        <section class="footer">
+          <p class="footer__copyright">Ilya sigidin</p>
+        </section>
       </footer>
     </div>
   <script type="text/javascript" src="bundle.js"></script></body>

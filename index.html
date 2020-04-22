@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <meta name="desctiption" content="UI-kit">
-    <meta name="keywords" content="PUG, SCSS, webpack, resume, BEM">
+    <meta name="description" content="UI-kit">
+    <meta name="keywords" content="PUG, SCSS, webpack, ui-kit, BEM">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
@@ -15,72 +15,72 @@
   <body>
     <div class="index">
       <header class="index__header">
-        <div class="header-line ">
-          <nav class="header-line__navigation">
-            <div class="header-nav">
+        <div class="header ">
+          <nav class="header__navigation">
+            <section class="header-nav">
               <ul class="header-nav__links">
                 <li><a class="header-nav__links-item" href="./index.html">Главная</a></li>
                 <li><a class="header-nav__links-item" href="./ui-kit.html">Ui-kit</a></li>
                 <li><a class="header-nav__links-item" href="./contacts.html">Контакты</a></li>
                 <li><a class="header-nav__links-item" href="./reviews.html">Отзывы</a></li>
               </ul>
-            </div>
-          </nav><a class="header-line__logo" href="./index.html"></a>
-          <div class="account-panel">
+            </section>
+          </nav><a class="header__logo" href="./index.html"></a>
+          <section class="account-panel">
             <p class="account-panel__title">Аккаунт</p>
-            <div class="account-panel__controls"><a href="./login.html">
-                <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_hight" type="submit">
-                  <div class="ripple-btn__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                  <p>Вход</p>
-                </button></a><a href="./register.html">
-                <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_hight" type="submit">
-                  <div class="ripple-btn__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                  <p>Регистрация</p>
-                </button></a>
+            <div class="account-panel__controls">
+              <a class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_large" href="./login.html">
+                <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
+                <p class="ripple-btn__text">Вход</p>
+              </a>
+              <a class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_large" href="./register.html">
+                <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
+                <p class="ripple-btn__text">Регистрация</p>
+              </a>
             </div>
-          </div>
+          </section>
         </div>
-        <div class="header-line__mobile">
-          <div class="header-mobile js-header-mobile"><a class="header-mobile__button js-hamburger-button">&#9776;</a>
-            <aside class="header-mobile__menu js-hamburger-menu">
-              <div class="header-nav">
+        <div class="header__mobile">
+          <section class="header-mobile js-header-mobile"><a class="header-mobile__hamburger-button js-header-mobile__hamburger-button">&#9776;</a>
+            <aside class="header-mobile__hamburger-menu js-header-mobile__hamburger-menu">
+              <section class="header-nav">
                 <ul class="header-nav__links">
                   <li><a class="header-nav__links-item" href="./index.html">Главная</a></li>
                   <li><a class="header-nav__links-item" href="./ui-kit.html">Ui-kit</a></li>
                   <li><a class="header-nav__links-item" href="./contacts.html">Контакты</a></li>
                   <li><a class="header-nav__links-item" href="./reviews.html">Отзывы</a></li>
                 </ul>
-              </div>
+              </section>
             </aside>
-          </div>
+          </section>
         </div>
       </header>
       <main class="index__content">
         <div class="index__left-wrapper">
-          <section class="index__search">
-            <div class="form-search js-seach-form-widget">
-              <div class="form-search__find-str">
-                <div class="form-search__str-wrapper">
-                  <input class="form-search__str" type="text" placeholder="Search">
-                  <label class="form-search__str-status">I’ve not found what I’m looking for...</label>
+          <form class="index__search">
+            <section class="form-search js-form-search">
+              <div class="form-search__find-line">
+                <div class="form-search__line-wrapper">
+                  <input class="form-search__input-text-area js-form-search__input-text-area" type="text" placeholder="Search">
+                  <label class="form-search__status js-form-search__status">I’ve not found what I’m looking for...</label>
                 </div>
-                <input class="form-search__btn-find" type="button" id="form-search__btn-find" name="form-search__btn-find">
+                <input class="form-search__search-btn js-form-search__search-btn" type="button">
               </div>
               <div class="form-search__options">
-                <ul class="form-search__items form-search__hidden-item" id="form-search__items">
-                  <li>ilya</li>
-                  <li>sigidin</li>
-                  <li>education 1</li>
-                  <li>Fullstack Development</li>
-                  <li>hello</li>
-                  <li>pick me</li>
-                  <li>Press F</li>
+                <ul class="form-search__item-list js-form-search__item-list">
+                  <li class="form-search__item-list-option js-form-search__item-list-option" tabindex="0">ilya</li>
+                  <li class="form-search__item-list-option js-form-search__item-list-option" tabindex="0">sigidin</li>
+                  <li class="form-search__item-list-option js-form-search__item-list-option" tabindex="0">education 1</li>
+                  <li class="form-search__item-list-option js-form-search__item-list-option" tabindex="0">Fullstack Development</li>
+                  <li class="form-search__item-list-option js-form-search__item-list-option" tabindex="0">hello</li>
+                  <li class="form-search__item-list-option js-form-search__item-list-option" tabindex="0">pick me</li>
+                  <li class="form-search__item-list-option js-form-search__item-list-option" tabindex="0">Press F</li>
                 </ul>
               </div>
-            </div>
-          </section>
+            </section>
+          </form>
           <section class="index__container">
-            <div class="news-list">
+            <section class="news-list">
               <div class="news-list__item">
                 <h2 class="news-list__item-title">Welcome!</h2>
                 <p class="news-list__item-text">Здравствуйте всем, привет всем! Данный сайт посвящён псевдо компании которая занимается организацией праздников. Хоть никакой компании и не существует в природе, но в любом случае, мне необходимо было создать проект, где были бы использованы все компоненты UI-kit'a которые я делал (очевидно НЕ ВСЕ виджеты на 100% мои, ибо где-то пришлось использовать готовые решения, но ради этого данное задание и было собственно сделано, вот) (см. page ui-kit).</p>
@@ -89,43 +89,43 @@
                 <h2 class="news-list__item-title">Технология сайта</h2>
                 <p class="news-list__item-text">На данный момент страница построена на модульной архитектуре при использовании webpack, pug, scss, но в будущем планируется перенести это чудо на React. Меня радует то что данный контент подгружается динамически, я использую в качестве базы данных JSON файл, в котором находятся все эти новости, а при помощи PUG'a это всё тянется сюда.</p>
               </div>
-            </div>
+            </section>
           </section>
           <section class="index__assistant">
-            <div class="assistant js-assistant-widget">
-              <div class="assistant__start">
-                <div class="assistant__request-avatar"><img src="./assets/images/sarah-brown.jpg" alt="assistant-avatar"></div>
-              </div>
-              <div class="assistant__messenger">
-                  <div class="messaging__widget ">
-                    <div class="messaging__header">
-                      <p class="messaging__interlocutor-name">Elena</p>
-                      <div class="messaging__interlocutor-picture" style="background-image: url(./assets/images/sarah-brown.jpg)"></div>
-                    </div>
-                    <div class="messaging__body">
-                      <div class="messaging__wrap">
-                        <div class="messaging__interlocutor-area">
-                          <button class="messaging__dialog-button messaging__send-message"></button>
-                          <button class="messaging__dialog-button messaging__send-photo"></button>
-                        </div>
-                        <div class="messaging__chat-area">
-                          <textarea class="messaging__textarea messaging__message-to" disabled placeholder="Здравствуйте, чем я могу вам помочь?"></textarea>
-                          <textarea class="messaging__textarea messaging__message-from"></textarea>
-                        </div>
-                        <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint-reverse ripple-btn_size_hight ripple-btn_width_responsive" type="submit">
-                          <div class="ripple-btn__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                          <p>Submit</p>
-                        </button>
+            <section class="assistant js-assistant">
+              <div class="assistant__open-popup-button js-assistant__open-popup-button"><img class="assistant__request-avatar" src="./assets/images/sarah-brown.jpg" alt="assistant-avatar"></div>
+              <div class="assistant__messenger js-assistant__messenger">
+                <div class="messaging">
+                  <div class="messaging__header">
+                    <p class="messaging__interlocutor-name">Elena</p>
+                    <div class="messaging__interlocutor-picture" style="background-image: url(./assets/images/sarah-brown.jpg)"></div>
+                  </div>
+                  <div class="messaging__body">
+                    <div class="messaging__wrap">
+                      <div class="messaging__interlocutor-area">
+                        <button class="messaging__dialog-button messaging__dialog-button_for_message"></button>
+                        <button class="messaging__dialog-button messaging__dialog-button_for_photo"></button>
                       </div>
+                      <div class="messaging__chat-area">
+                        <div class="messaging__textarea-wrapper">
+                          <textarea class="messaging__textarea messaging__textarea_for_to" disabled placeholder="Здравствуйте, чем я могу вам помочь?"></textarea>
+                        </div>
+                        <textarea class="messaging__textarea messaging__textarea_for_from">Yeah that sounds great. See you then.</textarea>
+                      </div>
+                      <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint-reverse ripple-btn_size_large ripple-btn_width_responsive" type="submit">
+                        <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
+                        <p class="ripple-btn__text">Reply</p>
+                      </button>
                     </div>
                   </div>
+                </div>
               </div>
-            </div>
+            </section>
           </section>
         </div>
         <div class="index__right-wrapper">
           <section class="index__last-event">
-            <div class="widget-events">
+            <section class="widget-events">
               <div class="widget-events__picture" style="background-image: url(./assets/images/gray-bg.jpg)"></div>
               <div class="widget-events__information">
                 <div class="widget-events__information-wrapper">
@@ -136,31 +136,31 @@
                   <h3 class="widget-events__event-title">8 Марта</h3>
                   <p class="widget-events__event-text">Междунаро́дный же́нский день — праздник, отмечаемый ежегодно 8 марта в ряде стран как «женский день». Исторически появился как день солидарности женщин во многих странах в борьбе за равные права и эмансипацию.</p>
                   <div class="widget-events__to-calendar">
-                    <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_low ripple-btn_width_responsive" type="submit">
-                      <div class="ripple-btn__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                      <p>Add to calendar</p>
+                    <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_small ripple-btn_width_responsive" type="submit">
+                      <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
+                      <p class="ripple-btn__text">Add to calendar</p>
                     </button>
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
           </section>
           <section class="index__important-news">
-            <div class="widget-news">
+            <section class="widget-news">
               <div class="widget-news__picture" style="background-image: url(&quot;./assets/images/holiday-picture.jpg&quot;)"></div>
               <div class="widget-news__information">
                 <h3 class="widget-news__title">АКЦИЯ на утренние праздники!</h3>
                 <p class="widget-news__date">02 Февраля 2020</p>
                 <p class="widget-news__text">Подарите любимым праздники со скидкой в 20% с 8 по 25 марта!</p>
               </div>
-            </div>
+            </section>
           </section>
         </div>
       </main>
       <footer class="index__footer">
-        <div class="footer__topline">
-          <p class="footer__topline-copyright">Ilya sigidin</p>
-        </div>
+        <section class="footer">
+          <p class="footer__copyright">Ilya sigidin</p>
+        </section>
       </footer>
     </div>
   <script type="text/javascript" src="bundle.js"></script></body>

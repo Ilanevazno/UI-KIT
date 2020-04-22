@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <meta name="desctiption" content="UI-kit">
-    <meta name="keywords" content="PUG, SCSS, webpack, resume, BEM">
+    <meta name="description" content="UI-kit">
+    <meta name="keywords" content="PUG, SCSS, webpack, ui-kit, BEM">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
@@ -15,44 +15,44 @@
   <body>
     <div class="reviews">
       <header class="reviews__header">
-        <div class="header-line ">
-          <nav class="header-line__navigation">
-            <div class="header-nav">
+        <div class="header ">
+          <nav class="header__navigation">
+            <section class="header-nav">
               <ul class="header-nav__links">
                 <li><a class="header-nav__links-item" href="./index.html">Главная</a></li>
                 <li><a class="header-nav__links-item" href="./ui-kit.html">Ui-kit</a></li>
                 <li><a class="header-nav__links-item" href="./contacts.html">Контакты</a></li>
                 <li><a class="header-nav__links-item" href="./reviews.html">Отзывы</a></li>
               </ul>
-            </div>
-          </nav><a class="header-line__logo" href="./index.html"></a>
-          <div class="account-panel">
+            </section>
+          </nav><a class="header__logo" href="./index.html"></a>
+          <section class="account-panel">
             <p class="account-panel__title">Аккаунт</p>
-            <div class="account-panel__controls"><a href="./login.html">
-                <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_hight" type="submit">
-                  <div class="ripple-btn__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                  <p>Вход</p>
-                </button></a><a href="./register.html">
-                <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_hight" type="submit">
-                  <div class="ripple-btn__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                  <p>Регистрация</p>
-                </button></a>
+            <div class="account-panel__controls">
+              <a class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_large" href="./login.html">
+                <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
+                <p class="ripple-btn__text">Вход</p>
+              </a>
+              <a class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_large" href="./register.html">
+                <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
+                <p class="ripple-btn__text">Регистрация</p>
+              </a>
             </div>
-          </div>
+          </section>
         </div>
-        <div class="header-line__mobile">
-          <div class="header-mobile js-header-mobile"><a class="header-mobile__button js-hamburger-button">&#9776;</a>
-            <aside class="header-mobile__menu js-hamburger-menu">
-              <div class="header-nav">
+        <div class="header__mobile">
+          <section class="header-mobile js-header-mobile"><a class="header-mobile__hamburger-button js-header-mobile__hamburger-button">&#9776;</a>
+            <aside class="header-mobile__hamburger-menu js-header-mobile__hamburger-menu">
+              <section class="header-nav">
                 <ul class="header-nav__links">
                   <li><a class="header-nav__links-item" href="./index.html">Главная</a></li>
                   <li><a class="header-nav__links-item" href="./ui-kit.html">Ui-kit</a></li>
                   <li><a class="header-nav__links-item" href="./contacts.html">Контакты</a></li>
                   <li><a class="header-nav__links-item" href="./reviews.html">Отзывы</a></li>
                 </ul>
-              </div>
+              </section>
             </aside>
-          </div>
+          </section>
         </div>
       </header>
       <main class="reviews__content">
@@ -60,39 +60,38 @@
           <section class="stats-section">
             <h2 class="stats-section__title">Наша статистика</h2>
             <div class="stats-section__container">
-              <p class="stats-section__text">Мы работаем с 2010 года, и за 10 лет мы собрали довольно позитивную статистику:</p>
-              <p class="stats-section__text">Процент довольных клиентов:</p>
+              <p class="stats-section__text">Мы работаем с 2010 года, и за 10 лет мы собрали довольно позитивную статистику, ниже приведён процент довольных клиентов:</p>
               <div class="stats-section__chart">
-                <figure class="percentages-chart js-percentages-chart" data-percent="98">
-                  <div class="percentages-chart__figure-inner">
-                    <svg class="percentages-chart__svg" height="100" width="100">
-                      <circle class="percentages-chart__outer" width="50" height="50" cx="125" cy="65" r="60" transform="rotate(-90, 95, 95)"></circle>
-                    </svg>
-                    <figcaption class="percentages-chart__current">98</figcaption>
-                  </div>
-                </figure>
+                <section class="percentages-chart">
+                  <svg class="percentages-chart__figure" width="100%" height="100%" viewBox="0 0 42 42">
+                    <circle class="percentages-chart__filled" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="2" stroke-dasharray="98 2" stroke-dashoffset="25"></circle>
+                  </svg>
+                  <div class="percentages-chart__text">98</div>
+                </section>
               </div>
               <p class="stats-section__title">Соотношение отзывов:</p>
               <div class="stats-section__review">
                 <div class="stats-section__review-desc">
-                  <div class="stats-section__review-stat" style="background-color: #5ac832; width: 90%"></div>
-                  <p class="stats-section__review-title stats-section__text">Положительных отзывов</p>
+                  <div class="stats-section__review-stats" style="background-color: #5ac832; width: 90%"></div>
+                  <p class="stats-section__text">Положительных отзывов</p>
                 </div>
                 <div class="stats-section__review-desc">
-                  <div class="stats-section__review-stat" style="background-color: #d32727; width: 3%"></div>
-                  <p class="stats-section__review-title stats-section__text">Негативных отзывов</p>
+                  <div class="stats-section__review-stats" style="background-color: #d32727; width: 3%"></div>
+                  <p class="stats-section__text">Негативных отзывов</p>
                 </div>
                 <div class="stats-section__review-desc">
-                  <div class="stats-section__review-stat" style="background-color: #b4b1b1; width: 7%"></div>
-                  <p class="stats-section__review-title stats-section__text">Нейтральных отзывов</p>
+                  <div class="stats-section__review-stats" style="background-color: #b4b1b1; width: 7%"></div>
+                  <p class="stats-section__text">Нейтральных отзывов</p>
                 </div>
               </div>
               <div class="stats-section__chart">
-                <svg width="100%" height="100%" viewBox="0 0 42 42">
-                  <circle lass="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#5ac832" stroke-width="6" stroke-dasharray="90 10" stroke-dashoffset="60"></circle>
-                  <circle lass="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d32727" stroke-width="6" stroke-dasharray="3 97" stroke-dashoffset="70"></circle>
-                  <circle lass="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#b4b1b1" stroke-width="6" stroke-dasharray="7 93" stroke-dashoffset="167"></circle>
-                </svg>
+                <section class="donut-chart">
+                  <svg class="donut-chart__figure" width="100%" height="100%" viewBox="0 0 42 42">
+                    <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#5ac832" stroke-width="6" stroke-dasharray="90 10" stroke-dashoffset="15"></circle>
+                    <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d32727" stroke-width="6" stroke-dasharray="3 97" stroke-dashoffset="25"></circle>
+                    <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#b4b1b1" stroke-width="6" stroke-dasharray="7 93" stroke-dashoffset="122"></circle>
+                  </svg>
+                </section>
               </div>
             </div>
           </section>
@@ -101,56 +100,104 @@
           <section class="reviews-section">
             <h2 class="reviews-section__title">Что о нас думают другие?</h2>
             <div class="reviews-section__sort">
-              <div class="widget-select js-dropdown-widget">
-                <div class="widget-select__area js-dropdown-textarea">
-                  <div class="widget-select__area-text js-dropdown-text-inner">Сортировка по</div>
-                  <div class="widget-select__area-btn"></div>
+              <section class="dropdown js-dropdown">
+                <div class="dropdown__selected-option-area js-dropdown__selected-option-area" tabindex="0">
+                  <div class="dropdown__selected-option-area-text js-dropdown__selected-option-area-text">Сортировка по</div>
+                  <div class="dropdown__selected-option-area-btn"></div>
                 </div>
-                <ul class="widget-select__label js-dropdown-menu">
-                  <li class="widget-select__label-item js-dropdown-label-item">Самые новые</li>
-                  <li class="widget-select__label-item js-dropdown-label-item">Наиболее актуальные</li>
-                  <li class="widget-select__label-item js-dropdown-label-item">Подтверждённые</li>
+                <ul class="dropdown__label js-dropdown__label" tabindex="0">
+                  <li class="dropdown__label-item js-dropdown__label-item" tabindex="0">Самые новые</li>
+                  <li class="dropdown__label-item js-dropdown__label-item" tabindex="0">Наиболее актуальные</li>
+                  <li class="dropdown__label-item js-dropdown__label-item" tabindex="0">Подтверждённые</li>
                 </ul>
-              </div>
+              </section>
             </div>
             <div class="reviews-section__container">
               <div class="reviews-section__review-item">
                 <textarea class="reviews-section__user-review" disabled>Всё гуд!</textarea>
                 <div class="reviews-section__user-profile">
-                  <div class="user-profile">
-                    <div class="user-profile__picture" style="background: no-repeat center/100% url(./assets/images/fallen-bg.jpg)"></div>
+                  <section class="user-profile">
+                    <div class="user-profile__picture" style="background: no-repeat center/cover url(./assets/images/fallen-bg.jpg)"></div>
                     <div class="user-profile__info">
                       <h2 class="user-profile__info-name">Andrew</h2>
                       <h3 class="user-profile__info-job"></h3>
-                      <div class="user-profile__info-social"><a class=".user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://facebook.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.45 48.31" class="user-profile__svg-icon"><defs></defs><g><g><path class="user-profile__icon" d="M22.45,15.64H14.8v-5a2,2,0,0,1,2.13-2.32h5.39V0L14.89,0C6.65,0,4.77,6.17,4.77,10.12v5.52H0v8.53H4.77V48.31h10V24.17h6.77Z"/></g></g></svg></a><a class="user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://twitter.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.26 40.04" class="user-profile__svg-icon"><defs></defs><g><g><path class="user-profile__icon" d="M49.26,4.74a20.17,20.17,0,0,1-5.8,1.59A10.09,10.09,0,0,0,47.9.74a20,20,0,0,1-6.42,2.45A10.11,10.11,0,0,0,24,10.11a10.26,10.26,0,0,0,.26,2.3A28.66,28.66,0,0,1,3.43,1.85,10.11,10.11,0,0,0,6.56,15.34,10,10,0,0,1,2,14.08v.13a10.12,10.12,0,0,0,8.11,9.91,10.18,10.18,0,0,1-2.67.35,10,10,0,0,1-1.9-.18,10.11,10.11,0,0,0,9.44,7A20.27,20.27,0,0,1,2.41,35.64,19.25,19.25,0,0,1,0,35.49,28.6,28.6,0,0,0,15.49,40c18.59,0,28.76-15.41,28.76-28.76,0-.44,0-.88,0-1.31A20.38,20.38,0,0,0,49.26,4.74Z"/></g></g></svg></a><a class="user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://dbb.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.44 49.44" class="user-profile__svg-icon"><defs></defs><g><g><path class="user-profile__icon" d="M48.94,19.74A25.18,25.18,0,0,0,47.5,15.1a24.71,24.71,0,0,0-2.28-4.2,24.88,24.88,0,0,0-6.68-6.68A24.57,24.57,0,0,0,29.7.5a25.05,25.05,0,0,0-10,0A24.57,24.57,0,0,0,10.9,4.22,24.88,24.88,0,0,0,4.22,10.9a24.71,24.71,0,0,0-2.28,4.2,24.75,24.75,0,0,0,0,19.24,24.71,24.71,0,0,0,2.28,4.2,24.88,24.88,0,0,0,6.68,6.68,24.57,24.57,0,0,0,8.84,3.72,24.75,24.75,0,0,0,14.6-1.44,24.71,24.71,0,0,0,4.2-2.28,24.88,24.88,0,0,0,6.68-6.68,24.57,24.57,0,0,0,3.72-8.84,25.05,25.05,0,0,0,0-10Zm-3.12,4.77a48.8,48.8,0,0,0-14.7-.69l-.45-1.09c-.44-1-.92-2.06-1.41-3.06C37.6,16.26,41,11.37,41,11.31A21,21,0,0,1,45.82,24.51ZM38.66,8.88c0,.08-3.06,4.66-11,7.64A109.12,109.12,0,0,0,19.75,4.2a21.33,21.33,0,0,1,5-.59A21,21,0,0,1,38.66,8.88Zm-19-4.66H19.6ZM15.71,5.63a125.49,125.49,0,0,1,7.84,12.16A78.25,78.25,0,0,1,4.06,20.37,21.15,21.15,0,0,1,15.71,5.63ZM3.61,24.72c0-.23,0-.45,0-.67A77.06,77.06,0,0,0,25.3,21c.61,1.19,1.18,2.39,1.71,3.59l-.83.25C14.79,28.57,9,38.82,9,38.82H9A21.05,21.05,0,0,1,3.61,24.72ZM24.72,45.83A21,21,0,0,1,11.27,41c.28.23.48.37.48.37s4-8.82,16.56-13.18l.14-.05a87.59,87.59,0,0,1,4.51,16A21,21,0,0,1,24.72,45.83Zm11.8-3.6a91.69,91.69,0,0,0-4.11-15.08,30.62,30.62,0,0,1,13.15.92A21.12,21.12,0,0,1,36.52,42.23Z"/></g></g></svg></a></div>
+                      <div class="user-profile__info-social"><a class="user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://facebook.com"><span class="user-profile__info-social-icon">
+                            <section class="svg-icon">
+                              <svg class="svg-icon__item" svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.45 48.31">
+                                <path d="M22.45,15.64H14.8v-5a2,2,0,0,1,2.13-2.32h5.39V0L14.89,0C6.65,0,4.77,6.17,4.77,10.12v5.52H0v8.53H4.77V48.31h10V24.17h6.77Z"></path>
+                              </svg>
+                            </section></span></a><a class="user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://twitter.com"><span class="user-profile__info-social-icon">
+                            <section class="svg-icon">
+                              <svg class="svg-icon__item" svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.26 40.04">
+                                <path d="M49.26,4.74a20.17,20.17,0,0,1-5.8,1.59A10.09,10.09,0,0,0,47.9.74a20,20,0,0,1-6.42,2.45A10.11,10.11,0,0,0,24,10.11a10.26,10.26,0,0,0,.26,2.3A28.66,28.66,0,0,1,3.43,1.85,10.11,10.11,0,0,0,6.56,15.34,10,10,0,0,1,2,14.08v.13a10.12,10.12,0,0,0,8.11,9.91,10.18,10.18,0,0,1-2.67.35,10,10,0,0,1-1.9-.18,10.11,10.11,0,0,0,9.44,7A20.27,20.27,0,0,1,2.41,35.64,19.25,19.25,0,0,1,0,35.49,28.6,28.6,0,0,0,15.49,40c18.59,0,28.76-15.41,28.76-28.76,0-.44,0-.88,0-1.31A20.38,20.38,0,0,0,49.26,4.74Z"></path>
+                              </svg>
+                            </section></span></a><a class="user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://dbb.com"><span class="user-profile__info-social-icon">
+                            <section class="svg-icon">
+                              <svg class="svg-icon__item" svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.44 49.44">
+                                <path d="M48.94,19.74A25.18,25.18,0,0,0,47.5,15.1a24.71,24.71,0,0,0-2.28-4.2,24.88,24.88,0,0,0-6.68-6.68A24.57,24.57,0,0,0,29.7.5a25.05,25.05,0,0,0-10,0A24.57,24.57,0,0,0,10.9,4.22,24.88,24.88,0,0,0,4.22,10.9a24.71,24.71,0,0,0-2.28,4.2,24.75,24.75,0,0,0,0,19.24,24.71,24.71,0,0,0,2.28,4.2,24.88,24.88,0,0,0,6.68,6.68,24.57,24.57,0,0,0,8.84,3.72,24.75,24.75,0,0,0,14.6-1.44,24.71,24.71,0,0,0,4.2-2.28,24.88,24.88,0,0,0,6.68-6.68,24.57,24.57,0,0,0,3.72-8.84,25.05,25.05,0,0,0,0-10Zm-3.12,4.77a48.8,48.8,0,0,0-14.7-.69l-.45-1.09c-.44-1-.92-2.06-1.41-3.06C37.6,16.26,41,11.37,41,11.31A21,21,0,0,1,45.82,24.51ZM38.66,8.88c0,.08-3.06,4.66-11,7.64A109.12,109.12,0,0,0,19.75,4.2a21.33,21.33,0,0,1,5-.59A21,21,0,0,1,38.66,8.88Zm-19-4.66H19.6ZM15.71,5.63a125.49,125.49,0,0,1,7.84,12.16A78.25,78.25,0,0,1,4.06,20.37,21.15,21.15,0,0,1,15.71,5.63ZM3.61,24.72c0-.23,0-.45,0-.67A77.06,77.06,0,0,0,25.3,21c.61,1.19,1.18,2.39,1.71,3.59l-.83.25C14.79,28.57,9,38.82,9,38.82H9A21.05,21.05,0,0,1,3.61,24.72ZM24.72,45.83A21,21,0,0,1,11.27,41c.28.23.48.37.48.37s4-8.82,16.56-13.18l.14-.05a87.59,87.59,0,0,1,4.51,16A21,21,0,0,1,24.72,45.83Zm11.8-3.6a91.69,91.69,0,0,0-4.11-15.08,30.62,30.62,0,0,1,13.15.92A21.12,21.12,0,0,1,36.52,42.23Z"></path>
+                              </svg>
+                            </section></span></a>
+                      </div>
                     </div>
-                  </div>
+                  </section>
                 </div>
               </div>
               <div class="reviews-section__review-item">
                 <textarea class="reviews-section__user-review" disabled>Заказали праздник всей семьёй, всё прошло на высшем уровне!!!</textarea>
                 <div class="reviews-section__user-profile">
-                  <div class="user-profile">
-                    <div class="user-profile__picture" style="background: no-repeat center/100% url(./assets/images/fallen-bg.jpg)"></div>
+                  <section class="user-profile">
+                    <div class="user-profile__picture" style="background: no-repeat center/cover url(./assets/images/fallen-bg.jpg)"></div>
                     <div class="user-profile__info">
                       <h2 class="user-profile__info-name">Anastasiya</h2>
                       <h3 class="user-profile__info-job"></h3>
-                      <div class="user-profile__info-social"><a class=".user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://facebook.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.45 48.31" class="user-profile__svg-icon"><defs></defs><g><g><path class="user-profile__icon" d="M22.45,15.64H14.8v-5a2,2,0,0,1,2.13-2.32h5.39V0L14.89,0C6.65,0,4.77,6.17,4.77,10.12v5.52H0v8.53H4.77V48.31h10V24.17h6.77Z"/></g></g></svg></a><a class="user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://twitter.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.26 40.04" class="user-profile__svg-icon"><defs></defs><g><g><path class="user-profile__icon" d="M49.26,4.74a20.17,20.17,0,0,1-5.8,1.59A10.09,10.09,0,0,0,47.9.74a20,20,0,0,1-6.42,2.45A10.11,10.11,0,0,0,24,10.11a10.26,10.26,0,0,0,.26,2.3A28.66,28.66,0,0,1,3.43,1.85,10.11,10.11,0,0,0,6.56,15.34,10,10,0,0,1,2,14.08v.13a10.12,10.12,0,0,0,8.11,9.91,10.18,10.18,0,0,1-2.67.35,10,10,0,0,1-1.9-.18,10.11,10.11,0,0,0,9.44,7A20.27,20.27,0,0,1,2.41,35.64,19.25,19.25,0,0,1,0,35.49,28.6,28.6,0,0,0,15.49,40c18.59,0,28.76-15.41,28.76-28.76,0-.44,0-.88,0-1.31A20.38,20.38,0,0,0,49.26,4.74Z"/></g></g></svg></a><a class="user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://dbb.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.44 49.44" class="user-profile__svg-icon"><defs></defs><g><g><path class="user-profile__icon" d="M48.94,19.74A25.18,25.18,0,0,0,47.5,15.1a24.71,24.71,0,0,0-2.28-4.2,24.88,24.88,0,0,0-6.68-6.68A24.57,24.57,0,0,0,29.7.5a25.05,25.05,0,0,0-10,0A24.57,24.57,0,0,0,10.9,4.22,24.88,24.88,0,0,0,4.22,10.9a24.71,24.71,0,0,0-2.28,4.2,24.75,24.75,0,0,0,0,19.24,24.71,24.71,0,0,0,2.28,4.2,24.88,24.88,0,0,0,6.68,6.68,24.57,24.57,0,0,0,8.84,3.72,24.75,24.75,0,0,0,14.6-1.44,24.71,24.71,0,0,0,4.2-2.28,24.88,24.88,0,0,0,6.68-6.68,24.57,24.57,0,0,0,3.72-8.84,25.05,25.05,0,0,0,0-10Zm-3.12,4.77a48.8,48.8,0,0,0-14.7-.69l-.45-1.09c-.44-1-.92-2.06-1.41-3.06C37.6,16.26,41,11.37,41,11.31A21,21,0,0,1,45.82,24.51ZM38.66,8.88c0,.08-3.06,4.66-11,7.64A109.12,109.12,0,0,0,19.75,4.2a21.33,21.33,0,0,1,5-.59A21,21,0,0,1,38.66,8.88Zm-19-4.66H19.6ZM15.71,5.63a125.49,125.49,0,0,1,7.84,12.16A78.25,78.25,0,0,1,4.06,20.37,21.15,21.15,0,0,1,15.71,5.63ZM3.61,24.72c0-.23,0-.45,0-.67A77.06,77.06,0,0,0,25.3,21c.61,1.19,1.18,2.39,1.71,3.59l-.83.25C14.79,28.57,9,38.82,9,38.82H9A21.05,21.05,0,0,1,3.61,24.72ZM24.72,45.83A21,21,0,0,1,11.27,41c.28.23.48.37.48.37s4-8.82,16.56-13.18l.14-.05a87.59,87.59,0,0,1,4.51,16A21,21,0,0,1,24.72,45.83Zm11.8-3.6a91.69,91.69,0,0,0-4.11-15.08,30.62,30.62,0,0,1,13.15.92A21.12,21.12,0,0,1,36.52,42.23Z"/></g></g></svg></a></div>
+                      <div class="user-profile__info-social"><a class="user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://facebook.com"><span class="user-profile__info-social-icon">
+                            <section class="svg-icon">
+                              <svg class="svg-icon__item" svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.45 48.31">
+                                <path d="M22.45,15.64H14.8v-5a2,2,0,0,1,2.13-2.32h5.39V0L14.89,0C6.65,0,4.77,6.17,4.77,10.12v5.52H0v8.53H4.77V48.31h10V24.17h6.77Z"></path>
+                              </svg>
+                            </section></span></a><a class="user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://twitter.com"><span class="user-profile__info-social-icon">
+                            <section class="svg-icon">
+                              <svg class="svg-icon__item" svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.26 40.04">
+                                <path d="M49.26,4.74a20.17,20.17,0,0,1-5.8,1.59A10.09,10.09,0,0,0,47.9.74a20,20,0,0,1-6.42,2.45A10.11,10.11,0,0,0,24,10.11a10.26,10.26,0,0,0,.26,2.3A28.66,28.66,0,0,1,3.43,1.85,10.11,10.11,0,0,0,6.56,15.34,10,10,0,0,1,2,14.08v.13a10.12,10.12,0,0,0,8.11,9.91,10.18,10.18,0,0,1-2.67.35,10,10,0,0,1-1.9-.18,10.11,10.11,0,0,0,9.44,7A20.27,20.27,0,0,1,2.41,35.64,19.25,19.25,0,0,1,0,35.49,28.6,28.6,0,0,0,15.49,40c18.59,0,28.76-15.41,28.76-28.76,0-.44,0-.88,0-1.31A20.38,20.38,0,0,0,49.26,4.74Z"></path>
+                              </svg>
+                            </section></span></a><a class="user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://dbb.com"><span class="user-profile__info-social-icon">
+                            <section class="svg-icon">
+                              <svg class="svg-icon__item" svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.44 49.44">
+                                <path d="M48.94,19.74A25.18,25.18,0,0,0,47.5,15.1a24.71,24.71,0,0,0-2.28-4.2,24.88,24.88,0,0,0-6.68-6.68A24.57,24.57,0,0,0,29.7.5a25.05,25.05,0,0,0-10,0A24.57,24.57,0,0,0,10.9,4.22,24.88,24.88,0,0,0,4.22,10.9a24.71,24.71,0,0,0-2.28,4.2,24.75,24.75,0,0,0,0,19.24,24.71,24.71,0,0,0,2.28,4.2,24.88,24.88,0,0,0,6.68,6.68,24.57,24.57,0,0,0,8.84,3.72,24.75,24.75,0,0,0,14.6-1.44,24.71,24.71,0,0,0,4.2-2.28,24.88,24.88,0,0,0,6.68-6.68,24.57,24.57,0,0,0,3.72-8.84,25.05,25.05,0,0,0,0-10Zm-3.12,4.77a48.8,48.8,0,0,0-14.7-.69l-.45-1.09c-.44-1-.92-2.06-1.41-3.06C37.6,16.26,41,11.37,41,11.31A21,21,0,0,1,45.82,24.51ZM38.66,8.88c0,.08-3.06,4.66-11,7.64A109.12,109.12,0,0,0,19.75,4.2a21.33,21.33,0,0,1,5-.59A21,21,0,0,1,38.66,8.88Zm-19-4.66H19.6ZM15.71,5.63a125.49,125.49,0,0,1,7.84,12.16A78.25,78.25,0,0,1,4.06,20.37,21.15,21.15,0,0,1,15.71,5.63ZM3.61,24.72c0-.23,0-.45,0-.67A77.06,77.06,0,0,0,25.3,21c.61,1.19,1.18,2.39,1.71,3.59l-.83.25C14.79,28.57,9,38.82,9,38.82H9A21.05,21.05,0,0,1,3.61,24.72ZM24.72,45.83A21,21,0,0,1,11.27,41c.28.23.48.37.48.37s4-8.82,16.56-13.18l.14-.05a87.59,87.59,0,0,1,4.51,16A21,21,0,0,1,24.72,45.83Zm11.8-3.6a91.69,91.69,0,0,0-4.11-15.08,30.62,30.62,0,0,1,13.15.92A21.12,21.12,0,0,1,36.52,42.23Z"></path>
+                              </svg>
+                            </section></span></a>
+                      </div>
                     </div>
-                  </div>
+                  </section>
                 </div>
               </div>
               <div class="reviews-section__review-item">
                 <textarea class="reviews-section__user-review" disabled>Урвал праздник со скидкой, сделали ребёнку самый лучший день рождения!!!</textarea>
                 <div class="reviews-section__user-profile">
-                  <div class="user-profile">
-                    <div class="user-profile__picture" style="background: no-repeat center/100% url(./assets/images/fallen-bg.jpg)"></div>
+                  <section class="user-profile">
+                    <div class="user-profile__picture" style="background: no-repeat center/cover url(./assets/images/fallen-bg.jpg)"></div>
                     <div class="user-profile__info">
                       <h2 class="user-profile__info-name">Evgeniy</h2>
                       <h3 class="user-profile__info-job"></h3>
-                      <div class="user-profile__info-social"><a class=".user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://facebook.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.45 48.31" class="user-profile__svg-icon"><defs></defs><g><g><path class="user-profile__icon" d="M22.45,15.64H14.8v-5a2,2,0,0,1,2.13-2.32h5.39V0L14.89,0C6.65,0,4.77,6.17,4.77,10.12v5.52H0v8.53H4.77V48.31h10V24.17h6.77Z"/></g></g></svg></a><a class="user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://twitter.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.26 40.04" class="user-profile__svg-icon"><defs></defs><g><g><path class="user-profile__icon" d="M49.26,4.74a20.17,20.17,0,0,1-5.8,1.59A10.09,10.09,0,0,0,47.9.74a20,20,0,0,1-6.42,2.45A10.11,10.11,0,0,0,24,10.11a10.26,10.26,0,0,0,.26,2.3A28.66,28.66,0,0,1,3.43,1.85,10.11,10.11,0,0,0,6.56,15.34,10,10,0,0,1,2,14.08v.13a10.12,10.12,0,0,0,8.11,9.91,10.18,10.18,0,0,1-2.67.35,10,10,0,0,1-1.9-.18,10.11,10.11,0,0,0,9.44,7A20.27,20.27,0,0,1,2.41,35.64,19.25,19.25,0,0,1,0,35.49,28.6,28.6,0,0,0,15.49,40c18.59,0,28.76-15.41,28.76-28.76,0-.44,0-.88,0-1.31A20.38,20.38,0,0,0,49.26,4.74Z"/></g></g></svg></a><a class="user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://dbb.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.44 49.44" class="user-profile__svg-icon"><defs></defs><g><g><path class="user-profile__icon" d="M48.94,19.74A25.18,25.18,0,0,0,47.5,15.1a24.71,24.71,0,0,0-2.28-4.2,24.88,24.88,0,0,0-6.68-6.68A24.57,24.57,0,0,0,29.7.5a25.05,25.05,0,0,0-10,0A24.57,24.57,0,0,0,10.9,4.22,24.88,24.88,0,0,0,4.22,10.9a24.71,24.71,0,0,0-2.28,4.2,24.75,24.75,0,0,0,0,19.24,24.71,24.71,0,0,0,2.28,4.2,24.88,24.88,0,0,0,6.68,6.68,24.57,24.57,0,0,0,8.84,3.72,24.75,24.75,0,0,0,14.6-1.44,24.71,24.71,0,0,0,4.2-2.28,24.88,24.88,0,0,0,6.68-6.68,24.57,24.57,0,0,0,3.72-8.84,25.05,25.05,0,0,0,0-10Zm-3.12,4.77a48.8,48.8,0,0,0-14.7-.69l-.45-1.09c-.44-1-.92-2.06-1.41-3.06C37.6,16.26,41,11.37,41,11.31A21,21,0,0,1,45.82,24.51ZM38.66,8.88c0,.08-3.06,4.66-11,7.64A109.12,109.12,0,0,0,19.75,4.2a21.33,21.33,0,0,1,5-.59A21,21,0,0,1,38.66,8.88Zm-19-4.66H19.6ZM15.71,5.63a125.49,125.49,0,0,1,7.84,12.16A78.25,78.25,0,0,1,4.06,20.37,21.15,21.15,0,0,1,15.71,5.63ZM3.61,24.72c0-.23,0-.45,0-.67A77.06,77.06,0,0,0,25.3,21c.61,1.19,1.18,2.39,1.71,3.59l-.83.25C14.79,28.57,9,38.82,9,38.82H9A21.05,21.05,0,0,1,3.61,24.72ZM24.72,45.83A21,21,0,0,1,11.27,41c.28.23.48.37.48.37s4-8.82,16.56-13.18l.14-.05a87.59,87.59,0,0,1,4.51,16A21,21,0,0,1,24.72,45.83Zm11.8-3.6a91.69,91.69,0,0,0-4.11-15.08,30.62,30.62,0,0,1,13.15.92A21.12,21.12,0,0,1,36.52,42.23Z"/></g></g></svg></a></div>
+                      <div class="user-profile__info-social"><a class="user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://facebook.com"><span class="user-profile__info-social-icon">
+                            <section class="svg-icon">
+                              <svg class="svg-icon__item" svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.45 48.31">
+                                <path d="M22.45,15.64H14.8v-5a2,2,0,0,1,2.13-2.32h5.39V0L14.89,0C6.65,0,4.77,6.17,4.77,10.12v5.52H0v8.53H4.77V48.31h10V24.17h6.77Z"></path>
+                              </svg>
+                            </section></span></a><a class="user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://twitter.com"><span class="user-profile__info-social-icon">
+                            <section class="svg-icon">
+                              <svg class="svg-icon__item" svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.26 40.04">
+                                <path d="M49.26,4.74a20.17,20.17,0,0,1-5.8,1.59A10.09,10.09,0,0,0,47.9.74a20,20,0,0,1-6.42,2.45A10.11,10.11,0,0,0,24,10.11a10.26,10.26,0,0,0,.26,2.3A28.66,28.66,0,0,1,3.43,1.85,10.11,10.11,0,0,0,6.56,15.34,10,10,0,0,1,2,14.08v.13a10.12,10.12,0,0,0,8.11,9.91,10.18,10.18,0,0,1-2.67.35,10,10,0,0,1-1.9-.18,10.11,10.11,0,0,0,9.44,7A20.27,20.27,0,0,1,2.41,35.64,19.25,19.25,0,0,1,0,35.49,28.6,28.6,0,0,0,15.49,40c18.59,0,28.76-15.41,28.76-28.76,0-.44,0-.88,0-1.31A20.38,20.38,0,0,0,49.26,4.74Z"></path>
+                              </svg>
+                            </section></span></a><a class="user-profile__info-social-link" target="_blank" rel="noopener noreferrer" href="http://dbb.com"><span class="user-profile__info-social-icon">
+                            <section class="svg-icon">
+                              <svg class="svg-icon__item" svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.44 49.44">
+                                <path d="M48.94,19.74A25.18,25.18,0,0,0,47.5,15.1a24.71,24.71,0,0,0-2.28-4.2,24.88,24.88,0,0,0-6.68-6.68A24.57,24.57,0,0,0,29.7.5a25.05,25.05,0,0,0-10,0A24.57,24.57,0,0,0,10.9,4.22,24.88,24.88,0,0,0,4.22,10.9a24.71,24.71,0,0,0-2.28,4.2,24.75,24.75,0,0,0,0,19.24,24.71,24.71,0,0,0,2.28,4.2,24.88,24.88,0,0,0,6.68,6.68,24.57,24.57,0,0,0,8.84,3.72,24.75,24.75,0,0,0,14.6-1.44,24.71,24.71,0,0,0,4.2-2.28,24.88,24.88,0,0,0,6.68-6.68,24.57,24.57,0,0,0,3.72-8.84,25.05,25.05,0,0,0,0-10Zm-3.12,4.77a48.8,48.8,0,0,0-14.7-.69l-.45-1.09c-.44-1-.92-2.06-1.41-3.06C37.6,16.26,41,11.37,41,11.31A21,21,0,0,1,45.82,24.51ZM38.66,8.88c0,.08-3.06,4.66-11,7.64A109.12,109.12,0,0,0,19.75,4.2a21.33,21.33,0,0,1,5-.59A21,21,0,0,1,38.66,8.88Zm-19-4.66H19.6ZM15.71,5.63a125.49,125.49,0,0,1,7.84,12.16A78.25,78.25,0,0,1,4.06,20.37,21.15,21.15,0,0,1,15.71,5.63ZM3.61,24.72c0-.23,0-.45,0-.67A77.06,77.06,0,0,0,25.3,21c.61,1.19,1.18,2.39,1.71,3.59l-.83.25C14.79,28.57,9,38.82,9,38.82H9A21.05,21.05,0,0,1,3.61,24.72ZM24.72,45.83A21,21,0,0,1,11.27,41c.28.23.48.37.48.37s4-8.82,16.56-13.18l.14-.05a87.59,87.59,0,0,1,4.51,16A21,21,0,0,1,24.72,45.83Zm11.8-3.6a91.69,91.69,0,0,0-4.11-15.08,30.62,30.62,0,0,1,13.15.92A21.12,21.12,0,0,1,36.52,42.23Z"></path>
+                              </svg>
+                            </section></span></a>
+                      </div>
                     </div>
-                  </div>
+                  </section>
                 </div>
               </div>
             </div>
@@ -158,9 +205,9 @@
         </section>
       </main>
       <footer class="reviews__footer">
-        <div class="footer__topline">
-          <p class="footer__topline-copyright">Ilya sigidin</p>
-        </div>
+        <section class="footer">
+          <p class="footer__copyright">Ilya sigidin</p>
+        </section>
       </footer>
     </div>
   <script type="text/javascript" src="bundle.js"></script></body>

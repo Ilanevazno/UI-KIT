@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <meta name="desctiption" content="UI-kit">
-    <meta name="keywords" content="PUG, SCSS, webpack, resume, BEM">
+    <meta name="description" content="UI-kit">
+    <meta name="keywords" content="PUG, SCSS, webpack, ui-kit, BEM">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
@@ -15,44 +15,44 @@
   <body>
     <div class="contacts">
       <header class="contacts__header">
-        <div class="header-line ">
-          <nav class="header-line__navigation">
-            <div class="header-nav">
+        <div class="header ">
+          <nav class="header__navigation">
+            <section class="header-nav">
               <ul class="header-nav__links">
                 <li><a class="header-nav__links-item" href="./index.html">Главная</a></li>
                 <li><a class="header-nav__links-item" href="./ui-kit.html">Ui-kit</a></li>
                 <li><a class="header-nav__links-item" href="./contacts.html">Контакты</a></li>
                 <li><a class="header-nav__links-item" href="./reviews.html">Отзывы</a></li>
               </ul>
-            </div>
-          </nav><a class="header-line__logo" href="./index.html"></a>
-          <div class="account-panel">
+            </section>
+          </nav><a class="header__logo" href="./index.html"></a>
+          <section class="account-panel">
             <p class="account-panel__title">Аккаунт</p>
-            <div class="account-panel__controls"><a href="./login.html">
-                <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_hight" type="submit">
-                  <div class="ripple-btn__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                  <p>Вход</p>
-                </button></a><a href="./register.html">
-                <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_hight" type="submit">
-                  <div class="ripple-btn__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                  <p>Регистрация</p>
-                </button></a>
+            <div class="account-panel__controls">
+              <a class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_large" href="./login.html">
+                <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
+                <p class="ripple-btn__text">Вход</p>
+              </a>
+              <a class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_large" href="./register.html">
+                <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
+                <p class="ripple-btn__text">Регистрация</p>
+              </a>
             </div>
-          </div>
+          </section>
         </div>
-        <div class="header-line__mobile">
-          <div class="header-mobile js-header-mobile"><a class="header-mobile__button js-hamburger-button">&#9776;</a>
-            <aside class="header-mobile__menu js-hamburger-menu">
-              <div class="header-nav">
+        <div class="header__mobile">
+          <section class="header-mobile js-header-mobile"><a class="header-mobile__hamburger-button js-header-mobile__hamburger-button">&#9776;</a>
+            <aside class="header-mobile__hamburger-menu js-header-mobile__hamburger-menu">
+              <section class="header-nav">
                 <ul class="header-nav__links">
                   <li><a class="header-nav__links-item" href="./index.html">Главная</a></li>
                   <li><a class="header-nav__links-item" href="./ui-kit.html">Ui-kit</a></li>
                   <li><a class="header-nav__links-item" href="./contacts.html">Контакты</a></li>
                   <li><a class="header-nav__links-item" href="./reviews.html">Отзывы</a></li>
                 </ul>
-              </div>
+              </section>
             </aside>
-          </div>
+          </section>
         </div>
       </header>
       <main class="contacts__content">
@@ -62,16 +62,20 @@
             <p class="contact-section__text">Вы можете посетить наш офис по адресу:</p>
             <p class="contact-section__text">Россия. Санкт-Петербург, Итальянская ул. 3 (БЦ рандомный, 2 этаж)</p>
             <div class="contact-section__widget">
-              <div class="widget-location js-widget-location" data-coords="[59.890138,30.37824]">
-                <div class="widget-location__overlay">
-                  <div class="widget-location__overlay-text-wrapper">
-                    <p class="widget-location__overlay-welcome-text">Meet us!</p>
-                    <p class="widget-location__overlay-address-text">Итальянская ул. дом 3</p>
+              <div class="location js-location" data-coords="[59.890138,30.37824]">
+                <div class="location__overlay">
+                  <div class="location__overlay-text-wrapper">
+                    <p class="location__overlay-welcome-text">Meet us!</p>
+                    <p class="location__overlay-address-text">Итальянская ул. дом 3</p>
                   </div>
-                  <div class="widget-location__overlay-controls-wrapper">
-                    <div class="widget-location__overlay-controls-container">
-                      <button class="widget-location__overlay-controls widget-location__overlay-btn-set-address js-overlay-btn-set-address"></button>
-                      <button class="widget-location__overlay-controls widget-location__overlay-btn-find-marker js-overlay-btn-find-marker"></button>
+                  <div class="location__overlay-controls-wrapper">
+                    <div class="location__overlay-controls-container">
+                      <div class="location__overlay-controls">
+                        <button class="location__overlay-btn-set-address js-location__overlay-btn-set-address"></button>
+                      </div>
+                      <div class="location__overlay-controls">
+                        <button class="location__overlay-btn-find-marker js-location__overlay-btn-find-marker"></button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -84,17 +88,35 @@
             <h2 class="contact-section__title">Как мы работаем?</h2>
             <p class="contact-section__text">О работе нашей компании вы сможете увидеть в нашем видео ролике:</p>
             <div class="contact-section__widget">
-              <div class="video-player__container">
-                <video class="video-player__screen">
+              <section class="video-player js-video-player">
+                <video class="video-player__screen js-video-player__screen">
                   <source src="./assets/video/new-zeland.mp4" type="video/mp4">
                 </video>
                 <div class="video-player__controls">
-                  <button class="video-player__control video-player__play" id="video-player__play"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 320.001 320.001" style="enable-background:new 0 0 320.001 320.001;" xml:space="preserve"><path d="M295.84,146.049l-256-144c-4.96-2.784-11.008-2.72-15.904,0.128C19.008,5.057,16,10.305,16,16.001v288c0,5.696,3.008,10.944,7.936,13.824c2.496,1.44,5.28,2.176,8.064,2.176c2.688,0,5.408-0.672,7.84-2.048l256-144c5.024-2.848,8.16-8.16,8.16-13.952S300.864,148.897,295.84,146.049z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></button>
-                  <button class="video-player__control video-player__pause video-player__hidden-item" id="video-player__pause"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path fill="rgb(255, 255, 255)" d="M10 24h-6v-24h6v24zm10 0h-6v-24h6v24zm-11-23h-4v22h4v-22zm10 0h-4v22h4v-22z"/></svg></button>
-                  <progress class="video-player__progress" max="100" value="0" id="video-player__progress" onTimeUpdate="progressUpdate()"></progress>
-                  <button class="video-player__control video-player__fullscreen" id="video-player__fullscreen"></button>
+                  <div class="video-video-player__control video-player__control_type_play js-video-player__control_type_play">
+                    <button class="video-player__control"><span class="video-player__control-figure">
+                        <section class="svg-icon">
+                          <svg class="svg-icon__item" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20" height="20" viewBox="0 0 320.001 320.001" style="enable-background:new 0 0 320.001 320.001;" xml:space="preserve">
+                            <path d="M295.84,146.049l-256-144c-4.96-2.784-11.008-2.72-15.904,0.128C19.008,5.057,16,10.305,16,16.001v288c0,5.696,3.008,10.944,7.936,13.824c2.496,1.44,5.28,2.176,8.064,2.176c2.688,0,5.408-0.672,7.84-2.048l256-144c5.024-2.848,8.16-8.16,8.16-13.952S300.864,148.897,295.84,146.049z"></path>
+                          </svg>
+                        </section></span></button>
+                  </div>
+                  <div class="video-video-player__control video-player__control_type_pause js-video-player__control_type_pause">
+                    <button class="video-player__control"><span class="video-player__control-figure">
+                        <section class="svg-icon">
+                          <svg class="svg-icon__item" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill-rule="evenodd" clip-rule="evenodd">
+                            <path fill="rgb(255, 255, 255)" d="M10 24h-6v-24h6v24zm10 0h-6v-24h6v24zm-11-23h-4v22h4v-22zm10 0h-4v22h4v-22z"></path>
+                          </svg>
+                        </section></span></button>
+                  </div>
+                  <div class="video-video-player__control video-player__control_type_progress js-video-player__control_type_progress">
+                    <progress class="video-player__control" max="100" value="0"></progress>
+                  </div>
+                  <div class="video-video-player__control video-player__control_type_fullscreen js-video-player__control_type_fullscreen">
+                    <button class="video-player__control"></button>
+                  </div>
                 </div>
-              </div>
+              </section>
             </div>
           </section>
         </div>
@@ -103,36 +125,57 @@
             <h2 class="contact-section__title">Остались ещё вопросы?</h2>
             <p class="contact-section__text">Вы можете отправить нам сообщение, и мы ответим вам на почту</p>
             <div class="contact-section__widget">
-              <form class="js-message-form message-form__container">
+              <form class="message-form js-message-form">
                 <div class="message-form__fields">
-                  <input class="message-form__name message-form__item " type="text" id="" name="" placeholder="Your Name">
-                  <label class="message-form__field-status" for=""></label>
-                </div>
-                <div class="message-form__fields">
-                  <input class="message-form__email message-form__item contact__user-email" type="email" id="contact__user-email" name="contact__user-email" placeholder="Your Email">
-                  <label class="message-form__field-status" for="contact__user-email"></label>
+                  <div class="message-form__item">
+                    <input class="message-form__field js-message-form__field" type="text" name="" placeholder="Your Name">
+                    <label class="message-form__field-status js-message-form__field-status"></label>
+                  </div>
                 </div>
                 <div class="message-form__fields">
-                  <textarea class="message-form__item message-form__textarea contact__user-message" id="contact__user-message" placeholder="Your Email"></textarea>
+                  <div class="message-form__item">
+                    <input class="message-form__field js-message-form__field" type="email" name="contact__user-email" placeholder="Your Email">
+                    <label class="message-form__field-status js-message-form__field-status"></label>
+                  </div>
                 </div>
-                <div class="message-form__policy message-form__policy-item"><span class="message-form__policy-item">
-                    <input class="tick__checkbox-input policy-accept" type="checkbox" name="policy-accept" id="policy-accept">
-                    <label class="js-checkbox-icon tick__checkbox-icon" for="policy-accept"></label></span>
-                  <p class="message-form__policy-text message-form__policy-item">Я согласен на обработку<a class="message-form__policy-href message-form__policy-item" href="https://policy.com/">персональных данных</a></p>
+                <div class="message-form__fields">
+                  <div class="message-form__item">
+                    <textarea class="message-form__textarea" placeholder="Your Message"></textarea>
+                  </div>
                 </div>
-                <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint-reverse ripple-btn_size_hight" type="submit">
-                  <div class="ripple-btn__ripple-effect js-ripple-effect"><span class="js-ripple-circle"></span></div>
-                  <p>Submit</p>
-                </button>
+                <div class="message-form__fields">
+                  <div class="message-form__item">
+                    <div class="message-form__policy">
+                      <div class="message-form__policy-item">
+                        <section class="tick-box">
+                          <label class="tick-box__label">
+                            <input class="tick-box__input" type="checkbox" name="policy-accept">
+                            <div class="tick-box__icon" tabindex="0"></div>
+                          </label>
+                        </section>
+                      </div>
+                      <div class="message-form__policy-item">
+                        <p class="message-form__policy-text">Я согласен на обработку</p>
+                      </div>
+                      <div class="message-form__policy-item"><a class="message-form__policy-href" href="https://policy.com/" target="_blank" rel="noopener noreferrer">персональных данных</a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="message-form__submit-btn">
+                  <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint-reverse ripple-btn_size_large" type="submit">
+                    <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
+                    <p class="ripple-btn__text">Submit</p>
+                  </button>
+                </div>
               </form>
             </div>
           </section>
         </div>
       </main>
       <footer class="contacts__footer">
-        <div class="footer__topline">
-          <p class="footer__topline-copyright">Ilya sigidin</p>
-        </div>
+        <section class="footer">
+          <p class="footer__copyright">Ilya sigidin</p>
+        </section>
       </footer>
     </div>
   <script type="text/javascript" src="bundle.js"></script></body>
