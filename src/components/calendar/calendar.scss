@@ -46,13 +46,18 @@
 
     &--days-names {
       background-color: $orange-template;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       color: white;
       text-transform: uppercase;
       height: 3.1rem;
       font-family: 'Lato black', Arial, sans-serif;
+    }
+
+    &--day-name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     &--cells-days {
