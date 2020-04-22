@@ -1,6 +1,6 @@
 include ../../components/percentages-chart/percentages-chart.pug
 include ../../components/donut-chart/donut-chart.pug
-mixin charts-section(title = '')
+mixin charts-section({ title })
   -
     const charts = ['0', '38', '62', '89'];
     const donutData = [

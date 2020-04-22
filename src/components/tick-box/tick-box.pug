@@ -1,5 +1,5 @@
-mixin tick-box (boxName = '')
+mixin tick-box ({ tickBoxName })
   section.tick-box
     label.tick-box__label
-      input.tick-box__input(type="checkbox" name= boxName)
+      input.tick-box__input(type="checkbox" name= tickBoxName)
       .tick-box__icon(tabindex="0")

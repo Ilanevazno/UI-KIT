@@ -1,5 +1,5 @@
 include ../video-player/video-player
-mixin video-section (title = '')
+mixin video-section ({ title })
   section.video-section
     h2.video-section__title= title
     +video-player(require('../../assets/video/new-zeland.mp4'))
