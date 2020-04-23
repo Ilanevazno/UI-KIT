@@ -14,11 +14,11 @@ mixin ripple-btn(button = {})
     theme = ` ripple-btn_theme_${theme}`;
     theme = isReversedColor ? `${theme}-reverse` : theme;
 
-    target = !!local ? '_blank' : false,
-    rel = !!local ? 'noopener noreferrer' : false,
+    const target = !!local ? '_blank' : false;
+    const rel = !!local ? 'noopener noreferrer' : false;
 
-    tag = href ? 'a' : 'button',
-    entityType = tag === 'button' ? 'submit' : false;
+    const tag = href ? 'a' : 'button';
+    const entityType = tag === 'button' ? 'submit' : false;
 
     let className = 'ripple-btn js-ripple-btn ' + theme + size;
     className += !!isResponsive ? ' ripple-btn_width_responsive' : '';
