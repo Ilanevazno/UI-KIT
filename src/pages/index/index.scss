@@ -24,6 +24,13 @@
     margin-top: 2rem;
   }
 
+  &__assistant {
+    position: fixed;
+    bottom: 10vh;
+    right: 5vh;
+    z-index: 500;
+  }
+
   &__block {
     &-events {
       padding: 2rem 0;
