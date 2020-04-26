@@ -1,4 +1,6 @@
 import HeaderMobile from './HeaderMobile';
 
-const hamburger = new HeaderMobile('.js-header-mobile');
-hamburger.init();
+$('.js-header-mobile').each((idx, itm) => {
+  const hamburger = new HeaderMobile(itm);
+  hamburger.init();
+});

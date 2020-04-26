@@ -16,17 +16,10 @@ class Dropdown {
 
   handleDocumentClick(e) {
     const $caughtTarget = $(e.target);
+    const dropdownIsOpen = this.$optionsContainer.is('.dropdown__label_open');
+    const containerHasTarget = this.$htmlContainer.find($caughtTarget).length === 0;
 
-    const checkTarget = () => {
-      if (this.$optionsContainer.is('.dropdown__label_open') && (this.$htmlContainer.find($caughtTarget).length === 0)) {
-        return true;
-      }
-      return false;
-    };
-
-    const canClose = checkTarget();
-
-    if (canClose) {
+    if (dropdownIsOpen && containerHasTarget) {
       this.$optionsContainer.toggleClass('dropdown__label_open');
     }
   }

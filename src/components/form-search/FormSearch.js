@@ -9,6 +9,7 @@ class FormSearch {
       $errorNotify: this.$htmlElement.find('.js-form-search__status'),
     };
     this.openMM = false;
+    this.$everyListItem = this.htmlItemList.$searchItemList.find('li');
   }
 
   bindActions() {
@@ -54,11 +55,10 @@ class FormSearch {
 
   handleInputTextAreaInput(e) {
     const val = e.target.value.trim();
-    const itemList = this.htmlItemList.$searchItemList.find('li');
     this.htmlItemList.$searchItemList.removeClass('form-search__item-list_showed');
 
     if (val !== '') {
-      itemList.each((idx, elem) => {
+      this.$everyListItem.each((idx, elem) => {
         if (elem.innerText.search(val) === -1) {
           $(elem).hide();
         } else {
@@ -66,16 +66,14 @@ class FormSearch {
         }
       });
     } else {
-      itemList.each((idx, elem) => {
+      this.$everyListItem.each((idx, elem) => {
         $(elem).show();
       });
     }
   }
 
   handleSearchBtnClick() {
-    const itemList = this.htmlItemList.$searchItemList.find('li');
-
-    const findingElement = [...itemList].some(
+    const findingElement = [...this.$everyListItem].some(
       (element) => element.innerText === this.htmlItemList.$inputLabel.val(),
     );
 

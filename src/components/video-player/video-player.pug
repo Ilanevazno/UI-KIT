@@ -8,11 +8,11 @@ mixin video-player({ src })
         .video-video-player__control.video-player__control_type_play.js-video-player__control_type_play
           button.video-player__control
             span.video-player__control-figure
-              +svg-icon('play')
+              +svg-icon({ icon: 'play' })
         .video-video-player__control.video-player__control_type_pause.js-video-player__control_type_pause
           button.video-player__control
             span.video-player__control-figure
-              +svg-icon('pause')
+              +svg-icon({ icon: 'pause' })
         .video-video-player__control.video-player__control_type_progress.js-video-player__control_type_progress
           progress.video-player__control(
             max="100"

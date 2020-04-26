@@ -1,6 +1,6 @@
 class VideoPlayer {
   constructor(selector) {
-    this.$videoContainer = selector;
+    this.$videoContainer = $(selector);
     this.$videoScreen = this.$videoContainer.find('.js-video-player__screen');
     this.$videoProgress = this.$videoContainer.find('.js-video-player__control_type_progress');
     this.controls = {
