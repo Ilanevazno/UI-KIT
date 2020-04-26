@@ -21,7 +21,7 @@ class HeaderMobile {
     }
   }
 
-  bootstrap() {
+  init() {
     this.bindActions();
   }
 }

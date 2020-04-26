@@ -46,7 +46,7 @@ class Dropdown {
     return this.currentState;
   }
 
-  bootstrap() {
+  init() {
     this.bindActions();
   }
 }

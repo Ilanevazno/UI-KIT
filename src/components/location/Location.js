@@ -64,7 +64,7 @@ class Location {
     L.marker(this.coords, { icon: placeMark }).addTo(this.mapEntity);
   }
 
-  bootstrap() {
+  init() {
     this.render();
     this.bindActions();
   }

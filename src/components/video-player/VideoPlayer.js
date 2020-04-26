@@ -71,7 +71,7 @@ class VideoPlayer {
     this.$videoScreen[0].play();
   }
 
-  bootstrap() {
+  init() {
     this.bindActions();
     this.controls.$pause.hide();
   }

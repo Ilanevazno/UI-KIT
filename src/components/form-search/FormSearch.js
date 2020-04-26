@@ -29,18 +29,18 @@ class FormSearch {
   }
 
   handleDocumentClick(e) {
-    const $catchedTarget = $(e.target);
+    const $caughtTarget = $(e.target);
 
     const checkTarget = () => {
-      if (this.htmlItemList.$searchItemList.is('.form-search__item-list_showed') && (this.$htmlElement.find($catchedTarget).length === 0)) {
+      if (this.htmlItemList.$searchItemList.is('.form-search__item-list_showed') && (this.$htmlElement.find($caughtTarget).length === 0)) {
         return true;
       }
       return false;
     };
 
-    const isCanClose = checkTarget();
+    const shouldClose = checkTarget();
 
-    if (isCanClose) {
+    if (shouldClose) {
       this.htmlItemList.$searchItemList.removeClass('form-search__item-list_showed');
     }
   }
@@ -94,7 +94,7 @@ class FormSearch {
     this.htmlItemList.$searchItemList.removeClass('form-search__item-list_showed');
   }
 
-  bootstrap() {
+  init() {
     this.bindActions();
   }
 }

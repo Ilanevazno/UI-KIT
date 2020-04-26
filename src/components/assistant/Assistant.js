@@ -22,7 +22,7 @@ class Assistant {
     }
   }
 
-  bootstrap() {
+  init() {
     this.bindActions();
   }
 }

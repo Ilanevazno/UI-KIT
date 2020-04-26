@@ -39,7 +39,7 @@ class Calendar {
     $(document).on('DOMContentLoaded.document', this.handleDocumentDomContentLoaded.bind(this));
   }
 
-  bootstrap() {
+  init() {
     this.render();
     this.bindActions();
   }

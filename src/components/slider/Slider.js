@@ -58,7 +58,7 @@ class Slider {
     });
   }
 
-  bootstrap() {
+  init() {
     this.render();
     this.bindActions();
   }

@@ -8,7 +8,7 @@ class RippleBtn {
     this.$rippleHtmlButton.on('animationEnd webkitAnimationEnd OAnimationEnd MSAnimationEnd', this.handleRippleEffectAnimationEnd);
   }
 
-  bootstrap() {
+  init() {
     this.bindActions();
   }
 

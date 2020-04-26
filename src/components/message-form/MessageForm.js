@@ -9,7 +9,7 @@ class MessageForm {
     this.$htmlContainer.on('submit.messageForm', this.handleMessageFormSubmit.bind(this));
   }
 
-  bootstrap() {
+  init() {
     this.bindActions();
   }
 
