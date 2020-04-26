@@ -12,4 +12,5 @@ mixin account-panel ({ title = '', buttonList = [], })
             theme= 'mint',
             size = 'large',
           } = link;
-        +ripple-btn({ theme, size, text: description, href })
+        .account-panel__controls-item
+          +ripple-btn({ theme, size, text: description, href })
