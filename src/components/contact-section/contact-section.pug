@@ -11,8 +11,9 @@ mixin contact-section (data = {})
     } = data;
   section.contact-section
     h2.contact-section__title= title
-    - for (let i = 0; i < paragraphs.length; i += 1)
-      p.contact-section__text= paragraphs[i]
+    -
+    each paragraph in paragraphs
+      p.contact-section__text= paragraph
     .contact-section__widget
       case contactType
         when 'communicate'

@@ -5,15 +5,15 @@ include ../account-panel/account-panel
 mixin header (pages = {}, theme)
   -
     let headerClassName = 'header ';
-    const logo = { link: './index.html' };
+    const logoLink = './index.html';
     const buttonList = [
-      { href: './login.html', description: 'Вход', size: 'large' },
-      { href: './register.html', description: 'Регистрация', size: 'large' },
+      { href: './login.html', description: 'Вход', size: 'large', },
+      { href: './register.html', description: 'Регистрация', size: 'large', },
     ];
   div(class= headerClassName)
     nav.header__navigation
       +header-nav(pages)
-    a.header__logo(href= logo.link)
-    +account-panel({ title: 'Аккаунт', buttonList })
+    a.header__logo(href= logoLink)
+    +account-panel({ title: 'Аккаунт', buttonList, })
   .header__mobile
     +header-mobile(pages)

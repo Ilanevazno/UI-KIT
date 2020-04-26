@@ -27,9 +27,10 @@ mixin register-section(data = {})
     let filledCount = 0;
   section.register-section
     form.register-section__form
-      - for (let i = 0; i < requiredFields.length; i++)
+      -
+      each field in requiredFields
         .register-section__form-item
-          h2.register-section__item-title= requiredFields[i].placeholder
-          +input-label({ name: requiredFields[i].fieldName, labelType: requiredFields[i].labelType })
+          h2.register-section__item-title= field.placeholder
+          +input-label({ name: field.fieldName, labelType: field.labelType })
       +stages({ maxStep: 3, currentStep: 1 })
       +ripple-btn({ theme: 'mint', size: 'large', text: finishBtnText })

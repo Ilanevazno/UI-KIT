@@ -1,5 +1,6 @@
 include ../../components/percentages-chart/percentages-chart.pug
 include ../../components/donut-chart/donut-chart.pug
+
 mixin charts-section({ title })
   -
     const charts = ['0', '38', '62', '89'];
@@ -12,8 +13,9 @@ mixin charts-section({ title })
   section.charts-section
     h2.charts-section__title= title
     .charts-section__container
-      - for (let i = 0; i < charts.length; i += 1)
+      -
+      each chart in charts
         .charts-section__container-item
-          +percentages-chart({ currentFill: charts[i], })
+          +percentages-chart({ currentFill: chart, })
       .charts-section__container-item
         +donut-chart(donutData)
