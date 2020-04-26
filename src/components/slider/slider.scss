@@ -2,14 +2,7 @@
   .back-bar {
     height: 0.6rem;
     border-radius: 8px;
-    background-color: #eeeeee;
-    background-color: #e7e7e7;
-    background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#dddddd));
-    background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
-    background-image: -o-linear-gradient(top, #eeeeee, #dddddd);
     background-image: linear-gradient(to bottom, #eeeeee, #dddddd);
-    background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffdddddd', GradientType=0);
 
     .pointer {
@@ -22,8 +15,7 @@
 
     .selected-bar {
       background-color: $color;
-      border-top-left-radius: 8px;
-      border-bottom-left-radius: 8px;
+      border-radius: 8px;
     }
 
     .pointer-label {

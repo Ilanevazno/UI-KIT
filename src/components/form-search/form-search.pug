@@ -3,13 +3,11 @@ mixin form-search(data = {})
     const {
       searchList = [],
       placeholder = 'Search',
-      errorMessage = 'I’ve not found what I’m looking for...',
     } = data;
   section.form-search.js-form-search
     .form-search__find-line
       .form-search__line-wrapper
         input.form-search__input-text-area.js-form-search__input-text-area(type="text" placeholder= placeholder)
-        label.form-search__status.js-form-search__status= errorMessage
       input.form-search__search-btn.js-form-search__search-btn(type="button")
     .form-search__options
       ul.form-search__item-list.js-form-search__item-list

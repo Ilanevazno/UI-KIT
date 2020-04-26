@@ -1,12 +1,12 @@
 class FormSearch {
   constructor(element) {
     this.$htmlElement = $(document).find(element);
+    this.errorMessage = 'I’ve not found what I’m looking for...';
     this.htmlItemList = {
       $searchItemList: this.$htmlElement.find('.js-form-search__item-list'),
       $searchListOptions: this.$htmlElement.find('.js-form-search__item-list-option'),
       $searchBtn: this.$htmlElement.find('.js-form-search__search-btn'),
       $inputLabel: this.$htmlElement.find('.js-form-search__input-text-area'),
-      $errorNotify: this.$htmlElement.find('.js-form-search__status'),
     };
     this.openMM = false;
     this.$everyListItem = this.htmlItemList.$searchItemList.find('li');
@@ -17,15 +17,10 @@ class FormSearch {
     this.htmlItemList.$searchListOptions.on('click.items', this.handleItemListOptionClick.bind(this));
     this.htmlItemList.$inputLabel.on('input.searchInput', this.handleInputTextAreaInput.bind(this));
     this.htmlItemList.$searchBtn.on('click.searchButton', this.handleSearchBtnClick.bind(this));
-    this.htmlItemList.$errorNotify.on('click.errorNotify', this.handleStatusClick.bind(this));
     $(document).on('click.document', this.handleDocumentClick.bind(this));
   }
 
   handleInputTextAreaClick() {
-    this.prepareLine();
-  }
-
-  handleStatusClick() {
     this.prepareLine();
   }
 
@@ -49,7 +44,8 @@ class FormSearch {
   prepareLine() {
     this.htmlItemList.$searchItemList.toggleClass('form-search__item-list_showed');
     this.htmlItemList.$searchBtn.removeClass('form-search__search-btn_status_invalid');
-    this.htmlItemList.$errorNotify.hide();
+    this.htmlItemList.$inputLabel.removeClass('form-search__input-text-area_status_invalid');
+    this.htmlItemList.$inputLabel.attr('placeholder', 'Search');
     this.openMM = true;
   }
 
@@ -83,7 +79,9 @@ class FormSearch {
       this.htmlItemList.$searchBtn.addClass('form-search__search-btn_status_valid');
     } else {
       this.htmlItemList.$searchBtn.addClass('form-search__search-btn_status_invalid');
-      this.htmlItemList.$errorNotify.show();
+      this.htmlItemList.$inputLabel.addClass('form-search__input-text-area_status_invalid');
+      this.htmlItemList.$inputLabel.val('');
+      this.htmlItemList.$inputLabel.attr('placeholder', this.errorMessage);
     }
   }
 

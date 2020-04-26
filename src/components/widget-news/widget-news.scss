@@ -27,15 +27,13 @@
   }
 
   &__date {
-    font-family: 'Lato Black', Arial, sans-serif;
-    font-size: 1.45rem;
+    font: 1.45rem 'Lato Black', Arial, sans-serif;
     margin: 7% 0 0 0;
     color: white;
   }
 
   &__text {
-    font-family: 'Lato Regular', Arial, sans-serif;
-    font-size: 1.37rem;
+    font: 1.37rem 'Lato Regular', Arial, sans-serif;
     margin: 8% 0 3.9rem 0;
     color: white;
   }
