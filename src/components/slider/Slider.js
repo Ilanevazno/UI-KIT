@@ -47,8 +47,8 @@ class Slider {
       });
     };
 
-    this.$htmlContainer.next().each((idx, itm) => {
-      $(itm).find('.pointer').each((index, item) => {
+    this.$htmlContainer.next().each((idx, html) => {
+      $(html).find('.pointer').each((index, item) => {
         moveLabels(item);
 
         $(item).on('mousedown', () => {
