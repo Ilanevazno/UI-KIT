@@ -1,6 +1,6 @@
 import Location from './Location';
 
-$('.js-location').each((idx, itm) => {
-  const location = new Location(itm);
+$('.js-location').each((index, html) => {
+  const location = new Location(html);
   location.init();
 });

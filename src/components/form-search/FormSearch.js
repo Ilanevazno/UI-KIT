@@ -8,7 +8,7 @@ class FormSearch {
       $searchBtn: this.$htmlElement.find('.js-form-search__search-btn'),
       $inputLabel: this.$htmlElement.find('.js-form-search__input-text-area'),
     };
-    this.openMM = false;
+    this.menuIsOpen = false;
     this.$everyListItem = this.htmlItemList.$searchItemList.find('li');
   }
 
@@ -46,7 +46,7 @@ class FormSearch {
     this.htmlItemList.$searchBtn.removeClass('form-search__search-btn_status_invalid');
     this.htmlItemList.$inputLabel.removeClass('form-search__input-text-area_status_invalid');
     this.htmlItemList.$inputLabel.attr('placeholder', 'Search');
-    this.openMM = true;
+    this.menuIsOpen = true;
   }
 
   handleInputTextAreaInput(e) {
@@ -54,16 +54,16 @@ class FormSearch {
     this.htmlItemList.$searchItemList.removeClass('form-search__item-list_showed');
 
     if (val !== '') {
-      this.$everyListItem.each((idx, elem) => {
-        if (elem.innerText.search(val) === -1) {
-          $(elem).hide();
+      this.$everyListItem.each((index, element) => {
+        if (element.innerText.search(val) === -1) {
+          $(element).hide();
         } else {
-          $(elem).show();
+          $(element).show();
         }
       });
     } else {
-      this.$everyListItem.each((idx, elem) => {
-        $(elem).show();
+      this.$everyListItem.each((index, element) => {
+        $(element).show();
       });
     }
   }

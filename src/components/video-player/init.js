@@ -1,7 +1,7 @@
 import VideoPlayer from './VideoPlayer';
 
-$('.js-video-player').each((idx, itm) => {
-  const video = new VideoPlayer(itm);
+$('.js-video-player').each((index, html) => {
+  const video = new VideoPlayer(html);
   video.init();
   video.setCurrentTime(10);
 });

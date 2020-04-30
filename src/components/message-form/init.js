@@ -1,6 +1,6 @@
 import MessageForm from './MessageForm';
 
-$('.js-message-form').each((idx, itm) => {
-  const messageForm = new MessageForm(itm);
+$('.js-message-form').each((index, html) => {
+  const messageForm = new MessageForm(html);
   messageForm.init();
 });

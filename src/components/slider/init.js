@@ -1,6 +1,6 @@
 import Slider from './Slider';
 
-$('.js-slider').each((idx, element) => {
-  const slider = new Slider(element);
+$('.js-slider').each((index, html) => {
+  const slider = new Slider(html);
   slider.init();
 });

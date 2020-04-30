@@ -1,6 +1,6 @@
 import Calendar from './Calendar';
 
-$('.js-calendar').each((idx, itm) => {
-  const calendar = new Calendar(itm);
+$('.js-calendar').each((index, html) => {
+  const calendar = new Calendar(html);
   calendar.init();
 });

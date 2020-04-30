@@ -6,8 +6,8 @@ class Stages {
   }
 
   clearStages() {
-    this.$stagesItems.each((idx, itm) => {
-      $(itm).removeClass('is-active');
+    this.$stagesItems.each((index, html) => {
+      $(html).removeClass('is-active');
     });
   }
 
