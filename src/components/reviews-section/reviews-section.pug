@@ -17,8 +17,8 @@ mixin reviews-section({ reviews = [], title })
       each item in reviews
         -
           const {
-            name = '',
-            text = '',
+            name,
+            text,
           } = item;
         .reviews-section__review-item
           textarea.reviews-section__user-review(disabled)= text

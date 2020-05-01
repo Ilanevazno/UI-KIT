@@ -5,4 +5,8 @@ mixin dropdown ({ placeholder = 'Choose an option', optionList = [] })
       .dropdown__selected-option-area-btn
     ul.dropdown__label.js-dropdown__label(tabindex="0")
       each item in optionList
-        li.dropdown__label-item.js-dropdown__label-item(tabindex="0")= item.text
+        -
+          const {
+            text,
+          } = item;
+        li.dropdown__label-item.js-dropdown__label-item(tabindex="0")= text

@@ -19,10 +19,15 @@ mixin user-profile(profile = {})
       h3.user-profile__info-job= job
       .user-profile__info-social
         each link in social
+          -
+            const {
+              href,
+              icon,
+            } = link;
           a.user-profile__info-social-link(
             target="_blank"
             rel="noopener noreferrer"
-            href= link.href
+            href= href
           )
             span.user-profile__info-social-icon
-              +svg-icon({ icon: link.icon, })
+              +svg-icon({ icon: icon, })

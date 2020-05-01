@@ -4,7 +4,11 @@ mixin donut-chart(donutData = [])
       -
         let dashOffset = 15;
       each item in donutData
-        - const remainderOfDash = 100 - item.fill;
+        -
+          const {
+            fill,
+          } = item;
+          const remainderOfDash = 100 - fill;
         circle(
           cx="21"
           cy="21"
@@ -12,7 +16,7 @@ mixin donut-chart(donutData = [])
           fill="transparent"
           stroke= item.color
           stroke-width="6"
-          stroke-dasharray=`${item.fill} ${remainderOfDash}`
+          stroke-dasharray=`${fill} ${remainderOfDash}`
           stroke-dashoffset= dashOffset
           )
-        - dashOffset = (100 - item.fill) + dashOffset
+        - dashOffset = (100 - fill) + dashOffset

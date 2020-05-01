@@ -2,5 +2,9 @@ mixin header-nav(data = [ url, name, ])
   section.header-nav
     ul.header-nav__links
       each page in data
+        -
+          const {
+            name,
+          } = page
         li
-          a.header-nav__links-item(href= page.url)= page.name
+          a.header-nav__links-item(href= page.url)= name

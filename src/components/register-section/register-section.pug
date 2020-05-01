@@ -28,13 +28,14 @@ mixin register-section(data = {})
   section.register-section
     form.register-section__form
       each field in requiredFields
+        -
+          const {
+            placeholder,
+            fieldName,
+            labelType,
+          } = field;
         .register-section__form-item
-          h2.register-section__item-title= field.placeholder
-          -
-            const {
-              fieldName,
-              labelType,
-            } = field;
+          h2.register-section__item-title= placeholder
           +input-label({ name: fieldName, labelType: labelType })
       +stages({ maxStep: 3, currentStep: 1 })
       +ripple-btn({ theme: 'mint', size: 'large', text: finishBtnText })
