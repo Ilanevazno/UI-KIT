@@ -1,3 +1,8 @@
-mixin arrow-button({ direction = left, isDisabled = false, })
+mixin arrow-button({ direction = 'left', isDisabled = false, })
+  -
+    const directionModify = {
+      left: 'arrow-button__inner_direction_left',
+      right: 'arrow-button__inner_direction_right',
+    };
   button.arrow-button(type="button" disabled= isDisabled)
-    .arrow-button__inner(class=`arrow-button__inner_direction_${direction}`)
+    .arrow-button__inner(class= directionModify[direction])

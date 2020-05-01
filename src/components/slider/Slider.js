@@ -20,7 +20,7 @@ class Slider {
 
   render() {
     this.$htmlContainer.jRange(this.settings);
-    this.fixRangeOffset();
+    this.setTooltipPosition();
   }
 
   bindActions() {
@@ -38,7 +38,7 @@ class Slider {
     }
   }
 
-  fixRangeOffset() {
+  setTooltipPosition() {
     const moveLabels = (target) => {
       $(document).on('mousemove.slider', () => {
         const position = $(target).position().left;

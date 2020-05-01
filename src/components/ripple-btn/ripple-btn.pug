@@ -1,8 +1,8 @@
 mixin ripple-btn(button = {})
   -
-    let {
-      theme = 'orange',
-      size = 'small',
+    const {
+      theme,
+      size,
       isResponsive = false,
       isReversedColor = false,
       text = 'Button',
@@ -10,23 +10,34 @@ mixin ripple-btn(button = {})
       local = false,
     } = button;
 
-    size = ` ripple-btn_size_${size}`;
-    theme = ` ripple-btn_theme_${theme}`;
-    theme = isReversedColor ? `${theme}-reverse` : theme;
-
     const target = !!local ? '_blank' : false;
     const rel = !!local ? 'noopener noreferrer' : false;
 
     const tag = href ? 'a' : 'button';
     const entityType = tag === 'button' ? 'submit' : false;
 
-    let className = 'ripple-btn js-ripple-btn ' + theme + size;
-    className += !!isResponsive ? ' ripple-btn_width_responsive' : '';
+    const themeModifiers = {
+      orange: 'ripple-btn_theme_orange',
+      mint: 'ripple-btn_theme_mint',
+    };
+
+    const sizeModifiers = {
+      small: 'ripple-btn_size_small',
+      large: 'ripple-btn_size_large',
+    };
+
+    const classes = [
+      'ripple-btn',
+      'js-ripple-btn',
+      isReversedColor ? `${themeModifiers[theme]}-reverse` : themeModifiers[theme],
+      sizeModifiers[size],
+      isResponsive ? 'ripple-btn_width_responsive' : false,
+    ];
 
   #{tag}(
     type= entityType
     href= href
-    class= className
+    class= classes
   )
     .ripple-btn__ripple-effect.js-ripple-btn__ripple-effect
       span.ripple-btn__ripple-circle.js-ripple-btn__ripple-circle

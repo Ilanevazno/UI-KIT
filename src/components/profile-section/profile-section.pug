@@ -11,7 +11,7 @@ mixin profile-section ({ title })
           facebook: 'https://www.facebook.com/',
           twitter: 'https://twitter.com/',
           dribbble: 'https://dribbble.com/',
-        }
+        },
       },
       {
         name: 'Sarah Brown',
@@ -21,13 +21,12 @@ mixin profile-section ({ title })
           facebook: 'https://www.facebook.com/',
           twitter: 'https://twitter.com/',
           dribbble: 'https://dribbble.com/',
-        }
+        },
       },
     ];
   section.profile-section
     h2.profile-section__title= title
     .profile-section__container
-      -
       each user in usersList
         .profile-section__container-item
           +user-profile(user)

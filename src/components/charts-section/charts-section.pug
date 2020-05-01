@@ -13,7 +13,6 @@ mixin charts-section({ title })
   section.charts-section
     h2.charts-section__title= title
     .charts-section__container
-      -
       each chart in charts
         .charts-section__container-item
           +percentages-chart({ currentFill: chart, })

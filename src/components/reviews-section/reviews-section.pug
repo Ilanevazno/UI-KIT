@@ -8,11 +8,11 @@ mixin reviews-section({ reviews = [], title })
       +dropdown({
         placeholder: 'Сортировка по',
         optionList: [
-          {value: 'first', text: 'Самые новые'},
-          {value: 'second', text: 'Наиболее актуальные'},
-          {value: 'third', text: 'Подтверждённые'},
-        ]
-      })
+          { value: 'first', text: 'Самые новые' },
+          { value: 'second', text: 'Наиболее актуальные' },
+          { value: 'third', text: 'Подтверждённые' },
+        ],
+      },)
     .reviews-section__container
       each item in reviews
         -
