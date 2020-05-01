@@ -16,15 +16,15 @@ mixin messaging(data = {})
     .messaging__body
       .messaging__wrap
         .messaging__interlocutor-area
-          button.messaging__dialog-button.messaging__dialog-button_for_message
-          button.messaging__dialog-button.messaging__dialog-button_for_photo
+          button.messaging__dialog-button.messaging__dialog-button_type_message
+          button.messaging__dialog-button.messaging__dialog-button_type_photo
         .messaging__chat-area
           .messaging__textarea-wrapper
-            textarea.messaging__textarea.messaging__textarea_for_to(
+            textarea.messaging__textarea.messaging__textarea_type_reception(
               disabled
               placeholder= placeholder
             )
-          textarea.messaging__textarea.messaging__textarea_for_from
+          textarea.messaging__textarea.messaging__textarea_type_answer
             | Yeah that sounds great. See you then.
         +ripple-btn({
           theme: 'mint',

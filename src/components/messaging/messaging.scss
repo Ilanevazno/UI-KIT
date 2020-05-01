@@ -58,7 +58,7 @@
     cursor: pointer;
     background: inherit;
 
-    &_for {
+    &_type {
       &_message {
         background: 12%/46% url('./img/Chat-Icon.png') no-repeat;
       }
@@ -94,8 +94,8 @@
       }
     }
 
-    &_for {
-      &_to {
+    &_type {
+      &_reception {
         background: white;
         border: none;
         color: darken($gray-template, 35);
@@ -106,7 +106,7 @@
         }
       }
 
-      &_from {
+      &_answer {
         background: $gray-template;
         border: 3px solid white;
         margin-top: 2.3rem;
