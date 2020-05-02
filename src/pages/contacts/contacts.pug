@@ -11,27 +11,39 @@ block content
   -
     const data = require('../../assets/data/data.json');
     const { newsList, pages, searchLine, lastEvent, importantNews } = data;
+    const contactItems = [
+      {
+        title: 'Хотите пообщаться?',
+        paragraphs: ['Вы можете посетить наш офис по адресу:', 'Россия. Санкт-Петербург, Итальянская ул. 3 (БЦ рандомный, 2 этаж)'],
+        contactType: 'communicate',
+      },
+      {
+        title: 'Как мы работаем?',
+        paragraphs: ['О работе нашей компании вы сможете увидеть в нашем видео ролике:'],
+        contactType: 'about-work',
+      },
+      {
+        title: 'Остались ещё вопросы?',
+        paragraphs: ['Вы можете отправить нам сообщение, и мы ответим вам на почту'],
+        contactType: 'any-question',
+      },
+    ];
   .contacts
     header.contacts__header
       +header(pages)
     main.contacts__content
-      .contacts__item
-        +contact-section({
-          title: 'Хотите пообщаться?',
-          paragraphs: ['Вы можете посетить наш офис по адресу:', 'Россия. Санкт-Петербург, Итальянская ул. 3 (БЦ рандомный, 2 этаж)'],
-          contactType: 'communicate',
-        })
-      .contacts__item
-        +contact-section({
-          title: 'Как мы работаем?',
-          paragraphs: ['О работе нашей компании вы сможете увидеть в нашем видео ролике:'],
-          contactType: 'about-work',
-        })
-      .contacts__item
-        +contact-section({
-          title: 'Остались ещё вопросы?',
-          paragraphs: ['Вы можете отправить нам сообщение, и мы ответим вам на почту'],
-          contactType: 'any-question',
-        })
+      each contact in contactItems
+        -
+          const {
+            title,
+            paragraphs,
+            contactType,
+          } = contact;
+        .contacts__item
+          +contact-section({
+            title,
+            paragraphs,
+            contactType,
+          }) = contact
     footer.contacts__footer
-      +footer({ title: 'Ilya sigidin', })
+      +footer({ title: 'Ilya sigidin' })
