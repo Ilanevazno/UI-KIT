@@ -7,11 +7,11 @@ mixin ripple-button(button = {})
       isReversedColor = false,
       text = 'Button',
       href = false,
-      local = false,
+      isLocalHref = false,
     } = button;
 
-    const target = !!local ? '_blank' : false;
-    const rel = !!local ? 'noopener noreferrer' : false;
+    const target = !!isLocalHref ? '_blank' : false;
+    const rel = !!isLocalHref ? 'noopener noreferrer' : false;
 
     const tag = href ? 'a' : 'button';
     const entityType = tag === 'button' ? 'submit' : false;

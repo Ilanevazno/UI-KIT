@@ -1,9 +1,8 @@
 .search-dropdown-section {
   &__title {
     text-transform: uppercase;
-    font-family: 'Lato black', Arial, sans-serif;
+    font: 2.3rem 'Lato black', Arial, sans-serif;
     text-align: center;
-    font-size: 2.3rem;
     margin-bottom: 2rem;
     color: $text-color;
   }

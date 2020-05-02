@@ -2,7 +2,6 @@ extends ../../templates/main
 
 include ../../components/header/header
 include ../../components/footer/footer
-
 include ../../components/buttons-section/buttons-section
 include ../../components/arrows-section/arrows-section
 include ../../components/charts-section/charts-section
@@ -30,32 +29,32 @@ block content
       +header(pages)
     main.ui-kit__content
       section.ui-kit__buttons
-        +buttons-section({ title: 'Standard buttons', })
+        +buttons-section({ title: 'Standard buttons' })
       section.ui-kit__arrows
-        +arrows-section({ title: 'Arrow buttons', })
+        +arrows-section({ title: 'Arrow buttons' })
       section.ui-kit__charts
-        +charts-section({ title: 'Percentages / pie chart', })
+        +charts-section({ title: 'Percentages / pie chart' })
       section.ui-kit__sliders
-        +sliders-section({ title: 'Sliders', })
+        +sliders-section({ title: 'Sliders' })
       section.ui-kit__stages
-        +stages-section({ title: 'Stages', })
+        +stages-section({ title: 'Stages' })
       section.ui-kit__forms
         +form-section({ mainTitle: 'Form elements', togglesTitle: 'Toggles', boxesTitle: 'Tick boxes' })
       section.ui-kit__search-and-profile
         section.ui-kit__search
-          +search-dropdown-section({ title: 'Search / drop down', })
+          +search-dropdown-section({ title: 'Search / drop down' })
         section.ui-kit__profile
-          +profile-section({ title: 'User profile', })
+          +profile-section({ title: 'User profile' })
       section.ui-kit__news-events
-        +news-events-section({ title: 'News & events', })
+        +news-events-section({ title: 'News & events' })
       section.ui-kit__location
-        +location-section({ title: 'Location', })
+        +location-section({ title: 'Location' })
       section.ui-kit__calendar-and-messaging
         section.ui-kit__calendar
-          +calendar-section({ title: 'Calendar', })
+          +calendar-section({ title: 'Calendar' })
         section.ui-kit__messaging
-          +messaging-section({ title: 'Messaging', })
+          +messaging-section({ title: 'Messaging' })
       section.ui-kit__video
-        +video-section({ title: 'Video', })
+        +video-section({ title: 'Video' })
     footer.ui-kit__footer
-      +footer({ title: 'Ilya sigidin', })
+      +footer({ title: 'Ilya sigidin' })

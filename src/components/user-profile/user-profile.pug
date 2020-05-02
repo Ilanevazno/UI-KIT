@@ -7,9 +7,9 @@ mixin user-profile(profile = {})
       name = 'user',
       job = 'Должность не указана',
       social = [
-        { href: 'http://facebook.com', icon: 'facebook', },
-        { href: 'http://twitter.com', icon: 'twitter', },
-        { href: 'http://dbb.com', icon: 'dbb', },
+        { href: 'http://facebook.com', icon: 'facebook' },
+        { href: 'http://twitter.com', icon: 'twitter' },
+        { href: 'http://dbb.com', icon: 'dbb' },
       ],
     } = profile;
   section.user-profile
@@ -29,5 +29,5 @@ mixin user-profile(profile = {})
             rel="noopener noreferrer"
             href= href
           )
-            span.user-profile__info-social-icon
-              +svg-icon({ icon: icon, })
+            span.user-profile__info-social-link-icon
+              +svg-icon({ icon: icon })

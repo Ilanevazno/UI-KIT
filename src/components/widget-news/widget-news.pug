@@ -9,7 +9,7 @@ mixin widget-news(news = {})
   section.widget-news
     .widget-news__picture(style=`background-image: url("${require(`../../components/widget-news/img/${picture}`)}")`)
     .widget-news__information
-      h3.widget-news__title= title
-      p.widget-news__date= date
-      p.widget-news__text= text
+      h3.widget-news__information-title= title
+      p.widget-news__information-date= date
+      p.widget-news__information-text= text
 

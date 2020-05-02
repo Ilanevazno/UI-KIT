@@ -6,7 +6,7 @@ mixin search-dropdown-section ({ title })
     h2.search-dropdown-section__title= title
     .search-dropdown-section__container
       form.search-dropdown-section__item
-        +form-search({ searchList: [ 'Даже', 'какие-то', 'элементы', 'поиска', ] })
+        +form-search({ searchList: ['Даже', 'какие-то', 'элементы', 'поиска'] })
       form.search-dropdown-section__item
         +form-search()
       .search-dropdown-section__item
@@ -17,4 +17,4 @@ mixin search-dropdown-section ({ title })
             { value: 'third', text: 'This is option 3' },
             { value: 'fourth', text: 'This is option 4' },
           ],
-        },)
+        })

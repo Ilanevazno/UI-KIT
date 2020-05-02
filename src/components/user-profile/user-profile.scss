@@ -19,7 +19,7 @@
     }
   }
 
-  &:hover &__info-social-icon {
+  &:hover &__info-social-link-icon {
     fill: darken($gray-template, 45%);
 
     &:hover {
@@ -106,12 +106,12 @@
           color: white;
           cursor: pointer;
         }
-      }
 
-      &-icon {
-        height: 2.5rem;
-        width: 4.7rem;
-        fill: white;
+        &-icon {
+          height: 2.5rem;
+          width: 4.7rem;
+          fill: white;
+        }
       }
     }
   }

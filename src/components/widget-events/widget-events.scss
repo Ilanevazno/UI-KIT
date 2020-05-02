@@ -14,29 +14,28 @@
   &__information {
     width: 53%;
     margin: 0 auto;
-  }
 
-  &__date {
-    font: 8rem 'Lato Light', Arial, sans-serif;
-    color: white;
-    margin: 8% 0 0 0;
-
-    &-title {
+    &-date {
       display: flex;
       justify-content: space-between;
+
+
+      &-day {
+        font: 8rem 'Lato Light', Arial, sans-serif;
+        color: white;
+        margin: 8% 0 0 0;
+      }
+
+      &-month {
+        font: 3.5rem 'Lato Light', Arial, sans-serif;
+        color: white;
+        margin: 0;
+        display: flex;
+        align-items: flex-end;
+        padding: 7%;
+      }
     }
-  }
 
-  &__month {
-    font: 3.5rem 'Lato Light', Arial, sans-serif;
-    color: white;
-    margin: 0;
-    display: flex;
-    align-items: flex-end;
-    padding: 7%;
-  }
-
-  &__event {
     &-title {
       font: 1.6rem 'Lato Black', Arial, sans-serif;
       color: white;
@@ -51,7 +50,7 @@
     }
   }
 
-  &__to-calendar {
+  &__button-to-calendar {
     width: 100%;
     margin: 2rem 0 3rem 0;
     padding: 0 1.4rem;
