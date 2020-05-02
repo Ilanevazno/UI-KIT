@@ -3,33 +3,32 @@ class RippleButton {
     this.$rippleHtmlButton = $(selector);
   }
 
-  bindActions() {
-    this.$rippleHtmlButton.on('click.rippleEffect', this.handleRippleEffectClick);
-    this.$rippleHtmlButton.on('animationEnd webkitAnimationEnd OAnimationEnd MSAnimationEnd', this.handleRippleEffectAnimationEnd);
-  }
-
   init() {
     this.bindActions();
   }
 
   handleRippleEffectClick(e) {
-    const $this = $(this);
-    const $offset = $this.parent().offset();
-    const $circle = $this.find('.js-ripple-button__ripple-circle');
+    const $offset = this.$rippleHtmlButton.offset();
+    const $circle = this.$rippleHtmlButton.find('.js-ripple-button__ripple-circle');
 
-    const x = e.pageX - $offset.left;
-    const y = e.pageY - $offset.top;
+    const axisX = e.pageX - $offset.left;
+    const axisY = e.pageY - $offset.top;
 
     $circle.css({
-      top: `${y}px`,
-      left: `${x}px`,
+      top: `${axisY}px`,
+      left: `${axisX}px`,
     });
 
-    $this.addClass('ripple-button__ripple-circle_active');
+    this.$rippleHtmlButton.addClass('ripple-button__ripple-circle_active');
   }
 
   handleRippleEffectAnimationEnd() {
-    $(this).removeClass('ripple-button__ripple-circle_active');
+    this.$rippleHtmlButton.removeClass('ripple-button__ripple-circle_active');
+  }
+
+  bindActions() {
+    this.$rippleHtmlButton.on('click.rippleEffect', this.handleRippleEffectClick.bind(this));
+    this.$rippleHtmlButton.on('animationEnd webkitAnimationEnd OAnimationEnd MSAnimationEnd', this.handleRippleEffectAnimationEnd.bind(this));
   }
 }
 
