@@ -30,7 +30,6 @@ class MessageForm {
       },
     ];
 
-
     const checkedData = data.map((item) => {
       if (this.testLabel(item.label, item.match)) {
         return {
@@ -46,10 +45,6 @@ class MessageForm {
     return checkedData.every(checkResult)
       ? this.userAlert('Форма успешно отправлена!')
       : this.userAlert('Ошибка при отправке формы, проверьте поля.');
-  }
-
-  userAlert() {
-    // alert for users
   }
 
   testLabel(label, regexp) {

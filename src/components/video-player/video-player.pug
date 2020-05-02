@@ -1,8 +1,8 @@
 include ../svg-icon/svg-icon
 
-mixin video-player({ src })
+mixin video-player({ src, videoStartTime })
   section.video-player.js-video-player
-    video.video-player__screen.js-video-player__screen
+    video.video-player__screen.js-video-player__screen(data-startTime= videoStartTime)
       source(src= src type="video/mp4")
     .video-player__controls-container
         .video-player__control.video-player__control_type_play.js-video-player__control_type_play

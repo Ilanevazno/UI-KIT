@@ -9,9 +9,10 @@ class VideoPlayer {
       $pause: this.$videoContainer.find('.js-video-player__control_type_pause'),
       $fullScreen: this.$videoContainer.find('.js-video-player__control_type_fullscreen'),
     };
+    this.videoStartingTime = Number(this.videoScreen.getAttribute('data-startTime'));
   }
 
-  setCurrentTime(time) {
+  _setCurrentTime(time) {
     this.videoScreen.currentTime = time;
   }
 
@@ -76,6 +77,7 @@ class VideoPlayer {
   init() {
     this._bindActions();
     this.controls.$pause.hide();
+    this._setCurrentTime(this.videoStartingTime);
   }
 }
 
