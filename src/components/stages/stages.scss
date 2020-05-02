@@ -57,7 +57,7 @@
         }
       }
 
-      &.is-active {
+      &_active {
         @extend %remain-steps;
         &:before {
           background-color: $orange-template;

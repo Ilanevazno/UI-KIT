@@ -3,6 +3,6 @@ mixin stages({ maxStep = '', currentStep = '' })
     ul.stages__multi-steps
       - for (var i = 0; i < maxStep; i += 1)
       - if ((i + 1) === currentStep)
-        li.stages__multi-steps-item.is-active
+        li.stages__multi-steps-item.stages__multi-steps-item_active
       - else
         li.stages__multi-steps-item

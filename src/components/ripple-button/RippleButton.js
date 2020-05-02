@@ -8,13 +8,13 @@ class RippleButton {
   }
 
   handleRippleEffectClick(e) {
-    const $offset = this.$rippleHtmlButton.offset();
-    const $circle = this.$rippleHtmlButton.find('.js-ripple-button__ripple-circle');
+    const rippleOffset = this.$rippleHtmlButton.offset();
+    const $rippleCircle = this.$rippleHtmlButton.find('.js-ripple-button__ripple-circle');
 
-    const axisX = e.pageX - $offset.left;
-    const axisY = e.pageY - $offset.top;
+    const axisX = e.pageX - rippleOffset.left;
+    const axisY = e.pageY - rippleOffset.top;
 
-    $circle.css({
+    $rippleCircle.css({
       top: `${axisY}px`,
       left: `${axisX}px`,
     });
