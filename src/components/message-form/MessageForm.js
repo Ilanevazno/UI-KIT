@@ -1,8 +1,9 @@
 class MessageForm {
   constructor(selector) {
     this.$htmlContainer = $(selector);
-    this.$userNameLabel = this.$htmlContainer.find('.js-message-form__field').eq(0);
-    this.$userEmailLabel = this.$htmlContainer.find('.js-message-form__field').eq(1);
+    this.$formLabels = this.$htmlContainer.find('.js-message-form__field');
+    this.$userNameLabel = this.$formLabels.eq(0);
+    this.$userEmailLabel = this.$formLabels.eq(1);
   }
 
   bindActions() {

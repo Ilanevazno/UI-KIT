@@ -1,5 +1,5 @@
 include ../tick-box/tick-box
-include ../ripple-btn/ripple-btn
+include ../ripple-button/ripple-button
 
 mixin message-form(data = {})
   -
@@ -52,4 +52,4 @@ mixin message-form(data = {})
                 rel="noopener noreferrer"
               )= policy.text
     .message-form__submit-btn
-      +ripple-btn({ theme: 'mint', size: 'large', text: 'Submit', isReversedColor: true })
+      +ripple-button({ theme: 'mint', size: 'large', text: 'Submit', isReversedColor: true })

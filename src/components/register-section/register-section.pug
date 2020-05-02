@@ -1,5 +1,5 @@
 include ../input-label/input-label
-include ../ripple-btn/ripple-btn
+include ../ripple-button/ripple-button
 include ../stages/stages.pug
 
 mixin register-section(data = {})
@@ -38,4 +38,4 @@ mixin register-section(data = {})
           h2.register-section__item-title= placeholder
           +input-label({ name: fieldName, labelType: labelType })
       +stages({ maxStep: 3, currentStep: 1 })
-      +ripple-btn({ theme: 'mint', size: 'large', text: finishBtnText })
+      +ripple-button({ theme: 'mint', size: 'large', text: finishBtnText })

@@ -27,14 +27,10 @@ class FormSearch {
   handleDocumentClick(e) {
     const $caughtTarget = $(e.target);
 
-    const checkTarget = () => {
-      if (this.htmlItemList.$searchItemList.is('.form-search__item-list_showed') && (this.$htmlElement.find($caughtTarget).length === 0)) {
-        return true;
-      }
-      return false;
-    };
+    const itemListIsShowed = this.htmlItemList.$searchItemList.is('.form-search__item-list_showed');
+    const targetNotItemList = this.$htmlElement.find($caughtTarget).length === 0;
 
-    const shouldClose = checkTarget();
+    const shouldClose = itemListIsShowed && targetNotItemList;
 
     if (shouldClose) {
       this.htmlItemList.$searchItemList.removeClass('form-search__item-list_showed');

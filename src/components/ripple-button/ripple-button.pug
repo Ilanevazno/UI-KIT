@@ -1,4 +1,4 @@
-mixin ripple-btn(button = {})
+mixin ripple-button(button = {})
   -
     const {
       theme,
@@ -17,21 +17,21 @@ mixin ripple-btn(button = {})
     const entityType = tag === 'button' ? 'submit' : false;
 
     const themeModifiers = {
-      orange: 'ripple-btn_theme_orange',
-      mint: 'ripple-btn_theme_mint',
+      orange: 'ripple-button_theme_orange',
+      mint: 'ripple-button_theme_mint',
     };
 
     const sizeModifiers = {
-      small: 'ripple-btn_size_small',
-      large: 'ripple-btn_size_large',
+      small: 'ripple-button_size_small',
+      large: 'ripple-button_size_large',
     };
 
     const classes = [
-      'ripple-btn',
-      'js-ripple-btn',
+      'ripple-button',
+      'js-ripple-button',
       isReversedColor ? `${themeModifiers[theme]}-reverse` : themeModifiers[theme],
       sizeModifiers[size],
-      isResponsive ? 'ripple-btn_width_responsive' : false,
+      isResponsive ? 'ripple-button_width_responsive' : false,
     ];
 
   #{tag}(
@@ -39,6 +39,6 @@ mixin ripple-btn(button = {})
     href= href
     class= classes
   )
-    .ripple-btn__ripple-effect.js-ripple-btn__ripple-effect
-      span.ripple-btn__ripple-circle.js-ripple-btn__ripple-circle
-    p.ripple-btn__text= text
+    .ripple-button__ripple-effect.js-ripple-button__ripple-effect
+      span.ripple-button__ripple-circle.js-ripple-button__ripple-circle
+    p.ripple-button__text= text

@@ -1,4 +1,4 @@
-include ../ripple-btn/ripple-btn
+include ../ripple-button/ripple-button
 
 mixin account-panel ({ title = '', buttonList = [], })
   section.account-panel
@@ -13,4 +13,4 @@ mixin account-panel ({ title = '', buttonList = [], })
             size = 'large',
           } = link;
         .account-panel__controls-item
-          +ripple-btn({ theme, size, text: description, href })
+          +ripple-button({ theme, size, text: description, href })

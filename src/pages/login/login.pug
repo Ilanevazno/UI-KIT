@@ -2,7 +2,7 @@ extends ../../templates/main
 
 include ../../components/header/header
 include ../../components/footer/footer
-include ../../components/ripple-btn/ripple-btn
+include ../../components/ripple-button/ripple-button
 include ../../components/input-label/input-label
 
 block title
@@ -20,6 +20,6 @@ block content
           +input-label({ name: 'user-email', labelType: 'text', placeholder: 'Ваш логин' })
         .login__form-control
           +input-label({ name: 'user-email', labelType: 'password', placeholder: 'Ваш пароль' })
-        +ripple-btn({theme: 'mint', size: 'large', text: 'Вход в аккаунт' })
+        +ripple-button({theme: 'mint', size: 'large', text: 'Вход в аккаунт' })
     footer.login__footer
       +footer({ title: 'Ilya sigidin', })

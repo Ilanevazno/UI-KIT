@@ -1,4 +1,4 @@
-include ../ripple-btn/ripple-btn
+include ../ripple-button/ripple-button
 
 mixin messaging(data = {})
   -
@@ -26,7 +26,7 @@ mixin messaging(data = {})
             )
           textarea.messaging__textarea.messaging__textarea_type_answer
             | Yeah that sounds great. See you then.
-        +ripple-btn({
+        +ripple-button({
           theme: 'mint',
           size: 'large',
           text: 'Reply',

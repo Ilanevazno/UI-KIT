@@ -1,4 +1,4 @@
-class RippleBtn {
+class RippleButton {
   constructor(selector) {
     this.$rippleHtmlButton = $(selector);
   }
@@ -15,7 +15,7 @@ class RippleBtn {
   handleRippleEffectClick(e) {
     const $this = $(this);
     const $offset = $this.parent().offset();
-    const $circle = $this.find('.js-ripple-btn__ripple-circle');
+    const $circle = $this.find('.js-ripple-button__ripple-circle');
 
     const x = e.pageX - $offset.left;
     const y = e.pageY - $offset.top;
@@ -25,12 +25,12 @@ class RippleBtn {
       left: `${x}px`,
     });
 
-    $this.addClass('ripple-btn__ripple-circle_active');
+    $this.addClass('ripple-button__ripple-circle_active');
   }
 
   handleRippleEffectAnimationEnd() {
-    $(this).removeClass('ripple-btn__ripple-circle_active');
+    $(this).removeClass('ripple-button__ripple-circle_active');
   }
 }
 
-export default RippleBtn;
+export default RippleButton;
