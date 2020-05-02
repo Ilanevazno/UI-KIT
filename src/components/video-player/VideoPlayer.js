@@ -12,8 +12,10 @@ class VideoPlayer {
     this.videoStartingTime = Number(this.videoScreen.getAttribute('data-startTime'));
   }
 
-  _setCurrentTime(time) {
-    this.videoScreen.currentTime = time;
+  init() {
+    this._bindActions();
+    this.controls.$pause.hide();
+    this._setCurrentTime(this.videoStartingTime);
   }
 
   _bindActions() {
@@ -22,6 +24,10 @@ class VideoPlayer {
     this.controls.$fullScreen.on('click.controlFullscreen', this._handleFullscreenControlClick.bind(this));
     this.$videoProgress.on('click.controlProgress', this._handleControlProgressIconClick.bind(this));
     this.videoScreen.addEventListener('timeupdate', this._handleScreenTimeUpdate.bind(this));
+  }
+
+  _setCurrentTime(time) {
+    this.videoScreen.currentTime = time;
   }
 
   _handlePlayControlClick() {
@@ -72,12 +78,6 @@ class VideoPlayer {
     this.videoScreen.pause();
     this.videoScreen.currentTime = videoDuration * (eventOffset / progressIconWidth);
     this.videoScreen.play();
-  }
-
-  init() {
-    this._bindActions();
-    this.controls.$pause.hide();
-    this._setCurrentTime(this.videoStartingTime);
   }
 }
 

@@ -9,7 +9,12 @@ class Calendar {
     };
   }
 
-  render() {
+  init() {
+    this._render();
+    this._bindActions();
+  }
+
+  _render() {
     this.$htmlContainer = $(this.selector).datepicker({
       inline: true,
       language: {
@@ -34,16 +39,11 @@ class Calendar {
     });
   }
 
-  bindActions() {
-    $(document).on('DOMContentLoaded.document', this.handleDocumentDomContentLoaded.bind(this));
+  _bindActions() {
+    $(document).on('DOMContentLoaded.document', this._handleDocumentDomContentLoaded.bind(this));
   }
 
-  init() {
-    this.render();
-    this.bindActions();
-  }
-
-  handleDocumentDomContentLoaded() {
+  _handleDocumentDomContentLoaded() {
     // get current day
     const $selectedDay = this.$htmlContainer.find(('.datepicker--cell-day.-current-'));
 

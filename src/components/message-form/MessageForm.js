@@ -6,15 +6,15 @@ class MessageForm {
     this.$userEmailLabel = this.$formLabels.eq(1);
   }
 
-  bindActions() {
-    this.$htmlContainer.on('submit.messageForm', this.handleMessageFormSubmit.bind(this));
-  }
-
   init() {
-    this.bindActions();
+    this._bindActions();
   }
 
-  handleMessageFormSubmit(e) {
+  _bindActions() {
+    this.$htmlContainer.on('submit.messageForm', this._handleMessageFormSubmit.bind(this));
+  }
+
+  _handleMessageFormSubmit(e) {
     e.preventDefault();
 
     const data = [
@@ -31,7 +31,7 @@ class MessageForm {
     ];
 
     const checkedData = data.map((item) => {
-      if (this.testLabel(item.label, item.match)) {
+      if (this._testLabel(item.label, item.match)) {
         return {
           label: item.label,
           checked: true,
@@ -47,7 +47,7 @@ class MessageForm {
       : this.userAlert('Ошибка при отправке формы, проверьте поля.');
   }
 
-  testLabel(label, regexp) {
+  _testLabel(label, regexp) {
     const $messageStatus = label.siblings('.js-message-form__field-status');
     $messageStatus.removeClass('message-form__field-status_state_success message-form__field-status_state_error');
 

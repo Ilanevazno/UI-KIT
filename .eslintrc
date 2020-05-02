@@ -8,14 +8,15 @@
       "TouchEvent": true,
       "Touch": true,
       "CanvasJS": true,
-      "L": true
+      "L": true,
     },
     "env": {
       "commonjs": true,
       "node": true,
-        "jquery": true
+        "jquery": true,
     },
     "rules": {
-      "class-methods-use-this": "off"
+      "class-methods-use-this": "off",
+      "no-underscore-dangle": "off",
     }
   }

@@ -15,34 +15,12 @@ class Location {
     this.mapIcon = require('./img/marker-icon.png');
   }
 
-  bindActions() {
-    this.$currentPositionBtn.on('click.overlayBtnSetAddress', this.handleOverlayBtnSetAddressClick.bind(this));
-    this.$findMarkerBtn.on('click.overlayBtnBindMarker', this.handleOverlayBtnBindMarkerClick.bind(this));
+  init() {
+    this._render();
+    this._bindActions();
   }
 
-  handleOverlayBtnBindMarkerClick() {
-    this.mapEntity.panTo(this.coords);
-  }
-
-  handleOverlayBtnSetAddressClick() {
-    const requestLatitude = prompt('Введите долготу');
-    const requestLongitude = prompt('Введите ширину');
-    if (requestLatitude && requestLongitude) {
-      this.mapEntity.setView([requestLatitude, requestLongitude], 13);
-      const placeMark = L.icon({
-        iconUrl: this.mapIcon,
-        iconSize: [40, 56],
-        iconAnchor: [22, 94],
-        popupAnchor: [-3, -76],
-        shadowUrl: '',
-        shadowSize: [68, 95],
-        shadowAnchor: [22, 94],
-      });
-      L.marker([requestLatitude, requestLongitude], { icon: placeMark }).addTo(this.mapEntity);
-    }
-  }
-
-  render() {
+  _render() {
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
       maxZoom: 18,
       id: 'mapbox/streets-v11',
@@ -64,9 +42,31 @@ class Location {
     L.marker(this.coords, { icon: placeMark }).addTo(this.mapEntity);
   }
 
-  init() {
-    this.render();
-    this.bindActions();
+  _bindActions() {
+    this.$currentPositionBtn.on('click.overlayBtnSetAddress', this._handleOverlayBtnSetAddressClick.bind(this));
+    this.$findMarkerBtn.on('click.overlayBtnBindMarker', this._handleOverlayBtnBindMarkerClick.bind(this));
+  }
+
+  _handleOverlayBtnBindMarkerClick() {
+    this.mapEntity.panTo(this.coords);
+  }
+
+  _handleOverlayBtnSetAddressClick() {
+    const requestLatitude = prompt('Введите долготу');
+    const requestLongitude = prompt('Введите ширину');
+    if (requestLatitude && requestLongitude) {
+      this.mapEntity.setView([requestLatitude, requestLongitude], 13);
+      const placeMark = L.icon({
+        iconUrl: this.mapIcon,
+        iconSize: [40, 56],
+        iconAnchor: [22, 94],
+        popupAnchor: [-3, -76],
+        shadowUrl: '',
+        shadowSize: [68, 95],
+        shadowAnchor: [22, 94],
+      });
+      L.marker([requestLatitude, requestLongitude], { icon: placeMark }).addTo(this.mapEntity);
+    }
   }
 }
 

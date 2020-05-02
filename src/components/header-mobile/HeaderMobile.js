@@ -4,25 +4,25 @@ class HeaderMobile {
     this.$mobileMenuButton = this.$mobileMenu.prev('.js-header-mobile__hamburger-button');
   }
 
-  bindActions() {
-    $(document).on('click.mobileMenu', this.handleDocumentClick.bind(this));
-    this.$mobileMenuButton.on('click.mobileMenuButton', this.handleHamburgerButtonClick.bind(this));
+  init() {
+    this._bindActions();
   }
 
-  handleHamburgerButtonClick() {
+  _bindActions() {
+    $(document).on('click.mobileMenu', this._handleDocumentClick.bind(this));
+    this.$mobileMenuButton.on('click.mobileMenuButton', this._handleHamburgerButtonClick.bind(this));
+  }
+
+  _handleHamburgerButtonClick() {
     setTimeout(() => {
       this.$mobileMenu.toggleClass('header-mobile__hamburger-menu_opened');
     }, 0);
   }
 
-  handleDocumentClick(event) {
+  _handleDocumentClick(event) {
     if (event.target.className !== 'header__links-list') {
       this.$mobileMenu.removeClass('header-mobile__hamburger-menu_opened');
     }
-  }
-
-  init() {
-    this.bindActions();
   }
 }
 
