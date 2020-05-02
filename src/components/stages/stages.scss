@@ -5,48 +5,42 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    width: 100%;
     padding: 0;
     font-family: 'Lato black', Arial, sans-serif;
 
     &-item {
-      counter-increment: stepNum;
       text-align: center;
       display: block;
       position: relative;
-      color: $orange-template;
-      font-size: 16px;
+      font-size: 1.5rem;
+      color: white;
 
       &:not(:last-child) {
         width: 100%;
       }
 
       &:before {
-        content: counter(stepNum);
+        content: '';
         display: block;
-        margin: 0 0 auto 0px;
+        margin: 0 0 auto 0;
         background-color: $orange-template;
         color: white;
-        width: 36px;
-        height: 36px;
-        line-height: 32px;
+        width: 3rem;
+        height: 3rem;
+        line-height: 3rem;
         text-align: center;
         font-weight: bold;
-        border: {
-          width: 2px;
-          style: solid;
-          color: $orange-template;
-          radius: 50%;
-        }
+        border: 2px solid $orange-template;
+        border-radius: 50%;
       }
 
       &:after {
         content: '';
-        height: 7px;
+        height: 0.6rem;
         width: 100%;
         background-color: $orange-template;
         position: absolute;
-        top: 16px;
+        top: 1.3rem;
         left: 13%;
         z-index: -1;
       }
@@ -57,36 +51,31 @@
         }
       }
 
+      &-text {
+        position: absolute;
+        left: 1.3rem;
+        top: 0.7rem;
+      }
+
       &_active {
-        @extend %remain-steps;
-        &:before {
-          background-color: $orange-template;
-          color: white;
-          border-color: $orange-template;
+        &:after {
+          background-color: $gray-template;
         }
 
         ~ .stages__multi-steps-item {
           color: #808080;
-          @extend %remain-steps;
+
           &:before {
             color: darken($gray-template, 40%);
             background-color: $gray-template;
             border-color: $gray-template;
           }
+
+          &:after {
+            background-color: $gray-template;
+          }
         }
       }
     }
-  }
-}
-
-%remain-steps {
-  &:before {
-    content: counter(stepNum);
-    font-family: inherit;
-    font-weight: 700;
-  }
-
-  &:after {
-    background-color: $gray-template;
   }
 }
