@@ -2,9 +2,9 @@ mixin stages({ maxStep = '', currentStep = '' })
   section.stages
     ul.stages__multi-steps
       - for (let counter = 0; counter < maxStep; counter += 1)
-      - if ((counter + 1) === currentStep)
+      if ((counter + 1) === currentStep)
         li.stages__multi-steps-item.stages__multi-steps-item_active
           span.stages__multi-steps-item-text= counter + 1
-      - else
+      else
         li.stages__multi-steps-item
           span.stages__multi-steps-item-text= counter + 1
