@@ -46,23 +46,29 @@ class Slider {
 
   _moveTooltip(target) {
     const $targetElement = $(target);
-    const $elementTooltip = $targetElement.next();
+    // const $elementTooltip = $targetElement.next();
 
-    $(document).on('mousemove.slider', () => {
-      const position = $targetElement.position().left;
-      const offset = $targetElement.width() / 2;
-      $elementTooltip.css('left', `${position - offset}px`);
-    });
+    $(document).on('mousemove.document', this._handleDocumentMouseMove.bind('', $targetElement));
+  }
+
+  _handleDocumentMouseMove($targetElement) {
+    const $elementTooltip = $targetElement.next();
+    const position = $targetElement.position().left;
+    const offset = $targetElement.width() / 2;
+    $elementTooltip.css('left', `${position - offset}px`);
+  }
+
+  _handlePointerMouseDown(event) {
+    const $caughtPointer = $(event.target);
+    this._moveTooltip($caughtPointer);
   }
 
   _setTooltipPosition() {
     this.$htmlContainer.next().each((idx, html) => {
-      $(html).find('.pointer').each((index, item) => {
-        this._moveTooltip(item);
+      $(html).find('.pointer').each((index, currentPointer) => {
+        this._moveTooltip(currentPointer);
 
-        $(item).on('mousedown.item', () => {
-          this._moveTooltip(item);
-        });
+        $(currentPointer).on('mousedown.currentPointer', this._handlePointerMouseDown.bind(this));
       });
     });
   }
