@@ -26,9 +26,8 @@
     }
 
     &-welcome-text {
-      font-family: 'Lato light', Arial, sans-serif;
+      font: 100 3.4rem 'Lato', Arial, sans-serif;
       color: white;
-      font-size: 3.4rem;
       white-space: nowrap;
 
       @include media-screen($mobile) {
@@ -37,7 +36,7 @@
     }
 
     &-address-text {
-      font: 1.55rem/1.7rem 'Lato black', Arial, sans-serif;
+      font: 900 1.55rem/1.7rem 'Lato', Arial, sans-serif;
       color: white;
       width: 17rem;
       text-transform: uppercase;

@@ -21,13 +21,15 @@
 
 
       &-day {
-        font: 8rem 'Lato Light', Arial, sans-serif;
+        font-size: 8rem;
+        font-weight: 100;
         color: white;
         margin: 8% 0 0 0;
       }
 
       &-month {
-        font: 3.5rem 'Lato Light', Arial, sans-serif;
+        font-size: 3.5rem;
+        font-weight: 100;
         color: white;
         margin: 0;
         display: flex;
@@ -37,14 +39,15 @@
     }
 
     &-title {
-      font: 1.6rem 'Lato Black', Arial, sans-serif;
+      font-size: 1.6rem;
       color: white;
       text-transform: uppercase;
       margin: 2% 0 0 0;
     }
 
     &-text {
-      font: 1.43rem 'Lato Regular', Arial, sans-serif;
+      font-size: 1.43rem;
+      font-weight: 400;
       margin: 2% 0 0 0;
       color: white;
     }

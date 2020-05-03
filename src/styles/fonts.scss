@@ -1,41 +1,41 @@
 @font-face{
-    font-family: 'Lato black';
+    font-family: 'Lato';
     src: url('../assets/fonts/lato-black.woff2') format('woff2'),
     url('../assets/fonts/lato-black.woff') format('woff'),
     url('../assets/fonts/lato-black.ttf') format('ttf'),
     url('../assets/fonts/lato-black.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: 900;
+    font-style: bolder;
 }
 
 @font-face{
-    font-family: 'Lato Light';
+    font-family: 'Lato';
     src: url('../assets/fonts/lato-light.woff2') format('woff2'),
     url('../assets/fonts/lato-light.woff') format('woff'),
     url('../assets/fonts/lato-light.ttf') format('ttf'),
     url('../assets/fonts/lato-light.svg') format('svg');
-    font-weight: light;
-    font-style: normal;
+    font-weight: 100;
+    font-style: light;
 }
 
 @font-face{
-    font-family: 'Lato Bold';
+    font-family: 'Lato';
     src: url('../assets/fonts/lato-bold.woff2') format('woff2'),
     url('../assets/fonts/lato-bold.woff') format('woff'),
     url('../assets/fonts/lato-bold.ttf') format('ttf'),
     url('../assets/fonts/lato-bold.svg') format('svg');
-    font-weight: light;
-    font-style: normal;
+    font-weight: 500;
+    font-style: bold;
 }
 
 @font-face{
-    font-family: 'Lato Regular';
+    font-family: 'Lato';
     src: url('../assets/fonts/lato-regular.woff2') format('woff2'),
     url('../assets/fonts/lato-regular.woff') format('woff'),
     url('../assets/fonts/lato-regular.ttf') format('ttf'),
     url('../assets/fonts/lato-regular.svg') format('svg');
-    font-weight: light;
-    font-style: normal;
+    font-weight: regular;
+    font-style: 400;
 }
 
 @font-face{
@@ -44,6 +44,6 @@
     url('../assets/fonts/source-sans-pro-regular.woff') format('woff'),
     url('../assets/fonts/source-sans-pro-regular.ttf') format('ttf'),
     url('../assets/fonts/source-sans-pro-regular.svg') format('svg');
-    font-weight: regular;
+    font-weight: normal;
     font-style: normal;
 }
