@@ -25,6 +25,10 @@
     fill: white;
     cursor: pointer;
 
+    &:focus {
+      box-shadow: 0px 0px 6px 0px $mint-template;
+    }
+
     &_type {
       &_play {
         flex-basis: 10%;

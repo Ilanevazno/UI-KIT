@@ -113,6 +113,10 @@
         outline: none;
         margin-bottom: 1.6rem;
         color: darken($gray-template, 35);
+
+        &:focus {
+          box-shadow: 0px 0px 6px 0px $mint-template;
+        }
       }
     }
   }

@@ -46,9 +46,7 @@ class Slider {
 
   _moveTooltip(target) {
     const $targetElement = $(target);
-    // const $elementTooltip = $targetElement.next();
-
-    $(document).on('mousemove.document', this._handleDocumentMouseMove.bind('', $targetElement));
+    $(document).on('mousemove.document', this._handleDocumentMouseMove.bind(false, $targetElement));
   }
 
   _handleDocumentMouseMove($targetElement) {

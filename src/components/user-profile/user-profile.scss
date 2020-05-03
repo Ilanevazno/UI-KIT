@@ -71,7 +71,6 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      align-items: center;
       color: white;
       font-weight: 400;
       font-size: 2.1rem;
@@ -101,7 +100,6 @@
 
       &-link {
         display: flex;
-        justify-content: space-between;
 
         &:hover {
           color: white;
