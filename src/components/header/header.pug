@@ -14,6 +14,6 @@ mixin header (pages = {}, theme)
     nav.header__navigation
       +header-nav(pages)
     a.header__logo(href= logoLink)
-    +account-panel({ title: 'Аккаунт', buttonList, })
+    +account-panel({ title: 'Аккаунт', buttonList })
   .header__mobile
     +header-mobile(pages)

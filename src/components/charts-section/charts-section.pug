@@ -15,6 +15,6 @@ mixin charts-section({ title })
     .charts-section__container
       each chart in charts
         .charts-section__container-item
-          +percentages-chart({ currentFill: chart, })
+          +percentages-chart({ currentFill: chart })
       .charts-section__container-item
         +donut-chart(donutData)

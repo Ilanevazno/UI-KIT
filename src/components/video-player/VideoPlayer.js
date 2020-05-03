@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 class VideoPlayer {
   constructor(selector) {
     this.$videoContainer = $(selector);
