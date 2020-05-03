@@ -29,14 +29,18 @@
           <section class="account-panel">
             <p class="account-panel__title">Аккаунт</p>
             <div class="account-panel__controls">
-              <a class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_large" href="./login.html">
-                <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
-                <p class="ripple-btn__text">Вход</p>
-              </a>
-              <a class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_large" href="./register.html">
-                <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
-                <p class="ripple-btn__text">Регистрация</p>
-              </a>
+              <div class="account-panel__controls-item">
+                <a class="ripple-button js-ripple-button ripple-button_theme_mint ripple-button_size_large" href="./login.html">
+                  <div class="ripple-button__ripple-effect js-ripple-button__ripple-effect"><span class="ripple-button__ripple-circle js-ripple-button__ripple-circle"></span></div>
+                  <p class="ripple-button__text">Вход</p>
+                </a>
+              </div>
+              <div class="account-panel__controls-item">
+                <a class="ripple-button js-ripple-button ripple-button_theme_mint ripple-button_size_large" href="./register.html">
+                  <div class="ripple-button__ripple-effect js-ripple-button__ripple-effect"><span class="ripple-button__ripple-circle js-ripple-button__ripple-circle"></span></div>
+                  <p class="ripple-button__text">Регистрация</p>
+                </a>
+              </div>
             </div>
           </section>
         </div>
@@ -92,21 +96,27 @@
                 <video class="video-player__screen js-video-player__screen">
                   <source src="./assets/video/new-zeland.mp4" type="video/mp4">
                 </video>
-                <div class="video-player__controls">
-                  <div class="video-video-player__control video-player__control_type_play js-video-player__control_type_play">
-                    <button class="video-player__control"><span class="video-player__control-figure">
+                <div class="video-player__controls-container">
+                  <div class="video-player__control video-player__control_type_play js-video-player__control_type_play">
+                    <button class="video-player__control"><span class="video-player__control-icon">
                         <section class="svg-icon">
+                          <svg class="svg-icon__item" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20" height="20" viewBox="0 0 320.001 320.001" style="enable-background:new 0 0 320.001 320.001;" xml:space="preserve">
+                            <path d="M295.84,146.049l-256-144c-4.96-2.784-11.008-2.72-15.904,0.128C19.008,5.057,16,10.305,16,16.001v288c0,5.696,3.008,10.944,7.936,13.824c2.496,1.44,5.28,2.176,8.064,2.176c2.688,0,5.408-0.672,7.84-2.048l256-144c5.024-2.848,8.16-8.16,8.16-13.952S300.864,148.897,295.84,146.049z"></path>
+                          </svg>
                         </section></span></button>
                   </div>
-                  <div class="video-video-player__control video-player__control_type_pause js-video-player__control_type_pause">
-                    <button class="video-player__control"><span class="video-player__control-figure">
+                  <div class="video-player__control video-player__control_type_pause js-video-player__control_type_pause">
+                    <button class="video-player__control"><span class="video-player__control-icon">
                         <section class="svg-icon">
+                          <svg class="svg-icon__item" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill-rule="evenodd" clip-rule="evenodd">
+                            <path fill="rgb(255, 255, 255)" d="M10 24h-6v-24h6v24zm10 0h-6v-24h6v24zm-11-23h-4v22h4v-22zm10 0h-4v22h4v-22z"></path>
+                          </svg>
                         </section></span></button>
                   </div>
-                  <div class="video-video-player__control video-player__control_type_progress js-video-player__control_type_progress">
-                    <progress class="video-player__control" max="100" value="0"></progress>
+                  <div class="video-player__control video-player__control_type_progress js-video-player__control_type_progress">
+                    <progress class="video-player__control-progress-icon js-video-player__control-progress-icon" max="100" value="0"></progress>
                   </div>
-                  <div class="video-video-player__control video-player__control_type_fullscreen js-video-player__control_type_fullscreen">
+                  <div class="video-player__control video-player__control_type_fullscreen js-video-player__control_type_fullscreen">
                     <button class="video-player__control"></button>
                   </div>
                 </div>
@@ -143,7 +153,7 @@
                       <div class="message-form__policy-item">
                         <section class="tick-box">
                           <label class="tick-box__label">
-                            <input class="tick-box__input" type="checkbox">
+                            <input class="tick-box__input" type="checkbox" name="empty">
                             <div class="tick-box__icon" tabindex="0"></div>
                           </label>
                         </section>
@@ -156,9 +166,9 @@
                   </div>
                 </div>
                 <div class="message-form__submit-btn">
-                  <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint-reverse ripple-btn_size_large" type="submit">
-                    <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
-                    <p class="ripple-btn__text">Submit</p>
+                  <button class="ripple-button js-ripple-button ripple-button_theme_mint-reverse ripple-button_size_large" type="submit">
+                    <div class="ripple-button__ripple-effect js-ripple-button__ripple-effect"><span class="ripple-button__ripple-circle js-ripple-button__ripple-circle"></span></div>
+                    <p class="ripple-button__text">Submit</p>
                   </button>
                 </div>
               </form>
@@ -168,7 +178,7 @@
       </main>
       <footer class="contacts__footer">
         <section class="footer">
-          <p class="footer__copyright"></p>
+          <p class="footer__copyright">Ilya sigidin</p>
         </section>
       </footer>
     </div>

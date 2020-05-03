@@ -29,14 +29,18 @@
           <section class="account-panel">
             <p class="account-panel__title">Аккаунт</p>
             <div class="account-panel__controls">
-              <a class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_large" href="./login.html">
-                <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
-                <p class="ripple-btn__text">Вход</p>
-              </a>
-              <a class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_large" href="./register.html">
-                <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
-                <p class="ripple-btn__text">Регистрация</p>
-              </a>
+              <div class="account-panel__controls-item">
+                <a class="ripple-button js-ripple-button ripple-button_theme_mint ripple-button_size_large" href="./login.html">
+                  <div class="ripple-button__ripple-effect js-ripple-button__ripple-effect"><span class="ripple-button__ripple-circle js-ripple-button__ripple-circle"></span></div>
+                  <p class="ripple-button__text">Вход</p>
+                </a>
+              </div>
+              <div class="account-panel__controls-item">
+                <a class="ripple-button js-ripple-button ripple-button_theme_mint ripple-button_size_large" href="./register.html">
+                  <div class="ripple-button__ripple-effect js-ripple-button__ripple-effect"><span class="ripple-button__ripple-circle js-ripple-button__ripple-circle"></span></div>
+                  <p class="ripple-button__text">Регистрация</p>
+                </a>
+              </div>
             </div>
           </section>
         </div>
@@ -62,7 +66,6 @@
               <div class="form-search__find-line">
                 <div class="form-search__line-wrapper">
                   <input class="form-search__input-text-area js-form-search__input-text-area" type="text" placeholder="Search">
-                  <label class="form-search__status js-form-search__status">I’ve not found what I’m looking for...</label>
                 </div>
                 <input class="form-search__search-btn js-form-search__search-btn" type="button">
               </div>
@@ -91,56 +94,23 @@
               </div>
             </section>
           </section>
-          <section class="index__assistant">
-            <section class="assistant js-assistant">
-              <div class="assistant__open-popup-button js-assistant__open-popup-button"><img class="assistant__request-avatar" src="./assets/images/sarah-brown.jpg" alt="assistant-avatar"></div>
-              <div class="assistant__messenger js-assistant__messenger">
-                <div class="messaging">
-                  <div class="messaging__header">
-                    <p class="messaging__interlocutor-name">Elena</p>
-                    <div class="messaging__interlocutor-picture" style="background-image: url(./assets/images/sarah-brown.jpg)"></div>
-                  </div>
-                  <div class="messaging__body">
-                    <div class="messaging__wrap">
-                      <div class="messaging__interlocutor-area">
-                        <button class="messaging__dialog-button messaging__dialog-button_for_message"></button>
-                        <button class="messaging__dialog-button messaging__dialog-button_for_photo"></button>
-                      </div>
-                      <div class="messaging__chat-area">
-                        <div class="messaging__textarea-wrapper">
-                          <textarea class="messaging__textarea messaging__textarea_for_to" disabled placeholder="Здравствуйте, чем я могу вам помочь?"></textarea>
-                        </div>
-                        <textarea class="messaging__textarea messaging__textarea_for_from">Yeah that sounds great. See you then.</textarea>
-                      </div>
-                      <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint-reverse ripple-btn_size_large ripple-btn_width_responsive" type="submit">
-                        <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
-                        <p class="ripple-btn__text">Reply</p>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </section>
         </div>
         <div class="index__right-wrapper">
           <section class="index__last-event">
             <section class="widget-events">
               <div class="widget-events__picture" style="background-image: url(./assets/images/gray-bg.jpg)"></div>
               <div class="widget-events__information">
-                <div class="widget-events__information-wrapper">
-                  <div class="widget-events__date-title">
-                    <p class="widget-events__date"></p>
-                    <p class="widget-events__month"></p>
-                  </div>
-                  <h3 class="widget-events__event-title">8 Марта</h3>
-                  <p class="widget-events__event-text">Междунаро́дный же́нский день — праздник, отмечаемый ежегодно 8 марта в ряде стран как «женский день». Исторически появился как день солидарности женщин во многих странах в борьбе за равные права и эмансипацию.</p>
-                  <div class="widget-events__to-calendar">
-                    <button class="ripple-btn js-ripple-btn  ripple-btn_theme_mint ripple-btn_size_small ripple-btn_width_responsive" type="submit">
-                      <div class="ripple-btn__ripple-effect js-ripple-btn__ripple-effect"><span class="ripple-btn__ripple-circle js-ripple-btn__ripple-circle"></span></div>
-                      <p class="ripple-btn__text">Add to calendar</p>
-                    </button>
-                  </div>
+                <div class="widget-events__information-date">
+                  <p class="widget-events__information-date-day"></p>
+                  <p class="widget-events__information-date-month"></p>
+                </div>
+                <h3 class="widget-events__information-title">8 Марта</h3>
+                <p class="widget-events__information-text">Междунаро́дный же́нский день — праздник, отмечаемый ежегодно 8 марта в ряде стран как «женский день». Исторически появился как день солидарности женщин во многих странах в борьбе за равные права и эмансипацию.</p>
+                <div class="widget-events__button-to-calendar">
+                  <button class="ripple-button js-ripple-button ripple-button_theme_mint ripple-button_size_small ripple-button_width_responsive" type="submit">
+                    <div class="ripple-button__ripple-effect js-ripple-button__ripple-effect"><span class="ripple-button__ripple-circle js-ripple-button__ripple-circle"></span></div>
+                    <p class="ripple-button__text">Add to calendar</p>
+                  </button>
                 </div>
               </div>
             </section>
@@ -149,17 +119,48 @@
             <section class="widget-news">
               <div class="widget-news__picture" style="background-image: url(&quot;./assets/images/holiday-picture.jpg&quot;)"></div>
               <div class="widget-news__information">
-                <h3 class="widget-news__title">АКЦИЯ на утренние праздники!</h3>
-                <p class="widget-news__date">02 Февраля 2020</p>
-                <p class="widget-news__text">Подарите любимым праздники со скидкой в 20% с 8 по 25 марта!</p>
+                <h3 class="widget-news__information-title">АКЦИЯ на утренние праздники!</h3>
+                <p class="widget-news__information-date">02 Февраля 2020</p>
+                <p class="widget-news__information-text">Подарите любимым праздники со скидкой в 20% с 8 по 25 марта!</p>
               </div>
             </section>
           </section>
         </div>
+        <section class="index__assistant">
+          <section class="assistant js-assistant">
+            <div class="assistant__open-popup-button js-assistant__open-popup-button"><img class="assistant__request-avatar" src="./assets/images/sarah-brown.jpg" alt="assistant-avatar"></div>
+            <div class="assistant__messenger js-assistant__messenger">
+              <div class="messaging">
+                <div class="messaging__header">
+                  <p class="messaging__interlocutor-name">Elena</p>
+                  <div class="messaging__interlocutor-picture" style="background-image: url(./assets/images/sarah-brown.jpg)"></div>
+                </div>
+                <div class="messaging__body">
+                  <div class="messaging__wrap">
+                    <div class="messaging__interlocutor-area">
+                      <button class="messaging__dialog-button messaging__dialog-button_type_message"></button>
+                      <button class="messaging__dialog-button messaging__dialog-button_type_photo"></button>
+                    </div>
+                    <div class="messaging__chat-area">
+                      <div class="messaging__textarea-wrapper">
+                        <textarea class="messaging__textarea messaging__textarea_type_reception" disabled placeholder="Здравствуйте, чем я могу вам помочь?"></textarea>
+                      </div>
+                      <textarea class="messaging__textarea messaging__textarea_type_answer">Yeah that sounds great. See you then.</textarea>
+                    </div>
+                    <button class="ripple-button js-ripple-button ripple-button_theme_mint-reverse ripple-button_size_large ripple-button_width_responsive" type="submit">
+                      <div class="ripple-button__ripple-effect js-ripple-button__ripple-effect"><span class="ripple-button__ripple-circle js-ripple-button__ripple-circle"></span></div>
+                      <p class="ripple-button__text">Reply</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
       </main>
       <footer class="index__footer">
         <section class="footer">
-          <p class="footer__copyright"></p>
+          <p class="footer__copyright">Ilya sigidin</p>
         </section>
       </footer>
     </div>
