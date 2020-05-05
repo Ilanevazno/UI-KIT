@@ -32,9 +32,9 @@ class FormSearch {
     const $caughtTarget = $(e.target);
 
     const isTargetShown = this.htmlItemList.$searchItemList.is('.form-search__item-list_isShown');
-    const targetIsNotItemList = this.$htmlElement.find($caughtTarget).length === 0;
+    const isItemListClicked = this.$htmlElement.find($caughtTarget).length > 0;
 
-    const shouldClose = isTargetShown && targetIsNotItemList;
+    const shouldClose = isTargetShown && !isItemListClicked;
 
     if (shouldClose) {
       this.htmlItemList.$searchItemList.removeClass('form-search__item-list_isShown');
