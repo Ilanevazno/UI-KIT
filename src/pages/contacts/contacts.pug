@@ -33,17 +33,7 @@ block content
       +header(pages)
     main.contacts__content
       each contact in contactItems
-        -
-          const {
-            title,
-            paragraphs,
-            contactType,
-          } = contact;
         .contacts__item
-          +contact-section({
-            title,
-            paragraphs,
-            contactType,
-          }) = contact
+          +contact-section(contact)
     footer.contacts__footer
       +footer({ title: 'Ilya sigidin' })
