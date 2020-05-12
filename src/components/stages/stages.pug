@@ -3,9 +3,8 @@ mixin stages({ maxStep = '', currentStep = '' })
     ul.stages__multi-steps
       - for (let counter = 1; counter <= maxStep; counter += 1)
         -
-          const stepClassName = counter === currentStep ?
-            'stages__multi-steps-item stages__multi-steps-item_active'
-            :
-            'stages__multi-steps-item';
+          const stepClassName = counter === currentStep
+          ? 'stages__multi-steps-item stages__multi-steps-item_active'
+          : 'stages__multi-steps-item';
         li(class= stepClassName)
           span.stages__multi-steps-item-text= counter
