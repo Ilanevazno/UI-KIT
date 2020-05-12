@@ -5,6 +5,7 @@ class Dropdown {
     this.$innerTextArea = this.$htmlContainer.find('.js-dropdown__selected-option-area-text');
     this.$optionsContainer = this.$htmlContainer.find('.js-dropdown__label');
     this.$optionsContainerItem = this.$htmlContainer.find('.js-dropdown__label-item');
+    autoBind(this);
   }
 
   init() {
@@ -12,9 +13,9 @@ class Dropdown {
   }
 
   _bindActions() {
-    this.$textArea.on('click.optionsArea', this._handleSelectedOptionAreaClick.bind(this));
-    this.$optionsContainerItem.on('click.labelItem', this._handleLabelItemClick.bind(this));
-    $(document).on('click.dropdown', this._handleDocumentClick.bind(this));
+    this.$textArea.on('click.optionsArea', this._handleSelectedOptionAreaClick);
+    this.$optionsContainerItem.on('click.labelItem', this._handleLabelItemClick);
+    $(document).on('click.dropdown', this._handleDocumentClick);
   }
 
   _handleDocumentClick(e) {

@@ -13,6 +13,7 @@ class Location {
     this.$currentPositionBtn = this.$mapContainer.find('.js-location__overlay-btn-set-address');
     this.$findMarkerBtn = this.$mapContainer.find('.js-location__overlay-btn-find-marker');
     this.mapIcon = require('./img/marker-icon.png');
+    autoBind(this);
   }
 
   init() {
@@ -43,8 +44,8 @@ class Location {
   }
 
   _bindActions() {
-    this.$currentPositionBtn.on('click.overlayBtnSetAddress', this._handleOverlayBtnSetAddressClick.bind(this));
-    this.$findMarkerBtn.on('click.overlayBtnBindMarker', this._handleOverlayBtnBindMarkerClick.bind(this));
+    this.$currentPositionBtn.on('click.overlayBtnSetAddress', this._handleOverlayBtnSetAddressClick);
+    this.$findMarkerBtn.on('click.overlayBtnBindMarker', this._handleOverlayBtnBindMarkerClick);
   }
 
   _handleOverlayBtnBindMarkerClick() {

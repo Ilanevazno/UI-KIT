@@ -24,6 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "air-datepicker": "^2.2.3",
+    "auto-bind": "^4.0.0",
     "cspell": "^4.0.55",
     "leaflet-css": "^0.1.0"
   },

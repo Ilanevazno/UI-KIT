@@ -4,6 +4,7 @@ class MessageForm {
     this.$formLabels = this.$htmlContainer.find('.js-message-form__field');
     this.$userNameLabel = this.$formLabels.eq(0);
     this.$userEmailLabel = this.$formLabels.eq(1);
+    autoBind(this);
   }
 
   init() {
@@ -11,7 +12,7 @@ class MessageForm {
   }
 
   _bindActions() {
-    this.$htmlContainer.on('submit.messageForm', this._handleMessageFormSubmit.bind(this));
+    this.$htmlContainer.on('submit.messageForm', this._handleMessageFormSubmit);
   }
 
   _handleMessageFormSubmit(e) {

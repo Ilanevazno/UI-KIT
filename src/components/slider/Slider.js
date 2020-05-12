@@ -17,6 +17,7 @@ class Slider {
     };
     this.maxWidth = 360;
     this.minWidth = 260;
+    autoBind(this);
   }
 
   init() {
@@ -30,7 +31,7 @@ class Slider {
   }
 
   _bindActions() {
-    $(window).on('resize.window', this._handleWindowResize.bind(this));
+    $(window).on('resize.window', this._handleWindowResize);
   }
 
   _handleWindowResize() {
@@ -66,7 +67,7 @@ class Slider {
       $(html).find('.pointer').each((index, currentPointer) => {
         this._moveTooltip(currentPointer);
 
-        $(currentPointer).on('mousedown.currentPointer', this._handlePointerMouseDown.bind(this));
+        $(currentPointer).on('mousedown.currentPointer', this._handlePointerMouseDown);
       });
     });
   }

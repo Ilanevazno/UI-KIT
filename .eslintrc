@@ -9,6 +9,7 @@
       "Touch": true,
       "CanvasJS": true,
       "L": true,
+      "autoBind": true,
     },
     "env": {
       "commonjs": true,

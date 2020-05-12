@@ -2,6 +2,7 @@ class HeaderMobile {
   constructor(selector) {
     this.$mobileMenu = $(selector).find('.js-header-mobile__hamburger-menu');
     this.$mobileMenuButton = this.$mobileMenu.prev('.js-header-mobile__hamburger-button');
+    autoBind(this);
   }
 
   init() {
@@ -9,8 +10,8 @@ class HeaderMobile {
   }
 
   _bindActions() {
-    $(document).on('click.mobileMenu', this._handleDocumentClick.bind(this));
-    this.$mobileMenuButton.on('click.mobileMenuButton', this._handleHamburgerButtonClick.bind(this));
+    $(document).on('click.mobileMenu', this._handleDocumentClick);
+    this.$mobileMenuButton.on('click.mobileMenuButton', this._handleHamburgerButtonClick);
   }
 
   _handleHamburgerButtonClick() {

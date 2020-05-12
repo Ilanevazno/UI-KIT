@@ -3,6 +3,7 @@ class Assistant {
     this.$htmlContainer = $(selector);
     this.$startIcon = this.$htmlContainer.find('.js-assistant__open-popup-button');
     this.$modalBody = this.$htmlContainer.find('.js-assistant__messenger');
+    autoBind(this);
   }
 
   init() {
@@ -10,8 +11,8 @@ class Assistant {
   }
 
   _bindActions() {
-    this.$htmlContainer.on('click.assistant', this._handleAssistantClick.bind(this));
-    $(document).on('click.document', this._handleDocumentClick.bind(this));
+    this.$htmlContainer.on('click.assistant', this._handleAssistantClick);
+    $(document).on('click.document', this._handleDocumentClick);
   }
 
   _handleAssistantClick() {

@@ -9,6 +9,7 @@ class VideoPlayer {
       $fullScreen: this.$videoContainer.find('.js-video-player__control_type_fullscreen'),
     };
     this.videoStartingTime = Number(this.videoScreen.getAttribute('data-startTime'));
+    autoBind(this);
   }
 
   init() {
@@ -18,11 +19,11 @@ class VideoPlayer {
   }
 
   _bindActions() {
-    this.controls.$play.on('click.controlPlay', this._handlePlayControlClick.bind(this));
-    this.controls.$pause.on('click.controlPause', this._handlePauseControlClick.bind(this));
-    this.controls.$fullScreen.on('click.controlFullscreen', this._handleFullscreenControlClick.bind(this));
-    this.$videoProgress.on('click.controlProgress', this._handleControlProgressIconClick.bind(this));
-    this.videoScreen.addEventListener('timeupdate', this._handleScreenTimeUpdate.bind(this));
+    this.controls.$play.on('click.controlPlay', this._handlePlayControlClick);
+    this.controls.$pause.on('click.controlPause', this._handlePauseControlClick);
+    this.controls.$fullScreen.on('click.controlFullscreen', this._handleFullscreenControlClick);
+    this.$videoProgress.on('click.controlProgress', this._handleControlProgressIconClick);
+    this.videoScreen.addEventListener('timeupdate', this._handleScreenTimeUpdate);
   }
 
   _setCurrentTime(time) {

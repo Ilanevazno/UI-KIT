@@ -1,6 +1,7 @@
 class RippleButton {
   constructor(selector) {
     this.$rippleHtmlButton = $(selector);
+    autoBind(this);
   }
 
   init() {
@@ -27,8 +28,8 @@ class RippleButton {
   }
 
   _bindActions() {
-    this.$rippleHtmlButton.on('click.rippleEffect', this._handleRippleEffectClick.bind(this));
-    this.$rippleHtmlButton.on('animationEnd webkitAnimationEnd OAnimationEnd MSAnimationEnd', this._handleRippleEffectAnimationEnd.bind(this));
+    this.$rippleHtmlButton.on('click.rippleEffect', this._handleRippleEffectClick);
+    this.$rippleHtmlButton.on('animationEnd webkitAnimationEnd OAnimationEnd MSAnimationEnd', this._handleRippleEffectAnimationEnd);
   }
 }
 

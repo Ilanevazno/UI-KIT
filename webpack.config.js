@@ -116,7 +116,8 @@ module.exports = {
     new webpack.ProvidePlugin({
       '$': 'jquery',
       'jQuery': 'jquery',
-      'window.jQuery': 'jquery'
+      'window.jQuery': 'jquery',
+      'autoBind': 'auto-bind',
     }),
     ...glob.sync('src/pages/**/*.pug')
       .map(html => new HtmlWebpackPlugin({

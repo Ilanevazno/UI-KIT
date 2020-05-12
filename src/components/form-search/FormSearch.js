@@ -10,6 +10,8 @@ class FormSearch {
     };
     this.menuIsOpen = false;
     this.$everyListItem = this.htmlItemList.$searchItemList.find('li');
+
+    autoBind(this);
   }
 
   init() {
@@ -17,11 +19,11 @@ class FormSearch {
   }
 
   _bindActions() {
-    this.htmlItemList.$inputLabel.on('click.searchLabel', this._handleInputTextAreaClick.bind(this));
-    this.htmlItemList.$searchListOptions.on('click.items', this._handleItemListOptionClick.bind(this));
-    this.htmlItemList.$inputLabel.on('input.searchInput', this._handleInputTextAreaInput.bind(this));
-    this.htmlItemList.$searchBtn.on('click.searchButton', this._handleSearchBtnClick.bind(this));
-    $(document).on('click.document', this._handleDocumentClick.bind(this));
+    this.htmlItemList.$inputLabel.on('click.searchLabel', this._handleInputTextAreaClick);
+    this.htmlItemList.$searchListOptions.on('click.items', this._handleItemListOptionClick);
+    this.htmlItemList.$inputLabel.on('input.searchInput', this._handleInputTextAreaInput);
+    this.htmlItemList.$searchBtn.on('click.searchButton', this._handleSearchBtnClick);
+    $(document).on('click.document', this._handleDocumentClick);
   }
 
   _handleInputTextAreaClick() {
