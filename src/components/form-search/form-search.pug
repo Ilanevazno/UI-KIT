@@ -1,9 +1,4 @@
-mixin form-search(data = {})
-  -
-    const {
-      searchList = [],
-      placeholder = 'Search',
-    } = data;
+mixin form-search({ searchList = [], placeholder = 'Search' } = data)
   section.form-search.js-form-search
     .form-search__find-line
       .form-search__line-wrapper

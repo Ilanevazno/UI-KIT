@@ -1,10 +1,4 @@
-mixin location(settings = {})
-  -
-    const {
-      welcomeText = '',
-      address = '',
-      coords = '',
-    } = settings;
+mixin location({ welcomeText = '', address = '', coords = '' })
   div.location.js-location(data-coords = coords)
     .location__overlay
       .location__overlay-text-wrapper

@@ -2,13 +2,7 @@ include ../message-form/message-form
 include ../location/location
 include ../video-player/video-player
 
-mixin contact-section (data = {})
-  -
-    const {
-      title = 'Заголовок',
-      paragraphs = [],
-      contactType = '',
-    } = data;
+mixin contact-section ({ title = 'Заголовок', paragraphs = [], contactType = '' })
   section.contact-section
     h2.contact-section__title= title
     each paragraph in paragraphs

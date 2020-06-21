@@ -1,9 +1,3 @@
-mixin input-label (data = {})
-  -
-    const {
-      name = '',
-      labelType = '',
-      placeholder = '',
-    } = data;
+mixin input-label ({ name = '', labelType = '', placeholder = '' })
   label.input-label
     input.input-label__item(type= labelType name= name placeholder= placeholder)

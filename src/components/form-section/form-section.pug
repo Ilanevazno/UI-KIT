@@ -2,13 +2,7 @@ include ../message-form/message-form
 include ../toggles/toggles
 include ../tick-box/tick-box
 
-mixin form-section (data = {})
-  -
-    const {
-      mainTitle = '',
-      togglesTitle = '',
-      boxesTitle = '',
-    } = data;
+mixin form-section ({ mainTitle = '', togglesTitle = '', boxesTitle = '' })
   section.form-section
     h2.form-section__title= mainTitle
     .form-section__container

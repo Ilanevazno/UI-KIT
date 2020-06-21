@@ -1,12 +1,6 @@
 include ../ripple-button/ripple-button
 
-mixin messaging(data = {})
-  -
-    const {
-      picture = 'sarah-brown.jpg',
-      userName = 'user',
-      placeholder = 'hello there',
-    } = data;
+mixin messaging({ picture = 'sarah-brown.jpg', userName = 'user', placeholder = 'hello there' })
   .messaging
     div.messaging__header
       p.messaging__interlocutor-name= userName

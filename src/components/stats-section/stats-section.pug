@@ -2,14 +2,7 @@ include ../percentages-chart/percentages-chart
 include ../donut-chart/donut-chart
 
 
-mixin stats-section (data = {})
-  -
-    const {
-      donutData = [],
-      statsTitle = '',
-      statsText = '',
-      donutTitle = '',
-    } = data;
+mixin stats-section ({ donutData = [], statsTitle = '', statsText = '', donutTitle = '' })
   section.stats-section
     h2.stats-section__title= statsTitle
     .stats-section__container
