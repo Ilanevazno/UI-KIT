@@ -52,7 +52,7 @@ class Slider {
 
   _handleDocumentMouseMove($targetElement) {
     const $elementTooltip = $targetElement.next();
-    const position = $targetElement.position().left;
+    const position = $targetElement.position().left + 2;
     const offset = $targetElement.width() / 2;
     $elementTooltip.css('left', `${position - offset}px`);
   }

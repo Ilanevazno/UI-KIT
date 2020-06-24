@@ -17,7 +17,7 @@ mixin message-form(data = {})
         link: '',
       },
     } = data;
-  form.message-form.js-message-form
+  form.message-form.js-message-form(novalidate)
     .message-form__fields
       .message-form__item
         input.message-form__field.js-message-form__field(

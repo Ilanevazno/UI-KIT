@@ -44,8 +44,8 @@ class MessageForm {
     const checkResult = (el) => el.checked;
 
     return checkedData.every(checkResult)
-      ? this.userAlert('Форма успешно отправлена!')
-      : this.userAlert('Ошибка при отправке формы, проверьте поля.');
+      ? 'Форма успешно отправлена!'
+      : 'Ошибка при отправке формы, проверьте поля.';
   }
 
   _testLabel(label, regexp) {

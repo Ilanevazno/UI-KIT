@@ -85,17 +85,15 @@
     }
 
     .-selected-,
-    .-current- {
+    .-in-range-{
       background-color: $orange-template;
       color: white;
     }
 
     &--buttons {
       background-color: darken($gray-template, 10%);
-      min-height: 5.4rem;
       display: flex;
       align-items: center;
-      padding: 0 2.5rem;
       border-bottom-right-radius: 5px;
       border-bottom-left-radius: 5px;
     }
@@ -106,6 +104,11 @@
       text-transform: uppercase;
       color: #868686;
       cursor: pointer;
+      width: 100%;
+      min-height: 5.4rem;
+      display: flex;
+      align-items: center;
+      padding: 0 2.5rem;
     }
 
     &--months,

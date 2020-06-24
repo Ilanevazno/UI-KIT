@@ -29,11 +29,26 @@ class Calendar {
         timeFormat: 'hh:ii',
         firstDay: 0,
       },
+      onSelect(formattedDate) {
+        const $currentDayLabel = $('.js-datepicker__current-day');
+        const arrayOfSelectedDays = formattedDate.split(',');
+        let availableDays = arrayOfSelectedDays.map((item) => item.split('.')[0]).join(' - ');
+
+        if (arrayOfSelectedDays[0] === arrayOfSelectedDays[1]) {
+          [availableDays] = arrayOfSelectedDays[0].split('.');
+        }
+
+        const selectedDay = availableDays === '' ? new Date().getDate() : availableDays;
+
+        $currentDayLabel.text(selectedDay);
+      },
       prevHtml: this.svgIcons.leftAngle,
-      selectOtherMonths: false,
       nextHtml: this.svgIcons.rightAngle,
-      todayButton: new Date(),
+      selectOtherMonths: true,
       selectOtherYears: false,
+      todayButton: new Date(),
+      toggleSelected: false,
+      range: true,
       navTitles: {
         days: 'MM',
       },
@@ -50,7 +65,7 @@ class Calendar {
 
     // create current day - month label
     $('<div/>', {
-      class: 'datepicker__current-day',
+      class: 'js-datepicker__current-day datepicker__current-day',
       text: $selectedDay.text(),
     }).prependTo($('.datepicker'));
   }
