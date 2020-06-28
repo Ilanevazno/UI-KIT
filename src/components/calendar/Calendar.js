@@ -48,7 +48,6 @@ class Calendar {
       selectOtherYears: false,
       todayButton: new Date(),
       toggleSelected: false,
-      range: true,
       navTitles: {
         days: 'MM',
       },
@@ -68,6 +67,8 @@ class Calendar {
       class: 'js-datepicker__current-day datepicker__current-day',
       text: $selectedDay.text(),
     }).prependTo($('.datepicker'));
+
+    $selectedDay.addClass('-selected-');
   }
 }
 

@@ -4,13 +4,12 @@ include ../account-panel/account-panel
 
 mixin header (pages = {}, theme)
   -
-    let headerClassName = 'header ';
     const logoLink = './index.html';
     const buttonList = [
       { href: './login.html', description: 'Вход', size: 'large', },
       { href: './register.html', description: 'Регистрация', size: 'large', },
     ];
-  div(class= headerClassName)
+  section.header
     nav.header__navigation
       +header-nav(pages)
     a.header__logo(href= logoLink)

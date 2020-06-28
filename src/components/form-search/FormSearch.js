@@ -33,18 +33,18 @@ class FormSearch {
   _handleDocumentClick(e) {
     const $caughtTarget = $(e.target);
 
-    const isTargetShown = this.htmlItemList.$searchItemList.is('.form-search__item-list_isShown');
+    const isTargetShown = this.htmlItemList.$searchItemList.is('.form-search__item-list_shown');
     const isItemListClicked = this.$htmlElement.find($caughtTarget).length > 0;
 
     const shouldClose = isTargetShown && !isItemListClicked;
 
     if (shouldClose) {
-      this.htmlItemList.$searchItemList.removeClass('form-search__item-list_isShown');
+      this.htmlItemList.$searchItemList.removeClass('form-search__item-list_shown');
     }
   }
 
   _prepareLine() {
-    this.htmlItemList.$searchItemList.toggleClass('form-search__item-list_isShown');
+    this.htmlItemList.$searchItemList.toggleClass('form-search__item-list_shown');
     this.htmlItemList.$searchBtn.removeClass('form-search__search-btn_status_invalid');
     this.htmlItemList.$inputLabel.removeClass('form-search__input-text-area_status_invalid');
     this.htmlItemList.$inputLabel.attr('placeholder', 'Search');
@@ -53,7 +53,7 @@ class FormSearch {
 
   _handleInputTextAreaInput(e) {
     const val = e.target.value.trim();
-    this.htmlItemList.$searchItemList.removeClass('form-search__item-list_isShown');
+    this.htmlItemList.$searchItemList.removeClass('form-search__item-list_shown');
 
     if (val !== '') {
       this.$everyListItem.each((index, element) => {
@@ -89,7 +89,7 @@ class FormSearch {
 
   _handleItemListOptionClick(e) {
     this.htmlItemList.$inputLabel.val($(e.target).text());
-    this.htmlItemList.$searchItemList.removeClass('form-search__item-list_isShown');
+    this.htmlItemList.$searchItemList.removeClass('form-search__item-list_shown');
   }
 }
 
